@@ -10,37 +10,48 @@ using namespace Urho3D;
 class App : public Application {
     URHO3D_OBJECT(App, Application);
 
-    Scene *scene;
+    Scene *scene = nullptr;
     Node *player;
+    uint level = 1;
 
 public:
     // Initialization
     explicit App(Context* context) : Application(context) {}
 
+    void loadScene(uint level) {
+        auto* cache = GetSubsystem<ResourceCache>();
+
+        if (scene) {
+            scene->Remove();
+            delete scene;
+        }
+
+        scene = new Scene(context_);
+
+        SharedPtr<File> file = cache->GetFile(ToString("Scenes/level%u.xml", level));
+        scene->LoadXML(*file);
+
+        player = scene->GetChild("Player");
+
+        auto* renderer = GetSubsystem<Renderer>();
+
+        SharedPtr<Viewport> viewport(new Viewport(context_, scene, player->GetComponent<Camera>()));
+        renderer->SetViewport(0, viewport);
+    }
+
     void Start() final {
         srand(1765783456);
-        auto* cache = GetSubsystem<ResourceCache>();
 
         // Handlers
         SubscribeToEvent(E_UPDATE, URHO3D_HANDLER(App, HandleUpdate));
 
         // Load scene
+        loadScene(level);
+
+        // Configure graphics
         {
-            scene = new Scene(context_);
-
-            SharedPtr<File> file = cache->GetFile("Scenes/level1.xml");
-            scene->LoadXML(*file);
-
-            player = scene->GetChild("Player");
-        }
-
-        // Configure renderer
-        {
-            auto* renderer = GetSubsystem<Renderer>();
             auto* graphics = GetSubsystem<Graphics>();
 
-            SharedPtr<Viewport> viewport(new Viewport(context_, scene, player->GetComponent<Camera>()));
-            renderer->SetViewport(0, viewport);
             auto params = graphics->GetScreenModeParams();
             params.vsync_ = true;
             graphics->SetScreenMode(graphics->GetWidth(), graphics->GetHeight(), params);
@@ -50,6 +61,12 @@ public:
     // Runtime
     void HandleUpdate(StringHash, VariantMap&) {
         auto* input = GetSubsystem<Input>();
+
+        // Checks
+        if (player->GetPosition().y_ < -10) {
+            // Reload scene
+            loadScene(level);
+        }
 
         // Controls
         {
