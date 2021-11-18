@@ -23,7 +23,6 @@ class App : public Application {
 
     Scene *scene = nullptr;
     Node *player, *goal;
-    uint level = 1;
 
 public:
     // Initialization
@@ -31,7 +30,7 @@ public:
         engineParameters_[EP_RESOURCE_PREFIX_PATHS] = "Project";
     }
 
-    void loadScene(uint level) {
+    void loadScene(uint16_t level) {
         auto* cache = GetSubsystem<ResourceCache>();
 
         if (scene) {
@@ -58,21 +57,7 @@ public:
     }
 
     void Start() final {
-        // Handlers
         SubscribeToEvent(E_UPDATE, URHO3D_HANDLER(App, HandleUpdate));
-        SubscribeToEvent(E_NODECOLLISION, URHO3D_HANDLER(App, HandleNodeCollision));
-
-        // Load scene
-        loadScene(level);
-
-        // Configure graphics
-        {
-            auto* graphics = GetSubsystem<Graphics>();
-
-            auto params = graphics->GetScreenModeParams();
-            params.vsync_ = true;
-            graphics->SetScreenMode(graphics->GetWidth(), graphics->GetHeight(), params);
-        }
     }
 
     // Runtime
@@ -84,44 +69,8 @@ public:
             // Reload scene
             loadScene(level);
         }
-
-        // Controls
-        {
-            // Movement
-            if (input->GetKeyDown(KEY_W) || input->GetKeyDown(KEY_S)) {
-                auto rigid = player->GetComponent<RigidBody>();
-                auto impulse = player->GetDirection()/4;
-                // Never apply up-/downwards impulse
-                impulse.y_ = 0;
-                // Negate if backwards
-                if (input->GetKeyDown(KEY_S)) {
-                    impulse = -impulse;
-                }
-                // Apply
-                rigid->ApplyImpulse(impulse);
-            }
-            if (input->GetKeyDown(KEY_A)) {
-                player->Rotate({0, -2.5, 0});
-            }
-            if (input->GetKeyDown(KEY_D)) {
-                player->Rotate({0, 2.5, 0});
-            }
-            if (input->GetKeyDown(KEY_Q)) {
-                player->Rotate({-2.5, 0, 0});
-            }
-            if (input->GetKeyDown(KEY_E)) {
-                player->Rotate({2.5, 0, 0});
-            }
-        }
     }
 
-    void HandleNodeCollision(StringHash eventType, VariantMap& eventData) {
-        auto otherNode = eventData["OtherNode"].GetPtr();
-
-        if (otherNode == goal) {
-            loadScene(++level);
-        }
-    }
 };
 
 
