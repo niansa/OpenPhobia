@@ -1,10 +1,33 @@
-# Set project name
+# Configure project
 project(Template LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 
+# Configure engine
+set(URHO3D_ENABLE_ALL OFF)
+set(URHO3D_DOCS OFF)
+set(URHO3D_CSHARP OFF)
+set(URHO3D_EXTRAS OFF)
+set(URHO3D_GLOW ON)
+set(URHO3D_HASH_DEBUG OFF)
+set(URHO3D_IK OFF)
+set(URHO3D_LEGACY_RENDERER OFF)
+set(URHO3D_LOGGING ON)
+set(URHO3D_MONOLITHIC_HEADER OFF)
+set(URHO3D_NAVIGATION OFF)
+set(URHO3D_NETWORK OFF)
+set(URHO3D_NO_EDITOR_PLAYER_EXE ON)
+set(URHO3D_PHYSICS ON)
+set(URHO3D_PLAYER OFF)
+set(URHO3D_PROFILING OFF)
+set(URHO3D_RMLUI OFF)
+set(URHO3D_SAMPLES OFF)
+set(URHO3D_TOOLS OFF)
+set(URHO3D_URHO2D OFF)
+set(URHO3D_WEBP OFF)
 add_subdirectory(rbfx)
 
+# Game executable
 add_executable(Template main.cpp)
 target_link_libraries(Template PUBLIC Urho3D)
 
