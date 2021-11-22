@@ -22,7 +22,7 @@ class App : public Application {
     URHO3D_OBJECT(App, Application);
 
     Scene *scene = nullptr;
-    Node *player, *goal;
+    Node *player;
 
 public:
     // Initialization
@@ -48,7 +48,6 @@ public:
         }
 
         player = scene->GetChild("Player");
-        goal = scene->GetChild("Goal");
 
         auto* renderer = GetSubsystem<Renderer>();
 
@@ -58,16 +57,13 @@ public:
 
     void Start() final {
         SubscribeToEvent(E_UPDATE, URHO3D_HANDLER(App, HandleUpdate));
+        loadScene(1);
     }
 
     // Runtime
     void HandleUpdate(StringHash, VariantMap&) {
-        auto* input = GetSubsystem<Input>();
-
-        // Checks
         if (player->GetPosition().y_ < -10) {
-            // Reload scene
-            loadScene(level);
+            // TODO: Reset player here (by reloading scene?)
         }
     }
 
