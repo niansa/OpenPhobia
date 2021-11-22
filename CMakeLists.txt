@@ -1,5 +1,5 @@
 # Configure project
-project(Template LANGUAGES CXX)
+project(Game LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 
@@ -28,13 +28,13 @@ set(URHO3D_WEBP OFF)
 add_subdirectory(rbfx)
 
 # Game executable
-add_executable(Template main.cpp)
-target_link_libraries(Template PUBLIC Urho3D)
+add_executable(Game main.cpp)
+target_link_libraries(Game PUBLIC Urho3D)
 
 # Copy the stuff we need
-add_custom_command(TARGET Template PRE_BUILD
+add_custom_command(TARGET Game PRE_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy_directory
-                       ${CMAKE_SOURCE_DIR}/Project $<TARGET_FILE_DIR:Template>/Project)
-add_custom_command(TARGET Template PRE_BUILD
+                       ${CMAKE_SOURCE_DIR}/Project $<TARGET_FILE_DIR:Game>/Project)
+add_custom_command(TARGET Game PRE_BUILD
                   COMMAND ${CMAKE_COMMAND} -E copy_directory
-                      ${CMAKE_SOURCE_DIR}/rbfx/bin/CoreData $<TARGET_FILE_DIR:Template>/Project/CoreData)
+                      ${CMAKE_SOURCE_DIR}/rbfx/bin/CoreData $<TARGET_FILE_DIR:Game>/Project/CoreData)
