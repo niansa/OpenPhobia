@@ -24,6 +24,7 @@ You can enable/disable rbfx components in the `CMakeLists.txt`. The default sett
 
 Here are some resources that may be useful:
 
+ - rbfx samples: https://github.com/rbfx/rbfx/tree/master/Source/Samples
  - rbfx git repo: https://github.com/rokups/rbfx
  - rbfx wiki: https://github.com/rokups/rbfx/wiki
  - rbfx Discord: https://discord.gg/B4YMD4Xuh4
