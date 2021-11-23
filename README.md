@@ -6,7 +6,7 @@
 
 1. Clone this repository using `git clone`
 2. Run `git submodule update --init --recursive --depth 1` inside of it to fetch all dependencies
-3. Make sure the rbfx submodule is up to date: `pushd build && git pull && popd`
+3. Make sure the rbfx submodule is up to date: `pushd rbfx ; git pull ; popd`
 4. Use your favorite IDE to start coding!
 
 ### Scene editing
@@ -20,6 +20,6 @@
 
 You can enable/disable rbfx components in the `CMakeLists.txt`. The default settings are just fine for most small games.
 
-### Executable Distribution
+## Executable Distribution
 
 The only build outputs needed for public distribution are: `Project` and `Game(.exe)`
