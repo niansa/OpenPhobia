@@ -16,6 +16,10 @@
 3. `cd` into the `bin` directory inside your build directory and run `Editor`
 4. Choose the `Project` folder inside your game repository
 
-### Distribution
+### Enabling and disabling rbfx components
+
+You can enable/disable rbfx components in the `CMakeLists.txt`. The default settings are just fine for most small games.
+
+### Executable Distribution
 
 The only build outputs needed for public distribution are: `Project` and `Game(.exe)`
