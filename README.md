@@ -1,4 +1,4 @@
-# rbfx game engine template
+# C++ rbfx game engine template
 
 ## How to start game development
 
@@ -19,6 +19,14 @@
 ### Enabling and disabling rbfx components
 
 You can enable/disable rbfx components in the `CMakeLists.txt`. The default settings are just fine for most small games.
+
+### Learning
+
+Here are some resources that may be useful:
+
+ - rbfx git repo: https://github.com/rokups/rbfx
+ - rbfx wiki: https://github.com/rokups/rbfx/wiki
+ - rbfx Discord: https://discord.gg/B4YMD4Xuh4
 
 ## Executable Distribution
 
