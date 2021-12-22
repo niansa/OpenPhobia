@@ -111,7 +111,7 @@ public:
                     playerVel += player->GetWorldUp() * 7.5;
                 }
             }
-            playerVel += player->GetWorldDirection() * 2;
+            playerVel += player->GetWorldDirection() / 8;
         } else if (input->GetKeyDown(Key::KEY_ESCAPE)) {
             exit(0);
         }
