@@ -3,8 +3,8 @@
 	<technique name="Techniques/LitOpaque.xml" quality="0" loddistance="0.000000" />
 	<texture unit="diffuse" name="Textures/surface_1.png" />
 	<shader vsdefines="PBR " psdefines="PBR " />
-	<parameter name="Metallic" value="1.000000" />
-	<parameter name="Roughness" value="0.400000" />
+        <parameter name="Metallic" value="0.600000" />
+        <parameter name="Roughness" value="0.500000" />
 	<parameter name="MatEmissiveColor" value="0 0 0" />
 	<parameter name="MatSpecColor" value="0 0 0 1" />
 	<parameter name="VOffset" value="0 1 0 0" />
