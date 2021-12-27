@@ -28,7 +28,7 @@ set(URHO3D_WEBP OFF)
 add_subdirectory(rbfx)
 
 # Game executable
-add_executable(Game main.cpp)
+add_executable(Game main.cpp Namespace.hpp SceneManager.hpp SceneManager.cpp Main.hpp FriendlyApp.hpp)
 target_link_libraries(Game PUBLIC Urho3D)
 
 # Copy the stuff we need
