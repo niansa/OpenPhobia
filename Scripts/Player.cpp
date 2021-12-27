@@ -7,6 +7,11 @@ namespace Scatter {
 bool Player::Update() {
     auto* input = app->GetSubsystem<Input>();
 
+    // Escape key handling
+    if (input->GetKeyDown(Key::KEY_ESCAPE)) {
+        exit(0);
+    }
+
     // Position check
     if (node->GetPosition().y_ < -10) {
         lMan->reloadLevel();
@@ -38,8 +43,6 @@ bool Player::Update() {
             }
         }
         playerVel += node->GetWorldDirection() / 8;
-    } else if (input->GetKeyDown(Key::KEY_ESCAPE)) {
-        exit(0);
     }
     limitVel(playerVel);
     playerBody->SetLinearVelocity(playerVel);
