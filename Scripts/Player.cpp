@@ -1,0 +1,53 @@
+#include "Player.hpp"
+#include "../LevelManager.hpp"
+
+
+
+namespace Scatter {
+bool Player::Update() {
+    auto* input = app->GetSubsystem<Input>();
+
+    // Position check
+    if (node->GetPosition().y_ < -10) {
+        lMan->reloadLevel();
+        return false;
+    }
+
+    // Camera
+    auto mMove = input->GetMouseMove();
+    if (mMove.x_ || mMove.y_) {
+        { // Head rotation
+            auto headRot = head->GetRotation().EulerAngles();
+            headRot.x_ = Max(Min(headRot.x_ + mMove.y_ / 8.0f, 80), -80);
+            head->SetRotation(Quaternion(headRot));
+        }
+        { // Body rotation
+            node->Rotate({0, mMove.x_ / 4.0f, 0});
+        }
+    }
+
+    // Movement
+    auto playerBody = node->GetComponent<RigidBody>();
+    auto playerVel = playerBody->GetLinearVelocity();
+    if (input->GetKeyDown(Key::KEY_SPACE)) {
+        if (playerVel.y_ > -0.5 && playerVel.y_ < 0.5) {
+            eastl::vector<RigidBody*> collisions;
+            playerBody->GetCollidingBodies(collisions);
+            if (collisions.size() != 0) {
+                playerVel += node->GetWorldUp() * 7.5;
+            }
+        }
+        playerVel += node->GetWorldDirection() / 8;
+    } else if (input->GetKeyDown(Key::KEY_ESCAPE)) {
+        exit(0);
+    }
+    limitVel(playerVel);
+    playerBody->SetLinearVelocity(playerVel);
+    auto bodyRot = node->GetRotation();
+    bodyRot.x_ = 0;
+    bodyRot.z_ = 0;
+    node->SetRotation(bodyRot);
+
+    return true;
+}
+}
