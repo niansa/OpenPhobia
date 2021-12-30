@@ -52,7 +52,7 @@ bool Player::Update() {
     node->SetRotation(bodyRot);
 
     // Shooting
-    if (input->GetKeyPress(Key::KEY_V)) {
+    if (input->GetMouseButtonPress(MouseButtonFlags::Enum::MOUSEB_LEFT)) {
         auto bullet = node->GetParent()->CreateChild();
         bullet->SetName("Spawn_Bullet");
         bullet->SetPosition(node->GetPosition()+getHead()->GetPosition());
