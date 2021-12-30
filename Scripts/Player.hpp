@@ -1,4 +1,4 @@
-namespace Scatter {
+namespace Game {
 class Player;
 }
 #ifndef PLAYER_HPP
