@@ -34,7 +34,7 @@ add_subdirectory(rbfx)
 add_subdirectory(easyscript)
 
 # Game executable
-add_executable(Game main.cpp LevelManager.hpp Scripts/Player.hpp Scripts/Player.cpp Scripts/Jumper.hpp Scripts/Jumper.cpp)
+add_executable(Game main.cpp LevelManager.hpp)
 target_link_libraries(Game PUBLIC Urho3D rbfxeasyscript)
 
 # Copy the stuff we need
