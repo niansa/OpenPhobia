@@ -5,18 +5,18 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="357" />
-	<attribute name="Next Replicated Component ID" value="833" />
-	<attribute name="Next Local Node ID" value="16777303" />
-	<attribute name="Next Local Component ID" value="16777502" />
+	<attribute name="Next Replicated Node ID" value="359" />
+	<attribute name="Next Replicated Component ID" value="835" />
+	<attribute name="Next Local Node ID" value="16777305" />
+	<attribute name="Next Local Component ID" value="16777505" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
 	<component type="Octree" id="1" />
 	<component type="PhysicsWorld" id="30" />
 	<component type="EditorSceneSettings" id="16777460">
-		<attribute name="Camera Position" value="1.34844 2.4288 -0.522784" />
-		<attribute name="Camera Rotation" value="0.792251 0.129578 -0.588467 0.0962003" />
+		<attribute name="Camera Position" value="1.44433 5.17348 2.72177" />
+		<attribute name="Camera Rotation" value="0.523774 0.105983 -0.828461 0.167573" />
 	</component>
 	<component type="RenderPipeline" id="755">
 		<attribute name="Bloom" value="true" />
@@ -274,14 +274,13 @@
 			<attribute name="Name" value="Platform" />
 			<attribute name="Tags" />
 			<attribute name="Position" value="-2.44117 2.33968 0" />
-			<attribute name="Rotation" value="-0.966364 -0.0675765 0.24813 4.70174e-05" />
+			<attribute name="Rotation" value="1 0 0 0" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="CollisionShape" id="811">
 				<attribute name="Size" value="2.3 2 2.3" />
 			</component>
 			<component type="RigidBody" id="812">
-				<attribute name="Physics Rotation" value="0.966367 0.0675767 -0.248131 -4.70159e-05" />
 				<attribute name="Physics Position" value="-5.49264 1.16984 0" />
 			</component>
 			<component type="StaticModel" id="813">
