@@ -30,9 +30,12 @@ set(URHO3D_URHO2D OFF)
 set(URHO3D_WEBP OFF)
 add_subdirectory(rbfx)
 
+# rbfx easyscript
+add_subdirectory(easyscript)
+
 # Game executable
-add_executable(Game main.cpp Namespace.hpp SceneManager.hpp SceneManager.cpp LevelManager.hpp Main.hpp FriendlyApp.hpp Script.hpp Scripts/Player.hpp Scripts/Player.cpp)
-target_link_libraries(Game PUBLIC Urho3D)
+add_executable(Game main.cpp LevelManager.hpp Scripts/Player.hpp Scripts/Player.cpp)
+target_link_libraries(Game PUBLIC Urho3D rbfxeasyscript)
 
 # Copy the stuff we need
 add_custom_command(TARGET Game PRE_BUILD

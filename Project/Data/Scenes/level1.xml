@@ -5,18 +5,18 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="348" />
-	<attribute name="Next Replicated Component ID" value="825" />
-	<attribute name="Next Local Node ID" value="16777295" />
-	<attribute name="Next Local Component ID" value="16777490" />
+	<attribute name="Next Replicated Node ID" value="350" />
+	<attribute name="Next Replicated Component ID" value="827" />
+	<attribute name="Next Local Node ID" value="16777297" />
+	<attribute name="Next Local Component ID" value="16777493" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
 	<component type="Octree" id="1" />
 	<component type="PhysicsWorld" id="30" />
 	<component type="EditorSceneSettings" id="16777460">
-		<attribute name="Camera Position" value="-7.43721 9.36739 0.85958" />
-		<attribute name="Camera Rotation" value="0.571707 0.320694 0.658599 -0.369532" />
+		<attribute name="Camera Position" value="-7.43724 9.36744 0.859585" />
+		<attribute name="Camera Rotation" value="0.573909 0.251803 0.713548 -0.313167" />
 	</component>
 	<component type="RenderPipeline" id="755">
 		<attribute name="Bloom" value="true" />
@@ -281,7 +281,7 @@
 				<attribute name="Size" value="2.3 2 2.3" />
 			</component>
 			<component type="RigidBody" id="812">
-				<attribute name="Physics Rotation" value="0.966367 0.0675767 -0.248131 -4.70168e-05" />
+				<attribute name="Physics Rotation" value="0.966367 0.0675767 -0.248131 -4.70159e-05" />
 				<attribute name="Physics Position" value="-5.49264 1.16984 0" />
 			</component>
 			<component type="StaticModel" id="813">
@@ -464,7 +464,7 @@
 	</node>
 	<node id="321">
 		<attribute name="Is Enabled" value="true" />
-		<attribute name="Name" value="Spawn" />
+		<attribute name="Name" value="Spawn_Player" />
 		<attribute name="Tags" />
 		<attribute name="Position" value="0 1 0" />
 		<attribute name="Rotation" value="1 0 0 0" />

@@ -3,12 +3,12 @@ class LevelManager;
 }
 #ifndef LEVELMANAGER_HPP
 #define LEVELMANAGER_HPP
-#include "Namespace.hpp"
-#include "SceneManager.hpp"
+#include "easyscript/Namespace.hpp"
+#include "easyscript/SceneManager.hpp"
 
 
 
-namespace Scatter {
+namespace Game {
 class LevelManager : public SceneManager {
     int level = 1;
 

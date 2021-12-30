@@ -3,7 +3,7 @@
 
 
 
-namespace Scatter {
+namespace Game {
 bool Player::Update() {
     auto* input = app->GetSubsystem<Input>();
 

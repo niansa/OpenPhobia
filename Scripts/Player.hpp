@@ -3,8 +3,8 @@ class Player;
 }
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
-#include "../Namespace.hpp"
-#include "../Script.hpp"
+#include "../easyscript/Namespace.hpp"
+#include "../easyscript/Script.hpp"
 
 #include <Urho3D/Input/Input.h>
 #include <Urho3D/Scene/Node.h>
@@ -12,7 +12,7 @@ class Player;
 
 
 
-namespace Scatter {
+namespace Game {
 class LevelManager;
 
 class Player final : public Script {
