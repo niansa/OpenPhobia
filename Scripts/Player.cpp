@@ -51,6 +51,18 @@ bool Player::Update() {
     bodyRot.z_ = 0;
     node->SetRotation(bodyRot);
 
+    // Shooting
+    if (input->GetKeyPress(Key::KEY_V)) {
+        auto bullet = node->GetParent()->CreateChild();
+        bullet->SetName("Spawn_Bullet");
+        bullet->SetPosition(node->GetPosition()+getHead()->GetPosition());
+        bullet->Translate(getHead()->GetWorldDirection());
+        bullet->SetScale({0.25, 0.25, 0.25});
+        lMan->loadSpawner(bullet);
+        bullet->GetChild("Bullet")->GetComponent<RigidBody>()->ApplyImpulse(getHead()->GetWorldDirection()*10);
+        return false;
+    }
+
     return true;
 }
 }
