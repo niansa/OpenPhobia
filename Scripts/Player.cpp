@@ -4,7 +4,7 @@
 #include <Urho3D/Physics/CollisionShape.h>
 
 
-#include <unistd.h>
+
 namespace Game {
 void Player::Start() {
     head = node->GetChild("Head");
@@ -64,7 +64,6 @@ bool Player::Update(float timeStep) {
         }
 
         // Walk
-        //usleep(10000);
         kinematicController->SetWalkDirection(node->GetRotation() * moveDir * 4.f * timeStep);
     }
 
