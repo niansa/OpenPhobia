@@ -6,25 +6,23 @@ class LevelManager;
 #include "easyscript/Namespace.hpp"
 #include "easyscript/SceneManager.hpp"
 
+#include <Urho3D/Engine/Application.h>
+
 
 
 namespace Game {
 class LevelManager : public SceneManager {
-    int level = 1;
+    eastl::string level = "OldHouse";
 
 public:
     using SceneManager::SceneManager;
 
     void reloadLevel() {
-        loadScene("Scenes/level"+eastl::to_string(level)+".xml");
+        loadScene("Scenes/"+level+".xml");
         player->setLevelManager(this);
     }
-    void loadLevel(int nlevel) {
+    void loadLevel(eastl::string nlevel) {
         level = nlevel;
-        reloadLevel();
-    }
-    void loadNextLevel() {
-        level++;
         reloadLevel();
     }
 

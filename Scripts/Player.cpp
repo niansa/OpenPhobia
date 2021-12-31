@@ -1,9 +1,18 @@
 #include "Player.hpp"
 #include "../LevelManager.hpp"
 
+#include <Urho3D/Physics/CollisionShape.h>
+
 
 
 namespace Game {
+void Player::Start() {
+    head = node->GetChild("Head");
+    collisionShape = node->GetComponent<CollisionShape>();
+    kinematicController = node->CreateComponent<KinematicCharacterController>();
+    kinematicController->SetHeight(0.85f);
+}
+
 bool Player::Update() {
     auto* input = app->GetSubsystem<Input>();
 
@@ -31,36 +40,31 @@ bool Player::Update() {
         }
     }
 
-    // Movement
-    auto playerBody = node->GetComponent<RigidBody>();
-    auto playerVel = playerBody->GetLinearVelocity();
-    if (input->GetKeyDown(Key::KEY_SPACE)) {
-        if (playerVel.y_ > -0.5 && playerVel.y_ < 0.5) {
-            eastl::vector<RigidBody*> collisions;
-            playerBody->GetCollidingBodies(collisions);
-            if (collisions.size() != 0) {
-                playerVel += node->GetWorldUp() * 7.5;
-            }
-        }
-        playerVel += node->GetWorldDirection() / 8;
-    }
-    limitVel(playerVel);
-    playerBody->SetLinearVelocity(playerVel);
-    auto bodyRot = node->GetRotation();
-    bodyRot.x_ = 0;
-    bodyRot.z_ = 0;
-    node->SetRotation(bodyRot);
+    // Kinematic player stuff
+    {
+        // Update movement
+        Vector3 moveDir = moveDir.ZERO;
 
-    // Shooting
-    if (input->GetMouseButtonPress(MouseButtonFlags::Enum::MOUSEB_LEFT)) {
-        auto bullet = node->GetParent()->CreateChild();
-        bullet->SetName("Spawn_Bullet");
-        bullet->SetPosition(node->GetPosition()+getHead()->GetPosition());
-        bullet->Translate(getHead()->GetWorldDirection());
-        bullet->SetScale({0.25, 0.25, 0.25});
-        lMan->loadSpawner(bullet);
-        bullet->GetChild("Bullet")->GetComponent<RigidBody>()->ApplyImpulse(getHead()->GetWorldDirection()*10);
-        return false;
+        if (input->GetKeyDown(Key::KEY_W)) {
+            moveDir += moveDir.FORWARD;
+        }
+        if (input->GetKeyDown(Key::KEY_S)) {
+            moveDir += moveDir.BACK;
+        }
+        if (input->GetKeyDown(Key::KEY_A)) {
+            moveDir += moveDir.LEFT;
+        }
+        if (input->GetKeyDown(Key::KEY_D)) {
+            moveDir += moveDir.RIGHT;
+        }
+
+        // Normalize move vector so that diagonal strafing is not faster
+        if (moveDir.LengthSquared() > 0.0f) {
+            moveDir.Normalize();
+        }
+
+        // Walk
+        kinematicController->SetWalkDirection(node->LocalToWorld(Vector4(moveDir * 0.06f, 0)));
     }
 
     return true;

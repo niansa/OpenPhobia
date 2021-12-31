@@ -8,7 +8,11 @@ class Player;
 
 #include <Urho3D/Input/Input.h>
 #include <Urho3D/Scene/Node.h>
+#include <Urho3D/Scene/LogicComponent.h>
 #include <Urho3D/Physics/RigidBody.h>
+#include <Urho3D/Physics/KinematicCharacterController.h>
+#include <Urho3D/Physics/PhysicsEvents.h>
+#include <Urho3D/Physics/PhysicsWorld.h>
 
 
 
@@ -25,20 +29,25 @@ class Player final : public Script {
         vel.z_ = Max(Min(vel.z_, 10), -10);
     }
 
+protected:
+    CollisionShape* collisionShape;
+    KinematicCharacterController* kinematicController;
+
 public:
+    using Script::Script;
+
     void setLevelManager(LevelManager *lMan) {
         this->lMan = lMan;
     }
 
-    virtual void Start() override {
-        head = node->GetChild("Head");
-    }
-
+    virtual void Start() override;
     virtual bool Update() override;
 
     Node *getHead() {
         return head;
     }
+
+    void onCollision(StringHash eventType, VariantMap& eventData);
 };
 }
 #endif // PLAYER_HPP
