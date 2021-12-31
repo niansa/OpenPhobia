@@ -2,19 +2,27 @@
 #include "../LevelManager.hpp"
 
 #include <Urho3D/Physics/CollisionShape.h>
+#include <Urho3D/Graphics/Renderer.h>
+#include <Urho3D/Graphics/Viewport.h>
+#include <Urho3D/Graphics/Camera.h>
 
 
 
 namespace Game {
 void Player::Start() {
-    head = node->GetChild("Head");
-    collisionShape = node->GetComponent<CollisionShape>();
-    kinematicController = node->CreateComponent<KinematicCharacterController>();
+    head = GetNode()->GetChild("Head");
+    collisionShape = GetNode()->GetComponent<CollisionShape>();
+    kinematicController = GetNode()->CreateComponent<KinematicCharacterController>();
     kinematicController->SetHeight(0.85f);
+
+    auto* renderer = GetSubsystem<Renderer>();
+
+    SharedPtr<Viewport> viewport(new Viewport(context_, GetScene(), head->GetComponent<Camera>()));
+    renderer->SetViewport(0, viewport);
 }
 
-bool Player::Update(float timeStep) {
-    auto* input = app->GetSubsystem<Input>();
+void Player::FixedUpdate(float timeStep) {
+    auto* input = GetSubsystem<Input>();
 
     // Escape key handling
     if (input->GetKeyDown(Key::KEY_ESCAPE)) {
@@ -22,10 +30,10 @@ bool Player::Update(float timeStep) {
     }
 
     // Position check
-    if (node->GetPosition().y_ < -10) {
+    /*if (GetNode()->GetPosition().y_ < -10) {
         lMan->reloadLevel();
-        return false;
-    }
+        return;
+    }*/
 
     // Camera
     auto mMove = input->GetMouseMove();
@@ -36,7 +44,7 @@ bool Player::Update(float timeStep) {
             head->SetRotation(Quaternion(headRot));
         }
         { // Body rotation
-            node->Rotate({0, mMove.x_ / 4.0f, 0});
+            GetNode()->Rotate({0, mMove.x_ / 4.0f, 0});
         }
     }
 
@@ -64,9 +72,7 @@ bool Player::Update(float timeStep) {
         }
 
         // Walk
-        kinematicController->SetWalkDirection(node->GetRotation() * moveDir * 4.f * timeStep);
+        kinematicController->SetWalkDirection(GetNode()->GetRotation() * moveDir * 0.03f);
     }
-
-    return true;
 }
 }

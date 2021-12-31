@@ -19,7 +19,6 @@ public:
 
     void reloadLevel() {
         loadScene("Scenes/"+level+".xml");
-        player->setLevelManager(this);
     }
     void loadLevel(eastl::string nlevel) {
         level = nlevel;

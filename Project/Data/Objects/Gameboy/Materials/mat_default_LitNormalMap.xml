@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<material>
+	<technique name="Techniques/LitTransparentFadeNormalMap.xml" quality="1" loddistance="0.000000" />
+	<texture unit="diffuse" name="Objects/Gameboy/Textures/mat_default_baseColor.png" />
+	<texture unit="normal" name="Objects/Gameboy/Textures/mat_default_normal.png" />
+	<texture unit="specular" name="Objects/Gameboy/Textures/mat_default_metallicRoughness_1.png" />
+	<texture unit="emissive" name="Objects/Gameboy/Textures/mat_default_emissive.jpg" />
+	<shader vsdefines="PBR " psdefines="PBR " />
+	<parameter name="Metallic" value="1.000000" />
+	<parameter name="OcclusionStrength" value="1.000000" />
+	<parameter name="Roughness" value="1.000000" />
+	<parameter name="MatEmissiveColor" value="0.969394 0.969394 0.969394" />
+	<parameter name="MatSpecColor" value="0 0 0 1" />
+	<parameter name="VOffset" value="0 1 0 0" />
+	<parameter name="UOffset" value="1 0 0 0" />
+	<parameter name="MatDiffColor" value="1 1 1 1" />
+	<parameter name="NormalScale" value="1.000000" />
+	<parameter name="MatEnvMapColor" value="1 1 1" />
+	<parameter name="DielectricReflectance" value="0.500000" />
+	<cull value="none" />
+	<shadowcull value="none" />
+	<fill value="solid" />
+	<depthbias constant="0.000000" slopescaled="0.000000" normaloffset="0.000000" />
+	<alphatocoverage enable="false" />
+	<lineantialias enable="false" />
+	<renderorder value="128" />
+	<occlusion enable="true" />
+</material>

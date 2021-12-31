@@ -5,10 +5,10 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="44" />
-	<attribute name="Next Replicated Component ID" value="40" />
-	<attribute name="Next Local Node ID" value="16777228" />
-	<attribute name="Next Local Component ID" value="16777235" />
+	<attribute name="Next Replicated Node ID" value="51" />
+	<attribute name="Next Replicated Component ID" value="47" />
+	<attribute name="Next Local Node ID" value="16777238" />
+	<attribute name="Next Local Component ID" value="16777250" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
@@ -19,8 +19,8 @@
 		<attribute name="Post Process Antialiasing" value="FXAA3" />
 	</component>
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="-0.736301 1.63565 -0.100701" />
-		<attribute name="Camera Rotation" value="0.949461 0.00444647 0.313848 -0.00162268" />
+		<attribute name="Camera Position" value="-0.424089 1.43855 1.34439" />
+		<attribute name="Camera Rotation" value="0.00372273 0.000594396 0.978285 -0.207229" />
 	</component>
 	<component type="PhysicsWorld" id="20" />
 	<node id="18">
@@ -136,6 +136,15 @@
 		<attribute name="Name" value="Spawn_Player" />
 		<attribute name="Tags" />
 		<attribute name="Position" value="-2.1619 0.616168 -0.896457" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+	</node>
+	<node id="45">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Spawn_Gameboy" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="-0.656444 1.02449 0.922388" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
