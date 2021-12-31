@@ -30,10 +30,10 @@ void Player::FixedUpdate(float timeStep) {
     }
 
     // Position check
-    /*if (GetNode()->GetPosition().y_ < -10) {
-        lMan->reloadLevel();
+    if (GetNode()->GetWorldPosition().y_ < -10) {
+        kinematicController->SetTransform(GetNode()->GetParent()->GetWorldPosition(), {0, 0, 0});
         return;
-    }*/
+    }
 
     // Camera
     auto mMove = input->GetMouseMove();
