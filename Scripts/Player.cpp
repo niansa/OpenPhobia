@@ -4,7 +4,7 @@
 #include <Urho3D/Physics/CollisionShape.h>
 
 
-
+#include <unistd.h>
 namespace Game {
 void Player::Start() {
     head = node->GetChild("Head");
@@ -13,7 +13,7 @@ void Player::Start() {
     kinematicController->SetHeight(0.85f);
 }
 
-bool Player::Update() {
+bool Player::Update(float timeStep) {
     auto* input = app->GetSubsystem<Input>();
 
     // Escape key handling
@@ -64,7 +64,8 @@ bool Player::Update() {
         }
 
         // Walk
-        kinematicController->SetWalkDirection(node->LocalToWorld(Vector4(moveDir * 0.06f, 0)));
+        //usleep(10000);
+        kinematicController->SetWalkDirection(node->GetRotation() * moveDir * 4.f * timeStep);
     }
 
     return true;

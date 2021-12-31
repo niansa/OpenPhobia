@@ -41,7 +41,7 @@ public:
     }
 
     virtual void Start() override;
-    virtual bool Update() override;
+    virtual bool Update(float timeStep) override;
 
     Node *getHead() {
         return head;
