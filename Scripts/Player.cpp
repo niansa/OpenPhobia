@@ -5,12 +5,16 @@
 #include <Urho3D/Graphics/Renderer.h>
 #include <Urho3D/Graphics/Viewport.h>
 #include <Urho3D/Graphics/Camera.h>
+#include <Urho3D/Graphics/Octree.h>
+#include <Urho3D/Graphics/OctreeQuery.h>
+#include <Urho3D/UI/UI.h>
 
 
 
 namespace Game {
 void Player::Start() {
     head = GetNode()->GetChild("Head");
+    handP = GetNode()->GetChild("Hand");
     collisionShape = GetNode()->GetComponent<CollisionShape>();
     kinematicController = GetNode()->CreateComponent<KinematicCharacterController>();
     kinematicController->SetHeight(0.85f);
@@ -33,19 +37,6 @@ void Player::FixedUpdate(float timeStep) {
     if (GetNode()->GetWorldPosition().y_ < -10) {
         kinematicController->SetTransform(GetNode()->GetParent()->GetWorldPosition(), {0, 0, 0});
         return;
-    }
-
-    // Camera
-    auto mMove = input->GetMouseMove();
-    if (mMove.x_ || mMove.y_) {
-        { // Head rotation
-            auto headRot = head->GetRotation().EulerAngles();
-            headRot.x_ = Max(Min(headRot.x_ + mMove.y_ / 8.0f, 80), -80);
-            head->SetRotation(Quaternion(headRot));
-        }
-        { // Body rotation
-            GetNode()->Rotate({0, mMove.x_ / 4.0f, 0});
-        }
     }
 
     // Kinematic player stuff
@@ -74,5 +65,68 @@ void Player::FixedUpdate(float timeStep) {
         // Walk
         kinematicController->SetWalkDirection(GetNode()->GetRotation() * moveDir * 0.03f);
     }
+}
+
+void Player::Update(float timeStep) {
+    auto* input = GetSubsystem<Input>();
+
+    // Camera
+    auto mMove = input->GetMouseMove();
+    if (mMove.x_ || mMove.y_) {
+        { // Head rotation
+            auto headRot = head->GetRotation().EulerAngles();
+            headRot.x_ = Max(Min(headRot.x_ + mMove.y_ / 8.0f, 80), -80);
+            head->SetRotation(Quaternion(headRot));
+        }
+        { // Body rotation
+            GetNode()->Rotate({0, mMove.x_ / 4.0f, 0});
+        }
+    }
+
+    // Object grabbing
+    if (!hand && input->GetKeyPress(Key::KEY_E)) {
+        // Grab item
+        auto *ui = GetSubsystem<UI>();
+        auto *graphics = GetSubsystem<Graphics>();
+        IntVector2 pos = ui->GetCursorPosition();
+        // Raycast
+        auto ray = head->GetComponent<Camera>()->GetScreenRay(float(pos.x_) / graphics->GetWidth(), float(pos.y_) / graphics->GetHeight());
+        ea::vector<RayQueryResult> results;
+        RayOctreeQuery query(results, ray, RAY_TRIANGLE, 50, DRAWABLE_GEOMETRY);
+        GetScene()->GetComponent<Octree>()->RaycastSingle(query);
+        // Get first result
+        if (!results.empty()) {
+            auto node = results[0].node_;
+            if (node->HasTag("Grabbable")) {
+                // Grab obect
+                grab(node);
+            }
+        }
+    }
+
+    // Object dropping
+    if (hand && input->GetKeyPress(Key::KEY_G)) {
+        drop();
+    }
+}
+
+void Player::grab(Node *node) {
+    handP->AddChild(node);
+    auto body = node->GetComponent<RigidBody>();
+    body->SetKinematic(true);
+    body->SetTrigger(true);
+    node->SetTransform(Vector3::ZERO, Quaternion(Vector3::ZERO));
+    hand = node;
+}
+
+void Player::drop() {
+    GetScene()->AddChild(hand);
+    auto body = hand->GetComponent<RigidBody>();
+    auto npos = head->GetWorldPosition() + head->GetWorldDirection() * 0.5f;
+    body->SetPosition(npos);
+    body->SetKinematic(false);
+    body->SetTrigger(false);
+    body->ApplyImpulse(head->GetWorldDirection()/4);
+    hand = nullptr;
 }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <material>
-	<technique name="Techniques/LitTransparentFadeNormalMap.xml" quality="1" loddistance="0.000000" />
+	<technique name="Techniques/Diff.xml" quality="0" loddistance="0.000000" />
 	<texture unit="diffuse" name="Objects/Gameboy/Textures/mat_default_baseColor.png" />
 	<texture unit="normal" name="Objects/Gameboy/Textures/mat_default_normal.png" />
 	<texture unit="specular" name="Objects/Gameboy/Textures/mat_default_metallicRoughness_1.png" />
@@ -12,8 +12,8 @@
 	<parameter name="MatEmissiveColor" value="0.969394 0.969394 0.969394" />
 	<parameter name="MatSpecColor" value="0 0 0 1" />
 	<parameter name="VOffset" value="0 1 0 0" />
-	<parameter name="UOffset" value="1 0 0 0" />
 	<parameter name="MatDiffColor" value="1 1 1 1" />
+	<parameter name="UOffset" value="1 0 0 0" />
 	<parameter name="NormalScale" value="1.000000" />
 	<parameter name="MatEnvMapColor" value="1 1 1" />
 	<parameter name="DielectricReflectance" value="0.500000" />

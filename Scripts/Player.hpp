@@ -21,6 +21,8 @@ class Player final : public LogicComponent {
     URHO3D_OBJECT(Player, LogicComponent);
 
     Node *head;
+    Node *handP;
+    Node *hand = nullptr;
 
 protected:
     CollisionShape* collisionShape;
@@ -31,6 +33,10 @@ public:
 
     virtual void Start() override;
     virtual void FixedUpdate(float timeStep) override;
+    virtual void Update(float timeStep) override;
+
+    void grab(Node *node);
+    void drop();
 };
 }
 #endif // PLAYER_HPP
