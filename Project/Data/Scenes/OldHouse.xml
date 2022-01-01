@@ -5,10 +5,10 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="59" />
-	<attribute name="Next Replicated Component ID" value="59" />
-	<attribute name="Next Local Node ID" value="16777252" />
-	<attribute name="Next Local Component ID" value="16777271" />
+	<attribute name="Next Replicated Node ID" value="60" />
+	<attribute name="Next Replicated Component ID" value="60" />
+	<attribute name="Next Local Node ID" value="16777254" />
+	<attribute name="Next Local Component ID" value="16777274" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
@@ -19,8 +19,8 @@
 		<attribute name="Post Process Antialiasing" value="FXAA3" />
 	</component>
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="-7.75758 2.01535 1.37623" />
-		<attribute name="Camera Rotation" value="0.602454 0.0840298 0.786071 -0.109911" />
+		<attribute name="Camera Position" value="-0.426753 3.96428 -3.28801" />
+		<attribute name="Camera Rotation" value="0.983392 -0.176037 0.0435102 0.00762629" />
 	</component>
 	<component type="PhysicsWorld" id="20" />
 	<node id="18">
@@ -28,11 +28,12 @@
 		<attribute name="Name" value="Sun" />
 		<attribute name="Tags" />
 		<attribute name="Position" value="-1 2 1" />
-		<attribute name="Rotation" value="0.543945 0.750533 0.375266 -0" />
+		<attribute name="Rotation" value="-0.526745 -0.589647 -0.546925 -0.275191" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="Light" id="8">
 			<attribute name="Light Type" value="Directional" />
+			<attribute name="Brightness Multiplier" value="0.100000" />
 			<attribute name="Cast Shadows" value="true" />
 		</component>
 	</node>
