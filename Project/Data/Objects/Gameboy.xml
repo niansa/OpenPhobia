@@ -5,10 +5,10 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="47" />
-	<attribute name="Next Replicated Component ID" value="31" />
-	<attribute name="Next Local Node ID" value="16777230" />
-	<attribute name="Next Local Component ID" value="16777238" />
+	<attribute name="Next Replicated Node ID" value="48" />
+	<attribute name="Next Replicated Component ID" value="32" />
+	<attribute name="Next Local Node ID" value="16777232" />
+	<attribute name="Next Local Component ID" value="16777241" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
@@ -19,8 +19,8 @@
 		<attribute name="Post Process Antialiasing" value="FXAA3" />
 	</component>
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="-0.0250611 0.153297 -0.270763" />
-		<attribute name="Camera Rotation" value="0.994443 0.10417 -0.0151533 0.00159351" />
+		<attribute name="Camera Position" value="0.118427 0.0996912 -0.142039" />
+		<attribute name="Camera Rotation" value="0.927819 0.0896765 -0.360414 0.0348237" />
 	</component>
 	<component type="PhysicsWorld" id="22" />
 	<node id="23">
@@ -28,7 +28,7 @@
 		<attribute name="Name" value="Default Light" />
 		<attribute name="Tags" />
 		<attribute name="Position" value="-1 2 1" />
-		<attribute name="Rotation" value="0.543945 0.750533 0.375266 -0" />
+		<attribute name="Rotation" value="0.885388 -0.0899548 0.286178 -0.355104" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="Light" id="11">
@@ -56,7 +56,7 @@
 		</component>
 		<component type="StaticModel" id="25">
 			<attribute name="Model" value="Model;Objects/Gameboy/Models/Gameboy.mdl" />
-			<attribute name="Material" value="Material;Objects/Gameboy/Materials/mat_default_LitNormalMap.xml;Objects/Gameboy/Materials/mat_default_LitNormalMap.xml;Objects/Gameboy/Materials/mat_default_LitNormalMap.xml;Objects/Gameboy/Materials/mat_default_LitNormalMap.xml;Objects/Gameboy/Materials/mat_default_LitNormalMap.xml;Objects/Gameboy/Materials/mat_default_LitNormalMap.xml;Objects/Gameboy/Materials/mat_default_LitNormalMap.xml;Objects/Gameboy/Materials/mat_default_LitNormalMap.xml" />
+			<attribute name="Material" value="Material;Objects/Gameboy/Materials/mat_default_LitNormalMap.xml;Objects/Gameboy/Materials/mat_default_LitNormalMap.xml;Objects/Gameboy/Materials/mat_default_LitNormalMap.xml;Objects/Gameboy/Materials/mat_default_LitNormalMap.xml;Objects/Gameboy/Materials/mat_default_LitNormalMap.xml;Objects/Gameboy/Materials/mat_default_LitNormalMap.xml;Objects/Gameboy/Materials/mat_default_LitNormalMap.xml;Objects/Gameboy/Materials/mat_alpha_LitNormalMap.xml" />
 		</component>
 	</node>
 </scene>
