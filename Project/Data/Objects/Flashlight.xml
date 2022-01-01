@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<scene id="1">
+	<attribute name="Name" value="" />
+	<attribute name="Time Scale" value="1.000000" />
+	<attribute name="Smoothing Constant" value="50.000000" />
+	<attribute name="Snap Threshold" value="5.000000" />
+	<attribute name="Elapsed Time" value="0.000000" />
+	<attribute name="Next Replicated Node ID" value="25" />
+	<attribute name="Next Replicated Component ID" value="26" />
+	<attribute name="Next Local Node ID" value="16777222" />
+	<attribute name="Next Local Component ID" value="16777225" />
+	<attribute name="Variables" />
+	<attribute name="Variable Names" value="" />
+	<attribute name="Lightmaps" value="Texture2D" />
+	<component type="PhysicsWorld" id="1" />
+	<component type="Octree" id="2" />
+	<component type="EditorSceneSettings" id="16777216">
+		<attribute name="Camera Position" value="0.863947 0.0100042 -0.0474622" />
+		<attribute name="Camera Rotation" value="0.728455 -0.0151674 -0.684779 -0.0142105" />
+	</component>
+	<component type="RenderPipeline" id="11" />
+	<node id="15">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Flashlight" />
+		<attribute name="Tags">
+			<string value="Grabbable" />
+			<string value="Useable" />
+			<string value="xRot" />
+		</attribute>
+		<attribute name="Position" value="0 0 -0" />
+		<attribute name="Rotation" value="-0.707107 0.707107 -0 -0" />
+		<attribute name="Scale" value="0.25 0.25 0.25" />
+		<attribute name="Variables" />
+		<component type="CollisionShape" id="22">
+			<attribute name="Shape Type" value="Cylinder" />
+			<attribute name="Size" value="0.3 1.4 0.3" />
+			<attribute name="Offset Position" value="0 0.3 0" />
+		</component>
+		<component type="RigidBody" id="23">
+			<attribute name="Physics Rotation" value="0.707107 -0.707107 0 0" />
+			<attribute name="Mass" value="0.300000" />
+			<attribute name="Linear Damping" value="0.500000" />
+			<attribute name="Angular Damping" value="0.500000" />
+		</component>
+		<node id="16">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="glassTop" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="0 0 -0" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="15">
+				<attribute name="Model" value="Model;Objects/Flashlight/Models/defaultMaterial.mdl" />
+				<attribute name="Material" value="Material;Objects/Flashlight/Materials/glass.xml" />
+			</component>
+		</node>
+		<node id="17">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="glass" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="0 0 -0" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="16">
+				<attribute name="Model" value="Model;Objects/Flashlight/Models/defaultMaterial.mdl" />
+				<attribute name="Material" value="Material;Objects/Flashlight/Materials/bulb1.xml" />
+			</component>
+		</node>
+		<node id="18">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="midComb_light_bottom" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="0 0 -0" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="17">
+				<attribute name="Model" value="Model;Objects/Flashlight/Models/defaultMaterial.mdl" />
+				<attribute name="Material" value="Material;Objects/Flashlight/Materials/lambert1.xml" />
+			</component>
+		</node>
+		<node id="19">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Lightbulb" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="0 0.920355 5.48573e-07" />
+			<attribute name="Rotation" value="-0.707107 0.707107 -0 -0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<component type="Light" id="18">
+				<attribute name="Light Type" value="Spot" />
+				<attribute name="Spot FOV" value="24.000000" />
+				<attribute name="Cast Shadows" value="true" />
+			</component>
+		</node>
+	</node>
+</scene>

@@ -98,9 +98,14 @@ void Player::Update(float timeStep) {
         // Get first result
         if (!results.empty()) {
             auto node = results[0].node_;
-            if (node->HasTag("Grabbable")) {
-                // Grab obect
-                grab(node);
+            while (node) {
+                if (node->HasTag("Grabbable")) {
+                    // Grab obect
+                    grab(node);
+                    break;
+                }
+                // Retry with parent node
+                node = node->GetParent();
             }
         }
     }
@@ -122,7 +127,7 @@ void Player::grab(Node *node) {
     auto body = node->GetComponent<RigidBody>();
     body->SetKinematic(true);
     body->SetTrigger(true);
-    node->SetTransform(Vector3::ZERO, Quaternion(Vector3::ZERO));
+    node->SetTransform(Vector3::ZERO, Quaternion(node->HasTag("xRot")?Vector3{90, 0, 0}:Vector3::ZERO));
     hand = node;
 }
 

@@ -5,10 +5,10 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="60" />
-	<attribute name="Next Replicated Component ID" value="60" />
-	<attribute name="Next Local Node ID" value="16777254" />
-	<attribute name="Next Local Component ID" value="16777274" />
+	<attribute name="Next Replicated Node ID" value="65" />
+	<attribute name="Next Replicated Component ID" value="64" />
+	<attribute name="Next Local Node ID" value="16777260" />
+	<attribute name="Next Local Component ID" value="16777283" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
@@ -19,8 +19,8 @@
 		<attribute name="Post Process Antialiasing" value="FXAA3" />
 	</component>
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="-0.426753 3.96428 -3.28801" />
-		<attribute name="Camera Rotation" value="0.983392 -0.176037 0.0435102 0.00762629" />
+		<attribute name="Camera Position" value="-4.41188 1.07209 -0.423862" />
+		<attribute name="Camera Rotation" value="0.311168 0.0313871 0.944988 -0.0958494" />
 	</component>
 	<component type="PhysicsWorld" id="20" />
 	<node id="18">
@@ -144,7 +144,7 @@
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Spawn_Player" />
 		<attribute name="Tags" />
-		<attribute name="Position" value="-2.1619 0.616168 -0.896457" />
+		<attribute name="Position" value="-2.45959 0.616168 -0.515769" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
@@ -154,6 +154,15 @@
 		<attribute name="Name" value="Spawn_Gameboy" />
 		<attribute name="Tags" />
 		<attribute name="Position" value="-0.322175 0.428105 0.922388" />
+		<attribute name="Rotation" value="-4.37114e-08 0 1 -0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+	</node>
+	<node id="62">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Spawn_Flashlight" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="-0.265734 0.428105 -1.05171" />
 		<attribute name="Rotation" value="-4.37114e-08 0 1 -0" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
