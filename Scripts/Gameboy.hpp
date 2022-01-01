@@ -4,6 +4,7 @@ class Gameboy;
 #ifndef GAMEBOY_HPP
 #define GAMEBOY_HPP
 #include "../easyscript/Namespace.hpp"
+#include "Useable.hpp"
 
 #include <Urho3D/Input/Input.h>
 #include <Urho3D/Scene/Node.h>
@@ -13,11 +14,13 @@ class Gameboy;
 
 
 namespace Game {
-class Gameboy final : public Component {
-    URHO3D_OBJECT(Gameboy, Component);
+class Gameboy final : public Useable {
+    URHO3D_OBJECT(Gameboy, Useable);
 
 public:
-    using Component::Component;
+    using Useable::Useable;
+
+    virtual void TurnOn() override;
 };
 }
 #endif // PLAYER_HPP

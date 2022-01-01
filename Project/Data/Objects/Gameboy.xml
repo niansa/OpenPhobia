@@ -5,10 +5,10 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="46" />
-	<attribute name="Next Replicated Component ID" value="30" />
-	<attribute name="Next Local Node ID" value="16777228" />
-	<attribute name="Next Local Component ID" value="16777235" />
+	<attribute name="Next Replicated Node ID" value="47" />
+	<attribute name="Next Replicated Component ID" value="31" />
+	<attribute name="Next Local Node ID" value="16777230" />
+	<attribute name="Next Local Component ID" value="16777238" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
@@ -41,6 +41,7 @@
 		<attribute name="Name" value="Gameboy" />
 		<attribute name="Tags">
 			<string value="Grabbable" />
+			<string value="Useable" />
 		</attribute>
 		<attribute name="Position" value="0 0 0" />
 		<attribute name="Rotation" value="1 0 0 -0" />

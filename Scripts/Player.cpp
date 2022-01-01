@@ -1,4 +1,5 @@
 #include "Player.hpp"
+#include "Useable.hpp"
 #include "../LevelManager.hpp"
 
 #include <Urho3D/Physics/CollisionShape.h>
@@ -107,6 +108,12 @@ void Player::Update(float timeStep) {
     // Object dropping
     if (hand && input->GetKeyPress(Key::KEY_G)) {
         drop();
+    }
+
+    // Object use
+    if (hand && input->GetMouseButtonPress(MouseButtonFlags::Enum::MOUSEB_RIGHT) && hand->HasTag("Useable")) {
+        auto script = static_cast<Useable *>(hand->GetComponent(hand->GetName()));
+        script->Use();
     }
 }
 
