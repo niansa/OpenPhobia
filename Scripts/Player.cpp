@@ -136,8 +136,7 @@ void Player::drop() {
     // Drop
     GetScene()->AddChild(hand);
     auto body = hand->GetComponent<RigidBody>();
-    auto npos = head->GetWorldPosition();
-    body->SetPosition(npos);
+    body->SetPosition(head->GetWorldPosition());
     body->SetKinematic(false);
     body->SetTrigger(false);
     body->ApplyImpulse(head->GetWorldDirection()/4);
