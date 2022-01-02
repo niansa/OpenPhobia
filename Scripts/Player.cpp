@@ -18,7 +18,7 @@ void Player::Start() {
     handP = GetNode()->GetChild("Hand");
     collisionShape = GetNode()->GetComponent<CollisionShape>();
     kinematicController = GetNode()->CreateComponent<KinematicCharacterController>();
-    kinematicController->SetHeight(0.85f);
+    kinematicController->SetHeight(GetNode()->GetScale().y_);
     kinematicController->SetCollisionLayerAndMask(1, 1);
 
     auto* renderer = GetSubsystem<Renderer>();
