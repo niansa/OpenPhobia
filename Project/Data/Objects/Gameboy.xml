@@ -5,10 +5,10 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="48" />
-	<attribute name="Next Replicated Component ID" value="32" />
-	<attribute name="Next Local Node ID" value="16777232" />
-	<attribute name="Next Local Component ID" value="16777241" />
+	<attribute name="Next Replicated Node ID" value="50" />
+	<attribute name="Next Replicated Component ID" value="34" />
+	<attribute name="Next Local Node ID" value="16777236" />
+	<attribute name="Next Local Component ID" value="16777247" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
@@ -19,8 +19,8 @@
 		<attribute name="Post Process Antialiasing" value="FXAA3" />
 	</component>
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="0.118427 0.0996912 -0.142039" />
-		<attribute name="Camera Rotation" value="0.927819 0.0896765 -0.360414 0.0348237" />
+		<attribute name="Camera Position" value="0.0494567 0.169621 -0.247913" />
+		<attribute name="Camera Rotation" value="0.964624 0.24983 -0.0814883 0.0210947" />
 	</component>
 	<component type="PhysicsWorld" id="22" />
 	<node id="23">
@@ -53,6 +53,8 @@
 		</component>
 		<component type="RigidBody" id="23">
 			<attribute name="Mass" value="0.100000" />
+			<attribute name="Collision Layer" value="2" />
+			<attribute name="Collision Mask" value="-7" />
 		</component>
 		<component type="StaticModel" id="25">
 			<attribute name="Model" value="Model;Objects/Gameboy/Models/Gameboy.mdl" />

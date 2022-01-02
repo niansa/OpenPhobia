@@ -19,6 +19,7 @@ void Player::Start() {
     collisionShape = GetNode()->GetComponent<CollisionShape>();
     kinematicController = GetNode()->CreateComponent<KinematicCharacterController>();
     kinematicController->SetHeight(0.85f);
+    kinematicController->SetCollisionLayerAndMask(1, 1);
 
     auto* renderer = GetSubsystem<Renderer>();
 
@@ -64,7 +65,7 @@ void Player::FixedUpdate(float timeStep) {
         }
 
         // Walk
-        kinematicController->SetWalkDirection(GetNode()->GetRotation() * moveDir * 0.03f);
+        kinematicController->SetWalkDirection(GetNode()->GetRotation() * moveDir * walkSpeed);
     }
 }
 
@@ -93,7 +94,7 @@ void Player::Update(float timeStep) {
         // Raycast
         auto ray = head->GetComponent<Camera>()->GetScreenRay(float(pos.x_) / graphics->GetWidth(), float(pos.y_) / graphics->GetHeight());
         ea::vector<RayQueryResult> results;
-        RayOctreeQuery query(results, ray, RAY_TRIANGLE, 50, DRAWABLE_GEOMETRY);
+        RayOctreeQuery query(results, ray, RAY_TRIANGLE, grabRange, DRAWABLE_GEOMETRY);
         GetScene()->GetComponent<Octree>()->RaycastSingle(query);
         // Get first result
         if (!results.empty()) {
@@ -132,9 +133,10 @@ void Player::grab(Node *node) {
 }
 
 void Player::drop() {
+    // Drop
     GetScene()->AddChild(hand);
     auto body = hand->GetComponent<RigidBody>();
-    auto npos = head->GetWorldPosition() + head->GetWorldDirection() * 0.5f;
+    auto npos = head->GetWorldPosition();
     body->SetPosition(npos);
     body->SetKinematic(false);
     body->SetTrigger(false);

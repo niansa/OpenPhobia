@@ -20,6 +20,10 @@ namespace Game {
 class Player final : public LogicComponent {
     URHO3D_OBJECT(Player, LogicComponent);
 
+    static constexpr float walkSpeed = 0.03f,
+                           grabRange = 50.f,
+                           throwDistance = 0.5f;
+
     Node *head;
     Node *handP;
     Node *hand = nullptr;
