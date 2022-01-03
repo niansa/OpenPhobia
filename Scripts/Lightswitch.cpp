@@ -6,7 +6,12 @@
 namespace Game {
 void Lightswitch::Start() {
     lightBulb = GetNode()->GetParent()->GetChild("Lightbulb")->GetComponent<Light>();
-    TurnOff();
+    if (GetNode()->HasTag("DefaultOn")) {
+        turnedOn = true;
+        TurnOn();
+    } else {
+        TurnOff();
+    }
 }
 
 void Lightswitch::TurnOn() {
