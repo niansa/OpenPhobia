@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<material>
+	<technique name="Techniques/DiffSpec.xml" />
+	<texture unit="diffuse" name="Models/Lightswitch/Textures/07___Default_diffuse.png" />
+	<texture unit="specular" name="Models/Lightswitch/Textures/07___Default_specularGlossiness.png" />
+	<parameter name="MatDiffColor" value="1 1 1 1" />
+	<parameter name="MatSpecColor" value="0.05 0.05 0.05 1000" />
+	<parameter name="MatEmissiveColor" value="0 0 0 1" />
+	<cull value="none" />
+	<shadowcull value="none" />
+</material>

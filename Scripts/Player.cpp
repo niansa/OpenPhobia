@@ -121,6 +121,30 @@ void Player::Update(float timeStep) {
         auto script = static_cast<Useable *>(hand->GetComponent(hand->GetName()));
         script->Use();
     }
+    if (input->GetMouseButtonPress(MouseButtonFlags::Enum::MOUSEB_LEFT)) {
+        auto *ui = GetSubsystem<UI>();
+        auto *graphics = GetSubsystem<Graphics>();
+        IntVector2 pos = ui->GetCursorPosition();
+        // Raycast
+        auto ray = head->GetComponent<Camera>()->GetScreenRay(float(pos.x_) / graphics->GetWidth(), float(pos.y_) / graphics->GetHeight());
+        ea::vector<RayQueryResult> results;
+        RayOctreeQuery query(results, ray, RAY_TRIANGLE, grabRange, DRAWABLE_GEOMETRY);
+        GetScene()->GetComponent<Octree>()->RaycastSingle(query);
+        // Get first result
+        if (!results.empty()) {
+            auto node = results[0].node_;
+            while (node) {
+                if (node->HasTag("Useable") && !node->HasTag("Grabbable")) {
+                    // Use object
+                    auto script = static_cast<Useable *>(node->GetComponent(node->GetName()));
+                    script->Use();
+                    break;
+                }
+                // Retry with parent node
+                node = node->GetParent();
+            }
+        }
+    }
 }
 
 void Player::grab(Node *node) {

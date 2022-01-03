@@ -5,10 +5,10 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="66" />
-	<attribute name="Next Replicated Component ID" value="65" />
-	<attribute name="Next Local Node ID" value="16777262" />
-	<attribute name="Next Local Component ID" value="16777286" />
+	<attribute name="Next Replicated Node ID" value="72" />
+	<attribute name="Next Replicated Component ID" value="70" />
+	<attribute name="Next Local Node ID" value="16777264" />
+	<attribute name="Next Local Component ID" value="16777289" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
@@ -19,8 +19,8 @@
 		<attribute name="Post Process Antialiasing" value="FXAA3" />
 	</component>
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="-6.64986 2.95338 7.30746" />
-		<attribute name="Camera Rotation" value="0.224011 0.0372645 0.960545 -0.16057" />
+		<attribute name="Camera Position" value="-2.49834 1.43861 -0.51477" />
+		<attribute name="Camera Rotation" value="0.800588 0.157585 -0.567281 0.111436" />
 	</component>
 	<component type="PhysicsWorld" id="20" />
 	<node id="18">
@@ -33,7 +33,6 @@
 		<attribute name="Variables" />
 		<component type="Light" id="8">
 			<attribute name="Light Type" value="Directional" />
-			<attribute name="Brightness Multiplier" value="0.100000" />
 			<attribute name="Cast Shadows" value="true" />
 		</component>
 	</node>
@@ -166,5 +165,46 @@
 		<attribute name="Rotation" value="-4.37114e-08 0 1 -0" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
+	</node>
+	<node id="67">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Light1" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<node id="68">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Lightswitch" />
+			<attribute name="Tags">
+				<string value="Useable" />
+				<string value="Scripted" />
+			</attribute>
+			<attribute name="Position" value="-3.51187 1.05002 0" />
+			<attribute name="Rotation" value="0.707107 0 -0.707107 0" />
+			<attribute name="Scale" value="0.002 0.002 0.002" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="66">
+				<attribute name="Model" value="Model;Models/Lightswitch.mdl" />
+				<attribute name="Material" value="Material;Models/Lightswitch/Materials/07___Default.xml" />
+			</component>
+		</node>
+		<node id="69">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Lightbulb" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="-2.2674 2.35112 -0.0990051" />
+			<attribute name="Rotation" value="0.704927 0.704927 0.0554789 -0.0554789" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<component type="Light" id="67">
+				<attribute name="Is Enabled" value="false" />
+				<attribute name="Light Type" value="Spot" />
+				<attribute name="Brightness Multiplier" value="0.400000" />
+				<attribute name="Spot FOV" value="100.000000" />
+				<attribute name="Cast Shadows" value="true" />
+			</component>
+		</node>
 	</node>
 </scene>
