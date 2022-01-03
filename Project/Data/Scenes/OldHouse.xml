@@ -5,18 +5,18 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="26" />
-	<attribute name="Next Replicated Component ID" value="36" />
-	<attribute name="Next Local Node ID" value="16777218" />
-	<attribute name="Next Local Component ID" value="16777219" />
+	<attribute name="Next Replicated Node ID" value="33" />
+	<attribute name="Next Replicated Component ID" value="39" />
+	<attribute name="Next Local Node ID" value="16777220" />
+	<attribute name="Next Local Component ID" value="16777222" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="2.9165 2.92147 0.75963" />
-		<attribute name="Camera Rotation" value="0.914581 0.270489 -0.28828 0.0852728" />
+		<attribute name="Camera Position" value="-2.3046 1.76358 -1.639" />
+		<attribute name="Camera Rotation" value="0.734268 0.190854 0.630528 -0.163887" />
 	</component>
 	<component type="RenderPipeline" id="14" />
 	<node id="2">
@@ -31,6 +31,8 @@
 			<attribute name="Bounding Box Min" value="-1000 -1000 -1000" />
 			<attribute name="Bounding Box Max" value="1000 1000 1000" />
 			<attribute name="Ambient Color" value="0.25 0.25 0.25 1" />
+			<attribute name="Ambient Brightness" value="0.000000" />
+			<attribute name="Background Brightness" value="0.010000" />
 		</component>
 	</node>
 	<node id="3">
@@ -43,11 +45,13 @@
 		<attribute name="Variables" />
 		<component type="Light" id="5">
 			<attribute name="Light Type" value="Directional" />
+			<attribute name="Brightness Multiplier" value="0.100000" />
+			<attribute name="Cast Shadows" value="true" />
 		</component>
 	</node>
 	<node id="4">
 		<attribute name="Is Enabled" value="true" />
-		<attribute name="Name" value="Sketchfab_model" />
+		<attribute name="Name" value="House" />
 		<attribute name="Tags" />
 		<attribute name="Position" value="0 0 -0" />
 		<attribute name="Rotation" value="0.707107 0.707107 0 0" />
@@ -80,6 +84,7 @@
 					<component type="StaticModel" id="16">
 						<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
 						<attribute name="Material" value="Material;Scenes/OldHouse/Materials/woodwall.xml" />
+						<attribute name="Cast Shadows" value="true" />
 					</component>
 					<component type="CollisionShape" id="22">
 						<attribute name="Shape Type" value="TriangleMesh" />
@@ -100,6 +105,7 @@
 					<component type="StaticModel" id="17">
 						<attribute name="Model" value="Model;Scenes/OldHouse/Models/Others_others_0.mdl" />
 						<attribute name="Material" value="Material;Scenes/OldHouse/Materials/others.xml" />
+						<attribute name="Cast Shadows" value="true" />
 					</component>
 					<component type="RigidBody" id="24">
 						<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
@@ -121,6 +127,7 @@
 					<component type="StaticModel" id="18">
 						<attribute name="Model" value="Model;Scenes/OldHouse/Models/Irons_iron_0.mdl" />
 						<attribute name="Material" value="Material;Scenes/OldHouse/Materials/iron.xml" />
+						<attribute name="Cast Shadows" value="true" />
 					</component>
 					<component type="RigidBody" id="26">
 						<attribute name="Physics Rotation" value="3.13916e-07 -6.92209e-15 1 2.18557e-08" />
@@ -142,6 +149,7 @@
 					<component type="StaticModel" id="19">
 						<attribute name="Model" value="Model;Scenes/OldHouse/Models/Woods_woods_0.mdl" />
 						<attribute name="Material" value="Material;Scenes/OldHouse/Materials/woods.xml" />
+						<attribute name="Cast Shadows" value="true" />
 					</component>
 					<component type="CollisionShape" id="28">
 						<attribute name="Shape Type" value="TriangleMesh" />
@@ -163,6 +171,7 @@
 					<component type="StaticModel" id="20">
 						<attribute name="Model" value="Model;Scenes/OldHouse/Models/Zinc_zinc_0.mdl" />
 						<attribute name="Material" value="Material;Scenes/OldHouse/Materials/zinc.xml" />
+						<attribute name="Cast Shadows" value="true" />
 					</component>
 					<component type="CollisionShape" id="30">
 						<attribute name="Shape Type" value="TriangleMesh" />
@@ -227,5 +236,14 @@
 				<attribute name="Physics Position" value="2.09535 1.19748 2.6524" />
 			</component>
 		</node>
+	</node>
+	<node id="27">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Spawn_Flashlight" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="0 0.682722 -1.51605" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
 	</node>
 </scene>
