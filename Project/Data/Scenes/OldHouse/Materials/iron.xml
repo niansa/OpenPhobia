@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<material>
+	<technique name="Techniques/DiffNormal.xml" />
+	<texture unit="diffuse" name="Scenes/OldHouse/Textures/iron_baseColor.png" />
+	<texture unit="normal" name="Scenes/OldHouse/Textures/iron_normal.png" />
+	<texture unit="emissive" name="Scenes/OldHouse/Textures/iron_metallicRoughness.png" />
+	<parameter name="MatDiffColor" value="1 1 1 1" />
+	<parameter name="MatSpecColor" value="1 1 1 88.6259" />
+	<parameter name="MatEmissiveColor" value="0 0 0 1" />
+</material>

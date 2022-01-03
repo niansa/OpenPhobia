@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<material>
+	<technique name="Techniques/DiffAlpha.xml" />
+	<texture unit="diffuse" name="Scenes/OldHouse/Textures/tilesglass_baseColor.png" />
+	<parameter name="MatDiffColor" value="1 1 1 1" />
+	<parameter name="MatSpecColor" value="1 1 1 0" />
+	<parameter name="MatEmissiveColor" value="0 0 0 1" />
+</material>
