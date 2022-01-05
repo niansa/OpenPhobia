@@ -5,18 +5,18 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="45" />
-	<attribute name="Next Replicated Component ID" value="50" />
-	<attribute name="Next Local Node ID" value="16777226" />
-	<attribute name="Next Local Component ID" value="16777231" />
+	<attribute name="Next Replicated Node ID" value="49" />
+	<attribute name="Next Replicated Component ID" value="53" />
+	<attribute name="Next Local Node ID" value="16777228" />
+	<attribute name="Next Local Component ID" value="16777234" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="-1.15234 2.12813 -2.6937" />
-		<attribute name="Camera Rotation" value="0.887543 0.305666 0.325944 -0.112233" />
+		<attribute name="Camera Position" value="-1.39067 1.72073 -0.339613" />
+		<attribute name="Camera Rotation" value="0.0121074 0.00423625 0.944285 -0.328878" />
 	</component>
 	<component type="RenderPipeline" id="14" />
 	<node id="2">
@@ -241,7 +241,7 @@
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Spawn_Flashlight" />
 		<attribute name="Tags" />
-		<attribute name="Position" value="0 0.682722 -1.51605" />
+		<attribute name="Position" value="-1.26921 0.682722 -1.69496" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
@@ -285,5 +285,14 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 		</node>
+	</node>
+	<node id="48">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Spawn_Gameboy" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="-1.84145 0.682722 -1.69496" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
 	</node>
 </scene>
