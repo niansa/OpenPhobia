@@ -4,7 +4,6 @@ class Player;
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
 #include "../easyscript/Namespace.hpp"
-#include "../easyscript/Script.hpp"
 
 #include <Urho3D/Input/Input.h>
 #include <Urho3D/Scene/Node.h>
