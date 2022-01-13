@@ -5,18 +5,18 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="49" />
-	<attribute name="Next Replicated Component ID" value="53" />
-	<attribute name="Next Local Node ID" value="16777228" />
-	<attribute name="Next Local Component ID" value="16777234" />
+	<attribute name="Next Replicated Node ID" value="89" />
+	<attribute name="Next Replicated Component ID" value="126" />
+	<attribute name="Next Local Node ID" value="16777230" />
+	<attribute name="Next Local Component ID" value="16777237" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="-1.39067 1.72073 -0.339613" />
-		<attribute name="Camera Rotation" value="0.0121074 0.00423625 0.944285 -0.328878" />
+		<attribute name="Camera Position" value="-0.238651 3.29715 1.21388" />
+		<attribute name="Camera Rotation" value="0.830226 0.293487 0.446827 -0.157909" />
 	</component>
 	<component type="RenderPipeline" id="14" />
 	<node id="2">
@@ -54,15 +54,15 @@
 		<attribute name="Name" value="House" />
 		<attribute name="Tags" />
 		<attribute name="Position" value="0 0 -0" />
-		<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="0.666667 0.666667 0.666667" />
 		<attribute name="Variables" />
 		<node id="5">
 			<attribute name="Is Enabled" value="true" />
-			<attribute name="Name" value="f65e098b077f440f93579c556a7a864d.fbx" />
+			<attribute name="Name" value="Model" />
 			<attribute name="Tags" />
 			<attribute name="Position" value="0 0 -0" />
-			<attribute name="Rotation" value="0.707107 -0.707107 0 0" />
+			<attribute name="Rotation" value="1 0 0 0" />
 			<attribute name="Scale" value="0.01 0.01 0.01" />
 			<attribute name="Variables" />
 			<node id="6">
@@ -86,13 +86,6 @@
 						<attribute name="Material" value="Material;Scenes/OldHouse/Materials/woodwall.xml" />
 						<attribute name="Cast Shadows" value="true" />
 					</component>
-					<component type="CollisionShape" id="22">
-						<attribute name="Shape Type" value="TriangleMesh" />
-						<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
-					</component>
-					<component type="RigidBody" id="23">
-						<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
-					</component>
 				</node>
 				<node id="9">
 					<attribute name="Is Enabled" value="true" />
@@ -106,14 +99,6 @@
 						<attribute name="Model" value="Model;Scenes/OldHouse/Models/Others_others_0.mdl" />
 						<attribute name="Material" value="Material;Scenes/OldHouse/Materials/others.xml" />
 						<attribute name="Cast Shadows" value="true" />
-					</component>
-					<component type="RigidBody" id="24">
-						<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
-						<attribute name="Physics Position" value="1.33338 0.000435671 0.000349335" />
-					</component>
-					<component type="CollisionShape" id="25">
-						<attribute name="Shape Type" value="TriangleMesh" />
-						<attribute name="Model" value="Model;Scenes/OldHouse/Models/Others_others_0.mdl" />
 					</component>
 				</node>
 				<node id="11">
@@ -131,7 +116,7 @@
 					</component>
 					<component type="RigidBody" id="26">
 						<attribute name="Physics Rotation" value="3.13916e-07 -6.92209e-15 1 2.18557e-08" />
-						<attribute name="Physics Position" value="4.81468 3.0934 -3.80373" />
+						<attribute name="Physics Position" value="4.81468 3.09339 -3.80372" />
 					</component>
 					<component type="CollisionShape" id="27">
 						<attribute name="Shape Type" value="TriangleMesh" />
@@ -151,14 +136,6 @@
 						<attribute name="Material" value="Material;Scenes/OldHouse/Materials/woods.xml" />
 						<attribute name="Cast Shadows" value="true" />
 					</component>
-					<component type="CollisionShape" id="28">
-						<attribute name="Shape Type" value="TriangleMesh" />
-						<attribute name="Model" value="Model;Scenes/OldHouse/Models/Woods_woods_0.mdl" />
-					</component>
-					<component type="RigidBody" id="29">
-						<attribute name="Physics Rotation" value="0.70057 -0.0959242 0.0959242 0.70057" />
-						<attribute name="Physics Position" value="0.0525712 3.86939 0.583941" />
-					</component>
 				</node>
 				<node id="15">
 					<attribute name="Is Enabled" value="true" />
@@ -172,14 +149,6 @@
 						<attribute name="Model" value="Model;Scenes/OldHouse/Models/Zinc_zinc_0.mdl" />
 						<attribute name="Material" value="Material;Scenes/OldHouse/Materials/zinc.xml" />
 						<attribute name="Cast Shadows" value="true" />
-					</component>
-					<component type="CollisionShape" id="30">
-						<attribute name="Shape Type" value="TriangleMesh" />
-						<attribute name="Model" value="Model;Scenes/OldHouse/Models/Zinc_zinc_0.mdl" />
-					</component>
-					<component type="RigidBody" id="31">
-						<attribute name="Physics Rotation" value="-0.169376 -0.683363 -0.176981 0.687753" />
-						<attribute name="Physics Position" value="5.31227 0.474147 1.99565" />
 					</component>
 				</node>
 				<node id="17">
@@ -205,6 +174,487 @@
 				</node>
 			</node>
 		</node>
+		<node id="53">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Collisions" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="0 0 0" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<node id="54">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Floor 1" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="0 -0.35 0" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="15 1 12" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="56">
+					<attribute name="Physics Position" value="0 -0.233333 0" />
+				</component>
+				<component type="CollisionShape" id="57">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="55">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Floor 2" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="-1.96179 5.03046 -1.01422" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="8.75 0.25 14.5" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="58">
+					<attribute name="Physics Position" value="-1.30786 3.35364 -0.67615" />
+				</component>
+				<component type="CollisionShape" id="59">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="86">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Roof" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="0.720147 9.33745 0" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="15 0.2 13" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="120">
+					<attribute name="Physics Position" value="0.480099 6.22497 0" />
+				</component>
+				<component type="CollisionShape" id="121">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="57">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Wall" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="-1.8 2.5 -5.9" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="8.5 5 0.2" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="62">
+					<attribute name="Physics Position" value="-1.2 1.66667 -3.93334" />
+				</component>
+				<component type="CollisionShape" id="63">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="59">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Wall" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="0.770431 2.5 5.96108" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="13.5 5 0.3" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="66">
+					<attribute name="Physics Position" value="0.51362 1.66667 3.97406" />
+				</component>
+				<component type="CollisionShape" id="67">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="60">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Wall" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="2.3488 7.02475 5.86074" />
+				<attribute name="Rotation" value="0.707107 0 0.707107 0" />
+				<attribute name="Scale" value="0.75 5 0.2" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="68">
+					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="1.56587 4.68317 3.90716" />
+				</component>
+				<component type="CollisionShape" id="69">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="61">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Wall" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="-4.08924 7.02475 -6.234" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="4.5 5 0.2" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="70">
+					<attribute name="Physics Position" value="-2.72616 4.68317 -4.156" />
+				</component>
+				<component type="CollisionShape" id="71">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="62">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Wall" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="1.04583 7.02475 -6.234" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="2.75 5 0.2" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="72">
+					<attribute name="Physics Position" value="0.697218 4.68317 -4.156" />
+				</component>
+				<component type="CollisionShape" id="73">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="63">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Wall" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="-5.96166 2.5 0.00989636" />
+				<attribute name="Rotation" value="0.707107 0 0.707107 0" />
+				<attribute name="Scale" value="12 5 0.2" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="74">
+					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="-3.97444 1.66667 0.00659758" />
+				</component>
+				<component type="CollisionShape" id="75">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="64">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Wall" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="7.20587 2.5 3.28393" />
+				<attribute name="Rotation" value="0.707107 0 0.707107 0" />
+				<attribute name="Scale" value="5.5 5 0.4" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="76">
+					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="4.80392 1.66667 2.18929" />
+				</component>
+				<component type="CollisionShape" id="77">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="65">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Wall" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="3.93169 2.5 0.930365" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="6.5 5 0.3" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="78">
+					<attribute name="Physics Position" value="2.62113 1.66667 0.620243" />
+				</component>
+				<component type="CollisionShape" id="79">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="66">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Wall" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="-3.56905 2.5 0.930365" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="5 5 0.3" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="80">
+					<attribute name="Physics Position" value="-2.37937 1.66667 0.620243" />
+				</component>
+				<component type="CollisionShape" id="81">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="88">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Wall" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="2.06994 2.5 4.37584" />
+				<attribute name="Rotation" value="0.707107 0 0.707107 0" />
+				<attribute name="Scale" value="2.5 5 0.6" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="124">
+					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="1.37996 1.66667 2.91723" />
+				</component>
+				<component type="CollisionShape" id="125">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="67">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Wall" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="1.96851 2.5 -2.48278" />
+				<attribute name="Rotation" value="0.707107 0 0.707107 0" />
+				<attribute name="Scale" value="7 5 0.4" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="82">
+					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="1.31234 1.66667 -1.65518" />
+				</component>
+				<component type="CollisionShape" id="83">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="82">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Wall" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="-6.27692 7.1372 -0.0304682" />
+				<attribute name="Rotation" value="0.707107 0 0.707107 0" />
+				<attribute name="Scale" value="12.5 4 0.2" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="112">
+					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="-4.18462 4.75813 -0.0203122" />
+				</component>
+				<component type="CollisionShape" id="113">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="83">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Wall" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="2.38597 7.1372 -1.33647" />
+				<attribute name="Rotation" value="0.707107 0 0.707107 0" />
+				<attribute name="Scale" value="9.75 4 0.2" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="114">
+					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="1.59065 4.75813 -0.890983" />
+				</component>
+				<component type="CollisionShape" id="115">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="84">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Wall" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="-1.85663 7.02475 6.25308" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="8.5 5 0.2" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="116">
+					<attribute name="Physics Position" value="-1.23775 4.68317 4.16872" />
+				</component>
+				<component type="CollisionShape" id="117">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="85">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Wall" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="-3.37841 7.02475 0.0145576" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="5.75 5 0.2" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="118">
+					<attribute name="Physics Position" value="-2.25228 4.68317 0.0097051" />
+				</component>
+				<component type="CollisionShape" id="119">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="56">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Staircase seperator" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="3.57573 2.68525 3.33964" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="3 4 0.2" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="60" />
+				<component type="RigidBody" id="61">
+					<attribute name="Physics Position" value="2.38382 1.79017 2.22643" />
+				</component>
+			</node>
+			<node id="68">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="BelowStairs" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="3.88314 2.99582 4.55801" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1 1 2.15" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="84" />
+				<component type="RigidBody" id="85">
+					<attribute name="Physics Position" value="2.58876 1.99722 3.03867" />
+				</component>
+			</node>
+			<node id="87">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="BelowStairs" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="3.35994 3.43094 4.55801" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1 1 2.15" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="122" />
+				<component type="RigidBody" id="123">
+					<attribute name="Physics Position" value="2.23996 2.28729 3.03867" />
+				</component>
+			</node>
+			<node id="69">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="BelowStairs" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="4.40544 2.55873 4.55801" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1 1 2.15" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="86" />
+				<component type="RigidBody" id="87">
+					<attribute name="Physics Position" value="2.93696 1.70582 3.03867" />
+				</component>
+			</node>
+			<node id="70">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="BelowStairs" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="3.0877 4.11751 4.55801" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="0.5 0.5 2.15" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="88" />
+				<component type="RigidBody" id="89">
+					<attribute name="Physics Position" value="2.05847 2.74501 3.03867" />
+				</component>
+			</node>
+			<node id="71">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="BelowStairs" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="2.56759 4.54971 4.55801" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="0.5 0.5 2.15" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="90" />
+				<component type="RigidBody" id="91">
+					<attribute name="Physics Position" value="1.71173 3.03314 3.03867" />
+				</component>
+			</node>
+			<node id="72">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="BelowStairs" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="4.40717 2.55718 4.55801" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1 1 2.15" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="92" />
+				<component type="RigidBody" id="93">
+					<attribute name="Physics Position" value="2.93811 1.70479 3.03867" />
+				</component>
+			</node>
+			<node id="73">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="BelowStairs" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="4.40712 2.55853 4.55801" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1 1 2.15" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="94" />
+				<component type="RigidBody" id="95">
+					<attribute name="Physics Position" value="2.93808 1.70568 3.03867" />
+				</component>
+			</node>
+			<node id="74">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="BelowStairs" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="2.56759 0.111431 2.11036" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="0.5 0.5 2.15" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="96" />
+				<component type="RigidBody" id="97">
+					<attribute name="Physics Position" value="1.71173 0.0742873 1.40691" />
+				</component>
+			</node>
+			<node id="75">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="BelowStairs" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="3.06848 0.545977 2.11036" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="0.5 0.5 2.15" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="98" />
+				<component type="RigidBody" id="99">
+					<attribute name="Physics Position" value="2.04565 0.363985 1.40691" />
+				</component>
+			</node>
+			<node id="76">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="BelowStairs" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="3.59167 0.982179 2.11036" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="0.5 0.5 2.15" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="100" />
+				<component type="RigidBody" id="101">
+					<attribute name="Physics Position" value="2.39445 0.654787 1.40691" />
+				</component>
+			</node>
+			<node id="77">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="BelowStairs" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="4.11341 1.41549 2.11036" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="0.5 0.5 2.15" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="102" />
+				<component type="RigidBody" id="103">
+					<attribute name="Physics Position" value="2.74227 0.943658 1.40691" />
+				</component>
+			</node>
+			<node id="78">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="BelowStairs" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="4.63695 1.85146 2.11036" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="0.5 0.5 2.15" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="104" />
+				<component type="RigidBody" id="105">
+					<attribute name="Physics Position" value="3.0913 1.23431 1.40691" />
+				</component>
+			</node>
+			<node id="79">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="BelowStairs" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="5.16067 2.28764 2.11036" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="0.5 0.5 2.15" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="106" />
+				<component type="RigidBody" id="107">
+					<attribute name="Physics Position" value="3.44045 1.52509 1.40691" />
+				</component>
+			</node>
+			<node id="80">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Floor between" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="6.24994 2.28764 3.47101" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1.75 0.5 5" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="108" />
+				<component type="RigidBody" id="109">
+					<attribute name="Physics Position" value="4.16663 1.52509 2.31401" />
+				</component>
+			</node>
+		</node>
 	</node>
 	<node id="23">
 		<attribute name="Is Enabled" value="true" />
@@ -214,28 +664,6 @@
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
-	</node>
-	<node id="24">
-		<attribute name="Is Enabled" value="true" />
-		<attribute name="Name" value="Antistuck" />
-		<attribute name="Tags" />
-		<attribute name="Position" value="0 0 0" />
-		<attribute name="Rotation" value="1 0 0 0" />
-		<attribute name="Scale" value="1 1 1" />
-		<attribute name="Variables" />
-		<node id="25">
-			<attribute name="Is Enabled" value="true" />
-			<attribute name="Name" value="BelowStairs" />
-			<attribute name="Tags" />
-			<attribute name="Position" value="2.09535 1.19748 2.6524" />
-			<attribute name="Rotation" value="1 0 0 0" />
-			<attribute name="Scale" value="1.5 2.2 1" />
-			<attribute name="Variables" />
-			<component type="CollisionShape" id="34" />
-			<component type="RigidBody" id="35">
-				<attribute name="Physics Position" value="2.09535 1.19748 2.6524" />
-			</component>
-		</node>
 	</node>
 	<node id="27">
 		<attribute name="Is Enabled" value="true" />
