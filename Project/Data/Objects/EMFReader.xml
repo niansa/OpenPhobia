@@ -165,6 +165,7 @@
 					<attribute name="Color" value="1 0 0 1" />
 					<attribute name="Brightness Multiplier" value="3.000000" />
 					<attribute name="Radius" value="0.040000" />
+					<attribute name="Range" value="0.040000" />
 				</component>
 			</node>
 		</node>
