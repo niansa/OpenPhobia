@@ -1,14 +1,10 @@
 {
-	"defaultScene": "",
-	"pipeline": {
-		"flavors": [
-			{
-				"name": "default",
-				"platforms": [],
-				"settings": {}
-			}
-		]
-	},
+	"flavors": [
+		{
+			"name": "default",
+			"settings": []
+		}
+	],
 	"plugins": [],
 	"resourcePaths": [
 		"Data/",

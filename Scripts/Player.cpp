@@ -163,7 +163,7 @@ void Player::drop() {
     body->SetPosition(head->GetWorldPosition());
     body->SetKinematic(false);
     body->SetTrigger(false);
-    body->ApplyImpulse(head->GetWorldDirection()/4);
+    body->SetLinearVelocity(head->GetWorldDirection()*4);
     hand = nullptr;
 }
 }
