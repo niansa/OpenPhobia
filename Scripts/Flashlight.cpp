@@ -5,15 +5,22 @@
 
 namespace Game {
 void Flashlight::Start() {
-    lightBulb = GetNode()->GetChild("Lightbulb")->GetComponent<Light>();
     TurnOff();
 }
 
 void Flashlight::TurnOn() {
-    lightBulb->SetEnabled(true);
+    for (const auto lightBulb : GetNode()->GetChildren()) {
+        if (lightBulb->GetName() == "Lightbulb") {
+            lightBulb->GetComponent<Light>()->SetEnabled(true);
+        }
+    }
 }
 
 void Flashlight::TurnOff() {
-    lightBulb->SetEnabled(false);
+    for (const auto lightBulb : GetNode()->GetChildren()) {
+        if (lightBulb->GetName() == "Lightbulb") {
+            lightBulb->GetComponent<Light>()->SetEnabled(false);
+        }
+    }
 }
 }

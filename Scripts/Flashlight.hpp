@@ -18,8 +18,6 @@ namespace Game {
 class Flashlight final : public Useable {
     URHO3D_OBJECT(Flashlight, Useable);
 
-    Light *lightBulb;
-
 public:
     using Useable::Useable;
 
