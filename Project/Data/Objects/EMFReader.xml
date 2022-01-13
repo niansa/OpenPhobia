@@ -20,8 +20,8 @@
 		<attribute name="Post Process Antialiasing" value="FXAA3" />
 	</component>
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="-0.0050685 0.0648108 -0.252164" />
-		<attribute name="Camera Rotation" value="0.999822 0.0109916 -0.0153289 0.000170033" />
+		<attribute name="Camera Position" value="0.0129645 0.0591054 -0.21057" />
+		<attribute name="Camera Rotation" value="0.99942 0.00924228 -0.0327742 0.000304646" />
 	</component>
 	<component type="PhysicsWorld" id="22" />
 	<node id="23">
