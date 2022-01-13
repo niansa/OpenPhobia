@@ -26,6 +26,9 @@ public:
     }
 
     void Start() {
+        Variant v;
+        v.SetCustom<LevelManager*>(this);
+        app->SetGlobalVar("LevelManager", v);
         reloadLevel();
     }
 };
