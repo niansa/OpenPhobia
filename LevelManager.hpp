@@ -7,6 +7,9 @@ class LevelManager;
 #include "easyscript/SceneManager.hpp"
 
 #include <Urho3D/Engine/Application.h>
+#include <Urho3D/RenderPipeline/RenderPipeline.h>
+#include <Urho3D/RenderPipeline/BloomPass.h>
+#include <Urho3D/RenderPipeline/SceneProcessor.h>
 
 
 
@@ -19,6 +22,13 @@ public:
 
     void reloadLevel() {
         loadScene("Scenes/"+level+".xml");
+        // Apply graphics settings
+        auto renderPipeline = scene->GetOrCreateComponent<RenderPipeline>();
+        auto renderSettings = renderPipeline->GetSettings();
+        renderSettings.bloom_.enabled_ = true;
+        renderSettings.sceneProcessor_.lightingMode_ = DirectLightingMode::DeferredBlinnPhong;
+        renderSettings.AdjustToSupported(app->GetContext());
+        renderPipeline->SetSettings(renderSettings);
     }
     void loadLevel(eastl::string nlevel) {
         level = nlevel;

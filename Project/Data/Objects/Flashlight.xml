@@ -5,18 +5,18 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="37" />
-	<attribute name="Next Replicated Component ID" value="38" />
-	<attribute name="Next Local Node ID" value="16777236" />
-	<attribute name="Next Local Component ID" value="16777246" />
+	<attribute name="Next Replicated Node ID" value="39" />
+	<attribute name="Next Replicated Component ID" value="40" />
+	<attribute name="Next Local Node ID" value="16777238" />
+	<attribute name="Next Local Component ID" value="16777249" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="0.467599 -0.089464 -0.12179" />
-		<attribute name="Camera Rotation" value="0.623785 -0.0408933 -0.778859 -0.0509842" />
+		<attribute name="Camera Position" value="0.361646 0.0257667 -0.200946" />
+		<attribute name="Camera Rotation" value="0.761793 0.0459397 -0.645014 0.038953" />
 	</component>
 	<component type="RenderPipeline" id="11" />
 	<node id="15">
