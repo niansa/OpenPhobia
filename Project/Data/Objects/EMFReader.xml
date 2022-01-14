@@ -7,8 +7,8 @@
 	<attribute name="Elapsed Time" value="0.000000" />
 	<attribute name="Next Replicated Node ID" value="71" />
 	<attribute name="Next Replicated Component ID" value="56" />
-	<attribute name="Next Local Node ID" value="16777258" />
-	<attribute name="Next Local Component ID" value="16777282" />
+	<attribute name="Next Local Node ID" value="16777260" />
+	<attribute name="Next Local Component ID" value="16777285" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
@@ -20,8 +20,8 @@
 		<attribute name="Post Process Antialiasing" value="FXAA3" />
 	</component>
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="0.0129645 0.0591054 -0.21057" />
-		<attribute name="Camera Rotation" value="0.99942 0.00924228 -0.0327742 0.000304646" />
+		<attribute name="Camera Position" value="0.00968809 0.356305 -0.162591" />
+		<attribute name="Camera Rotation" value="0.864652 0.501801 0.0207155 -0.012019" />
 	</component>
 	<component type="PhysicsWorld" id="22" />
 	<node id="23">
@@ -96,7 +96,7 @@
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="EMF1" />
 				<attribute name="Tags" />
-				<attribute name="Position" value="-0.0164554 0.062485 -0.0274198" />
+				<attribute name="Position" value="-0.0164554 0.062485 -0.0239325" />
 				<attribute name="Rotation" value="0.999962 0 0.00872654 0" />
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
@@ -104,14 +104,14 @@
 					<attribute name="Light Type" value="Spot" />
 					<attribute name="Color" value="0 0.645161 0.0364204 1" />
 					<attribute name="Brightness Multiplier" value="3.000000" />
-					<attribute name="Range" value="0.040000" />
+					<attribute name="Range" value="0.030000" />
 				</component>
 			</node>
 			<node id="67">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="EMF2" />
 				<attribute name="Tags" />
-				<attribute name="Position" value="-0.00861479 0.0634221 -0.0274198" />
+				<attribute name="Position" value="-0.00861479 0.0634221 -0.0239325" />
 				<attribute name="Rotation" value="0.999962 0 0.00872654 0" />
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
@@ -119,14 +119,14 @@
 					<attribute name="Light Type" value="Spot" />
 					<attribute name="Color" value="0.306452 1 0 1" />
 					<attribute name="Brightness Multiplier" value="3.000000" />
-					<attribute name="Range" value="0.040000" />
+					<attribute name="Range" value="0.030000" />
 				</component>
 			</node>
 			<node id="68">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="EMF3" />
 				<attribute name="Tags" />
-				<attribute name="Position" value="-0.00036859 0.0642022 -0.0274198" />
+				<attribute name="Position" value="-0.00036859 0.0642022 -0.0239325" />
 				<attribute name="Rotation" value="0.999962 0 0.00872654 0" />
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
@@ -134,14 +134,14 @@
 					<attribute name="Light Type" value="Spot" />
 					<attribute name="Color" value="0.91129 1 0 1" />
 					<attribute name="Brightness Multiplier" value="3.000000" />
-					<attribute name="Range" value="0.040000" />
+					<attribute name="Range" value="0.030000" />
 				</component>
 			</node>
 			<node id="69">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="EMF4" />
 				<attribute name="Tags" />
-				<attribute name="Position" value="0.00783175 0.0634492 -0.0274198" />
+				<attribute name="Position" value="0.00783175 0.0634492 -0.0239325" />
 				<attribute name="Rotation" value="0.999962 0 0.00872654 0" />
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
@@ -149,14 +149,14 @@
 					<attribute name="Light Type" value="Spot" />
 					<attribute name="Color" value="1 0.774194 0 1" />
 					<attribute name="Brightness Multiplier" value="3.000000" />
-					<attribute name="Range" value="0.040000" />
+					<attribute name="Range" value="0.030000" />
 				</component>
 			</node>
 			<node id="70">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="EMF5" />
 				<attribute name="Tags" />
-				<attribute name="Position" value="0.0159617 0.0624292 -0.0274198" />
+				<attribute name="Position" value="0.0159617 0.0624292 -0.0239325" />
 				<attribute name="Rotation" value="0.999962 0 0.00872654 0" />
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
@@ -165,7 +165,7 @@
 					<attribute name="Color" value="1 0 0 1" />
 					<attribute name="Brightness Multiplier" value="3.000000" />
 					<attribute name="Radius" value="0.040000" />
-					<attribute name="Range" value="0.040000" />
+					<attribute name="Range" value="0.030000" />
 				</component>
 			</node>
 		</node>
