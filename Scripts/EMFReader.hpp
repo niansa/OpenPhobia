@@ -22,6 +22,7 @@ public:
     using Useable::Useable;
 
     virtual void Start() override;
+    virtual void FixedUpdate(float) override;
     virtual void TurnOn() override;
     virtual void TurnOff() override;
 

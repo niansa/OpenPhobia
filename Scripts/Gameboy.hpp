@@ -21,6 +21,7 @@ public:
     using Useable::Useable;
 
     virtual void TurnOn() override;
+    virtual void TurnOff() override;
 };
 }
 #endif // PLAYER_HPP

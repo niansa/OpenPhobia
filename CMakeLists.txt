@@ -34,7 +34,11 @@ add_subdirectory(rbfx)
 add_subdirectory(easyscript)
 
 # Game executable
-add_executable(Game main.cpp LevelManager.hpp Useable.hpp)
+add_executable(Game
+    main.cpp LevelManager.hpp Useable.hpp EMF.hpp
+    SphereCastMultiple.cpp SphereCastMultiple.hpp
+
+)
 target_link_libraries(Game PUBLIC Urho3D rbfxeasyscript)
 
 # Copy the stuff we need

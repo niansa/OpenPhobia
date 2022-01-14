@@ -1,10 +1,15 @@
 #include "Gameboy.hpp"
 #include "../LevelManager.hpp"
+#include "EMFEmitter.hpp"
 
 
 
 namespace Game {
 void Gameboy::TurnOn() {
-    printf("Gameboy turned on\n");
+    auto emitter = GetNode()->CreateComponent<EMFEmitter>();
+    emitter->setLevel(EMFLevel::touch);
+}
+void Gameboy::TurnOff() {
+    GetNode()->RemoveComponent<EMFEmitter>();
 }
 }
