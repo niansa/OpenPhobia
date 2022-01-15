@@ -689,6 +689,7 @@
 				<attribute name="Name" value="Cup" />
 				<attribute name="Tags">
 					<string value="Grabbable" />
+					<string value="GhostInteractable" />
 				</attribute>
 				<attribute name="Position" value="-3.46248 6.28325 -2.74074" />
 				<attribute name="Rotation" value="0.707107 0.707107 0 0" />
@@ -716,6 +717,7 @@
 				<attribute name="Name" value="Plate" />
 				<attribute name="Tags">
 					<string value="Grabbable" />
+					<string value="GhostInteractable" />
 				</attribute>
 				<attribute name="Position" value="-3.30764 6.28278 -2.50165" />
 				<attribute name="Rotation" value="0.707107 0.707107 0 0" />
@@ -743,6 +745,7 @@
 				<attribute name="Name" value="Knife" />
 				<attribute name="Tags">
 					<string value="Grabbable" />
+					<string value="GhostInteractable" />
 				</attribute>
 				<attribute name="Position" value="-3.29893 6.2935 -2.22273" />
 				<attribute name="Rotation" value="0.5 0.5 -0.5 0.5" />

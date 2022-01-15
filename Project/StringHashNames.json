@@ -609,6 +609,7 @@
 	"GestureID",
 	"GestureInput",
 	"GestureRecorded",
+	"GhostInteractable",
 	"Gizmo",
 	"GizmoNodeModified",
 	"GizmoSelectionChanged",
