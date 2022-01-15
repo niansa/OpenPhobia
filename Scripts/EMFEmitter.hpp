@@ -6,24 +6,33 @@ class Gameboy;
 #include "../easyscript/Namespace.hpp"
 #include "../EMF.hpp"
 
-#include <Urho3D/Scene/Component.h>
+#include <Urho3D/Scene/LogicComponent.h>
+#include <Urho3D/Core/Timer.h>
 
 
 
 namespace Game {
-class EMFEmitter final : public Component {
-    URHO3D_OBJECT(EMFEmitter, Component);
+class EMFEmitter final : public LogicComponent {
+    URHO3D_OBJECT(EMFEmitter, LogicComponent);
 
     EMFLevel level = EMFLevel::basic;
+    Timer timer;
+    float timeout = 0;
 
 public:
-    using Component::Component;
+    using LogicComponent::LogicComponent;
+
+    virtual void FixedUpdate(float) override;
 
     unsigned getLevel() {
         return static_cast<unsigned>(level);
     }
     void setLevel(EMFLevel level) {
         this->level = level;
+    }
+    void timeoutIn(float seconds) {
+        timeout = seconds * 1000;
+        timer.Reset();
     }
 };
 }
