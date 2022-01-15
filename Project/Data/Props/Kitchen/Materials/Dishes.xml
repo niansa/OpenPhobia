@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<material>
+	<technique name="Techniques/DiffNormal.xml" />
+	<texture unit="diffuse" name="Props/Kitchen/Textures/Dishes_baseColor.png" />
+	<texture unit="normal" name="Props/Kitchen/Textures/Dishes_normal.png" />
+	<texture unit="emissive" name="Props/Kitchen/Textures/Dishes_metallicRoughness.png" />
+	<parameter name="MatDiffColor" value="1 1 1 1" />
+	<parameter name="MatSpecColor" value="1 1 1 0" />
+	<parameter name="MatEmissiveColor" value="0 0 0 1" />
+	<cull value="none" />
+	<shadowcull value="none" />
+</material>

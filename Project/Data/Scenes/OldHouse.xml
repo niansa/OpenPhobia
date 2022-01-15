@@ -5,18 +5,18 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="99" />
-	<attribute name="Next Replicated Component ID" value="135" />
-	<attribute name="Next Local Node ID" value="16777236" />
-	<attribute name="Next Local Component ID" value="16777246" />
+	<attribute name="Next Replicated Node ID" value="104" />
+	<attribute name="Next Replicated Component ID" value="148" />
+	<attribute name="Next Local Node ID" value="16777246" />
+	<attribute name="Next Local Component ID" value="16777261" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="-1.75427 2.09444 -3.43166" />
-		<attribute name="Camera Rotation" value="0.977664 0.209856 -0.011291 0.0024526" />
+		<attribute name="Camera Position" value="-1.52149 4.7643 -1.90355" />
+		<attribute name="Camera Rotation" value="0.66857 0.192245 -0.687672 0.207758" />
 	</component>
 	<component type="RenderPipeline" id="14" />
 	<node id="2">
@@ -31,7 +31,6 @@
 			<attribute name="Bounding Box Min" value="-1000 -1000 -1000" />
 			<attribute name="Bounding Box Max" value="1000 1000 1000" />
 			<attribute name="Ambient Color" value="0.25 0.25 0.25 1" />
-			<attribute name="Ambient Brightness" value="0.000000" />
 			<attribute name="Background Brightness" value="0.010000" />
 		</component>
 	</node>
@@ -652,6 +651,119 @@
 				<component type="CollisionShape" id="108" />
 				<component type="RigidBody" id="109">
 					<attribute name="Physics Position" value="4.16663 1.52509 2.31401" />
+				</component>
+			</node>
+		</node>
+		<node id="99">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Props" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="0 0 0" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<node id="100">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Table" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="-3.84718 5.70687 -3.37179" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1.75 1.75 1.75" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="135">
+					<attribute name="Model" value="Model;Props/misc/simple_table.mdl" />
+					<attribute name="Material" value="Material;" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+				<component type="CollisionShape" id="136">
+					<attribute name="Shape Type" value="ConvexHull" />
+					<attribute name="Model" value="Model;Props/misc/simple_table.mdl" />
+					<attribute name="Collision Margin" value="0.000000" />
+				</component>
+				<component type="RigidBody" id="137">
+					<attribute name="Physics Position" value="-2.56479 3.80458 -2.24786" />
+				</component>
+			</node>
+			<node id="101">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Cup" />
+				<attribute name="Tags">
+					<string value="Grabbable" />
+				</attribute>
+				<attribute name="Position" value="-3.46248 6.28325 -2.74074" />
+				<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="138">
+					<attribute name="Model" value="Model;Props/Kitchen/Models/SM_Cup.001_Dishes_Dirty_0.mdl" />
+					<attribute name="Material" value="Material;Props/Kitchen/Materials/Dishes_Dirty.xml" />
+				</component>
+				<component type="RigidBody" id="139">
+					<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Physics Position" value="-2.30832 4.18884 -1.82716" />
+					<attribute name="Mass" value="1.000000" />
+					<attribute name="Angular Damping" value="0.800000" />
+					<attribute name="Collision Layer" value="2" />
+					<attribute name="Is Kinematic" value="true" />
+				</component>
+				<component type="CollisionShape" id="140">
+					<attribute name="Shape Type" value="ConvexHull" />
+					<attribute name="Model" value="Model;Props/Kitchen/Models/SM_Cup_Dishes_0.mdl" />
+				</component>
+			</node>
+			<node id="102">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Plate" />
+				<attribute name="Tags">
+					<string value="Grabbable" />
+				</attribute>
+				<attribute name="Position" value="-3.30764 6.28278 -2.50165" />
+				<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="141">
+					<attribute name="Model" value="Model;Props/Kitchen/Models/SM_Plate_01.001_Dishes_Dirty_0.mdl" />
+					<attribute name="Material" value="Material;Props/Kitchen/Materials/Dishes_Dirty.xml" />
+				</component>
+				<component type="CollisionShape" id="142">
+					<attribute name="Shape Type" value="ConvexHull" />
+					<attribute name="Model" value="Model;Props/Kitchen/Models/SM_Plate_01.001_Dishes_Dirty_0.mdl" />
+				</component>
+				<component type="RigidBody" id="143">
+					<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Physics Position" value="-2.20509 4.18852 -1.66777" />
+					<attribute name="Mass" value="2.000000" />
+					<attribute name="Angular Damping" value="0.800000" />
+					<attribute name="Collision Layer" value="2" />
+					<attribute name="Is Kinematic" value="true" />
+				</component>
+			</node>
+			<node id="103">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Knife" />
+				<attribute name="Tags">
+					<string value="Grabbable" />
+				</attribute>
+				<attribute name="Position" value="-3.29893 6.2935 -2.22273" />
+				<attribute name="Rotation" value="0.5 0.5 -0.5 0.5" />
+				<attribute name="Scale" value="1.5 1.5 1.5" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="144">
+					<attribute name="Model" value="Model;Props/Kitchen/Models/SM_Fork_Utensils_0.mdl" />
+					<attribute name="Material" value="Material;Props/Kitchen/Materials/Coockware_Dirty.xml" />
+				</component>
+				<component type="RigidBody" id="145">
+					<attribute name="Physics Rotation" value="0.5 0.5 -0.5 0.5" />
+					<attribute name="Physics Position" value="-2.19929 4.19567 -1.48182" />
+					<attribute name="Mass" value="0.500000" />
+					<attribute name="Angular Damping" value="0.900000" />
+					<attribute name="Collision Layer" value="2" />
+					<attribute name="Is Kinematic" value="true" />
+				</component>
+				<component type="CollisionShape" id="147">
+					<attribute name="Shape Type" value="ConvexHull" />
+					<attribute name="Model" value="Model;Props/Kitchen/Models/SM_Fork_Utensils_0.mdl" />
+					<attribute name="Collision Margin" value="0.020000" />
 				</component>
 			</node>
 		</node>
