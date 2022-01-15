@@ -7,15 +7,15 @@
 	<attribute name="Elapsed Time" value="0.000000" />
 	<attribute name="Next Replicated Node ID" value="105" />
 	<attribute name="Next Replicated Component ID" value="149" />
-	<attribute name="Next Local Node ID" value="16777252" />
-	<attribute name="Next Local Component ID" value="16777270" />
+	<attribute name="Next Local Node ID" value="16777254" />
+	<attribute name="Next Local Component ID" value="16777273" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="-1.10017 5.81796 -2.75577" />
+		<attribute name="Camera Position" value="-1.10018 5.81884 -2.75618" />
 		<attribute name="Camera Rotation" value="0.868976 0.401586 -0.259362 0.127831" />
 	</component>
 	<component type="RenderPipeline" id="14" />
@@ -31,6 +31,7 @@
 			<attribute name="Bounding Box Min" value="-1000 -1000 -1000" />
 			<attribute name="Bounding Box Max" value="1000 1000 1000" />
 			<attribute name="Ambient Color" value="0.25 0.25 0.25 1" />
+			<attribute name="Ambient Brightness" value="0.000000" />
 			<attribute name="Background Brightness" value="0.010000" />
 		</component>
 	</node>

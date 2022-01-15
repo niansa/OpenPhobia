@@ -33,11 +33,14 @@ void Ghost::FixedUpdate(float timeStep) {
 
 void Ghost::throwBody(RigidBody *body) {
     body->SetKinematic(false);
+    // Get random direction
     auto dir = rng.GetDirectionVector3()*1.5f;
     if (dir.y_ < 0) {
         dir.y_ = -dir.y_;
     }
-    body->SetLinearVelocity(dir);
+    // Get random power
+    auto power = rng.GetFloat(0.25f, 1.75f);
+    body->SetLinearVelocity(dir*power);
     // Make it emit emf
     auto emitter = body->GetNode()->GetOrCreateComponent<EMFEmitter>();
     emitter->setLevel(EMFLevel::throw_);
