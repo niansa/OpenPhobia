@@ -5,36 +5,31 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="105" />
-	<attribute name="Next Replicated Component ID" value="149" />
-	<attribute name="Next Local Node ID" value="16777254" />
-	<attribute name="Next Local Component ID" value="16777273" />
+	<attribute name="Next Replicated Node ID" value="113" />
+	<attribute name="Next Replicated Component ID" value="179" />
+	<attribute name="Next Local Node ID" value="16777274" />
+	<attribute name="Next Local Component ID" value="16777303" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="-1.10018 5.81884 -2.75618" />
-		<attribute name="Camera Rotation" value="0.868976 0.401586 -0.259362 0.127831" />
+		<attribute name="Camera Position" value="-0.125209 6.01966 2.84879" />
+		<attribute name="Camera Rotation" value="0.597114 0.175067 0.726024 -0.292737" />
 	</component>
 	<component type="RenderPipeline" id="14" />
-	<node id="2">
-		<attribute name="Is Enabled" value="true" />
-		<attribute name="Name" value="Zone" />
-		<attribute name="Tags" />
-		<attribute name="Position" value="0 0 0" />
-		<attribute name="Rotation" value="1 0 0 0" />
-		<attribute name="Scale" value="1 1 1" />
-		<attribute name="Variables" />
-		<component type="Zone" id="4">
-			<attribute name="Bounding Box Min" value="-1000 -1000 -1000" />
-			<attribute name="Bounding Box Max" value="1000 1000 1000" />
-			<attribute name="Ambient Color" value="0.25 0.25 0.25 1" />
-			<attribute name="Ambient Brightness" value="0.000000" />
-			<attribute name="Background Brightness" value="0.010000" />
-		</component>
-	</node>
+	<component type="DynamicNavigationMesh" id="168">
+		<attribute name="Tile Size" value="32" />
+		<attribute name="Cell Size" value="0.115000" />
+		<attribute name="Cell Height" value="0.100000" />
+		<attribute name="Agent Height" value="1.750000" />
+		<attribute name="Agent Radius" value="0.250000" />
+		<attribute name="Agent Max Climb" value="0.800000" />
+		<attribute name="Bounding Box Padding" value="1 1 0.75" />
+		<attribute name="Navigation Data" value="5 0 192 192 135 136 200 191 181 77 200 192 254 92 207 64 222 49 235 64 175 170 162 64 4 0 0 0 4 0 0 0 5 0 192 192 135 136 200 191 181 77 200 192 31 133 107 64 31 133 107 64 0 1 0 0 0 64 0 0 5 0 192 192 135 136 200 191 181 77 200 192 31 133 235 61 205 204 204 61 32 0 0 0 32 0 0 0 0 0 224 63 0 0 128 62 205 204 76 63 102 102 166 63 0 1 0 0 0 4 0 0 82 76 84 68 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 5 0 192 192 152 136 8 62 181 77 200 192 235 122 20 192 152 136 8 62 75 22 37 192 17 0 17 0 32 32 22 31 24 31 0 0 138 0 0 0 82 76 84 68 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 5 0 192 192 152 136 8 62 181 77 200 192 235 122 20 192 152 136 8 62 75 22 37 192 17 0 17 0 32 32 22 31 24 31 0 0 31 255 1 0 255 255 255 5 21 0 1 0 15 31 3 3 5 31 0 15 32 0 174 15 2 0 255 255 255 6 21 63 1 0 15 32 3 3 5 31 0 15 32 0 196 15 2 0 255 255 239 35 6 7 1 0 31 67 10 3 3 35 14 15 1 0 31 75 32 0 163 160 44 45 45 45 45 45 45 45 45 105 82 76 84 68 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 5 0 192 192 34 34 98 64 181 77 200 192 235 122 20 192 34 34 98 64 75 22 37 192 51 0 51 0 32 32 20 31 22 31 0 0 139 0 0 0 82 76 84 68 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 5 0 192 192 34 34 98 64 181 77 200 192 235 122 20 192 34 34 98 64 75 22 37 192 51 0 51 0 32 32 20 31 22 31 0 0 31 255 1 0 255 255 194 23 0 1 0 15 223 2 1 7 31 0 15 32 0 238 15 2 0 255 255 195 23 63 1 0 15 224 2 1 7 31 0 15 32 0 255 3 15 2 0 255 255 175 37 6 7 1 0 31 67 204 2 1 37 14 15 1 0 31 75 32 0 225 192 44 45 45 45 45 45 45 45 45 45 45 105 82 76 84 68 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 192 192 152 136 8 62 181 77 200 192 235 122 20 192 171 170 202 64 75 22 37 192 17 0 79 0 32 32 12 31 10 31 0 0 1 1 0 0 82 76 84 68 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 192 192 152 136 8 62 181 77 200 192 235 122 20 192 171 170 202 64 75 22 37 192 17 0 79 0 32 32 12 31 10 31 0 0 31 255 1 0 255 64 63 34 34 34 85 1 10 15 32 0 24 15 74 0 2 7 64 0 15 32 0 2 15 2 0 170 27 62 1 0 12 205 0 11 31 0 15 32 0 26 47 0 0 64 0 11 15 32 0 225 31 0 1 0 255 64 63 63 63 63 85 1 10 15 32 0 24 15 74 0 2 7 64 0 15 32 0 2 15 2 0 170 27 63 1 0 12 205 0 11 31 0 13 106 1 15 32 0 9 0 78 0 15 32 0 255 10 15 2 0 255 53 63 6 7 3 74 1 10 63 14 15 11 32 0 21 47 6 67 42 0 0 52 12 13 9 22 0 36 12 73 10 0 15 2 0 181 41 6 7 1 0 13 0 1 41 14 15 1 0 28 75 248 0 15 32 0 9 47 6 3 32 0 11 47 14 11 32 0 203 101 44 41 0 0 44 45 1 0 80 45 45 45 45 105 82 76 84 68 1 0 0 0 1 0 0 0 0 0 0 0 2 0 0 0 235 122 20 192 152 136 8 62 181 77 200 192 104 20 174 63 152 136 8 62 75 22 37 192 17 0 17 0 32 32 0 26 24 31 0 0 141 0 0 0 82 76 84 68 1 0 0 0 1 0 0 0 0 0 0 0 2 0 0 0 235 122 20 192 152 136 8 62 181 77 200 192 104 20 174 63 152 136 8 62 75 22 37 192 17 0 17 0 32 32 0 26 24 31 0 0 31 255 1 0 255 255 238 31 0 1 0 7 1 26 3 15 31 0 7 15 32 0 206 15 2 0 255 255 212 31 63 1 0 7 1 0 3 15 31 0 7 15 32 0 179 15 2 0 255 255 239 47 22 7 1 0 5 17 3 27 3 47 30 15 1 0 5 31 11 32 0 146 47 60 45 1 0 5 96 41 0 0 0 0 0 82 76 84 68 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 235 122 20 192 171 170 202 64 181 77 200 192 104 20 174 63 171 170 202 64 75 22 37 192 79 0 79 0 32 32 0 31 20 31 0 0 114 0 0 0 82 76 84 68 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 235 122 20 192 171 170 202 64 181 77 200 192 104 20 174 63 171 170 202 64 75 22 37 192 79 0 79 0 32 32 0 31 20 31 0 0 31 255 1 0 255 255 110 31 0 1 0 255 255 255 239 31 63 1 0 255 109 15 127 5 255 255 111 47 22 7 1 0 10 63 67 30 15 1 0 10 31 75 32 0 255 14 47 60 45 1 0 6 80 45 45 45 45 105 82 76 84 68 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 235 122 20 192 34 34 98 64 181 77 200 192 104 20 174 63 34 34 98 64 75 22 37 192 51 0 51 0 32 32 0 30 10 31 0 0 117 1 0 0 82 76 84 68 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 235 122 20 192 34 34 98 64 181 77 200 192 104 20 174 63 34 34 98 64 75 22 37 192 51 0 51 0 32 32 0 30 10 31 0 0 31 255 1 0 255 70 17 0 1 0 15 94 1 7 1 31 0 19 0 7 0 7 2 0 4 50 0 2 19 0 15 32 0 14 4 47 0 6 50 0 1 12 0 15 2 0 2 0 83 0 15 25 0 2 4 2 0 15 31 0 12 15 32 0 77 15 160 0 12 0 31 0 13 130 0 0 19 0 15 2 0 7 15 32 0 255 46 15 2 0 255 41 17 63 1 0 15 65 1 7 1 31 0 19 63 7 0 7 2 0 4 50 0 2 19 0 15 32 0 14 4 47 0 6 50 0 1 12 0 15 2 0 2 0 83 0 15 25 0 2 4 2 0 15 31 0 12 15 32 0 77 15 160 0 12 0 31 0 13 130 0 0 19 0 15 2 0 7 15 32 0 255 16 15 2 0 255 71 111 6 7 7 7 7 3 95 1 7 128 14 15 15 15 15 11 0 22 39 0 7 2 0 5 50 0 3 32 0 37 28 13 1 0 0 49 0 36 15 11 82 0 16 12 24 0 20 9 14 0 0 2 0 16 12 33 0 9 18 0 11 2 0 31 12 31 0 11 53 0 0 14 94 0 15 2 0 3 15 32 0 76 53 6 15 15 255 0 15 2 0 0 16 6 224 0 12 33 0 7 64 1 0 31 0 39 15 15 76 1 0 127 1 16 30 20 0 15 2 0 5 31 11 32 0 207 47 60 45 1 0 6 80 45 45 41 0 0 82 76 84 68 1 0 0 0 2 0 0 0 0 0 0 0 1 0 0 0 104 20 174 63 152 136 8 62 181 77 200 192 169 71 161 64 152 136 8 62 75 22 37 192 17 0 17 0 32 32 4 27 23 31 0 0 144 0 0 0 82 76 84 68 1 0 0 0 2 0 0 0 0 0 0 0 1 0 0 0 104 20 174 63 152 136 8 62 181 77 200 192 169 71 161 64 152 136 8 62 75 22 37 192 17 0 17 0 32 32 4 27 23 31 0 0 31 255 1 0 255 255 210 31 0 1 0 4 4 251 2 15 31 0 4 15 32 0 210 15 252 0 5 15 2 0 255 255 187 31 63 1 0 4 4 228 2 15 31 0 4 15 32 0 214 15 2 0 255 255 207 47 6 7 1 0 2 20 3 248 2 47 14 15 1 0 2 31 11 32 0 181 47 44 45 1 0 2 80 41 0 0 0 0 82 76 84 68 1 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 104 20 174 63 171 170 202 64 181 77 200 192 169 71 161 64 171 170 202 64 75 22 37 192 79 0 79 0 32 32 0 31 20 31 0 0 114 0 0 0 82 76 84 68 1 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 104 20 174 63 171 170 202 64 181 77 200 192 169 71 161 64 171 170 202 64 75 22 37 192 79 0 79 0 32 32 0 31 20 31 0 0 31 255 1 0 255 255 110 31 0 1 0 255 255 255 239 31 63 1 0 255 109 15 127 5 255 255 111 47 22 7 1 0 10 63 3 30 15 1 0 10 31 11 32 0 255 14 47 60 45 1 0 6 80 45 45 45 45 41 82 76 84 68 1 0 0 0 0 0 0 0 1 0 0 0 2 0 0 0 5 0 192 192 152 136 8 62 75 22 37 192 235 122 20 192 152 136 8 62 168 221 140 63 17 0 17 0 32 32 22 31 0 22 0 0 162 0 0 0 82 76 84 68 1 0 0 0 0 0 0 0 1 0 0 0 2 0 0 0 5 0 192 192 152 136 8 62 75 22 37 192 235 122 20 192 152 136 8 62 168 221 140 63 17 0 17 0 32 32 22 31 0 22 0 0 31 255 1 0 2 21 0 1 0 15 31 0 2 21 255 31 0 15 32 0 255 255 166 15 2 0 247 6 202 3 8 2 0 21 63 1 0 8 22 0 6 2 0 5 31 0 22 63 20 0 8 2 0 15 32 0 255 255 143 15 2 0 255 14 35 134 135 1 0 31 195 42 1 3 35 14 15 1 0 31 75 32 0 255 255 133 35 12 13 1 0 31 73 160 2 3 15 2 0 242 80 0 0 0 0 0 82 76 84 68 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 5 0 192 192 34 34 98 64 75 22 37 192 235 122 20 192 34 34 98 64 168 221 140 63 51 0 51 0 32 32 20 31 0 31 0 0 182 0 0 0 82 76 84 68 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 5 0 192 192 34 34 98 64 75 22 37 192 235 122 20 192 34 34 98 64 168 221 140 63 51 0 51 0 32 32 20 31 0 31 0 0 31 255 1 0 0 23 0 1 0 15 31 0 0 23 255 31 0 15 32 0 255 255 4 15 2 0 255 14 15 64 3 121 15 2 0 1 23 63 1 0 15 32 0 255 255 35 15 2 0 255 14 7 95 3 31 63 44 1 1 15 32 0 109 37 134 135 1 0 31 195 160 0 1 37 14 15 1 0 31 75 32 0 255 226 37 12 13 1 0 31 73 0 2 1 15 2 0 255 14 37 6 7 1 0 31 67 44 1 1 15 96 3 77 192 44 45 45 45 45 45 45 45 45 45 45 105 82 76 84 68 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 5 0 192 192 152 136 8 62 75 22 37 192 235 122 20 192 222 221 205 64 168 221 140 63 17 0 80 0 32 32 12 31 0 31 0 0 14 2 0 0 82 76 84 68 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 5 0 192 192 152 136 8 62 75 22 37 192 235 122 20 192 222 221 205 64 168 221 140 63 17 0 80 0 32 32 12 31 0 31 0 0 23 255 1 0 91 0 0 255 255 62 1 0 7 31 0 15 32 0 255 255 116 27 63 1 0 12 160 2 11 31 0 15 32 0 30 11 255 2 25 62 64 0 31 255 32 0 140 15 192 3 32 23 0 1 0 32 63 63 4 0 10 2 0 7 31 0 16 0 14 0 10 30 0 0 18 0 6 2 0 0 14 0 0 20 0 8 2 0 6 30 0 0 28 0 0 4 0 10 2 0 0 24 0 4 2 0 0 14 0 10 30 0 0 18 0 6 2 0 0 14 0 0 20 0 8 2 0 6 30 0 0 28 0 0 4 0 10 2 0 0 24 0 4 2 0 0 14 0 10 30 0 0 18 0 6 2 0 0 14 0 0 20 0 8 2 0 6 30 0 0 28 0 0 4 0 10 2 0 0 24 0 4 2 0 0 14 0 10 30 0 0 18 0 6 2 0 0 14 0 0 20 0 8 2 0 6 30 0 0 28 0 0 4 0 10 2 0 0 24 0 4 2 0 0 14 0 10 30 0 0 18 0 6 2 0 0 14 0 0 20 0 8 2 0 6 30 0 0 28 0 0 4 0 10 2 0 0 24 0 4 2 0 0 14 0 10 30 0 0 18 0 6 2 0 0 14 0 0 20 0 8 2 0 6 30 0 0 28 0 0 4 0 10 2 0 0 24 0 4 2 0 0 14 0 10 30 0 0 18 0 6 2 0 0 14 0 0 20 0 8 2 0 6 30 0 0 28 0 0 4 0 10 2 0 0 24 0 4 2 0 0 14 0 10 30 0 0 18 0 6 2 0 0 14 0 0 20 0 8 2 0 6 30 0 0 28 0 0 4 0 10 2 0 0 24 0 4 2 0 17 63 4 3 10 2 0 4 28 0 0 2 0 15 32 0 110 15 192 3 44 105 134 131 0 0 134 135 1 0 16 195 216 0 4 2 0 105 14 11 0 0 14 15 1 0 20 75 28 0 0 2 0 15 32 0 255 255 176 31 9 224 2 11 47 10 0 32 0 139 47 14 3 160 0 11 101 44 41 0 0 44 45 1 0 80 45 45 45 45 105 82 76 84 68 1 0 0 0 1 0 0 0 1 0 0 0 2 0 0 0 235 122 20 192 171 170 202 64 75 22 37 192 104 20 174 63 222 221 205 64 168 221 140 63 79 0 80 0 32 32 0 31 0 31 0 0 122 0 0 0 82 76 84 68 1 0 0 0 1 0 0 0 1 0 0 0 2 0 0 0 235 122 20 192 171 170 202 64 75 22 37 192 104 20 174 63 222 221 205 64 168 221 140 63 79 0 80 0 32 32 0 31 0 31 0 0 31 0 1 0 255 255 142 29 1 1 0 10 177 2 13 31 0 15 32 0 28 15 2 0 237 31 63 1 0 255 255 255 239 47 150 135 1 0 10 63 195 30 15 1 0 10 31 75 32 0 255 255 255 144 47 60 45 1 0 6 80 45 45 45 45 105 82 76 84 68 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 235 122 20 192 34 34 98 64 75 22 37 192 104 20 174 63 34 34 98 64 168 221 140 63 51 0 51 0 32 32 0 29 0 31 0 0 33 1 0 0 82 76 84 68 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 235 122 20 192 34 34 98 64 75 22 37 192 104 20 174 63 34 34 98 64 168 221 140 63 51 0 51 0 32 32 0 29 0 31 0 0 31 0 1 0 10 47 255 255 31 0 10 15 32 0 255 241 15 2 0 0 7 51 2 15 30 0 0 9 33 0 1 15 0 14 2 0 5 66 0 14 27 0 1 2 0 15 32 0 108 5 127 0 17 0 142 0 12 2 0 6 31 0 15 32 3 144 31 63 1 0 10 47 0 0 31 0 10 15 32 0 255 241 15 2 0 0 7 51 2 15 30 0 0 9 33 0 1 15 0 14 2 0 5 66 0 14 27 0 1 2 0 15 32 0 108 5 127 0 17 63 142 0 12 2 0 6 31 0 15 32 3 144 47 150 135 1 0 8 95 131 0 0 30 15 1 0 8 31 11 32 0 255 208 45 28 13 1 0 6 17 2 28 11 251 2 1 2 0 21 12 33 0 15 32 0 3 6 33 0 15 32 0 4 35 0 14 66 0 15 32 0 132 19 6 159 0 15 160 0 4 5 31 0 0 32 0 45 22 7 1 0 4 62 0 1 224 0 15 96 3 77 47 60 45 1 0 6 80 45 45 41 0 0 82 76 84 68 1 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 235 122 20 192 152 136 8 62 75 22 37 192 104 20 174 63 152 136 8 62 168 221 140 63 17 0 17 0 32 32 0 26 0 31 0 0 42 1 0 0 82 76 84 68 1 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 235 122 20 192 152 136 8 62 75 22 37 192 104 20 174 63 152 136 8 62 168 221 140 63 17 0 17 0 32 32 0 26 0 31 0 0 31 0 1 0 7 16 255 1 0 15 31 0 7 16 0 31 0 15 32 0 255 255 144 11 2 0 4 175 2 11 23 0 6 2 0 2 33 0 6 16 0 13 2 0 0 33 0 13 21 0 7 2 0 15 32 0 108 0 127 0 15 161 0 8 0 29 0 0 2 0 5 177 0 31 63 1 0 7 0 40 0 31 0 31 0 7 15 32 0 255 255 149 11 2 0 4 207 2 11 23 0 6 2 0 2 33 0 6 16 0 13 2 0 0 33 0 13 21 0 7 2 0 15 32 0 108 0 127 0 15 161 0 8 0 29 0 0 2 0 5 177 0 47 150 135 1 0 5 17 131 36 0 47 30 15 1 0 5 31 11 32 0 255 255 116 41 28 13 1 0 4 173 2 65 13 13 13 9 160 2 11 2 0 18 12 33 0 15 28 0 2 1 2 0 1 33 0 15 31 0 7 52 0 0 14 250 2 15 2 0 4 15 32 0 108 16 6 225 0 31 3 156 0 4 65 0 0 36 45 1 0 160 33 0 0 0 0 0 0 0 0 0 82 76 84 68 1 0 0 0 2 0 0 0 1 0 0 0 1 0 0 0 104 20 174 63 152 136 8 62 75 22 37 192 169 71 161 64 152 136 8 62 168 221 140 63 17 0 17 0 32 32 4 27 0 22 0 0 182 0 0 0 82 76 84 68 1 0 0 0 2 0 0 0 1 0 0 0 1 0 0 0 104 20 174 63 152 136 8 62 75 22 37 192 169 71 161 64 152 136 8 62 168 221 140 63 17 0 17 0 32 32 4 27 0 22 0 0 95 255 255 255 255 0 1 0 4 0 28 0 0 2 0 15 31 0 4 16 0 28 0 0 2 0 15 32 0 255 255 134 0 155 2 15 2 0 255 15 0 188 3 31 63 1 0 4 0 28 0 0 2 0 15 31 0 4 16 63 28 0 0 2 0 15 32 0 255 255 134 0 155 2 15 2 0 255 19 47 134 135 1 0 2 20 131 61 1 47 14 15 1 0 2 31 11 32 0 255 255 110 20 9 128 2 47 12 13 1 0 1 5 31 0 15 2 0 255 6 80 0 0 0 0 0 82 76 84 68 1 0 0 0 2 0 0 0 1 0 0 0 0 0 0 0 104 20 174 63 171 170 202 64 75 22 37 192 169 71 161 64 171 170 202 64 168 221 140 63 79 0 79 0 32 32 0 31 0 31 0 0 105 0 0 0 82 76 84 68 1 0 0 0 2 0 0 0 1 0 0 0 0 0 0 0 104 20 174 63 171 170 202 64 75 22 37 192 169 71 161 64 171 170 202 64 168 221 140 63 79 0 79 0 32 32 0 31 0 31 0 0 31 0 1 0 255 255 255 239 31 63 1 0 255 255 255 239 47 150 135 1 0 10 63 131 30 15 1 0 10 31 11 32 0 255 255 255 144 47 60 45 1 0 6 80 45 45 45 45 41 82 76 84 68 1 0 0 0 0 0 0 0 2 0 0 0 2 0 0 0 5 0 192 192 152 136 8 62 168 221 140 63 235 122 20 192 152 136 8 62 249 249 152 64 17 0 17 0 32 32 22 31 0 20 0 0 164 0 0 0 82 76 84 68 1 0 0 0 0 0 0 0 2 0 0 0 2 0 0 0 5 0 192 192 152 136 8 62 168 221 140 63 235 122 20 192 152 136 8 62 249 249 152 64 17 0 17 0 32 32 22 31 0 20 0 0 31 255 1 0 2 21 0 1 0 15 31 0 2 21 255 31 0 15 32 0 255 255 102 15 2 0 255 56 6 202 3 8 2 0 21 63 1 0 8 22 0 6 2 0 5 31 0 22 63 20 0 8 2 0 15 32 0 255 255 79 15 2 0 255 78 35 6 7 1 0 31 67 106 1 3 35 14 15 1 0 31 75 32 0 255 255 69 35 12 13 1 0 31 73 96 2 3 15 2 0 255 51 80 0 0 0 0 0 82 76 84 68 1 0 0 0 0 0 0 0 2 0 0 0 1 0 0 0 5 0 192 192 34 34 98 64 168 221 140 63 235 122 20 192 34 34 98 64 249 249 152 64 51 0 51 0 32 32 20 31 0 22 0 0 162 0 0 0 82 76 84 68 1 0 0 0 0 0 0 0 2 0 0 0 1 0 0 0 5 0 192 192 34 34 98 64 168 221 140 63 235 122 20 192 34 34 98 64 249 249 152 64 51 0 51 0 32 32 20 31 0 22 0 0 31 255 1 0 0 23 0 1 0 15 31 0 0 23 255 31 0 15 32 0 255 255 164 15 2 0 249 8 204 3 4 2 0 23 63 1 0 4 20 0 8 2 0 7 31 0 24 63 24 0 4 2 0 15 32 0 255 255 143 15 2 0 255 14 37 134 135 1 0 31 195 44 1 1 37 14 15 1 0 31 75 32 0 255 255 131 37 12 13 1 0 31 73 160 2 1 15 2 0 244 80 0 0 0 0 0 82 76 84 68 1 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 5 0 192 192 152 136 8 62 168 221 140 63 235 122 20 192 171 170 202 64 249 249 152 64 17 0 79 0 32 32 12 31 0 24 0 0 210 1 0 0 82 76 84 68 1 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 5 0 192 192 152 136 8 62 168 221 140 63 235 122 20 192 171 170 202 64 249 249 152 64 17 0 79 0 32 32 12 31 0 24 0 0 23 255 1 0 91 0 0 255 255 62 1 0 7 31 0 15 32 0 255 255 144 0 2 0 11 191 2 16 62 20 0 8 2 0 15 32 0 45 15 2 0 189 23 0 1 0 32 63 63 4 0 10 2 0 7 31 0 16 0 14 0 10 30 0 0 18 0 6 2 0 0 14 0 0 20 0 8 2 0 6 30 0 0 28 0 0 4 0 10 2 0 0 24 0 4 2 0 0 14 0 10 30 0 0 18 0 6 2 0 0 14 0 0 20 0 8 2 0 6 30 0 0 28 0 0 4 0 10 2 0 0 24 0 4 2 0 0 14 0 10 30 0 0 18 0 6 2 0 0 14 0 0 20 0 8 2 0 6 30 0 0 28 0 0 4 0 10 2 0 0 24 0 4 2 0 0 14 0 10 30 0 0 18 0 6 2 0 0 14 0 0 20 0 8 2 0 6 30 0 0 28 0 0 4 0 10 2 0 0 24 0 4 2 0 0 14 0 10 30 0 0 18 0 6 2 0 0 14 0 0 20 0 8 2 0 6 30 0 0 28 0 0 4 0 10 2 0 0 24 0 4 2 0 0 14 0 10 30 0 0 18 0 6 2 0 0 14 0 0 20 0 8 2 0 6 30 0 0 28 0 0 4 0 10 2 0 0 24 0 4 2 0 0 14 0 10 30 0 0 18 0 6 2 0 0 14 0 0 20 0 8 2 0 6 30 0 0 28 0 0 4 0 10 2 0 0 24 0 8 2 0 10 30 0 15 32 0 63 15 2 0 201 105 134 131 0 0 134 135 1 0 24 195 240 0 105 14 11 0 0 14 15 1 0 31 75 32 0 255 255 91 47 12 9 128 2 11 0 2 0 15 160 2 9 0 2 0 15 32 0 13 41 12 13 1 0 16 73 52 0 15 2 0 196 80 0 0 0 0 0 82 76 84 68 1 0 0 0 1 0 0 0 2 0 0 0 2 0 0 0 235 122 20 192 171 170 202 64 168 221 140 63 104 20 174 63 171 170 202 64 249 249 152 64 79 0 79 0 32 32 0 31 0 24 0 0 118 0 0 0 82 76 84 68 1 0 0 0 1 0 0 0 2 0 0 0 2 0 0 0 235 122 20 192 171 170 202 64 168 221 140 63 104 20 174 63 171 170 202 64 249 249 152 64 79 0 79 0 32 32 0 31 0 24 0 0 31 0 1 0 255 255 255 15 31 255 1 0 204 31 63 1 0 255 255 255 15 15 31 7 205 47 150 135 1 0 10 63 195 30 15 1 0 10 31 75 32 0 255 255 175 47 28 13 1 0 10 31 73 0 4 200 80 0 0 0 0 0 82 76 84 68 1 0 0 0 1 0 0 0 2 0 0 0 1 0 0 0 235 122 20 192 34 34 98 64 168 221 140 63 104 20 174 63 34 34 98 64 249 249 152 64 51 0 51 0 32 32 0 31 0 22 0 0 204 0 0 0 82 76 84 68 1 0 0 0 1 0 0 0 2 0 0 0 1 0 0 0 235 122 20 192 34 34 98 64 168 221 140 63 104 20 174 63 34 34 98 64 249 249 152 64 51 0 51 0 32 32 0 31 0 22 0 0 31 0 1 0 10 47 255 255 31 0 10 15 32 0 255 79 31 0 128 1 12 15 2 0 206 15 0 1 12 15 128 2 15 15 2 0 255 14 31 63 1 0 10 47 0 0 31 0 10 15 32 0 255 79 31 63 128 1 12 15 2 0 206 15 0 1 12 15 128 2 15 15 2 0 255 14 47 150 135 1 0 8 95 131 0 0 30 15 1 0 8 31 11 32 0 255 77 47 15 3 128 1 11 63 15 15 3 160 1 10 63 15 15 75 32 0 140 31 9 160 0 11 31 9 0 1 11 95 11 0 0 28 13 1 0 8 31 9 254 3 255 11 80 0 0 0 0 0 82 76 84 68 1 0 0 0 1 0 0 0 2 0 0 0 0 0 0 0 235 122 20 192 152 136 8 62 168 221 140 63 104 20 174 63 152 136 8 62 249 249 152 64 17 0 17 0 32 32 0 31 0 20 0 0 205 0 0 0 82 76 84 68 1 0 0 0 1 0 0 0 2 0 0 0 0 0 0 0 235 122 20 192 152 136 8 62 168 221 140 63 104 20 174 63 152 136 8 62 249 249 152 64 17 0 17 0 32 32 0 31 0 20 0 0 31 0 1 0 169 63 255 255 255 191 0 9 31 255 32 0 11 0 31 0 15 64 0 9 15 32 0 255 115 15 2 0 255 78 31 63 1 0 169 63 0 0 0 191 0 9 0 28 4 15 32 0 8 0 31 0 15 64 0 9 15 32 0 255 115 15 2 0 255 78 41 22 7 1 0 19 135 1 0 4 21 0 63 67 30 15 1 0 10 31 75 32 0 74 63 13 13 73 96 0 9 79 9 0 0 0 32 0 8 0 31 0 15 32 0 8 17 11 91 2 15 64 0 7 15 32 0 255 84 47 28 13 1 0 5 1 191 1 15 2 0 255 74 80 0 0 0 0 0 82 76 84 68 1 0 0 0 2 0 0 0 2 0 0 0 2 0 0 0 104 20 174 63 152 136 8 62 168 221 140 63 169 71 161 64 152 136 8 62 249 249 152 64 17 0 17 0 32 32 5 13 14 20 0 0 165 0 0 0 82 76 84 68 1 0 0 0 2 0 0 0 2 0 0 0 2 0 0 0 104 20 174 63 152 136 8 62 168 221 140 63 169 71 161 64 152 136 8 62 249 249 152 64 17 0 17 0 32 32 5 13 14 20 0 0 31 255 1 0 255 178 20 0 1 0 15 205 1 4 4 31 0 15 32 0 141 15 159 0 4 15 2 0 255 74 5 27 2 15 2 0 255 170 20 63 1 0 15 197 1 4 4 31 0 15 32 0 141 15 159 0 4 15 2 0 255 255 255 17 34 6 7 1 0 31 3 42 3 4 34 14 15 1 0 31 11 32 0 108 31 9 128 0 4 33 12 13 1 0 15 31 0 5 15 2 0 255 69 80 0 0 0 0 0 82 76 84 68 1 0 0 0 2 0 0 0 2 0 0 0 1 0 0 0 104 20 174 63 171 170 202 64 168 221 140 63 169 71 161 64 222 221 205 64 249 249 152 64 79 0 80 0 32 32 0 31 0 24 0 0 135 0 0 0 82 76 84 68 1 0 0 0 2 0 0 0 2 0 0 0 1 0 0 0 104 20 174 63 171 170 202 64 168 221 140 63 169 71 161 64 222 221 205 64 249 249 152 64 79 0 80 0 32 32 0 31 0 24 0 0 31 0 1 0 255 255 175 47 1 1 194 2 11 15 32 0 44 31 255 1 0 204 31 63 1 0 255 255 255 15 15 93 4 11 15 2 0 175 47 150 135 1 0 10 63 131 30 15 1 0 10 31 11 32 0 255 255 175 47 28 13 1 0 10 31 9 226 3 175 15 2 0 6 80 0 0 0 0 0 82 76 84 68 1 0 0 0 2 0 0 0 2 0 0 0 0 0 0 0 104 20 174 63 152 136 8 62 168 221 140 63 169 71 161 64 34 34 98 64 249 249 152 64 17 0 51 0 32 32 0 24 0 20 0 0 209 1 0 0 82 76 84 68 1 0 0 0 2 0 0 0 2 0 0 0 0 0 0 0 104 20 174 63 152 136 8 62 168 221 140 63 169 71 161 64 34 34 98 64 249 249 152 64 17 0 51 0 32 32 0 24 0 20 0 0 242 4 0 1 2 2 3 4 5 6 7 8 9 10 11 11 12 13 14 15 16 1 0 18 255 1 0 15 32 0 109 63 255 255 255 160 0 10 15 2 0 2 0 194 0 15 25 0 2 4 2 0 15 32 0 13 31 255 32 0 108 10 160 0 116 32 31 30 29 28 27 26 189 0 1 31 0 16 16 8 0 115 255 255 255 34 34 34 33 32 0 167 25 255 255 255 22 21 20 19 18 17 0 1 8 32 0 63 24 24 23 32 0 94 15 2 0 1 8 160 0 15 2 0 2 7 192 0 15 2 0 255 78 31 63 1 0 5 18 0 1 0 15 31 0 5 18 63 31 0 15 32 0 78 15 99 0 6 1 27 0 15 2 0 4 0 149 0 15 27 0 4 2 2 0 6 192 0 15 2 0 4 15 64 0 12 15 32 0 77 10 160 0 0 207 0 9 18 0 0 15 0 3 185 0 0 11 0 4 2 0 1 152 0 4 2 0 15 32 0 0 9 2 0 15 32 0 84 15 2 0 1 1 136 0 15 25 0 1 4 2 0 0 33 0 4 12 0 15 2 0 255 77 47 22 7 1 0 3 19 3 120 1 47 30 15 1 0 3 31 11 32 0 52 63 28 13 13 97 0 2 4 96 0 92 0 0 0 12 13 1 0 10 32 0 14 2 0 31 12 32 0 12 40 0 12 96 0 15 2 0 1 31 14 32 0 107 25 6 160 0 17 6 163 1 4 146 1 1 31 0 5 32 0 0 192 1 3 65 1 0 33 0 2 43 0 7 32 1 8 192 1 2 26 0 2 2 0 4 224 0 8 32 0 8 2 0 15 32 0 21 28 28 156 1 2 159 1 5 160 0 15 2 0 1 31 12 32 0 12 0 242 1 31 9 57 0 1 15 2 0 255 60 80 0 0 0 0 0" />
+		<attribute name="Partition Type" value="monotone" />
+	</component>
 	<node id="3">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="GlobalLight" />
@@ -61,7 +56,7 @@
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Model" />
 			<attribute name="Tags" />
-			<attribute name="Position" value="0 0 -0" />
+			<attribute name="Position" value="0 0 0" />
 			<attribute name="Rotation" value="1 0 0 0" />
 			<attribute name="Scale" value="0.01 0.01 0.01" />
 			<attribute name="Variables" />
@@ -182,6 +177,7 @@
 			<attribute name="Rotation" value="1 0 0 0" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
+			<component type="Navigable" id="167" />
 			<node id="54">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="Floor 1" />
@@ -459,186 +455,64 @@
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
 				</component>
 			</node>
+			<node id="110">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Wall" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="-4.49827 7.1066 -7.25123" />
+				<attribute name="Rotation" value="0.707107 0 0.707107 0" />
+				<attribute name="Scale" value="2 4 0.2" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="173">
+					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="-2.99885 4.73773 -4.83415" />
+				</component>
+				<component type="CollisionShape" id="174">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="111">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Wall" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="0.207021 7.1066 -7.25123" />
+				<attribute name="Rotation" value="0.707107 0 0.707107 0" />
+				<attribute name="Scale" value="2 4 0.2" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="175">
+					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="0.138014 4.73773 -4.83415" />
+				</component>
+				<component type="CollisionShape" id="176">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
+			<node id="112">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Wall" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="-2.16372 7.1066 -8.09762" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="5 4 0.2" />
+				<attribute name="Variables" />
+				<component type="RigidBody" id="177">
+					<attribute name="Physics Position" value="-1.44248 4.73773 -5.39842" />
+				</component>
+				<component type="CollisionShape" id="178">
+					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
+				</component>
+			</node>
 			<node id="56">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="Staircase seperator" />
 				<attribute name="Tags" />
-				<attribute name="Position" value="3.57573 2.68525 3.33964" />
+				<attribute name="Position" value="3.87615 2.54721 3.36393" />
 				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="3 4 0.2" />
+				<attribute name="Scale" value="3.1 4.87 0.3" />
 				<attribute name="Variables" />
 				<component type="CollisionShape" id="60" />
 				<component type="RigidBody" id="61">
-					<attribute name="Physics Position" value="2.38382 1.79017 2.22643" />
-				</component>
-			</node>
-			<node id="68">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="BelowStairs" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="3.88314 2.99582 4.55801" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="1 1 2.15" />
-				<attribute name="Variables" />
-				<component type="CollisionShape" id="84" />
-				<component type="RigidBody" id="85">
-					<attribute name="Physics Position" value="2.58876 1.99722 3.03867" />
-				</component>
-			</node>
-			<node id="87">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="BelowStairs" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="3.35994 3.43094 4.55801" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="1 1 2.15" />
-				<attribute name="Variables" />
-				<component type="CollisionShape" id="122" />
-				<component type="RigidBody" id="123">
-					<attribute name="Physics Position" value="2.23996 2.28729 3.03867" />
-				</component>
-			</node>
-			<node id="69">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="BelowStairs" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="4.40544 2.55873 4.55801" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="1 1 2.15" />
-				<attribute name="Variables" />
-				<component type="CollisionShape" id="86" />
-				<component type="RigidBody" id="87">
-					<attribute name="Physics Position" value="2.93696 1.70582 3.03867" />
-				</component>
-			</node>
-			<node id="70">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="BelowStairs" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="3.0877 4.11751 4.55801" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="0.5 0.5 2.15" />
-				<attribute name="Variables" />
-				<component type="CollisionShape" id="88" />
-				<component type="RigidBody" id="89">
-					<attribute name="Physics Position" value="2.05847 2.74501 3.03867" />
-				</component>
-			</node>
-			<node id="71">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="BelowStairs" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="2.56759 4.54971 4.55801" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="0.5 0.5 2.15" />
-				<attribute name="Variables" />
-				<component type="CollisionShape" id="90" />
-				<component type="RigidBody" id="91">
-					<attribute name="Physics Position" value="1.71173 3.03314 3.03867" />
-				</component>
-			</node>
-			<node id="72">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="BelowStairs" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="4.40717 2.55718 4.55801" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="1 1 2.15" />
-				<attribute name="Variables" />
-				<component type="CollisionShape" id="92" />
-				<component type="RigidBody" id="93">
-					<attribute name="Physics Position" value="2.93811 1.70479 3.03867" />
-				</component>
-			</node>
-			<node id="73">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="BelowStairs" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="4.40712 2.55853 4.55801" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="1 1 2.15" />
-				<attribute name="Variables" />
-				<component type="CollisionShape" id="94" />
-				<component type="RigidBody" id="95">
-					<attribute name="Physics Position" value="2.93808 1.70568 3.03867" />
-				</component>
-			</node>
-			<node id="74">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="BelowStairs" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="2.56759 0.111431 2.11036" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="0.5 0.5 2.15" />
-				<attribute name="Variables" />
-				<component type="CollisionShape" id="96" />
-				<component type="RigidBody" id="97">
-					<attribute name="Physics Position" value="1.71173 0.0742873 1.40691" />
-				</component>
-			</node>
-			<node id="75">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="BelowStairs" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="3.06848 0.545977 2.11036" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="0.5 0.5 2.15" />
-				<attribute name="Variables" />
-				<component type="CollisionShape" id="98" />
-				<component type="RigidBody" id="99">
-					<attribute name="Physics Position" value="2.04565 0.363985 1.40691" />
-				</component>
-			</node>
-			<node id="76">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="BelowStairs" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="3.59167 0.982179 2.11036" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="0.5 0.5 2.15" />
-				<attribute name="Variables" />
-				<component type="CollisionShape" id="100" />
-				<component type="RigidBody" id="101">
-					<attribute name="Physics Position" value="2.39445 0.654787 1.40691" />
-				</component>
-			</node>
-			<node id="77">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="BelowStairs" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="4.11341 1.41549 2.11036" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="0.5 0.5 2.15" />
-				<attribute name="Variables" />
-				<component type="CollisionShape" id="102" />
-				<component type="RigidBody" id="103">
-					<attribute name="Physics Position" value="2.74227 0.943658 1.40691" />
-				</component>
-			</node>
-			<node id="78">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="BelowStairs" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="4.63695 1.85146 2.11036" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="0.5 0.5 2.15" />
-				<attribute name="Variables" />
-				<component type="CollisionShape" id="104" />
-				<component type="RigidBody" id="105">
-					<attribute name="Physics Position" value="3.0913 1.23431 1.40691" />
-				</component>
-			</node>
-			<node id="79">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="BelowStairs" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="5.16067 2.28764 2.11036" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="0.5 0.5 2.15" />
-				<attribute name="Variables" />
-				<component type="CollisionShape" id="106" />
-				<component type="RigidBody" id="107">
-					<attribute name="Physics Position" value="3.44045 1.52509 1.40691" />
+					<attribute name="Physics Position" value="2.5841 1.69814 2.24262" />
 				</component>
 			</node>
 			<node id="80">
@@ -652,6 +526,34 @@
 				<component type="CollisionShape" id="108" />
 				<component type="RigidBody" id="109">
 					<attribute name="Physics Position" value="4.16663 1.52509 2.31401" />
+				</component>
+			</node>
+			<node id="107">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Stairs 1" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="3.92881 1.27026 2.05703" />
+				<attribute name="Rotation" value="0.945519 0 0 0.325568" />
+				<attribute name="Scale" value="3.8 0.25 2.2" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="169" />
+				<component type="RigidBody" id="170">
+					<attribute name="Physics Rotation" value="0.945519 0 0 0.325568" />
+					<attribute name="Physics Position" value="2.61921 0.846839 1.37136" />
+				</component>
+			</node>
+			<node id="108">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Stairs 2" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="4.21331 3.55384 4.51643" />
+				<attribute name="Rotation" value="-0.945234 0 -0 0.326393" />
+				<attribute name="Scale" value="5 0.25 2.2" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="171" />
+				<component type="RigidBody" id="172">
+					<attribute name="Physics Rotation" value="0.945234 0 0 -0.326393" />
+					<attribute name="Physics Position" value="2.80887 2.36923 3.01095" />
 				</component>
 			</node>
 		</node>
@@ -853,7 +755,16 @@
 		<attribute name="Name" value="Spawn_Ghost" />
 		<attribute name="Tags" />
 		<attribute name="Position" value="-1.6548 4.06957 -1.6334" />
-		<attribute name="Rotation" value="-0.704927 -0.0554789 0.704927 -0.0554789" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+	</node>
+	<node id="2">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Spawn_Ambience" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 	</node>

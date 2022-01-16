@@ -1,10 +1,12 @@
 {
-	"flavors": [
-		{
-			"name": "default",
-			"settings": []
-		}
-	],
+	"pipeline": {
+		"flavors": [
+			{
+				"name": "default",
+				"settings": []
+			}
+		]
+	},
 	"plugins": [],
 	"resourcePaths": [
 		"Data/",

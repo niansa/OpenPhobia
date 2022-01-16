@@ -15,7 +15,7 @@
 namespace Game {
 void Player::Start() {
     head = GetNode()->GetChild("Head");
-    handP = GetNode()->GetChild("Hand");
+    handP = head->GetChild("Hand");
     collisionShape = GetNode()->GetComponent<CollisionShape>();
     kinematicController = GetNode()->CreateComponent<KinematicCharacterController>();
     kinematicController->SetHeight(GetNode()->GetScale().y_);

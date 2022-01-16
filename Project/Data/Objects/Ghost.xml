@@ -6,16 +6,16 @@
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
 	<attribute name="Next Replicated Node ID" value="3" />
-	<attribute name="Next Replicated Component ID" value="6" />
-	<attribute name="Next Local Node ID" value="16777224" />
-	<attribute name="Next Local Component ID" value="16777229" />
+	<attribute name="Next Replicated Component ID" value="9" />
+	<attribute name="Next Local Node ID" value="16777228" />
+	<attribute name="Next Local Component ID" value="16777235" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
 	<component type="Octree" id="1" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="-1.20401e-05 4.99997 10" />
-		<attribute name="Camera Rotation" value="-0.0888692 -0.021799 0.967132 -0.237239" />
+		<attribute name="Camera Position" value="-2.19047e-05 4.99997 10" />
+		<attribute name="Camera Rotation" value="-0.00422447 -0.00110201 0.967556 -0.252618" />
 	</component>
 	<component type="RenderPipeline" id="2" />
 	<component type="PhysicsWorld" id="4" />
@@ -27,11 +27,18 @@
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
-		<component type="RigidBody" id="3" />
 		<component type="Light" id="5">
 			<attribute name="Light Type" value="Spot" />
 			<attribute name="Color" value="1 0 0 1" />
 			<attribute name="Cast Shadows" value="true" />
+		</component>
+		<component type="CollisionShape" id="6">
+			<attribute name="Shape Type" value="Cylinder" />
+			<attribute name="Size" value="1 1.7 1" />
+		</component>
+		<component type="StaticModel" id="8">
+			<attribute name="Model" value="Model;Models/Box.mdl" />
+			<attribute name="Material" value="Material;" />
 		</component>
 	</node>
 </scene>
