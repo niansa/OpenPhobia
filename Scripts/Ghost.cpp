@@ -25,7 +25,7 @@ void Ghost::Start() {
         }
     }
     // Set initial ghost state
-    state = GhostState::roaming;
+    setState(GhostState::local);
 }
 
 void Ghost::FixedUpdate(float timeStep) {
@@ -34,7 +34,7 @@ void Ghost::FixedUpdate(float timeStep) {
         // Get all bodies nearby
         eastl::vector<PhysicsRaycastResult> results;
         constexpr float range = 0.5f;
-        SphereCastMultiple(physicsWorld, results, Ray(GetNode()->GetWorldPosition(), GetNode()->GetWorldDirection()), range, range);
+        SphereCastMultipleDS(physicsWorld, results, Ray(GetNode()->GetWorldPosition(), GetNode()->GetWorldDirection()), range, range);
         // Throw an object
         if (!results.empty()) {
             for (unsigned triesLeft = 25; triesLeft != 0; triesLeft--) {
