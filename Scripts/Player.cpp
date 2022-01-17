@@ -28,7 +28,7 @@ void Player::Start() {
 }
 
 void Player::FixedUpdate(float timeStep) {
-    auto* input = GetSubsystem<Input>();
+    auto input = GetSubsystem<Input>();
 
     // Escape key handling
     if (input->GetKeyDown(Key::KEY_ESCAPE)) {

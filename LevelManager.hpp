@@ -41,6 +41,11 @@ public:
         app->SetGlobalVar("LevelManager", v);
         reloadLevel();
     }
+
+
+    unsigned getTeamSanity() const {
+        return 5;
+    }
 };
 }
 #endif // LEVELMANAGER_HPP
