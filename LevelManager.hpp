@@ -26,7 +26,7 @@ public:
         auto renderPipeline = scene->GetOrCreateComponent<RenderPipeline>();
         auto renderSettings = renderPipeline->GetSettings();
         renderSettings.bloom_.enabled_ = true;
-        renderSettings.sceneProcessor_.lightingMode_ = DirectLightingMode::DeferredBlinnPhong;
+        renderSettings.sceneProcessor_.lightingMode_ = DirectLightingMode::Forward;
         renderSettings.AdjustToSupported(app->GetContext());
         renderPipeline->SetSettings(renderSettings);
     }
