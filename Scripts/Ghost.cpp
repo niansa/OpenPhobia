@@ -34,8 +34,7 @@ void Ghost::Start() {
     // Set initial ghost state
     setState(GhostState::local);
     // Start its animation
-    auto animationFile = "Objects/Ghost/Animations/Idle.ani";
-    animationController->Play(animationFile, 1, true);
+    animationController->Play("Objects/Ghost/Animations/Idle.ani", 1, true);
 
 }
 
