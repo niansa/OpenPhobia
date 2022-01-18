@@ -9,6 +9,7 @@
 #include <Urho3D/Physics/PhysicsWorld.h>
 #include <Urho3D/Math/RandomEngine.h>
 #include <Urho3D/Physics/KinematicCharacterController.h>
+#include <Urho3D/Graphics/AnimationController.h>
 #ifndef NDEBUG
 #   include <Urho3D/Input/Input.h>
 #endif
@@ -19,6 +20,7 @@ namespace Game {
 void Ghost::Start() {
     appearance = GetNode()->GetChild("Appearance");
     levelManager = GetGlobalVar("LevelManager").GetCustom<LevelManager*>();
+    animationController = appearance->GetChild("Model")->GetComponent<AnimationController>();
     // Create kinematic controller
     kinematicController = GetNode()->CreateComponent<KinematicCharacterController>();
     kinematicController->SetCollisionLayerAndMask(10, 1);
@@ -31,6 +33,10 @@ void Ghost::Start() {
     }
     // Set initial ghost state
     setState(GhostState::local);
+    // Start its animation
+    auto animationFile = "Objects/Ghost/Animations/Idle.ani";
+    animationController->Play(animationFile, 1, true);
+
 }
 
 void Ghost::FixedUpdate(float timeStep) {
@@ -66,9 +72,7 @@ void Ghost::FixedUpdate(float timeStep) {
     } else if (input->GetKeyDown(Key::KEY_R)) {
         setState(GhostState::reveal);
     } else if (input->GetKeyDown(Key::KEY_L)) {
-        if (rng.GetBool(0.025f*getAggression())) {
-            setState(GhostState::reveal);
-        }
+        setState(GhostState::local);
     }
 #   endif
     // Check if next step is to be executed

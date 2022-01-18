@@ -13,6 +13,7 @@ class Ghost;
 #include <Urho3D/Physics/RigidBody.h>
 #include <Urho3D/Physics/PhysicsWorld.h>
 #include <Urho3D/Physics/KinematicCharacterController.h>
+#include <Urho3D/Graphics/AnimationController.h>
 
 
 
@@ -32,6 +33,7 @@ class Ghost final : public LogicComponent {
     PhysicsWorld *physicsWorld;
     LevelManager *levelManager;
     Node *appearance;
+    AnimationController *animationController;
     GhostState nextState;
     float nextStateIn = NAN;
 
