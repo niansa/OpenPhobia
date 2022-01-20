@@ -27,6 +27,7 @@ public:
         auto renderSettings = renderPipeline->GetSettings();
         renderSettings.bloom_.enabled_ = true;
         renderSettings.sceneProcessor_.lightingMode_ = DirectLightingMode::Forward;
+        renderSettings.sceneProcessor_.maxPixelLights_ = 10;
         renderSettings.AdjustToSupported(app->GetContext());
         renderPipeline->SetSettings(renderSettings);
     }

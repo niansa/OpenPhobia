@@ -24,6 +24,12 @@ enum class GhostState {
     reveal
 };
 
+struct GhostAppearance {
+    Color color;
+};
+
+extern const eastl::vector<GhostAppearance> ghostAppearances;
+
 class Ghost final : public LogicComponent {
     URHO3D_OBJECT(Ghost, LogicComponent);
 
@@ -32,6 +38,7 @@ class Ghost final : public LogicComponent {
     KinematicCharacterController* kinematicController;
     PhysicsWorld *physicsWorld;
     LevelManager *levelManager;
+    const GhostAppearance *appearanceInfo;
     Node *appearance;
     AnimationController *animationController;
     GhostState nextState;

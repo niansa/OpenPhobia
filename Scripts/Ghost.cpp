@@ -10,6 +10,9 @@
 #include <Urho3D/Math/RandomEngine.h>
 #include <Urho3D/Physics/KinematicCharacterController.h>
 #include <Urho3D/Graphics/AnimationController.h>
+#include <Urho3D/Graphics/AnimatedModel.h>
+#include <Urho3D/Graphics/Material.h>
+#include <Urho3D/Math/Color.h>
 #ifndef NDEBUG
 #   include <Urho3D/Input/Input.h>
 #endif
@@ -17,6 +20,12 @@
 
 
 namespace Game {
+const eastl::vector<GhostAppearance> ghostAppearances =
+{
+    {Color(0.25f, 0.25f, 0.25f)},
+    {Color(0.358871f, 0.0f, 0.0999211f)}
+};
+
 void Ghost::Start() {
     appearance = GetNode()->GetChild("Appearance");
     levelManager = GetGlobalVar("LevelManager").GetCustom<LevelManager*>();
@@ -31,16 +40,28 @@ void Ghost::Start() {
             break;
         }
     }
+    // Get random ghost appearance
+    appearanceInfo = &(ghostAppearances[rng.GetUInt(0, ghostAppearances.size()-1)]);
+    // Set ghost appearance
+    eastl::vector<AnimatedModel*> models;
+    appearance->GetChild("Model")->GetComponents<AnimatedModel>(models);
+    for (auto model : models) {
+        Material *mat = model->GetMaterial();
+        mat->SetShaderParameter("MatEmissiveColor", Variant(appearanceInfo->color));
+    }
+    appearance->GetComponent<Light>()->SetColor(appearanceInfo->color);
     // Set initial ghost state
     setState(GhostState::local);
     // Start its animation
     animationController->Play("Objects/Ghost/Animations/Idle.ani", 1, true);
-
+#   ifndef NDEBUG
+    appearance->SetDeepEnabled(true);
+#   endif
 }
 
 void Ghost::FixedUpdate(float timeStep) {
     // Interact
-    if (appearance->IsEnabled() || rng.GetBool(0.0025f * getAggression())) {
+    if (state == GhostState::reveal || rng.GetBool(0.0025f * getAggression())) {
         // Get all bodies nearby
         eastl::vector<PhysicsRaycastResult> results;
         constexpr float range = 0.5f;
@@ -63,8 +84,8 @@ void Ghost::FixedUpdate(float timeStep) {
             }
         }
     }
-    // Debug keys
 #   ifndef NDEBUG
+    // Debug keys
     auto input = GetSubsystem<Input>();
     if (input->GetKeyDown(Key::KEY_M)) {
         setState(GhostState::roaming);
@@ -74,7 +95,7 @@ void Ghost::FixedUpdate(float timeStep) {
         setState(GhostState::local);
     }
 #   endif
-    // Check if next step is to be executed
+    // Timed state-dependent code
     if (stepTimer.GetMSec(false) > 200) {
         // State-dependent code
         switch (state) {
@@ -94,6 +115,13 @@ void Ghost::FixedUpdate(float timeStep) {
         // Potential state switch
         trySwitchState();
     }
+    // Untimed state-dependent code
+    if (appearance->IsEnabled()) {
+        auto light = appearance->GetComponent<Light>();
+        auto brightness = light->GetBrightness();
+        brightness += rng.GetFloat(-0.25f, 0.25f);
+        light->SetBrightness(Min(Max(brightness, 0.5f), 1.75f));
+    }
 }
 
 void Ghost::setState(GhostState nState) {
@@ -101,8 +129,10 @@ void Ghost::setState(GhostState nState) {
     state = nState;
     // Stop walking
     kinematicController->SetWalkDirection(Vector3::ZERO);
+#   ifdef NDEBUG
     // Set ghost visibility
     appearance->SetDeepEnabled(state == GhostState::reveal);
+#   endif
     // State dependent code
     switch (state) {
     case GhostState::local: {
