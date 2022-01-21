@@ -5,18 +5,18 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="1775" />
-	<attribute name="Next Replicated Component ID" value="1850" />
-	<attribute name="Next Local Node ID" value="16777238" />
-	<attribute name="Next Local Component ID" value="16777249" />
+	<attribute name="Next Replicated Node ID" value="1777" />
+	<attribute name="Next Replicated Component ID" value="1852" />
+	<attribute name="Next Local Node ID" value="16777256" />
+	<attribute name="Next Local Component ID" value="16777278" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="5.71867 2.00136 -5.6369" />
-		<attribute name="Camera Rotation" value="0.964027 0.159946 0.212292 0.00146248" />
+		<attribute name="Camera Position" value="7.01717 2.13645 -8.82422" />
+		<attribute name="Camera Rotation" value="0.547885 0.2323 -0.745814 0.299366" />
 	</component>
 	<component type="RenderPipeline" id="839" />
 	<node id="1671">
@@ -104,8 +104,8 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="1686">
-					<attribute name="Model" value="Model;Props/modern-furniture/Models/Kitchen1.mdl" />
-					<attribute name="Material" value="Material;Props/modern-furniture/Materials/Wood.xml;Props/modern-furniture/Materials/Marble.xml;Props/modern-furniture/Materials/SteelSilver.xml;Props/modern-furniture/Materials/CeramicWhite.xml" />
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/Kitchen.mdl" />
+					<attribute name="Material" value="Material;Materials/ambientgc/Wood006.xml;Materials/ambientgc/Marble016.xml;Props/modern-furniture/Materials/SteelSilver.xml;Materials/ambientgc/Marble006.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
 				<component type="CollisionShape" id="1717">
@@ -278,7 +278,7 @@
 				<attribute name="Variables" />
 				<component type="StaticModel" id="1688">
 					<attribute name="Model" value="Model;Props/modern-furniture/Models/Table.mdl" />
-					<attribute name="Material" value="Material;Props/modern-furniture/Materials/Wood.xml" />
+					<attribute name="Material" value="Material;Materials/ambientgc/Wood077.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
 				<component type="CollisionShape" id="1733">
@@ -300,7 +300,7 @@
 				<attribute name="Variables" />
 				<component type="StaticModel" id="1693">
 					<attribute name="Model" value="Model;Props/modern-furniture/Models/TV.mdl" />
-					<attribute name="Material" value="Material;Props/modern-furniture/Materials/SteelBlack.xml" />
+					<attribute name="Material" value="Material;Materials/Screen.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
 				<component type="CollisionShape" id="1735">
@@ -344,7 +344,7 @@
 				<attribute name="Variables" />
 				<component type="StaticModel" id="1700">
 					<attribute name="Model" value="Model;Props/modern-furniture/Models/Sofa2.mdl" />
-					<attribute name="Material" value="Material;Props/modern-furniture/Materials/FabricOrange.xml" />
+					<attribute name="Material" value="Material;Materials/ambientgc/Fabric063.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
 				<component type="CollisionShape" id="1739">
@@ -365,7 +365,7 @@
 					<attribute name="Variables" />
 					<component type="StaticModel" id="1703">
 						<attribute name="Model" value="Model;Props/modern-furniture/Models/Cushion1.mdl" />
-						<attribute name="Material" value="Material;Props/modern-furniture/Materials/FabricOrange.xml" />
+						<attribute name="Material" value="Material;Materials/ambientgc/Fabric063.xml" />
 						<attribute name="Cast Shadows" value="true" />
 					</component>
 					<component type="CollisionShape" id="1741">
@@ -446,7 +446,7 @@
 					<attribute name="Variables" />
 					<component type="StaticModel" id="1770">
 						<attribute name="Model" value="Model;Props/modern-furniture/Models/Monitor.mdl" />
-						<attribute name="Material" value="Material;Props/modern-furniture/Materials/PlasticBlack.xml" />
+						<attribute name="Material" value="Material;Materials/Screen.xml" />
 						<attribute name="Cast Shadows" value="true" />
 					</component>
 					<component type="CollisionShape" id="1787">
@@ -581,6 +581,7 @@
 				<component type="StaticModel" id="1708">
 					<attribute name="Model" value="Model;Props/modern-furniture/Models/Bed.mdl" />
 					<attribute name="Material" value="Material;Props/modern-furniture/Materials/FabricOrange.xml;Props/modern-furniture/Materials/Wood.xml" />
+					<attribute name="Cast Shadows" value="true" />
 				</component>
 				<component type="CollisionShape" id="1723">
 					<attribute name="Shape Type" value="TriangleMesh" />
@@ -601,6 +602,7 @@
 					<component type="StaticModel" id="1709">
 						<attribute name="Model" value="Model;Props/modern-furniture/Models/Cushion5.mdl" />
 						<attribute name="Material" value="Material;Props/modern-furniture/Materials/FabricGrey.xml" />
+						<attribute name="Cast Shadows" value="true" />
 					</component>
 					<component type="CollisionShape" id="1724">
 						<attribute name="Shape Type" value="ConvexHull" />
@@ -622,6 +624,7 @@
 					<component type="StaticModel" id="1710">
 						<attribute name="Model" value="Model;Props/modern-furniture/Models/Cushion5.mdl" />
 						<attribute name="Material" value="Material;Props/modern-furniture/Materials/FabricGrey.xml" />
+						<attribute name="Cast Shadows" value="true" />
 					</component>
 					<component type="CollisionShape" id="1729">
 						<attribute name="Shape Type" value="ConvexHull" />
@@ -642,7 +645,8 @@
 					<attribute name="Variables" />
 					<component type="StaticModel" id="1713">
 						<attribute name="Model" value="Model;Props/modern-furniture/Models/Quint.mdl" />
-						<attribute name="Material" value="Material;Props/modern-furniture/Materials/FabricGrey.xml;Props/modern-furniture/Materials/FabricFlower.xml" />
+						<attribute name="Material" value="Material;Props/modern-furniture/Materials/FabricGrey.xml;Materials/ambientgc/Fabric052.xml" />
+						<attribute name="Cast Shadows" value="true" />
 					</component>
 					<component type="CollisionShape" id="1731">
 						<attribute name="Shape Type" value="ConvexHull" />
@@ -664,7 +668,8 @@
 				<attribute name="Variables" />
 				<component type="StaticModel" id="1791">
 					<attribute name="Model" value="Model;Models/Cupboard.mdl" />
-					<attribute name="Material" value="Material;Props/modern-furniture/Materials/Wood.xml;Props/modern-furniture/Materials/SteelSilver.xml;Props/modern-furniture/Materials/Wood.xml;Props/modern-furniture/Materials/Wood.xml;Props/modern-furniture/Materials/SteelHair.xml;Props/modern-furniture/Materials/Wood.xml;Props/modern-furniture/Materials/SteelHair.xml" />
+					<attribute name="Material" value="Material;Materials/ambientgc/Wood077.xml;Props/modern-furniture/Materials/SteelSilver.xml;Materials/ambientgc/Wood077.xml;Materials/ambientgc/Wood077.xml;Props/modern-furniture/Materials/SteelHair.xml;Materials/ambientgc/Wood077.xml;Props/modern-furniture/Materials/SteelHair.xml" />
+					<attribute name="Cast Shadows" value="true" />
 				</component>
 				<component type="CollisionShape" id="1806">
 					<attribute name="Shape Type" value="ConvexHull" />
@@ -751,12 +756,12 @@
 				<attribute name="Name" value="" />
 				<attribute name="Tags" />
 				<attribute name="Position" value="4.15075 -0.0054236 -6.96041" />
-				<attribute name="Rotation" value="-0.707107 0 0.707107 -0" />
+				<attribute name="Rotation" value="0.707107 -0 -0.707107 0" />
 				<attribute name="Scale" value="0.01 0.005 0.01" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="1805">
 					<attribute name="Model" value="Model;Models/Cupboard.mdl" />
-					<attribute name="Material" value="Material;Props/modern-furniture/Materials/FabricOrange.xml;Props/modern-furniture/Materials/SteelSilver.xml;Props/modern-furniture/Materials/Wood.xml;Props/modern-furniture/Materials/Glass.xml;Props/modern-furniture/Materials/SteelHair.xml;Props/modern-furniture/Materials/Glass.xml;Props/modern-furniture/Materials/SteelHair.xml" />
+					<attribute name="Material" value="Material;Materials/ambientgc/Marble006.xml;Props/modern-furniture/Materials/SteelSilver.xml;Materials/ambientgc/Wood006.xml;Props/modern-furniture/Materials/Glass.xml;Props/modern-furniture/Materials/SteelHair.xml;Props/modern-furniture/Materials/Glass.xml;Props/modern-furniture/Materials/SteelHair.xml" />
 				</component>
 				<component type="CollisionShape" id="1808">
 					<attribute name="Shape Type" value="ConvexHull" />
@@ -793,7 +798,7 @@
 			</component>
 			<component type="StaticModel" id="1822">
 				<attribute name="Model" value="Model;Models/Plane.mdl" />
-				<attribute name="Material" value="Material;Props/modern-furniture/Materials/Wood.xml" />
+				<attribute name="Material" value="Material;Materials/ambientgc/Wood006.xml" />
 			</component>
 		</node>
 		<node id="1733">
@@ -1163,5 +1168,18 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 		</node>
+	</node>
+	<node id="1776">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="0.832421 0.554144 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Light" id="1851">
+			<attribute name="Is Enabled" value="false" />
+			<attribute name="Light Type" value="Directional" />
+		</component>
 	</node>
 </scene>
