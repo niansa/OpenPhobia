@@ -18,7 +18,7 @@ namespace Game {
 class Lightswitch final : public Useable {
     URHO3D_OBJECT(Lightswitch, Useable);
 
-    Light *lightBulb;
+    eastl::vector<Light*> lightBulbs;
 
 public:
     using Useable::Useable;

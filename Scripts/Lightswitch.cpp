@@ -5,7 +5,12 @@
 
 namespace Game {
 void Lightswitch::Start() {
-    lightBulb = GetNode()->GetParent()->GetChild("Lightbulb")->GetComponent<Light>();
+    for (auto node : GetNode()->GetParent()->GetChildren(true)) {
+        if (node->GetName() != "Lightbulb") {
+            continue;
+        }
+        lightBulbs.push_back(node->GetComponent<Light>());
+    }
     if (GetNode()->HasTag("DefaultOn")) {
         turnedOn = true;
         TurnOn();
@@ -15,12 +20,16 @@ void Lightswitch::Start() {
 }
 
 void Lightswitch::TurnOn() {
-    //GetNode()->SetRotation(Quaternion(Vector3{0, -90, 0}));
-    lightBulb->SetEnabled(true);
+    for (auto lightBulb : lightBulbs) {
+        //GetNode()->SetRotation(Quaternion(Vector3{0, -90, 0}));
+        lightBulb->SetEnabled(true);
+    }
 }
 
 void Lightswitch::TurnOff() {
-    lightBulb->SetEnabled(false);
-    //GetNode()->SetRotation(Quaternion(Vector3{0, -90, 180}));
+    for (auto lightBulb : lightBulbs) {
+        lightBulb->SetEnabled(false);
+        //GetNode()->SetRotation(Quaternion(Vector3{0, -90, 180}));
+    }
 }
 }

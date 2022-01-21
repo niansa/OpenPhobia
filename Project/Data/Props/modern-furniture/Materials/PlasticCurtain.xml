@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<material>
+	<technique name="Techniques/DiffAlpha.xml" />
+	<texture unit="diffuse" name="Props/modern-furniture/Textures/PlasticCurtain.png" />
+	<parameter name="MatDiffColor" value="0.8 0.8 0.8 0.422727" />
+	<parameter name="MatSpecColor" value="0.376364 0.376364 0.376364 66.9421" />
+	<parameter name="MatEmissiveColor" value="0 0 0 1" />
+</material>

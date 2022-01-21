@@ -19,7 +19,7 @@ class LevelManager;
 
 namespace Game {
 class LevelManager : public SceneManager {
-    eastl::string level = "OldHouse";
+    eastl::string level = "testmap";
 
 public:
     using SceneManager::SceneManager;
@@ -30,6 +30,7 @@ public:
         auto renderPipeline = scene->GetOrCreateComponent<RenderPipeline>();
         auto renderSettings = renderPipeline->GetSettings();
         renderSettings.bloom_.enabled_ = true;
+        renderSettings.bloom_.intensity_ = 2.f;
         renderSettings.sceneProcessor_.lightingMode_ = DirectLightingMode::Forward;
         renderSettings.sceneProcessor_.maxPixelLights_ = 10;
         renderSettings.AdjustToSupported(app->GetContext());

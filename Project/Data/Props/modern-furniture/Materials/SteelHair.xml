@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<material>
+	<technique name="Techniques/Diff.xml" />
+	<texture unit="diffuse" name="Props/modern-furniture/Textures/SteelHair.png" />
+	<parameter name="MatDiffColor" value="0.911393 0.911393 0.911393 1" />
+	<parameter name="MatSpecColor" value="0.268301 0.268301 0.268301 2.3187" />
+	<parameter name="MatEmissiveColor" value="0 0 0 1" />
+</material>

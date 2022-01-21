@@ -7,8 +7,8 @@
 	<attribute name="Elapsed Time" value="0.000000" />
 	<attribute name="Next Replicated Node ID" value="52" />
 	<attribute name="Next Replicated Component ID" value="36" />
-	<attribute name="Next Local Node ID" value="16777242" />
-	<attribute name="Next Local Component ID" value="16777256" />
+	<attribute name="Next Local Node ID" value="16777244" />
+	<attribute name="Next Local Component ID" value="16777259" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
@@ -50,6 +50,7 @@
 		<component type="CollisionShape" id="21">
 			<attribute name="Size" value="0.1 0.15 0.02" />
 			<attribute name="Offset Position" value="0 0.04 0" />
+			<attribute name="Collision Margin" value="0.000000" />
 		</component>
 		<component type="RigidBody" id="23">
 			<attribute name="Mass" value="1.000000" />

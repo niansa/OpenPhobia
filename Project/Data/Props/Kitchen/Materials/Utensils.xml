@@ -4,9 +4,7 @@
 	<texture unit="diffuse" name="Props/Kitchen/Textures/Utensils_baseColor.png" />
 	<texture unit="normal" name="Props/Kitchen/Textures/Utensils_normal.png" />
 	<texture unit="emissive" name="Props/Kitchen/Textures/Utensils_metallicRoughness.png" />
-	<parameter name="MatDiffColor" value="1 1 1 1" />
-	<parameter name="MatSpecColor" value="1 1 1 0" />
-	<parameter name="MatEmissiveColor" value="0 0 0 1" />
-	<cull value="none" />
-	<shadowcull value="none" />
+    	<shader vsdefines="PBR " psdefines="PBR " />
+	<parameter name="Metallic" value="1.000000" />
+	<parameter name="Roughness" value="0.400000" />
 </material>

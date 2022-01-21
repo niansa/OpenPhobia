@@ -1,0 +1,1167 @@
+<?xml version="1.0"?>
+<scene id="1">
+	<attribute name="Name" value="" />
+	<attribute name="Time Scale" value="1.000000" />
+	<attribute name="Smoothing Constant" value="50.000000" />
+	<attribute name="Snap Threshold" value="5.000000" />
+	<attribute name="Elapsed Time" value="0.000000" />
+	<attribute name="Next Replicated Node ID" value="1775" />
+	<attribute name="Next Replicated Component ID" value="1850" />
+	<attribute name="Next Local Node ID" value="16777238" />
+	<attribute name="Next Local Component ID" value="16777249" />
+	<attribute name="Variables" />
+	<attribute name="Variable Names" value="" />
+	<attribute name="Lightmaps" value="Texture2D" />
+	<component type="PhysicsWorld" id="1" />
+	<component type="Octree" id="2" />
+	<component type="EditorSceneSettings" id="16777216">
+		<attribute name="Camera Position" value="5.71867 2.00136 -5.6369" />
+		<attribute name="Camera Rotation" value="0.964027 0.159946 0.212292 0.00146248" />
+	</component>
+	<component type="RenderPipeline" id="839" />
+	<node id="1671">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Props" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<node id="1677">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Kitchen" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="0 0 0" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<node id="1693">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Lightsystem" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="0 0 0" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<node id="1709">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="Ceiling" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="0 0 0" />
+					<attribute name="Rotation" value="1 0 0 0" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<node id="1694">
+						<attribute name="Is Enabled" value="true" />
+						<attribute name="Name" value="Lightbulb" />
+						<attribute name="Tags" />
+						<attribute name="Position" value="5.65425 2.04918 -4.05296" />
+						<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+						<attribute name="Scale" value="1 1 1" />
+						<attribute name="Variables" />
+						<component type="Light" id="1692">
+							<attribute name="Light Type" value="Spot" />
+							<attribute name="Spot FOV" value="160.000000" />
+							<attribute name="Cast Shadows" value="true" />
+						</component>
+					</node>
+				</node>
+			</node>
+			<node id="1681">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="7.31782 0.975882 -2.30091" />
+				<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="1681">
+					<attribute name="Model" value="Model;Props/Kitchen/Models/SM_Pot_01_Coockware_0.mdl" />
+					<attribute name="Material" value="Material;Props/Kitchen/Materials/Coockware_Dirty.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="1682">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="7.32419 0.96531 -2.04885" />
+				<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="1682">
+					<attribute name="Model" value="Model;Props/Kitchen/Models/SM_Pot_04_Coockware_0.mdl" />
+					<attribute name="Material" value="Material;Props/Kitchen/Materials/Coockware_Dirty.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="1686">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="4.66033 -0.00434461 -2.2007" />
+				<attribute name="Rotation" value="-3.09086e-08 -3.09086e-08 -0.707107 0.707107" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="1686">
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/Kitchen1.mdl" />
+					<attribute name="Material" value="Material;Props/modern-furniture/Materials/Wood.xml;Props/modern-furniture/Materials/Marble.xml;Props/modern-furniture/Materials/SteelSilver.xml;Props/modern-furniture/Materials/CeramicWhite.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+				<component type="CollisionShape" id="1717">
+					<attribute name="Size" value="3.4 0.75 0.9" />
+					<attribute name="Offset Position" value="-0.75 0 -0.465" />
+				</component>
+				<component type="RigidBody" id="1718">
+					<attribute name="Physics Rotation" value="3.09086e-08 3.09086e-08 0.707107 -0.707107" />
+					<attribute name="Physics Position" value="4.66033 -0.00434461 -2.2007" />
+				</component>
+			</node>
+			<node id="1687">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="7.56002 -0.00434461 -2.27323" />
+				<attribute name="Rotation" value="-3.09086e-08 -3.09086e-08 -0.707107 0.707107" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="1687">
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/Baker.mdl" />
+					<attribute name="Material" value="Material;Props/modern-furniture/Materials/SteelSilver.xml;Props/modern-furniture/Materials/PlasticBlack.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+				<component type="CollisionShape" id="1719">
+					<attribute name="Shape Type" value="ConvexHull" />
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/Baker.mdl" />
+				</component>
+				<component type="RigidBody" id="1720">
+					<attribute name="Physics Rotation" value="3.09086e-08 3.09086e-08 0.707107 -0.707107" />
+					<attribute name="Physics Position" value="7.56002 -0.00434461 -2.27323" />
+				</component>
+			</node>
+			<node id="1690">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="7.38516 -0.00434465 -5.70193" />
+				<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="1689">
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/Fridge.mdl" />
+					<attribute name="Material" value="Material;Props/modern-furniture/Materials/SteelHair.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+				<component type="CollisionShape" id="1721">
+					<attribute name="Shape Type" value="ConvexHull" />
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/Fridge.mdl" />
+				</component>
+				<component type="RigidBody" id="1722">
+					<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Physics Position" value="7.38516 -0.00434465 -5.70193" />
+				</component>
+			</node>
+			<node id="1691">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="5.62292 2.31285 -3.59806" />
+				<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="1690">
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/Light3.mdl" />
+					<attribute name="Material" value="Material;Props/modern-furniture/Materials/Glass.xml;Props/modern-furniture/Materials/LightsWhite.xml" />
+				</component>
+			</node>
+		</node>
+		<node id="1689">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Living Room" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="0 0 0" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<node id="1707">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Lightsystem" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="0 0 0" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<node id="1711">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="0 0 0" />
+					<attribute name="Rotation" value="1 0 0 0" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<node id="1708">
+						<attribute name="Is Enabled" value="true" />
+						<attribute name="Name" value="Lightbulb" />
+						<attribute name="Tags" />
+						<attribute name="Position" value="17.9955 1.49424 -4.12511" />
+						<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+						<attribute name="Scale" value="1 1 1" />
+						<attribute name="Variables" />
+						<component type="Light" id="1705">
+							<attribute name="Light Type" value="Spot" />
+							<attribute name="Spot FOV" value="75.099998" />
+							<attribute name="Cast Shadows" value="true" />
+						</component>
+					</node>
+					<node id="1706">
+						<attribute name="Is Enabled" value="true" />
+						<attribute name="Name" value="Lightswitch" />
+						<attribute name="Tags">
+							<string value="Scripted" />
+							<string value="Useable" />
+						</attribute>
+						<attribute name="Position" value="17.9965 -0.00434458 -4.12388" />
+						<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+						<attribute name="Scale" value="1 1 1" />
+						<attribute name="Variables" />
+						<component type="StaticModel" id="1704">
+							<attribute name="Model" value="Model;Props/modern-furniture/Models/Lamp4.mdl" />
+							<attribute name="Material" value="Material;Props/modern-furniture/Materials/PlasticCurtain.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
+						</component>
+						<component type="CollisionShape" id="1743">
+							<attribute name="Shape Type" value="Cylinder" />
+							<attribute name="Size" value="0.55 1.7 0.55" />
+							<attribute name="Offset Position" value="0 0 -0.85" />
+							<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+						</component>
+						<component type="RigidBody" id="1744">
+							<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+							<attribute name="Physics Position" value="17.9965 -0.00434458 -4.12388" />
+						</component>
+					</node>
+					<node id="1712">
+						<attribute name="Is Enabled" value="true" />
+						<attribute name="Name" value="Lightbulb" />
+						<attribute name="Tags" />
+						<attribute name="Position" value="17.9955 1.32973 -4.12511" />
+						<attribute name="Rotation" value="-0.707107 0.707107 -0 -0" />
+						<attribute name="Scale" value="1 1 1" />
+						<attribute name="Variables" />
+						<component type="Light" id="1706">
+							<attribute name="Light Type" value="Spot" />
+							<attribute name="Spot FOV" value="60.000000" />
+							<attribute name="Cast Shadows" value="true" />
+						</component>
+					</node>
+					<node id="1731">
+						<attribute name="Is Enabled" value="true" />
+						<attribute name="Name" value="Lightbulb" />
+						<attribute name="Tags" />
+						<attribute name="Position" value="17.9955 1.32973 -4.12511" />
+						<attribute name="Rotation" value="-0.707107 0.707107 -0 -0" />
+						<attribute name="Scale" value="1 1 1" />
+						<attribute name="Variables" />
+						<component type="Light" id="1752">
+							<attribute name="Range" value="4.000000" />
+							<attribute name="Cast Shadows" value="true" />
+						</component>
+					</node>
+				</node>
+			</node>
+			<node id="1688">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="15.9001 -0.00434459 -3.7032" />
+				<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="1688">
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/Table.mdl" />
+					<attribute name="Material" value="Material;Props/modern-furniture/Materials/Wood.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+				<component type="CollisionShape" id="1733">
+					<attribute name="Shape Type" value="ConvexHull" />
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/Table.mdl" />
+				</component>
+				<component type="RigidBody" id="1734">
+					<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Physics Position" value="15.9001 -0.00434459 -3.7032" />
+				</component>
+			</node>
+			<node id="1695">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="15.6796 0.888326 -6.39437" />
+				<attribute name="Rotation" value="0.122788 0.122788 -0.696364 0.696364" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="1693">
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/TV.mdl" />
+					<attribute name="Material" value="Material;Props/modern-furniture/Materials/SteelBlack.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+				<component type="CollisionShape" id="1735">
+					<attribute name="Shape Type" value="TriangleMesh" />
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/TV.mdl" />
+				</component>
+				<component type="RigidBody" id="1736">
+					<attribute name="Physics Rotation" value="-0.122788 -0.122788 0.696364 -0.696364" />
+					<attribute name="Physics Position" value="15.6796 0.888326 -6.39437" />
+				</component>
+			</node>
+			<node id="1701">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="15.7261 -7.50479e-08 -6.4858" />
+				<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="1699">
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/Desk.mdl" />
+					<attribute name="Material" value="Material;Props/modern-furniture/Materials/Glass.xml;Props/modern-furniture/Materials/Wood.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+				<component type="CollisionShape" id="1737">
+					<attribute name="Size" value="2.5 0.9 0.035" />
+					<attribute name="Offset Position" value="0 0 -0.87" />
+				</component>
+				<component type="RigidBody" id="1738">
+					<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Physics Position" value="15.7261 -1.19209e-07 -6.4858" />
+				</component>
+			</node>
+			<node id="1702">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="16.4605 -0.00434437 -2.34" />
+				<attribute name="Rotation" value="-3.09086e-08 -3.09086e-08 -0.707107 0.707107" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="1700">
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/Sofa2.mdl" />
+					<attribute name="Material" value="Material;Props/modern-furniture/Materials/FabricOrange.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+				<component type="CollisionShape" id="1739">
+					<attribute name="Shape Type" value="TriangleMesh" />
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/Sofa2.mdl" />
+				</component>
+				<component type="RigidBody" id="1740">
+					<attribute name="Physics Rotation" value="3.09086e-08 3.09086e-08 0.707107 -0.707107" />
+					<attribute name="Physics Position" value="16.4605 -0.00434437 -2.34" />
+				</component>
+				<node id="1705">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="-1.33728 -0.0227841 -0.432691" />
+					<attribute name="Rotation" value="-0.773967 -0.479571 0.223677 0.347766" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<component type="StaticModel" id="1703">
+						<attribute name="Model" value="Model;Props/modern-furniture/Models/Cushion1.mdl" />
+						<attribute name="Material" value="Material;Props/modern-furniture/Materials/FabricOrange.xml" />
+						<attribute name="Cast Shadows" value="true" />
+					</component>
+					<component type="CollisionShape" id="1741">
+						<attribute name="Shape Type" value="ConvexHull" />
+						<attribute name="Model" value="Model;Props/modern-furniture/Models/Cushion1.mdl" />
+					</component>
+					<component type="RigidBody" id="1742">
+						<attribute name="Physics Rotation" value="0.0877448 0.404074 -0.208171 0.886392" />
+						<attribute name="Physics Position" value="17.7978 0.428347 -2.31722" />
+					</component>
+				</node>
+			</node>
+			<node id="1714">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="15.7142 0.00283719 -5.23336" />
+				<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Scale" value="1.7 1.4 0.005" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="1707">
+					<attribute name="Model" value="Model;Models/Box.mdl" />
+					<attribute name="Material" value="Material;Props/modern-furniture/Materials/FabricFlower.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="1741">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="0 0 0" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<node id="1740">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="13.3522 -9.16442e-08 -2.34139" />
+					<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<component type="StaticModel" id="1766">
+						<attribute name="Model" value="Model;Props/modern-furniture/Models/Desk.mdl" />
+						<attribute name="Material" value="Material;Props/modern-furniture/Materials/Wood.xml;Props/modern-furniture/Materials/Wood.xml" />
+						<attribute name="Cast Shadows" value="true" />
+					</component>
+					<component type="CollisionShape" id="1767">
+						<attribute name="Size" value="2.5 0.9 0.035" />
+						<attribute name="Offset Position" value="0 0 -0.87" />
+					</component>
+					<component type="RigidBody" id="1768">
+						<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+						<attribute name="Physics Position" value="13.3522 -1.19209e-07 -2.34139" />
+					</component>
+				</node>
+				<node id="1739">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="13.5129 0 -2.91464" />
+					<attribute name="Rotation" value="0.245784 0.245783 0.663014 -0.663014" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<component type="StaticModel" id="1765">
+						<attribute name="Model" value="Model;Props/modern-furniture/Models/Chair1.mdl" />
+						<attribute name="Material" value="Material;Props/modern-furniture/Materials/FabricGrey.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
+						<attribute name="Cast Shadows" value="true" />
+					</component>
+				</node>
+				<node id="1742">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="13.2669 0.885833 -2.07942" />
+					<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<component type="StaticModel" id="1770">
+						<attribute name="Model" value="Model;Props/modern-furniture/Models/Monitor.mdl" />
+						<attribute name="Material" value="Material;Props/modern-furniture/Materials/PlasticBlack.xml" />
+						<attribute name="Cast Shadows" value="true" />
+					</component>
+					<component type="CollisionShape" id="1787">
+						<attribute name="Shape Type" value="ConvexHull" />
+						<attribute name="Model" value="Model;Props/modern-furniture/Models/Monitor.mdl" />
+					</component>
+					<component type="RigidBody" id="1788">
+						<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+						<attribute name="Physics Position" value="13.2669 0.885833 -2.07942" />
+					</component>
+				</node>
+				<node id="1743">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="13.2669 0.891534 -2.45756" />
+					<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<component type="StaticModel" id="1771">
+						<attribute name="Model" value="Model;Props/modern-furniture/Models/Keyboard.mdl" />
+						<attribute name="Material" value="Material;Props/modern-furniture/Materials/Keyboard.xml" />
+					</component>
+				</node>
+				<node id="1744">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="12.7814 0.891534 -2.50234" />
+					<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<component type="StaticModel" id="1772">
+						<attribute name="Model" value="Model;Props/modern-furniture/Models/Mouse.mdl" />
+						<attribute name="Material" value="Material;Props/modern-furniture/Materials/PlasticBlack.xml" />
+						<attribute name="Cast Shadows" value="true" />
+					</component>
+					<component type="CollisionShape" id="1789">
+						<attribute name="Shape Type" value="ConvexHull" />
+						<attribute name="Model" value="Model;Props/modern-furniture/Models/Mouse.mdl" />
+					</component>
+					<component type="RigidBody" id="1790">
+						<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+						<attribute name="Physics Position" value="12.7814 0.891534 -2.50234" />
+					</component>
+				</node>
+			</node>
+			<node id="1749">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="13.2497 0.585175 -6.76191" />
+				<attribute name="Rotation" value="-4.37114e-08 2.03547e-17 -1 -4.65661e-10" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="1777">
+					<attribute name="Model" value="Model;Models/Piano.mdl" />
+					<attribute name="Material" value="Material;Models/Piano/Materials/Piano_New_mat.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+				<component type="CollisionShape" id="1783">
+					<attribute name="Shape Type" value="TriangleMesh" />
+					<attribute name="Model" value="Model;Models/Piano.mdl" />
+				</component>
+				<component type="RigidBody" id="1784">
+					<attribute name="Physics Rotation" value="4.37114e-08 -2.03547e-17 1 4.65661e-10" />
+					<attribute name="Physics Position" value="13.2497 0.585175 -6.76191" />
+				</component>
+			</node>
+			<node id="1750">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="13.1935 -0.000923302 -6.0514" />
+				<attribute name="Rotation" value="-4.37114e-08 2.03547e-17 -1 -4.65661e-10" />
+				<attribute name="Scale" value="0.002 0.002 0.002" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="1780">
+					<attribute name="Model" value="Model;Models/PianoChair.mdl" />
+					<attribute name="Material" value="Material;Models/PianoChair/Materials/unwrapChekcerShader.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="1753">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="17.6756 -0.020628 -6.74093" />
+				<attribute name="Rotation" value="-4.37114e-08 0 1 -0" />
+				<attribute name="Scale" value="0.004 0.004 0.004" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="1797">
+					<attribute name="Model" value="Model;Models/BooksCabinet.mdl" />
+					<attribute name="Material" value="Material;Models/BooksCabinet/Materials/Books_cabinet.xml;Models/BooksCabinet/Materials/Books.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+				<component type="CollisionShape" id="1800">
+					<attribute name="Shape Type" value="ConvexHull" />
+					<attribute name="Model" value="Model;Models/BooksCabinet.mdl" />
+				</component>
+				<component type="RigidBody" id="1804">
+					<attribute name="Physics Rotation" value="-4.37114e-08 0 1 0" />
+					<attribute name="Physics Position" value="17.6756 -0.020628 -6.74093" />
+				</component>
+			</node>
+		</node>
+		<node id="1716">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Bedroom" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="0 0 0" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<node id="1717">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Lightsystem" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="0 0 0" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+			</node>
+			<node id="1718">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="4.8359 0 -9.4198" />
+				<attribute name="Rotation" value="-0.5 -0.5 -0.5 0.5" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="1708">
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/Bed.mdl" />
+					<attribute name="Material" value="Material;Props/modern-furniture/Materials/FabricOrange.xml;Props/modern-furniture/Materials/Wood.xml" />
+				</component>
+				<component type="CollisionShape" id="1723">
+					<attribute name="Shape Type" value="TriangleMesh" />
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/Bed.mdl" />
+				</component>
+				<component type="RigidBody" id="1725">
+					<attribute name="Physics Rotation" value="0.5 0.5 0.5 -0.5" />
+					<attribute name="Physics Position" value="4.8359 0 -9.4198" />
+				</component>
+				<node id="1719">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="0.331017 -0.805008 -0.531808" />
+					<attribute name="Rotation" value="1 0 0 0" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<component type="StaticModel" id="1709">
+						<attribute name="Model" value="Model;Props/modern-furniture/Models/Cushion5.mdl" />
+						<attribute name="Material" value="Material;Props/modern-furniture/Materials/FabricGrey.xml" />
+					</component>
+					<component type="CollisionShape" id="1724">
+						<attribute name="Shape Type" value="ConvexHull" />
+						<attribute name="Model" value="Model;Props/modern-furniture/Models/Cushion5.mdl" />
+					</component>
+					<component type="RigidBody" id="1726">
+						<attribute name="Physics Rotation" value="0.5 0.5 0.5 -0.5" />
+						<attribute name="Physics Position" value="4.03089 0.531808 -9.75081" />
+					</component>
+				</node>
+				<node id="1720">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="-0.317391 -0.805008 -0.531808" />
+					<attribute name="Rotation" value="1 0 0 0" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<component type="StaticModel" id="1710">
+						<attribute name="Model" value="Model;Props/modern-furniture/Models/Cushion5.mdl" />
+						<attribute name="Material" value="Material;Props/modern-furniture/Materials/FabricGrey.xml" />
+					</component>
+					<component type="CollisionShape" id="1729">
+						<attribute name="Shape Type" value="ConvexHull" />
+						<attribute name="Model" value="Model;Props/modern-furniture/Models/Cushion5.mdl" />
+					</component>
+					<component type="RigidBody" id="1730">
+						<attribute name="Physics Rotation" value="0.5 0.5 0.5 -0.5" />
+						<attribute name="Physics Position" value="4.03089 0.531808 -9.10241" />
+					</component>
+				</node>
+				<node id="1723">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="0.0288081 0.249716 -0.517843" />
+					<attribute name="Rotation" value="1 0 0 0" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<component type="StaticModel" id="1713">
+						<attribute name="Model" value="Model;Props/modern-furniture/Models/Quint.mdl" />
+						<attribute name="Material" value="Material;Props/modern-furniture/Materials/FabricGrey.xml;Props/modern-furniture/Materials/FabricFlower.xml" />
+					</component>
+					<component type="CollisionShape" id="1731">
+						<attribute name="Shape Type" value="ConvexHull" />
+						<attribute name="Model" value="Model;Props/modern-furniture/Models/Quint.mdl" />
+					</component>
+					<component type="RigidBody" id="1732">
+						<attribute name="Physics Rotation" value="0.5 0.5 0.5 -0.5" />
+						<attribute name="Physics Position" value="5.08562 0.517843 -9.44861" />
+					</component>
+				</node>
+			</node>
+			<node id="1751">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="7.56112 -0.0054236 -10.0021" />
+				<attribute name="Rotation" value="0.707107 0 0.707107 0" />
+				<attribute name="Scale" value="0.02 0.02 0.02" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="1791">
+					<attribute name="Model" value="Model;Models/Cupboard.mdl" />
+					<attribute name="Material" value="Material;Props/modern-furniture/Materials/Wood.xml;Props/modern-furniture/Materials/SteelSilver.xml;Props/modern-furniture/Materials/Wood.xml;Props/modern-furniture/Materials/Wood.xml;Props/modern-furniture/Materials/SteelHair.xml;Props/modern-furniture/Materials/Wood.xml;Props/modern-furniture/Materials/SteelHair.xml" />
+				</component>
+				<component type="CollisionShape" id="1806">
+					<attribute name="Shape Type" value="ConvexHull" />
+					<attribute name="Model" value="Model;Models/Cupboard.mdl" />
+				</component>
+				<component type="RigidBody" id="1807">
+					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="7.56112 -0.0054236 -10.0021" />
+				</component>
+			</node>
+		</node>
+		<node id="1724">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Bathroom" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="0 0 0" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<node id="1725">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Lightsystem" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="0 0 0" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+			</node>
+			<node id="1726">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="10.115 0 -2.40061" />
+				<attribute name="Rotation" value="-3.09086e-08 -3.09086e-08 -0.707107 0.707107" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="1715">
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/Toilet.mdl" />
+					<attribute name="Material" value="Material;Props/modern-furniture/Materials/CeramicWhite.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+				<component type="CollisionShape" id="1745">
+					<attribute name="Shape Type" value="TriangleMesh" />
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/Toilet.mdl" />
+				</component>
+				<component type="RigidBody" id="1746">
+					<attribute name="Physics Rotation" value="3.09086e-08 3.09086e-08 0.707107 -0.707107" />
+					<attribute name="Physics Position" value="10.115 0 -2.40061" />
+				</component>
+			</node>
+			<node id="1727">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="11.6305 0 -2.18127" />
+				<attribute name="Rotation" value="0.5 0.5 -0.5 0.5" />
+				<attribute name="Scale" value="0.5 0.5 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="1716">
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/Shower.mdl" />
+					<attribute name="Material" value="Material;Props/modern-furniture/Materials/CeramicWhite.xml;Props/modern-furniture/Materials/SteelSilver.xml;Props/modern-furniture/Materials/PlasticCurtain.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+				<component type="CollisionShape" id="1747">
+					<attribute name="Shape Type" value="ConvexHull" />
+					<attribute name="Model" value="Model;Props/modern-furniture/Models/Shower.mdl" />
+				</component>
+				<component type="RigidBody" id="1748">
+					<attribute name="Physics Rotation" value="0.5 0.5 -0.5 0.5" />
+					<attribute name="Physics Position" value="11.6305 0 -2.18127" />
+				</component>
+			</node>
+		</node>
+		<node id="1755">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Hallway" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="0 0 0" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<node id="1756">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="4.15075 -0.0054236 -6.96041" />
+				<attribute name="Rotation" value="-0.707107 0 0.707107 -0" />
+				<attribute name="Scale" value="0.01 0.005 0.01" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="1805">
+					<attribute name="Model" value="Model;Models/Cupboard.mdl" />
+					<attribute name="Material" value="Material;Props/modern-furniture/Materials/FabricOrange.xml;Props/modern-furniture/Materials/SteelSilver.xml;Props/modern-furniture/Materials/Wood.xml;Props/modern-furniture/Materials/Glass.xml;Props/modern-furniture/Materials/SteelHair.xml;Props/modern-furniture/Materials/Glass.xml;Props/modern-furniture/Materials/SteelHair.xml" />
+				</component>
+				<component type="CollisionShape" id="1808">
+					<attribute name="Shape Type" value="ConvexHull" />
+					<attribute name="Model" value="Model;Models/Cupboard.mdl" />
+				</component>
+				<component type="RigidBody" id="1809">
+					<attribute name="Physics Rotation" value="0.707107 0 -0.707107 0" />
+					<attribute name="Physics Position" value="4.15075 -0.0054236 -6.96041" />
+				</component>
+			</node>
+		</node>
+	</node>
+	<node id="1728">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Walls" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<node id="1732">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Floor" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="10.9973 -9.51562e-07 -6.36688" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="14.7 1 9.2" />
+			<attribute name="Variables" />
+			<component type="CollisionShape" id="1753">
+				<attribute name="Shape Type" value="StaticPlane" />
+			</component>
+			<component type="RigidBody" id="1754">
+				<attribute name="Physics Position" value="10.9973 -9.51562e-07 -6.36688" />
+			</component>
+			<component type="StaticModel" id="1822">
+				<attribute name="Model" value="Model;Models/Plane.mdl" />
+				<attribute name="Material" value="Material;Props/modern-furniture/Materials/Wood.xml" />
+			</component>
+		</node>
+		<node id="1733">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Outside" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="0 0 0" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<node id="1734">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="6.33208 1.25 -10.948" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="5.4 2.5 0.1" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="1755" />
+				<component type="RigidBody" id="1756">
+					<attribute name="Physics Position" value="6.33208 1.25 -10.948" />
+				</component>
+				<component type="StaticModel" id="1844">
+					<attribute name="Model" value="Model;Models/Box.mdl" />
+					<attribute name="Material" value="Material;" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="1735">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="14.175 1.25 -10.948" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="8.3 2.5 0.1" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="1757" />
+				<component type="RigidBody" id="1758">
+					<attribute name="Physics Position" value="14.175 1.25 -10.948" />
+				</component>
+				<component type="StaticModel" id="1845">
+					<attribute name="Model" value="Model;Models/Box.mdl" />
+					<attribute name="Material" value="Material;" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="1736">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="11.0047 1.25 -1.795" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="14.7 2.5 0.1" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="1759" />
+				<component type="RigidBody" id="1760">
+					<attribute name="Physics Position" value="11.0047 1.25 -1.795" />
+				</component>
+				<component type="StaticModel" id="1846">
+					<attribute name="Model" value="Model;Models/Box.mdl" />
+					<attribute name="Material" value="Material;" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="1737">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="3.68302 1.25 -6.34567" />
+				<attribute name="Rotation" value="0.707107 0 0.707107 0" />
+				<attribute name="Scale" value="9.20001 2.5 0.1" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="1761" />
+				<component type="RigidBody" id="1762">
+					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="3.68302 1.25 -6.34567" />
+				</component>
+				<component type="StaticModel" id="1847">
+					<attribute name="Model" value="Model;Models/Box.mdl" />
+					<attribute name="Material" value="Material;" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="1738">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="18.3034 1.25 -6.39544" />
+				<attribute name="Rotation" value="0.707107 0 0.707107 0" />
+				<attribute name="Scale" value="9.2 2.5 0.1" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="1763" />
+				<component type="RigidBody" id="1764">
+					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="18.3034 1.25 -6.39544" />
+				</component>
+				<component type="StaticModel" id="1848">
+					<attribute name="Model" value="Model;Models/Box.mdl" />
+					<attribute name="Material" value="Material;" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+		</node>
+		<node id="1761">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Inside" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="0 0 0" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<node id="1762">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="6.66537 1.21013 -6.03543" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="2.7 2.5 0.1" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="1810" />
+				<component type="RigidBody" id="1811">
+					<attribute name="Physics Position" value="6.66537 1.21013 -6.03543" />
+				</component>
+				<component type="StaticModel" id="1818">
+					<attribute name="Model" value="Model;Models/Box.mdl" />
+					<attribute name="Material" value="Material;" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="1763">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="5.47449 1.21013 -7.93832" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="3.5 2.5 0.1" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="1812" />
+				<component type="RigidBody" id="1813">
+					<attribute name="Physics Position" value="5.47449 1.21013 -7.93832" />
+				</component>
+				<component type="StaticModel" id="1819">
+					<attribute name="Model" value="Model;Models/Box.mdl" />
+					<attribute name="Material" value="Material;" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="1764">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="8.3338 1.21013 -7.93962" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="0.3 2.5 0.1" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="1814" />
+				<component type="RigidBody" id="1815">
+					<attribute name="Physics Position" value="8.3338 1.21013 -7.93962" />
+				</component>
+				<component type="StaticModel" id="1820">
+					<attribute name="Model" value="Model;Models/Box.mdl" />
+					<attribute name="Material" value="Material;" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="1765">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="4.04173 1.21013 -6.04022" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="0.8 2.5 0.1" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="1816" />
+				<component type="RigidBody" id="1817">
+					<attribute name="Physics Position" value="4.04173 1.21013 -6.04022" />
+				</component>
+				<component type="StaticModel" id="1821">
+					<attribute name="Model" value="Model;Models/Box.mdl" />
+					<attribute name="Material" value="Material;" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="1766">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="8.48171 1.21013 -9.43975" />
+				<attribute name="Rotation" value="0.707107 0 0.707107 0" />
+				<attribute name="Scale" value="3.1 2.5 0.1" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="1823" />
+				<component type="RigidBody" id="1824">
+					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="8.48171 1.21013 -9.43975" />
+				</component>
+				<component type="StaticModel" id="1825">
+					<attribute name="Model" value="Model;Models/Box.mdl" />
+					<attribute name="Material" value="Material;" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="1767">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="8.00408 1.21013 -3.93668" />
+				<attribute name="Rotation" value="0.707107 0 0.707107 0" />
+				<attribute name="Scale" value="4.3 2.5 0.1" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="1826" />
+				<component type="RigidBody" id="1827">
+					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="8.00408 1.21013 -3.93669" />
+				</component>
+				<component type="StaticModel" id="1828">
+					<attribute name="Model" value="Model;Models/Box.mdl" />
+					<attribute name="Material" value="Material;" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="1768">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="12.0248 1.21013 -3.47825" />
+				<attribute name="Rotation" value="0.707107 0 0.707107 0" />
+				<attribute name="Scale" value="3.4 2.5 0.1" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="1829" />
+				<component type="RigidBody" id="1830">
+					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="12.0248 1.21013 -3.47825" />
+				</component>
+				<component type="StaticModel" id="1831">
+					<attribute name="Model" value="Model;Models/Box.mdl" />
+					<attribute name="Material" value="Material;" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="1769">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="12.0248 1.21013 -6.99929" />
+				<attribute name="Rotation" value="0.707107 0 0.707107 0" />
+				<attribute name="Scale" value="1.9 2.5 0.1" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="1832" />
+				<component type="RigidBody" id="1833">
+					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="12.0248 1.21013 -6.99929" />
+				</component>
+				<component type="StaticModel" id="1834">
+					<attribute name="Model" value="Model;Models/Box.mdl" />
+					<attribute name="Material" value="Material;" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="1770">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="12.0248 1.21013 -10.3095" />
+				<attribute name="Rotation" value="0.707107 0 0.707107 0" />
+				<attribute name="Scale" value="1.2 2.5 0.1" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="1835" />
+				<component type="RigidBody" id="1836">
+					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="12.0248 1.21013 -10.3095" />
+				</component>
+				<component type="StaticModel" id="1837">
+					<attribute name="Model" value="Model;Models/Box.mdl" />
+					<attribute name="Material" value="Material;" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="1771">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="15.1541 1.21013 -6.98638" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="6.3 2.5 0.1" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="1838" />
+				<component type="RigidBody" id="1839">
+					<attribute name="Physics Position" value="15.1541 1.21013 -6.98638" />
+				</component>
+				<component type="StaticModel" id="1840">
+					<attribute name="Model" value="Model;Models/Box.mdl" />
+					<attribute name="Material" value="Material;" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="1772">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="10.4745 1.21013 -3.98269" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="3.1 2.5 0.1" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="1841" />
+				<component type="RigidBody" id="1842">
+					<attribute name="Physics Position" value="10.4745 1.21013 -3.98269" />
+				</component>
+				<component type="StaticModel" id="1843">
+					<attribute name="Model" value="Model;Models/Box.mdl" />
+					<attribute name="Material" value="Material;" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+		</node>
+	</node>
+	<node id="1729">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Spawners" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<node id="1730">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Spawn_Player" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="4.98815 0 -7.00271" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+		</node>
+		<node id="1758">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Spawn_Flashlight" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="3.9256 0.603407 -7.15639" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+		</node>
+		<node id="1759">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Spawn_EMFReader" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="3.9256 0.603407 -6.80524" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+		</node>
+		<node id="1760">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Spawn_Ghost" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="13.7405 0 -4.52103" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+		</node>
+		<node id="1774">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Spawn_Ambience" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="0 0 0" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+		</node>
+	</node>
+</scene>
