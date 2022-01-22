@@ -41,7 +41,7 @@ void Ghost::Start() {
         }
     }
     // Get random ghost appearance
-    appearanceInfo = &(ghostAppearances[rng.GetUInt(0, ghostAppearances.size()-1)]);
+    appearanceInfo = &(ghostAppearances[rng.GetUInt(0, ghostAppearances.size())]);
     // Set ghost appearance
     eastl::vector<AnimatedModel*> models;
     appearance->GetChild("Model")->GetComponents<AnimatedModel>(models);
