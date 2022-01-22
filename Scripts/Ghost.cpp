@@ -64,9 +64,9 @@ void Ghost::FixedUpdate(float timeStep) {
     if (state == GhostState::reveal || rng.GetBool(0.0025f * getAggression())) {
         // Get all bodies nearby
         eastl::vector<PhysicsRaycastResult> results;
-        constexpr float range = 0.5f;
+        constexpr float range = 1.0f;
         SphereCastMultipleDS(physicsWorld, results, Ray(GetNode()->GetWorldPosition(), GetNode()->GetWorldDirection()), range, range);
-        // Throw an object
+        // Throw or use an object
         if (!results.empty()) {
             for (unsigned triesLeft = 25; triesLeft != 0; triesLeft--) {
                 auto body = results[rng.GetInt(0, results.size()-1)].body_;
@@ -168,7 +168,20 @@ void Ghost::throwBody(RigidBody *body) {
 void Ghost::useBody(RigidBody *body) {
     auto node = body->GetNode();
     auto script = static_cast<Useable *>(node->GetComponent(node->GetName()));
-    script->Use();
+    // Check if node is lightswitch
+    if (node->GetName() == "Lightswitch") {
+        // Reduce chance to turn it on
+        if (rng.GetBool(0.5f)) {
+            script->GhostUse();
+        }
+    } else {
+        // Just use it whatever it is
+        script->GhostUse();
+    }
+    // Make it emit emf
+    auto emitter = body->GetNode()->GetOrCreateComponent<EMFEmitter>();
+    emitter->setLevel(EMFLevel::touch);
+    emitter->timeoutIn(15);
 }
 
 float Ghost::getAggression() const {

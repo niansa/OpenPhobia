@@ -11,6 +11,7 @@ class Lightswitch;
 #include <Urho3D/Scene/LogicComponent.h>
 #include <Urho3D/Graphics/Light.h>
 #include <Urho3D/Physics/RigidBody.h>
+#include <Urho3D/Core/Timer.h>
 
 
 
@@ -19,6 +20,7 @@ class Lightswitch final : public Useable {
     URHO3D_OBJECT(Lightswitch, Useable);
 
     eastl::vector<Light*> lightBulbs;
+    Timer cooldown;
 
 public:
     using Useable::Useable;
