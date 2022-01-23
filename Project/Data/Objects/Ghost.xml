@@ -7,8 +7,8 @@
 	<attribute name="Elapsed Time" value="0.000000" />
 	<attribute name="Next Replicated Node ID" value="88" />
 	<attribute name="Next Replicated Component ID" value="20" />
-	<attribute name="Next Local Node ID" value="16777466" />
-	<attribute name="Next Local Component ID" value="16777234" />
+	<attribute name="Next Local Node ID" value="16777468" />
+	<attribute name="Next Local Component ID" value="16777237" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
@@ -16,7 +16,7 @@
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
 		<attribute name="Camera Position" value="3.32312 0.699294 0.274346" />
-		<attribute name="Camera Rotation" value="0.682771 0.0567809 -0.725915 0.0603926" />
+		<attribute name="Camera Rotation" value="0.682771 0.0567809 -0.725915 0.0603927" />
 	</component>
 	<component type="RenderPipeline" id="8" />
 	<node id="3">
@@ -40,8 +40,7 @@
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="CollisionShape" id="10">
-			<attribute name="Shape Type" value="Cylinder" />
-			<attribute name="Size" value="1 1.7 1" />
+			<attribute name="Size" value="0.5 1.7 0.8" />
 		</component>
 		<node id="84">
 			<attribute name="Is Enabled" value="true" />

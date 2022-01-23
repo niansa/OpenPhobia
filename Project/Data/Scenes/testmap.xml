@@ -7,16 +7,16 @@
 	<attribute name="Elapsed Time" value="0.000000" />
 	<attribute name="Next Replicated Node ID" value="1783" />
 	<attribute name="Next Replicated Component ID" value="1865" />
-	<attribute name="Next Local Node ID" value="16777262" />
-	<attribute name="Next Local Component ID" value="16777287" />
+	<attribute name="Next Local Node ID" value="16777266" />
+	<attribute name="Next Local Component ID" value="16777293" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="15.6595 3.09903 -4.33073" />
-		<attribute name="Camera Rotation" value="0.642991 0.210267 0.699966 -0.228904" />
+		<attribute name="Camera Position" value="10.2189 2.00276 -3.64023" />
+		<attribute name="Camera Rotation" value="0.942059 0.332137 -0.0418412 -0.0214149" />
 	</component>
 	<component type="RenderPipeline" id="839" />
 	<node id="1671">
@@ -273,7 +273,7 @@
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="" />
 				<attribute name="Tags" />
-				<attribute name="Position" value="15.9001 -0.00434459 -3.7032" />
+				<attribute name="Position" value="15.8418 -0.00434459 -3.7628" />
 				<attribute name="Rotation" value="0.707107 0.707107 0 0" />
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
@@ -288,7 +288,7 @@
 				</component>
 				<component type="RigidBody" id="1734">
 					<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
-					<attribute name="Physics Position" value="15.9001 -0.00434459 -3.7032" />
+					<attribute name="Physics Position" value="15.8418 -0.00434459 -3.7628" />
 				</component>
 			</node>
 			<node id="1695">
@@ -499,8 +499,8 @@
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="" />
 				<attribute name="Tags" />
-				<attribute name="Position" value="13.2497 0.585175 -6.76191" />
-				<attribute name="Rotation" value="-4.37114e-08 2.03547e-17 -1 -4.65661e-10" />
+				<attribute name="Position" value="12.8947 0.585175 -6.76191" />
+				<attribute name="Rotation" value="4.37114e-08 -2.03547e-17 1 4.65661e-10" />
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="1777">
@@ -509,19 +509,19 @@
 					<attribute name="Cast Shadows" value="true" />
 				</component>
 				<component type="CollisionShape" id="1783">
-					<attribute name="Shape Type" value="TriangleMesh" />
+					<attribute name="Shape Type" value="ConvexHull" />
 					<attribute name="Model" value="Model;Models/Piano.mdl" />
 				</component>
 				<component type="RigidBody" id="1784">
 					<attribute name="Physics Rotation" value="4.37114e-08 -2.03547e-17 1 4.65661e-10" />
-					<attribute name="Physics Position" value="13.2497 0.585175 -6.76191" />
+					<attribute name="Physics Position" value="12.8947 0.585175 -6.76191" />
 				</component>
 			</node>
 			<node id="1750">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="" />
 				<attribute name="Tags" />
-				<attribute name="Position" value="13.1935 -0.000923302 -6.0514" />
+				<attribute name="Position" value="12.8385 -0.000923302 -6.0514" />
 				<attribute name="Rotation" value="-4.37114e-08 2.03547e-17 -1 -4.65661e-10" />
 				<attribute name="Scale" value="0.002 0.002 0.002" />
 				<attribute name="Variables" />
@@ -713,7 +713,7 @@
 					<attribute name="Cast Shadows" value="true" />
 				</component>
 				<component type="CollisionShape" id="1745">
-					<attribute name="Shape Type" value="TriangleMesh" />
+					<attribute name="Shape Type" value="ConvexHull" />
 					<attribute name="Model" value="Model;Props/modern-furniture/Models/Toilet.mdl" />
 				</component>
 				<component type="RigidBody" id="1746">

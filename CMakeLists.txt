@@ -1,7 +1,12 @@
+cmake_minimum_required(VERSION 3.15)
+
 # Configure project
 project(Game LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
+
+# Include runtime sanitizer
+include(san.cmake)
 
 # Configure engine
 set(URHO3D_STATIC_RUNTIME ON)
