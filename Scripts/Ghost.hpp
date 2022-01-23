@@ -53,7 +53,7 @@ public:
     using LogicComponent::LogicComponent;
 
     virtual void Start() override;
-    virtual void FixedUpdate(float timeStep) override;
+    virtual void FixedUpdate(float) override;
 
     bool hasNextState() {
         return nextStateIn != NAN;

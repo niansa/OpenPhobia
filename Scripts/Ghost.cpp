@@ -59,7 +59,7 @@ void Ghost::Start() {
 #   endif
 }
 
-void Ghost::FixedUpdate(float timeStep) {
+void Ghost::FixedUpdate(float) {
     // Interact
     if (state == GhostState::reveal || rng.GetBool(0.0025f * getAggression())) {
         // Get all bodies nearby
