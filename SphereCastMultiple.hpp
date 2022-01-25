@@ -1,3 +1,5 @@
+#pragma once
+
 #include "easyscript/Namespace.hpp"
 
 #include <Urho3D/Physics/PhysicsWorld.h>
