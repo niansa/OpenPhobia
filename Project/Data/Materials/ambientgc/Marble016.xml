@@ -1,11 +1,9 @@
 <?xml version="1.0"?>
 <material>
-	<technique name="Techniques/PBR/PBRDiffNormalEmissive.xml" quality="0" loddistance="0.000000" />
+	<technique name="Techniques/PBR/PBRDiffNormal.xml" quality="0" loddistance="0.000000" />
 	<texture unit="diffuse" name="Materials/ambientgc/Textures/Marble016_2K_Color.jpg" />
 	<texture unit="normal" name="Materials/ambientgc/Textures/Marble016_2K_Normal.jpg" />
-	<texture unit="emissive" name="Materials/ambientgc/Textures/Marble016_2K_Roughness.jpg" />
-	<parameter name="Metallic" value="0.300000" />
-	<parameter name="Roughness" value="0.050000" />
+	<texture unit="specular" name="Materials/ambientgc/Textures/Marble016_2K_Specular.png" />
 	<parameter name="MatEmissiveColor" value="0 0 0" />
 	<parameter name="MatSpecColor" value="0 0 0 1" />
 	<parameter name="VOffset" value="0 1 0 0" />

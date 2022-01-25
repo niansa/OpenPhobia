@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<material>
+	<technique name="Techniques/PBR/PBRDiffNormal.xml" />
+	<texture unit="diffuse" name="Objects/Flashlight/Textures/nubs__uvgrid_baseColor.jpeg" />
+	<texture unit="normal" name="Objects/Flashlight/Textures/nubs__uvgrid_normal.jpeg" />
+	<parameter name="MatDiffColor" value="1 1 1 1" />
+	<parameter name="MatSpecColor" value="1 1 1 0" />
+	<parameter name="MatEmissiveColor" value="0 0 0 1" />
+	<cull value="none" />
+	<shadowcull value="none" />
+</material>
