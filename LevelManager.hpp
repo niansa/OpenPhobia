@@ -30,9 +30,10 @@ public:
         auto renderPipeline = scene->GetOrCreateComponent<RenderPipeline>();
         auto renderSettings = renderPipeline->GetSettings();
         renderSettings.bloom_.enabled_ = true;
-        renderSettings.bloom_.intensity_ = 2.f;
+        renderSettings.bloom_.intensity_ = 1.25f;
         renderSettings.sceneProcessor_.lightingMode_ = DirectLightingMode::Forward;
         renderSettings.sceneProcessor_.maxPixelLights_ = 10;
+        renderSettings.renderBufferManager_.colorSpace_ = RenderPipelineColorSpace::LinearLDR;
         renderSettings.AdjustToSupported(app->GetContext());
         renderPipeline->SetSettings(renderSettings);
     }
