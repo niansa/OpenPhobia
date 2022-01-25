@@ -30,6 +30,8 @@ public:
     virtual void Start() override;
     virtual void TurnOn() override;
     virtual void TurnOff() override;
+
+    void ghostyDim(bool enable);
 };
 }
 #endif // PLAYER_HPP

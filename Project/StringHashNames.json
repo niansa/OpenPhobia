@@ -1980,6 +1980,8 @@
 	"Models/BooksCabinet",
 	"Models/BooksCabinet.mdl",
 	"Models/BooksCabinet/Materials",
+	"Models/BooksCabinet/Materials/.Books.xml.kate-swp",
+	"Models/BooksCabinet/Materials/.Books_cabinet.xml.kate-swp",
 	"Models/BooksCabinet/Materials/Books.xml",
 	"Models/BooksCabinet/Materials/Books_cabinet.xml",
 	"Models/BooksCabinet/Textures",

@@ -93,6 +93,8 @@ void Ghost::FixedUpdate(float) {
         setState(GhostState::reveal);
     } else if (input->GetKeyDown(Key::KEY_L)) {
         setState(GhostState::local);
+    } else if (input->GetKeyDown(Key::KEY_H)) {
+        appearance->SetDeepEnabled(false);
     }
 #   endif
     // Timed state-dependent code

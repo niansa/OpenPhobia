@@ -21,6 +21,8 @@ void Lightswitch::Start() {
     } else {
         TurnOff();
     }
+    // Initially the ghost should be present... I guess
+    ghostyDim(true);
 }
 
 void Lightswitch::TurnOn() {
@@ -35,6 +37,19 @@ void Lightswitch::TurnOff() {
     for (auto lightBulb : lightBulbs) {
         lightBulb->SetEnabled(false);
         //GetNode()->SetRotation(Quaternion(Vector3{0, -90, 180}));
+    }
+}
+
+void Lightswitch::ghostyDim(bool enable) {
+    constexpr float dim = 0.75f;
+    if (enable) {
+        for (auto lightBulb : lightBulbs) {
+            lightBulb->SetBrightness(lightBulb->GetBrightness()*dim);
+        }
+    } else {
+        for (auto lightBulb : lightBulbs) {
+            lightBulb->SetBrightness(lightBulb->GetBrightness()/dim);
+        }
     }
 }
 }
