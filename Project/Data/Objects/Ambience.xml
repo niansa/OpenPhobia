@@ -7,8 +7,8 @@
 	<attribute name="Elapsed Time" value="0.000000" />
 	<attribute name="Next Replicated Node ID" value="3" />
 	<attribute name="Next Replicated Component ID" value="3" />
-	<attribute name="Next Local Node ID" value="16777224" />
-	<attribute name="Next Local Component ID" value="16777229" />
+	<attribute name="Next Local Node ID" value="16777226" />
+	<attribute name="Next Local Component ID" value="16777232" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
@@ -30,14 +30,14 @@
 			<attribute name="Bounding Box Min" value="-1000 -1000 -1000" />
 			<attribute name="Bounding Box Max" value="1000 1000 1000" />
 			<attribute name="Ambient Color" value="0.25 0.25 0.25 1" />
-			<attribute name="Ambient Brightness" value="0.000000" />
+			<attribute name="Ambient Brightness" value="0.100000" />
 			<attribute name="Background Brightness" value="0.010000" />
 		</component>
 		<component type="SoundSource" id="149">
 			<attribute name="Sound" value="Sound;Ambience/Atmosphere.ogg" />
 			<attribute name="Frequency" value="48000.000000" />
 			<attribute name="Is Playing" value="true" />
-			<attribute name="Play Position" value="-3184952" />
+			<attribute name="Play Position" value="-2424728" />
 		</component>
 	</node>
 </scene>

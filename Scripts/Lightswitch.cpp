@@ -1,6 +1,9 @@
 #include "Lightswitch.hpp"
 #include "../LevelManager.hpp"
 
+#include <Urho3D/Graphics/StaticModel.h>
+#include <Urho3D/Graphics/Material.h>
+
 
 
 namespace Game {
@@ -21,12 +24,12 @@ void Lightswitch::Start() {
     } else {
         TurnOff();
     }
-    // Initially the ghost should be present... I guess
-    ghostyDim(true);
 }
 
 void Lightswitch::TurnOn() {
     cooldown.Reset();
+    ghostyDim(false);
+    // Turn on light sources
     for (auto lightBulb : lightBulbs) {
         //GetNode()->SetRotation(Quaternion(Vector3{0, -90, 0}));
         lightBulb->SetEnabled(true);
@@ -34,6 +37,7 @@ void Lightswitch::TurnOn() {
 }
 
 void Lightswitch::TurnOff() {
+    // Turn off light sources
     for (auto lightBulb : lightBulbs) {
         lightBulb->SetEnabled(false);
         //GetNode()->SetRotation(Quaternion(Vector3{0, -90, 180}));
@@ -42,14 +46,16 @@ void Lightswitch::TurnOff() {
 
 void Lightswitch::ghostyDim(bool enable) {
     constexpr float dim = 0.75f;
-    if (enable) {
+    if (enable && !ghostyDimmed) {
         for (auto lightBulb : lightBulbs) {
             lightBulb->SetBrightness(lightBulb->GetBrightness()*dim);
         }
-    } else {
+        ghostyDimmed = true;
+    } else if (!enable && ghostyDimmed) {
         for (auto lightBulb : lightBulbs) {
             lightBulb->SetBrightness(lightBulb->GetBrightness()/dim);
         }
+        ghostyDimmed = false;
     }
 }
 }

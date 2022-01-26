@@ -23,6 +23,7 @@ class Lightswitch final : public Useable {
 
     eastl::vector<Light*> lightBulbs;
     Timer cooldown;
+    bool ghostyDimmed = false;
 
 public:
     using Useable::Useable;

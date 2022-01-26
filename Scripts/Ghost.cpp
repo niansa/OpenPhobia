@@ -1,6 +1,7 @@
 #include "Ghost.hpp"
 #include "Useable.hpp"
 #include "EMFEmitter.hpp"
+#include "Lightswitch.hpp"
 #include "../SphereCastMultiple.hpp"
 #include "../LevelManager.hpp"
 
@@ -172,9 +173,18 @@ void Ghost::useBody(RigidBody *body) {
     auto script = static_cast<Useable *>(node->GetComponent(node->GetName()));
     // Check if node is lightswitch
     if (node->GetName() == "Lightswitch") {
-        // Reduce chance to turn it on
-        if (rng.GetBool(0.5f)) {
-            script->GhostUse();
+        if (script->isTurnedOn()) {
+            // Might as well just dim it
+            if (rng.GetBool(0.25f)) {
+                static_cast<Lightswitch*>(script)->ghostyDim(true);
+            } else {
+                script->GhostUse();
+            }
+        } else {
+            // Reduce chance to turn it on
+            if (rng.GetBool(0.5f)) {
+                script->GhostUse();
+            }
         }
     } else {
         // Just use it whatever it is

@@ -31,8 +31,8 @@ public:
         // Apply graphics settings
         auto renderPipeline = scene->GetOrCreateComponent<RenderPipeline>();
         auto renderSettings = renderPipeline->GetSettings();
-        renderSettings.bloom_.enabled_ = true;
-        renderSettings.bloom_.intensity_ = 1.25f;
+        renderSettings.bloom_.enabled_ = false;
+        renderSettings.bloom_.intensity_ = 1.0f;
         renderSettings.sceneProcessor_.lightingMode_ = DirectLightingMode::Forward;
         renderSettings.sceneProcessor_.maxPixelLights_ = 10;
         renderSettings.renderBufferManager_.colorSpace_ = RenderPipelineColorSpace::LinearLDR;

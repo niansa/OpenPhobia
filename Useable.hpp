@@ -39,6 +39,10 @@ public:
     }
     virtual void TurnOn() {}
     virtual void TurnOff() {}
+
+    bool isTurnedOn() {
+        return turnedOn;
+    }
 };
 }
 #endif
