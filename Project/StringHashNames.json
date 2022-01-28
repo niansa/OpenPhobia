@@ -2035,6 +2035,8 @@
 	"Models/Cylinder.mdl",
 	"Models/DirtyCar",
 	"Models/DirtyCar.mdl",
+	"Models/DirtyCar/Materials/.large_car_body_mat.xml.kate-swp",
+	"Models/DirtyCar/Materials/.large_car_glass_mat.xml.kate-swp",
 	"Models/DirtyCar/Materials/large_car_body_mat.xml",
 	"Models/DirtyCar/Materials/large_car_glass_mat.xml",
 	"Models/DirtyCar/Materials/large_car_wheels_mat.xml",
