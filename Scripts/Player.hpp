@@ -29,11 +29,12 @@ class Player final : public LogicComponent {
     Node *handP;
     Node *hand = nullptr;
 
-protected:
     CollisionShape* collisionShape;
     KinematicCharacterController* kinematicController;
 
 public:
+    unsigned sanity = 25;
+
     using LogicComponent::LogicComponent;
 
     virtual void Start() override;

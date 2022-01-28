@@ -23,11 +23,17 @@ namespace Game {
 enum class GhostState {
     local,
     roaming,
-    reveal
+    reveal,
+    hunt
 };
 
 struct GhostAppearance {
     Color color;
+};
+struct GhostBehavior {
+    unsigned huntDuration;
+    unsigned sanityThreshold = 50;
+    unsigned huntCooldown = 30;
 };
 
 extern const eastl::vector<GhostAppearance> ghostAppearances;
@@ -45,6 +51,8 @@ class Ghost final : public LogicComponent {
     AnimationController *animationController;
     GhostState nextState;
     float nextStateIn = NAN;
+    Timer lastHuntTimer;
+    GhostBehavior behavior;
 
     float baseAgression = 1.f;
     unsigned maxHuntSanity = 50;
@@ -57,9 +65,17 @@ public:
     virtual void Start() override;
     virtual void FixedUpdate(float) override;
 
+    void setGhostBehavior(const GhostBehavior& nval) {
+        behavior = nval;
+    }
+    void addHuntDuration(unsigned ival) {
+        behavior.huntDuration += ival;
+    }
+
     bool isVisible() {
         return appearance->IsEnabled();
     }
+
     bool hasNextState() {
         return nextStateIn != NAN;
     }

@@ -17,10 +17,12 @@ class LevelManager;
 
 namespace Game {
 class Ghost;
+class Player;
 
 class LevelManager : public SceneManager {
     eastl::string level = "testmap";
     Ghost *ghost = nullptr;
+    eastl::vector<Player*> players;
 
 public:
     using SceneManager::SceneManager;
@@ -45,12 +47,13 @@ public:
 
     void Start();
 
-    unsigned getTeamSanity() const {
-        return 5;
-    }
+    unsigned getTeamSanity() const;
 
     Ghost *getGhost() {
         return ghost;
+    }
+    const eastl::vector<Player*> &getPlayers() const {
+        return players;
     }
 };
 }

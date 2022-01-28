@@ -1,5 +1,6 @@
 #include "LevelManager.hpp"
 #include "easyscript/Namespace.hpp"
+#include "Scripts/Player.hpp"
 #include "Scripts/Ghost.hpp"
 
 #include <Urho3D/UI/UI.h>
@@ -31,12 +32,28 @@ void LevelManager::Start() {
         abort();
     }
 
-    // Find ghost
+    // Find important components
     for (auto node : scene->GetChildren(true)) {
-        if (node->HasComponent<Ghost>()) {
+        if (node->HasComponent<Player>()) {
+            players.push_back(node->GetComponent<Player>());
+        } else if (node->HasComponent<Ghost>()) {
             ghost = node->GetComponent<Ghost>();
-            break;
         }
+    }
+
+    // Load ghost stuff  TODO: Based on difficulty
+    ghost->setGhostBehavior({30});
+}
+
+unsigned LevelManager::getTeamSanity() const {
+    if (!players.empty()) {
+        unsigned fres = 0;
+        for (const auto player : players) {
+            fres += player->sanity;
+        }
+        return fres / players.size();
+    } else {
+        return 100;
     }
 }
 }

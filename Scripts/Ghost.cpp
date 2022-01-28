@@ -55,14 +55,11 @@ void Ghost::Start() {
     setState(GhostState::local);
     // Start its animation
     animationController->Play("Objects/Ghost/Animations/Idle.ani", 1, true);
-#   ifndef NDEBUG
-    appearance->SetDeepEnabled(true);
-#   endif
 }
 
 void Ghost::FixedUpdate(float) {
     // Interact
-    if (state == GhostState::reveal || rng.GetBool(0.0025f * getAggression())) {
+    if (isVisible() || rng.GetBool(0.0025f * getAggression())) {
         // Get all bodies nearby
         eastl::vector<PhysicsRaycastResult> results;
         constexpr float range = 1.0f;
@@ -95,7 +92,7 @@ void Ghost::FixedUpdate(float) {
     } else if (input->GetKeyDown(Key::KEY_L)) {
         setState(GhostState::local);
     } else if (input->GetKeyDown(Key::KEY_H)) {
-        appearance->SetDeepEnabled(false);
+        setState(GhostState::hunt);
     }
 #   endif
     // Timed state-dependent code
@@ -110,6 +107,9 @@ void Ghost::FixedUpdate(float) {
             if (rng.GetBool(0.1f)) {
                 GetNode()->Rotate(Quaternion(Vector3{0, float(rng.GetInt(-10, rng.GetBool(0.25f)?180:90)), 0}));
             }
+        } break;
+        case GhostState::hunt: {
+            kinematicController->SetWalkDirection(GetNode()->GetWorldDirection()*rng.GetFloat(0.f, 0.04f));
         } break;
         default: {}
         }
@@ -128,18 +128,26 @@ void Ghost::FixedUpdate(float) {
 }
 
 void Ghost::setState(GhostState nState) {
+    if (state == GhostState::hunt) {
+        lastHuntTimer.Reset();
+    }
     // Set new state
     state = nState;
     // Stop walking
     kinematicController->SetWalkDirection(Vector3::ZERO);
-#   ifdef NDEBUG
     // Set ghost visibility
-    appearance->SetDeepEnabled(state == GhostState::reveal);
-#   endif
+    appearance->SetDeepEnabled(state == GhostState::reveal || state == GhostState::hunt);
     // State dependent code
     switch (state) {
     case GhostState::local: {
-        auto nState = rng.GetBool(0.025f*getAggression())?GhostState::reveal:GhostState::roaming;
+        GhostState nState;
+        if (levelManager->getTeamSanity() < behavior.sanityThreshold && lastHuntTimer.GetMSec(false) > behavior.huntCooldown * 1000 &&rng.GetBool(0.5f/*TODO: this value should be dynamic*/)) {
+            nState = GhostState::hunt;
+        } else if (rng.GetBool(0.025f*getAggression())) {
+            nState = GhostState::reveal;
+        } else  {
+            nState = GhostState::roaming;
+        }
         setNextState(nState, rng.GetFloat(1000, 1000/getAggression()));
     } break;
     case GhostState::roaming: {
@@ -147,6 +155,9 @@ void Ghost::setState(GhostState nState) {
     } break;
     case GhostState::reveal: {
         setNextState(GhostState::local, rng.GetFloat(2500, 15000*getAggression()));
+    } break;
+    case GhostState::hunt: {
+        setNextState(GhostState::local, behavior.huntDuration*1000.0f);
     } break;
     default: {}
     }
