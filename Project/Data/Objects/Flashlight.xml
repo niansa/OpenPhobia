@@ -7,15 +7,15 @@
 	<attribute name="Elapsed Time" value="0.000000" />
 	<attribute name="Next Replicated Node ID" value="39" />
 	<attribute name="Next Replicated Component ID" value="40" />
-	<attribute name="Next Local Node ID" value="16777242" />
-	<attribute name="Next Local Component ID" value="16777255" />
+	<attribute name="Next Local Node ID" value="16777244" />
+	<attribute name="Next Local Component ID" value="16777258" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="0.361646 0.0257666 -0.200946" />
+		<attribute name="Camera Position" value="0.361646 0.0257665 -0.200946" />
 		<attribute name="Camera Rotation" value="0.761793 0.0459398 -0.645014 0.038953" />
 	</component>
 	<component type="RenderPipeline" id="11" />
@@ -43,7 +43,7 @@
 			<attribute name="Friction" value="0.800000" />
 			<attribute name="Rolling Friction" value="0.800000" />
 			<attribute name="Linear Damping" value="0.500000" />
-			<attribute name="Angular Damping" value="0.500000" />
+			<attribute name="Angular Damping" value="0.300000" />
 			<attribute name="Collision Layer" value="2" />
 		</component>
 		<node id="16">

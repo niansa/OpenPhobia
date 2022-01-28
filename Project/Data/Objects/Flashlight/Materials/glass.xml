@@ -4,7 +4,7 @@
 	<texture unit="diffuse" name="Objects/Flashlight/Textures/glass_baseColor.png" />
 	<texture unit="normal" name="Objects/Flashlight/Textures/glass_normal.png" />
 	<parameter name="MatDiffColor" value="1 1 1 1" />
-	<parameter name="MatSpecColor" value="1 1 1 0" />
+	<parameter name="MatSpecColor" value="0 0 0 0" />
 	<parameter name="MatEmissiveColor" value="0 0 0 1" />
 	<cull value="none" />
 	<shadowcull value="none" />
