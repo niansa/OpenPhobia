@@ -6,7 +6,7 @@ class EMFReader;
 #ifndef EMFREADER_HPP
 #define EMFREADER_HPP
 #include "../easyscript/Namespace.hpp"
-#include "Useable.hpp"
+#include "Equipment.hpp"
 
 #include <Urho3D/Scene/Node.h>
 #include <Urho3D/Graphics/Light.h>
@@ -15,13 +15,13 @@ class EMFReader;
 
 
 namespace Game {
-class EMFReader final : public Useable {
-    URHO3D_OBJECT(EMFReader, Useable);
+class EMFReader final : public Equipment {
+    URHO3D_OBJECT(EMFReader, Equipment);
 
     Node *leds;
 
 public:
-    using Useable::Useable;
+    using Equipment::Equipment;
 
     virtual void Start() override;
     virtual void FixedUpdate(float) override;

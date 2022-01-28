@@ -9,10 +9,6 @@ class LevelManager;
 #include "easyscript/SceneManager.hpp"
 
 #include <Urho3D/Engine/Application.h>
-#include <Urho3D/UI/UI.h>
-#include <Urho3D/UI/Sprite.h>
-#include <Urho3D/Resource/ResourceCache.h>
-#include <Urho3D/Graphics/Texture2D.h>
 #include <Urho3D/RenderPipeline/RenderPipeline.h>
 #include <Urho3D/RenderPipeline/BloomPass.h>
 #include <Urho3D/RenderPipeline/SceneProcessor.h>
@@ -20,8 +16,11 @@ class LevelManager;
 
 
 namespace Game {
+class Ghost;
+
 class LevelManager : public SceneManager {
     eastl::string level = "testmap";
+    Ghost *ghost = nullptr;
 
 public:
     using SceneManager::SceneManager;
@@ -44,30 +43,14 @@ public:
         reloadLevel();
     }
 
-    void Start() {
-        Variant v;
-        v.SetCustom<LevelManager*>(this);
-        app->SetGlobalVar("LevelManager", v);
-        reloadLevel();
-
-        // Crosshair
-        auto ui = app->GetSubsystem<UI>();
-        auto crosshair = ui->GetRoot()->CreateChild<Sprite>("crosshair");
-        crosshair->SetAlignment(HorizontalAlignment::HA_CENTER, VerticalAlignment::VA_CENTER);
-
-        // Load crosshair texture  TODO: Fixup
-        auto cache = app->GetSubsystem<ResourceCache>();
-        auto crosshairTextureFile = cache->GetResource<Texture2D>("Textures/crosshair.png");
-        if (crosshairTextureFile) {
-            crosshair->SetTexture(crosshairTextureFile);
-        } else {
-            //TODO
-            abort();
-        }
-    }
+    void Start();
 
     unsigned getTeamSanity() const {
         return 5;
+    }
+
+    Ghost *getGhost() {
+        return ghost;
     }
 };
 }

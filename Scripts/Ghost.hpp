@@ -57,6 +57,9 @@ public:
     virtual void Start() override;
     virtual void FixedUpdate(float) override;
 
+    bool isVisible() {
+        return appearance->IsEnabled();
+    }
     bool hasNextState() {
         return nextStateIn != NAN;
     }

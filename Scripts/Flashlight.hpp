@@ -6,7 +6,7 @@ class Flashlight;
 #ifndef FLASHLIGHT_HPP
 #define FLASHLIGHT_HPP
 #include "../easyscript/Namespace.hpp"
-#include "Useable.hpp"
+#include "Equipment.hpp"
 
 #include <Urho3D/Input/Input.h>
 #include <Urho3D/Scene/Node.h>
@@ -17,11 +17,11 @@ class Flashlight;
 
 
 namespace Game {
-class Flashlight final : public Useable {
-    URHO3D_OBJECT(Flashlight, Useable);
+class Flashlight final : public Equipment {
+    URHO3D_OBJECT(Flashlight, Equipment);
 
 public:
-    using Useable::Useable;
+    using Equipment::Equipment;
 
     virtual void Start() override;
     virtual void TurnOn() override;

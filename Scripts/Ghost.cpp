@@ -119,7 +119,7 @@ void Ghost::FixedUpdate(float) {
         trySwitchState();
     }
     // Untimed state-dependent code
-    if (appearance->IsEnabled()) {
+    if (isVisible()) {
         auto light = appearance->GetComponent<Light>();
         auto brightness = light->GetBrightness();
         brightness += rng.GetFloat(-0.25f, 0.25f);
