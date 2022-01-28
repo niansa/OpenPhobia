@@ -16,7 +16,7 @@ void LevelManager::Start() {
     app->SetGlobalVar("LevelManager", v);
     reloadLevel();
 
-    // Crosshair
+    // Crosshair  TODO: Fixup
     auto ui = app->GetSubsystem<UI>();
     auto crosshair = ui->GetRoot()->CreateChild<Sprite>("crosshair");
     crosshair->SetAlignment(HorizontalAlignment::HA_CENTER, VerticalAlignment::VA_CENTER);
