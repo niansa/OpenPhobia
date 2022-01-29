@@ -16,6 +16,7 @@ class Ghost;
 #include <Urho3D/Physics/PhysicsWorld.h>
 #include <Urho3D/Physics/KinematicCharacterController.h>
 #include <Urho3D/Graphics/AnimationController.h>
+#include <Urho3D/Navigation/DynamicNavigationMesh.h>
 
 
 
@@ -44,7 +45,7 @@ class Ghost final : public LogicComponent {
     URHO3D_OBJECT(Ghost, LogicComponent);
 
     RandomEngine rng;
-    Timer stepTimer, stateTimer;
+    Timer stepTimer, stateTimer, navigationTimer;
     KinematicCharacterController* kinematicController;
     PhysicsWorld *physicsWorld;
     LevelManager *levelManager;
@@ -55,9 +56,13 @@ class Ghost final : public LogicComponent {
     float nextStateIn = NAN;
     Timer lastHuntTimer;
     GhostBehavior behavior;
+    DynamicNavigationMesh *navMesh;
+    ea::vector<Vector3> currentPath;
 
     float baseAgression = 1.f;
     unsigned maxHuntSanity = 50;
+
+    void followPath();
 
 public:
     GhostState state;
@@ -103,6 +108,7 @@ public:
     void throwBody(RigidBody *body);
     void useBody(RigidBody *body);
     float getAggression() const;
+    void chaseNearestPlayer();
     eastl::tuple<Player*, float> getPlayerToChase();
 };
 }

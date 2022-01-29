@@ -11,10 +11,12 @@
 #include <Urho3D/Physics/PhysicsWorld.h>
 #include <Urho3D/Math/RandomEngine.h>
 #include <Urho3D/Physics/KinematicCharacterController.h>
+#include <Urho3D/Navigation/DynamicNavigationMesh.h>
 #include <Urho3D/Graphics/AnimationController.h>
 #include <Urho3D/Graphics/AnimatedModel.h>
 #include <Urho3D/Graphics/Material.h>
 #include <Urho3D/Math/Color.h>
+#include <Urho3D/Resource/ResourceCache.h>
 #ifndef NDEBUG
 #   include <Urho3D/Input/Input.h>
 #endif
@@ -32,9 +34,11 @@ void Ghost::Start() {
     appearance = GetNode()->GetChild("Appearance");
     levelManager = GetGlobalVar("LevelManager").GetCustom<LevelManager*>();
     animationController = appearance->GetChild("Model")->GetComponent<AnimationController>();
+    navMesh = GetScene()->GetChild("SceneMain")->GetComponent<DynamicNavigationMesh>();
     // Create kinematic controller
     kinematicController = GetNode()->CreateComponent<KinematicCharacterController>();
     kinematicController->SetCollisionLayerAndMask(10, 1);
+    kinematicController->SetStepHeight(0.05);
     // Find physics world
     for (const auto node : GetScene()->GetChildren(true)) {
         if (node->HasComponent<RigidBody>()) {
@@ -58,6 +62,8 @@ void Ghost::Start() {
 }
 
 void Ghost::FixedUpdate(float) {
+    // Keep following the currentPath
+    followPath();
     // Interact
     if (isVisible() || rng.GetBool(0.0025f * getAggression())) {
         // Get all bodies nearby
@@ -100,23 +106,18 @@ void Ghost::FixedUpdate(float) {
         // State-dependent code
         switch (state) {
         case GhostState::roaming: {
-            // Roam around
-            if (rng.GetBool(0.5f)) {
+            // Roam around  TODO: Use navigation
+            /*if (rng.GetBool(0.5f)) {
                 kinematicController->SetWalkDirection(GetNode()->GetWorldDirection()*rng.GetFloat(0.f, 0.04f));
             }
             if (rng.GetBool(0.1f)) {
                 GetNode()->Rotate(Quaternion(Vector3{0, float(rng.GetInt(-10, rng.GetBool(0.25f)?180:90)), 0}));
-            }
+            }*/
         } break;
         case GhostState::hunt: {
-            /*auto [player, playerDistance] = getPlayerToChase();
-            auto dir = Vector3::ZERO;
-            if (player && playerDistance < 5.0f) {
-                dir = player->GetNode()->GetWorldPosition() - GetNode()->GetWorldPosition();
+            if (currentPath.empty()) {
+                chaseNearestPlayer();
             }
-            dir.z_ = 0.0f;
-            GetNode()->SetWorldDirection(dir);
-            kinematicController->SetWalkDirection(dir/8.0f);*/
         } break;
         default: {}
         }
@@ -134,7 +135,7 @@ void Ghost::setState(GhostState nState) {
     // Set new state
     state = nState;
     // Stop walking
-    kinematicController->SetWalkDirection(Vector3::ZERO);
+    currentPath.clear();
     // Set ghost visibility
     appearance->SetDeepEnabled(state == GhostState::reveal || state == GhostState::hunt);
     // State dependent code
@@ -158,6 +159,7 @@ void Ghost::setState(GhostState nState) {
     } break;
     case GhostState::hunt: {
         setNextState(GhostState::local, behavior.huntDuration*1000.0f);
+        chaseNearestPlayer();
     } break;
     default: {}
     }
@@ -223,5 +225,54 @@ eastl::tuple<Player*, float> Ghost::getPlayerToChase() {
         }
     }
     return {closestPlayer, closestPlayerDistance};
+}
+
+void Ghost::chaseNearestPlayer() {
+    auto [player, playerDistance] = getPlayerToChase();
+    navMesh->FindPath(currentPath, GetNode()->GetWorldPosition(), player->GetNode()->GetWorldPosition());
+}
+
+void Ghost::followPath() {
+    if (!currentPath.empty()) {
+        auto nextWaypoint = currentPath[0];
+        nextWaypoint.y_ = GetNode()->GetWorldPosition().y_;
+
+        for (auto node : GetScene()->GetChildren(false)) {
+            if (node->GetName() == "DebugNavBox") {
+                node->Remove();
+            }
+        }
+        auto* cache = GetSubsystem<ResourceCache>();
+        auto test = GetScene()->CreateChild();
+        test->SetName("DebugNavBox");
+        test->SetPosition(nextWaypoint);
+        test->SetScale({0.25f, 0.25f, 0.25f});
+        auto mesh = test->CreateComponent<StaticModel>();
+        mesh->SetModel(cache->GetResource<Model>("Models/Box.mdl"));
+
+        // Get distance and stuff
+        float move = 0.8f / 60.f;
+        float distance = (GetNode()->GetWorldPosition() - nextWaypoint).Length();
+        if (move > distance)
+            move = distance;
+
+        // Remove waypoint if it was reached
+        if (distance < 0.1f) {
+            navigationTimer.Reset();
+            currentPath.pop_front();
+            return;
+        } else if (navigationTimer.GetMSec(false) > 5000.f) {
+            kinematicController->Warp(nextWaypoint);
+            navigationTimer.Reset();
+            currentPath.pop_front();
+            return;
+        }
+
+        // Rotate toward next waypoint to reach and move without overshooting the target
+        GetNode()->LookAt(nextWaypoint, Vector3::UP);
+        kinematicController->SetWalkDirection(GetNode()->GetWorldDirection() * move);
+    } else {
+        kinematicController->SetWalkDirection(Vector3::ZERO);
+    }
 }
 }

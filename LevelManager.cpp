@@ -33,13 +33,14 @@ void LevelManager::Start() {
     }
 
     // Find important components
-    for (auto node : scene->GetChildren(true)) {
-        if (node->HasComponent<Player>()) {
-            players.push_back(node->GetComponent<Player>());
-        } else if (node->HasComponent<Ghost>()) {
-            ghost = node->GetComponent<Ghost>();
-        }
+    eastl::vector<Node*> nodes;
+    scene->GetNodesWithTag(nodes, "Player");
+    for (auto node : nodes) {
+        players.push_back(node->GetComponent<Player>());
     }
+    nodes.clear();
+    scene->GetNodesWithTag(nodes, "Ghost");
+    ghost = nodes[0]->GetComponent<Ghost>();
 
     // Load ghost stuff  TODO: Based on difficulty
     ghost->setGhostBehavior({30});
