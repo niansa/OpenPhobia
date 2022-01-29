@@ -20,6 +20,8 @@ class Ghost;
 
 
 namespace Game {
+class Player;
+
 enum class GhostState {
     local,
     roaming,
@@ -101,6 +103,7 @@ public:
     void throwBody(RigidBody *body);
     void useBody(RigidBody *body);
     float getAggression() const;
+    eastl::tuple<Player*, float> getPlayerToChase();
 };
 }
 #endif // GHOST_HPP

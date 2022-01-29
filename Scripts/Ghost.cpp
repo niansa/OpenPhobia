@@ -1,4 +1,5 @@
 #include "Ghost.hpp"
+#include "Player.hpp"
 #include "Useable.hpp"
 #include "EMFEmitter.hpp"
 #include "Lightswitch.hpp"
@@ -109,7 +110,14 @@ void Ghost::FixedUpdate(float) {
             }
         } break;
         case GhostState::hunt: {
-            kinematicController->SetWalkDirection(GetNode()->GetWorldDirection()*rng.GetFloat(0.f, 0.04f));
+            /*auto [player, playerDistance] = getPlayerToChase();
+            auto dir = Vector3::ZERO;
+            if (player && playerDistance < 5.0f) {
+                dir = player->GetNode()->GetWorldPosition() - GetNode()->GetWorldPosition();
+            }
+            dir.z_ = 0.0f;
+            GetNode()->SetWorldDirection(dir);
+            kinematicController->SetWalkDirection(dir/8.0f);*/
         } break;
         default: {}
         }
@@ -209,5 +217,19 @@ void Ghost::useBody(RigidBody *body) {
 
 float Ghost::getAggression() const {
     return Max(0.01f, (-(float(levelManager->getTeamSanity())-100))/100) * baseAgression;
+}
+
+eastl::tuple<Player*, float> Ghost::getPlayerToChase() {
+    // Get nearest player
+    Player *closestPlayer = nullptr;
+    float closestPlayerDistance = 100.f;
+    for (auto player : levelManager->getPlayers()) {
+        auto distance = (GetNode()->GetWorldPosition() - player->GetNode()->GetWorldPosition()).Length();
+        if (distance < closestPlayerDistance) {
+            closestPlayerDistance = distance;
+            closestPlayer = player;
+        }
+    }
+    return {closestPlayer, closestPlayerDistance};
 }
 }

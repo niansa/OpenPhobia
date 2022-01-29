@@ -35,6 +35,9 @@ public:
         auto ghostNode = ghost->GetNode();
         return (ghostNode->GetWorldPosition() - GetNode()->GetWorldPosition()).Length();
     }
+    bool isDistorted() {
+        return getDistanceToGhost() < 10.0f;
+    }
 };
 }
 #endif
