@@ -1,7 +1,7 @@
 # OpenPhobia
 A project of reimplementing Phasmophobia mechanics into rbfx just for fun!
 
-[Join Discord](https://discord.gg/nUrBAw346K)
+[Join the Discord!](https://discord.gg/nUrBAw346K)
 
 ## Scope
 The scope of this project is to reimplement Phasmophobia game mechanics without stealing assets. **Only** CC assets as well as selfmade ones are allowed for use.
