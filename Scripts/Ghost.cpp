@@ -51,7 +51,6 @@ void Ghost::Start() {
         Material *mat = model->GetMaterial();
         mat->SetShaderParameter("MatEmissiveColor", Variant(appearanceInfo->color));
     }
-    appearance->GetComponent<Light>()->SetColor(appearanceInfo->color);
     // Set initial ghost state
     setState(GhostState::local);
     // Start its animation
@@ -125,13 +124,6 @@ void Ghost::FixedUpdate(float) {
         stepTimer.Reset();
         // Potential state switch
         trySwitchState();
-    }
-    // Untimed state-dependent code
-    if (isVisible()) {
-        auto light = appearance->GetComponent<Light>();
-        auto brightness = light->GetBrightness();
-        brightness += rng.GetFloat(-0.25f, 0.25f);
-        light->SetBrightness(Min(Max(brightness, 0.5f), 1.75f));
     }
 }
 
