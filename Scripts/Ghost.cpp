@@ -42,7 +42,7 @@ void Ghost::Start() {
     kinematicController->SetCollisionLayerAndMask(10, 1);
     kinematicController->SetStepHeight(0.05);
     // Find physics world
-    physicsWorld = GetScene()->GetChild("SceneMain")->GetComponent<PhysicsWorld>();
+    physicsWorld = GetScene()->GetComponent<PhysicsWorld>();
     // Get random ghost appearance
     appearanceInfo = &(ghostAppearances[rng.GetUInt(0, ghostAppearances.size())]);
     // Set ghost appearance
@@ -158,7 +158,6 @@ void Ghost::setState(GhostState nState) {
     } break;
     case GhostState::hunt: {
         setNextState(GhostState::local, behavior->huntDuration*1000.0f);
-        chasePlayer();
     } break;
     default: {}
     }
@@ -281,19 +280,11 @@ void Ghost::followPath() {
 }
 
 bool Ghost::canSeePlayer(PlayerWDistance player) {
+    auto vectorToPlayer = player.player->GetNode()->GetWorldPosition() - GetNode()->GetWorldPosition();
+    auto vectorForward = GetNode()->GetWorldDirection();
     ea::vector<PhysicsRaycastResult> hits;
-    auto rotBak = GetNode()->GetWorldRotation();
-    GetNode()->LookAt(player.player->GetNode()->GetWorldPosition());
-    physicsWorld->Raycast(hits, Ray(GetNode()->GetWorldPosition(), GetNode()->GetWorldDirection()), 100.0f);
-    GetNode()->SetWorldRotation(rotBak);
-    for (auto hit : hits) {
-        auto node = hit.body_->GetNode();
-        printf("Hit node %s\n", node->GetName().c_str());
-        if (node->HasComponent<Player>() && node->GetComponent<Player>() == player.player) {
-            return true;
-        }
-    }
-    return false;
+    physicsWorld->Raycast(hits, Ray(GetNode()->GetWorldPosition(), vectorToPlayer.Normalized()), vectorToPlayer.Length());
+    return hits.size() <= 1;
 }
 
 float Ghost::getDistanceToPlayer(Player *player) {
