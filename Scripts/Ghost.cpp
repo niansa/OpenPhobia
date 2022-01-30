@@ -99,23 +99,24 @@ void Ghost::FixedUpdate(float) {
     }
 #   endif
     // Timed code
-    if (stepTimer.GetMSec(false) > 500) {
+    if (stepTimer.GetMSec(false) > 200) {
         // Update closest player
         updateClosestPlayer();
         // State-dependent code
         switch (state) {
-        case GhostState::roaming: {
-            // Roam around  TODO: Use navigation
-            /*if (rng.GetBool(0.5f)) {
-                kinematicController->SetWalkDirection(GetNode()->GetWorldDirection()*rng.GetFloat(0.f, 0.04f));
-            }
-            if (rng.GetBool(0.1f)) {
-                GetNode()->Rotate(Quaternion(Vector3{0, float(rng.GetInt(-10, rng.GetBool(0.25f)?180:90)), 0}));
-            }*/
-        } break;
         case GhostState::hunt: {
             if (canSeePlayer(behavior->getPlayerToChase())) {
                 chasePlayer();
+                break;
+            }
+        }
+        case GhostState::roaming: {
+            if (currentPath.empty()) {
+                // Get random location around the ghost
+                constexpr float maxDist = 5.0f;
+                auto nPos = GetNode()->GetWorldPosition() + rng.GetVector3(Vector3(-maxDist, 0.0f, -maxDist), Vector3(maxDist, 0.0f, maxDist));
+                // Go there
+                walkTo(nPos);
             }
         } break;
         default: {}
@@ -140,8 +141,11 @@ void Ghost::setState(GhostState nState) {
     // State dependent code
     switch (state) {
     case GhostState::local: {
+        // Go back home
+        walkTo(homePosition);
+        // Find and define next state
         GhostState nState;
-        if (behavior && levelManager->getTeamSanity() < behavior->sanityThreshold && lastHuntTimer.GetMSec(false) > behavior->huntCooldown * 1000 &&rng.GetBool(0.5f/*TODO: this value should be dynamic*/)) {
+        if (behavior && levelManager->getTeamSanity() < behavior->sanityThreshold && lastHuntTimer.GetMSec(false) > (behavior->huntCooldown + 1) * 1000 &&rng.GetBool(0.5f/*TODO: this value should be dynamic*/)) {
             nState = GhostState::hunt;
         } else if (rng.GetBool(0.025f*getAggression())) {
             nState = GhostState::reveal;
@@ -154,6 +158,7 @@ void Ghost::setState(GhostState nState) {
         setNextState(GhostState::local, rng.GetFloat(5000, 20000*getAggression()));
     } break;
     case GhostState::reveal: {
+        homePosition = GetNode()->GetWorldPosition();
         setNextState(GhostState::local, rng.GetFloat(2500, 15000*getAggression()));
     } break;
     case GhostState::hunt: {

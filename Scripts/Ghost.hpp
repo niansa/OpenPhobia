@@ -78,6 +78,7 @@ class Ghost final : public LogicComponent {
     DynamicNavigationMesh *navMesh;
     ea::vector<Vector3> currentPath;
     PlayerWDistance closestPlayer;
+    Vector3 homePosition;
 
     float baseAgression = 1.f;
     unsigned maxHuntSanity = 50;
@@ -118,6 +119,8 @@ public:
         }
     }
     void setNextState(GhostState nState, float in) {
+        printf("Next state in %f\n", in);
+        fflush(stdout);
         stateTimer.Reset();
         nextState = nState;
         nextStateIn = in;
