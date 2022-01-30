@@ -29,9 +29,6 @@ void LevelManager::Start() {
         crosshair->SetSize(crosshairTextureFile->GetSize() / 8);
         crosshair->SetPosition(-(crosshair->GetSize().x_ / 2), -(crosshair->GetSize().y_ / 2));
         crosshair->SetTexture(crosshairTextureFile);
-    } else {
-        //TODO
-        abort();
     }
 
     // Find important components
