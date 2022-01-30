@@ -119,8 +119,6 @@ public:
         }
     }
     void setNextState(GhostState nState, float in) {
-        printf("Next state in %f\n", in);
-        fflush(stdout);
         stateTimer.Reset();
         nextState = nState;
         nextStateIn = in;
