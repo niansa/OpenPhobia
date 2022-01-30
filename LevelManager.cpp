@@ -17,15 +17,17 @@ void LevelManager::Start() {
     app->SetGlobalVar("LevelManager", v);
     reloadLevel();
 
-    // Crosshair  TODO: Fixup
+    // Crosshair
     auto ui = app->GetSubsystem<UI>();
     auto crosshair = ui->GetRoot()->CreateChild<Sprite>("crosshair");
     crosshair->SetAlignment(HorizontalAlignment::HA_CENTER, VerticalAlignment::VA_CENTER);
 
-    // Load crosshair texture  TODO: Fixup
+    // Load crosshair texture
     auto cache = app->GetSubsystem<ResourceCache>();
     auto crosshairTextureFile = cache->GetResource<Texture2D>("Textures/crosshair.png");
     if (crosshairTextureFile) {
+        crosshair->SetSize(crosshairTextureFile->GetSize() / 8);
+        crosshair->SetPosition(-(crosshair->GetSize().x_ / 2), -(crosshair->GetSize().y_ / 2));
         crosshair->SetTexture(crosshairTextureFile);
     } else {
         //TODO
