@@ -135,6 +135,8 @@ public:
     float getAggression() const;
     void walkTo(const Vector3& pos);
     void chasePlayer();
+    bool canSeePlayer(PlayerWDistance player);
+    float getDistanceToPlayer(Player *player);
 };
 }
 #endif // GHOST_HPP

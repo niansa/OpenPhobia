@@ -10,7 +10,9 @@
 #include <Urho3D/Physics/RigidBody.h>
 #include <Urho3D/Physics/PhysicsWorld.h>
 #include <Urho3D/Math/RandomEngine.h>
+#include <Urho3D/Math/Ray.h>
 #include <Urho3D/Physics/KinematicCharacterController.h>
+#include <Urho3D/Physics/PhysicsWorld.h>
 #include <Urho3D/Navigation/DynamicNavigationMesh.h>
 #include <Urho3D/Graphics/AnimationController.h>
 #include <Urho3D/Graphics/AnimatedModel.h>
@@ -40,12 +42,7 @@ void Ghost::Start() {
     kinematicController->SetCollisionLayerAndMask(10, 1);
     kinematicController->SetStepHeight(0.05);
     // Find physics world
-    for (const auto node : GetScene()->GetChildren(true)) {
-        if (node->HasComponent<RigidBody>()) {
-            physicsWorld = node->GetComponent<RigidBody>()->GetPhysicsWorld();
-            break;
-        }
-    }
+    physicsWorld = GetScene()->GetChild("SceneMain")->GetComponent<PhysicsWorld>();
     // Get random ghost appearance
     appearanceInfo = &(ghostAppearances[rng.GetUInt(0, ghostAppearances.size())]);
     // Set ghost appearance
@@ -117,7 +114,7 @@ void Ghost::FixedUpdate(float) {
             }*/
         } break;
         case GhostState::hunt: {
-            if (currentPath.empty()) {
+            if (canSeePlayer(behavior->getPlayerToChase())) {
                 chasePlayer();
             }
         } break;
@@ -219,7 +216,7 @@ void Ghost::updateClosestPlayer() {
     closestPlayer.player = nullptr;
     closestPlayer.distance = 100.f;
     for (auto player : levelManager->getPlayers()) {
-        auto distance = (GetNode()->GetWorldPosition() - player->GetNode()->GetWorldPosition()).Length();
+        auto distance = getDistanceToPlayer(player);
         if (distance < closestPlayer.distance) {
             closestPlayer.distance = distance;
             closestPlayer.player = player;
@@ -275,7 +272,7 @@ void Ghost::followPath() {
             return;
         }
 
-        // Rotate toward next waypoint to reach and move without overshooting the target
+        // Rotate toward next waypoint to reach and move
         GetNode()->LookAt(nextWaypoint, Vector3::UP);
         kinematicController->SetWalkDirection(GetNode()->GetWorldDirection() * move);
     } else {
@@ -283,6 +280,25 @@ void Ghost::followPath() {
     }
 }
 
+bool Ghost::canSeePlayer(PlayerWDistance player) {
+    ea::vector<PhysicsRaycastResult> hits;
+    auto rotBak = GetNode()->GetWorldRotation();
+    GetNode()->LookAt(player.player->GetNode()->GetWorldPosition());
+    physicsWorld->Raycast(hits, Ray(GetNode()->GetWorldPosition(), GetNode()->GetWorldDirection()), 100.0f);
+    GetNode()->SetWorldRotation(rotBak);
+    for (auto hit : hits) {
+        auto node = hit.body_->GetNode();
+        printf("Hit node %s\n", node->GetName().c_str());
+        if (node->HasComponent<Player>() && node->GetComponent<Player>() == player.player) {
+            return true;
+        }
+    }
+    return false;
+}
+
+float Ghost::getDistanceToPlayer(Player *player) {
+    return (GetNode()->GetWorldPosition() - player->GetNode()->GetWorldPosition()).Length();
+}
 
 
 namespace GhostBehaviors {
