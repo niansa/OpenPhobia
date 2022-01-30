@@ -300,6 +300,11 @@ float Ghost::getDistanceToPlayer(Player *player) {
 
 namespace GhostBehaviors {
 float Default::getCurrentSpeed() {
+    if (ghost->canSeePlayer(getPlayerToChase())) {
+        speedup += 0.001f;
+    } else {
+        speedup = 0.0f;
+    }
     return 1.0f + speedup;
 }
 
