@@ -9,3 +9,7 @@
 
 SFX and Ambience:
 "Atmosphere" by Lucas Calvo - mundosound.com
+
+Textures:
+Crosshair:
+Calinou on opengameart is licensed under CC-BY-SA 3.0
