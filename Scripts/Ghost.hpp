@@ -48,6 +48,7 @@ struct GhostBehavior {
     virtual ~GhostBehavior() {}
     virtual float getCurrentSpeed() = 0;
     virtual PlayerWDistance getPlayerToChase() = 0;
+    virtual unsigned getHuntMultiplier() {return 0;}
 };
 namespace GhostBehaviors {
 struct Default : public GhostBehavior {
