@@ -145,7 +145,8 @@ void Ghost::setState(GhostState nState) {
         walkTo(homePosition);
         // Find and define next state
         GhostState nState;
-        if (behavior && levelManager->getTeamSanity() < behavior->sanityThreshold && lastHuntTimer.GetMSec(false) > (behavior->huntCooldown - 1) * 1000 &&rng.GetBool(0.5f/*TODO: this value should be dynamic*/)) {
+        auto teamSanity = levelManager->getTeamSanity();
+        if (behavior && teamSanity < behavior->sanityThreshold && lastHuntTimer.GetMSec(false) > (behavior->huntCooldown - 1) * 1000 && rng.GetBool(teamSanity>25?0.25f:0.5f)) {
             nState = GhostState::hunt;
         } else if (rng.GetBool(0.025f*getAggression())) {
             nState = GhostState::reveal;
