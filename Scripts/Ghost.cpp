@@ -99,7 +99,7 @@ void Ghost::FixedUpdate(float) {
     }
 #   endif
     // Timed code
-    if (stepTimer.GetMSec(false) > 200) {
+    if (stepTimer.GetMSec(false) > 500) {
         // Update closest player
         updateClosestPlayer();
         // State-dependent code
