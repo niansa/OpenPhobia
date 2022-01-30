@@ -30,14 +30,32 @@ enum class GhostState {
     hunt
 };
 
+struct PlayerWDistance {
+    Player *player = nullptr;
+    float distance;
+};
+
 struct GhostAppearance {
     Color color;
 };
 struct GhostBehavior {
-    unsigned huntDuration;
+    Ghost *ghost;
+    unsigned huntDuration = 30;
     unsigned sanityThreshold = 50;
     unsigned huntCooldown = 30;
+    float speedup = 0.0f;
+
+    virtual ~GhostBehavior() {}
+    virtual float getCurrentSpeed() = 0;
+    virtual PlayerWDistance getPlayerToChase() = 0;
 };
+namespace GhostBehaviors {
+struct Default : public GhostBehavior {
+    Default() {}
+    virtual float getCurrentSpeed();
+    virtual PlayerWDistance getPlayerToChase();
+};
+}
 
 extern const eastl::vector<GhostAppearance> ghostAppearances;
 
@@ -52,31 +70,32 @@ class Ghost final : public LogicComponent {
     const GhostAppearance *appearanceInfo;
     Node *appearance;
     AnimationController *animationController;
+    GhostState state;
     GhostState nextState;
     float nextStateIn = NAN;
     Timer lastHuntTimer;
-    GhostBehavior behavior;
+    eastl::unique_ptr<GhostBehavior> behavior = nullptr;
     DynamicNavigationMesh *navMesh;
     ea::vector<Vector3> currentPath;
+    PlayerWDistance closestPlayer;
 
     float baseAgression = 1.f;
     unsigned maxHuntSanity = 50;
 
+    void updateClosestPlayer();
     void followPath();
 
 public:
-    GhostState state;
-
     using LogicComponent::LogicComponent;
 
     virtual void Start() override;
     virtual void FixedUpdate(float) override;
 
-    void setGhostBehavior(const GhostBehavior& nval) {
-        behavior = nval;
+    void setGhostBehavior(eastl::unique_ptr<GhostBehavior> nval) {
+        behavior = std::move(nval);
     }
     void addHuntDuration(unsigned ival) {
-        behavior.huntDuration += ival;
+        behavior->huntDuration += ival;
     }
 
     bool isVisible() {
@@ -103,13 +122,19 @@ public:
         nextState = nState;
         nextStateIn = in;
     }
+    GhostState getState() {
+        return state;
+    }
+    PlayerWDistance getClosestPlayer() {
+        return closestPlayer;
+    }
 
     void setState(GhostState nState);
     void throwBody(RigidBody *body);
     void useBody(RigidBody *body);
     float getAggression() const;
-    void chaseNearestPlayer();
-    eastl::tuple<Player*, float> getPlayerToChase();
+    void walkTo(const Vector3& pos);
+    void chasePlayer();
 };
 }
 #endif // GHOST_HPP

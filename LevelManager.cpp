@@ -42,7 +42,9 @@ void LevelManager::Start() {
     ghost = nodes[0]->GetComponent<Ghost>();
 
     // Load ghost stuff  TODO: Based on difficulty
-    ghost->setGhostBehavior({30});
+    auto ghostBehavior = eastl::make_unique<GhostBehaviors::Default>();
+    ghostBehavior->ghost = ghost;
+    ghost->setGhostBehavior(std::move(ghostBehavior));
 }
 
 unsigned LevelManager::getTeamSanity() const {

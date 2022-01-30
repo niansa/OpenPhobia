@@ -101,8 +101,10 @@ void Ghost::FixedUpdate(float) {
         setState(GhostState::hunt);
     }
 #   endif
-    // Timed state-dependent code
+    // Timed code
     if (stepTimer.GetMSec(false) > 200) {
+        // Update closest player
+        updateClosestPlayer();
         // State-dependent code
         switch (state) {
         case GhostState::roaming: {
@@ -116,7 +118,7 @@ void Ghost::FixedUpdate(float) {
         } break;
         case GhostState::hunt: {
             if (currentPath.empty()) {
-                chaseNearestPlayer();
+                chasePlayer();
             }
         } break;
         default: {}
@@ -142,7 +144,7 @@ void Ghost::setState(GhostState nState) {
     switch (state) {
     case GhostState::local: {
         GhostState nState;
-        if (levelManager->getTeamSanity() < behavior.sanityThreshold && lastHuntTimer.GetMSec(false) > behavior.huntCooldown * 1000 &&rng.GetBool(0.5f/*TODO: this value should be dynamic*/)) {
+        if (behavior && levelManager->getTeamSanity() < behavior->sanityThreshold && lastHuntTimer.GetMSec(false) > behavior->huntCooldown * 1000 &&rng.GetBool(0.5f/*TODO: this value should be dynamic*/)) {
             nState = GhostState::hunt;
         } else if (rng.GetBool(0.025f*getAggression())) {
             nState = GhostState::reveal;
@@ -158,8 +160,8 @@ void Ghost::setState(GhostState nState) {
         setNextState(GhostState::local, rng.GetFloat(2500, 15000*getAggression()));
     } break;
     case GhostState::hunt: {
-        setNextState(GhostState::local, behavior.huntDuration*1000.0f);
-        chaseNearestPlayer();
+        setNextState(GhostState::local, behavior->huntDuration*1000.0f);
+        chasePlayer();
     } break;
     default: {}
     }
@@ -213,23 +215,25 @@ float Ghost::getAggression() const {
     return Max(0.01f, (-(float(levelManager->getTeamSanity())-100))/100) * baseAgression;
 }
 
-eastl::tuple<Player*, float> Ghost::getPlayerToChase() {
-    // Get nearest player
-    Player *closestPlayer = nullptr;
-    float closestPlayerDistance = 100.f;
+void Ghost::updateClosestPlayer() {
+    closestPlayer.player = nullptr;
+    closestPlayer.distance = 100.f;
     for (auto player : levelManager->getPlayers()) {
         auto distance = (GetNode()->GetWorldPosition() - player->GetNode()->GetWorldPosition()).Length();
-        if (distance < closestPlayerDistance) {
-            closestPlayerDistance = distance;
-            closestPlayer = player;
+        if (distance < closestPlayer.distance) {
+            closestPlayer.distance = distance;
+            closestPlayer.player = player;
         }
     }
-    return {closestPlayer, closestPlayerDistance};
 }
 
-void Ghost::chaseNearestPlayer() {
-    auto [player, playerDistance] = getPlayerToChase();
-    navMesh->FindPath(currentPath, GetNode()->GetWorldPosition(), player->GetNode()->GetWorldPosition());
+void Ghost::walkTo(const Vector3& pos) {
+    navMesh->FindPath(currentPath, GetNode()->GetWorldPosition(), pos);
+}
+
+void Ghost::chasePlayer() {
+    auto [player, playerDistance] = behavior->getPlayerToChase();
+    walkTo(player->GetNode()->GetWorldPosition());
 }
 
 void Ghost::followPath() {
@@ -237,6 +241,8 @@ void Ghost::followPath() {
         auto nextWaypoint = currentPath[0];
         nextWaypoint.y_ = GetNode()->GetWorldPosition().y_;
 
+#       ifndef NDEBUG
+        // Show debug waypoint thing (slow)
         for (auto node : GetScene()->GetChildren(false)) {
             if (node->GetName() == "DebugNavBox") {
                 node->Remove();
@@ -249,9 +255,10 @@ void Ghost::followPath() {
         test->SetScale({0.25f, 0.25f, 0.25f});
         auto mesh = test->CreateComponent<StaticModel>();
         mesh->SetModel(cache->GetResource<Model>("Models/Box.mdl"));
+#       endif
 
         // Get distance and stuff
-        float move = 0.8f / 60.f;
+        float move = behavior->getCurrentSpeed() / 60.f;
         float distance = (GetNode()->GetWorldPosition() - nextWaypoint).Length();
         if (move > distance)
             move = distance;
@@ -274,5 +281,17 @@ void Ghost::followPath() {
     } else {
         kinematicController->SetWalkDirection(Vector3::ZERO);
     }
+}
+
+
+
+namespace GhostBehaviors {
+float Default::getCurrentSpeed() {
+    return 1.0f + speedup;
+}
+
+PlayerWDistance Default::getPlayerToChase() {
+    return ghost->getClosestPlayer();
+}
 }
 }
