@@ -113,7 +113,7 @@ void Ghost::FixedUpdate(float) {
         case GhostState::roaming: {
             if (currentPath.empty()) {
                 // Get random location around the ghost
-                constexpr float maxDist = 5.0f;
+                constexpr float maxDist = 3.0f;
                 auto nPos = GetNode()->GetWorldPosition() + rng.GetVector3(Vector3(-maxDist, 0.0f, -maxDist), Vector3(maxDist, 0.0f, maxDist));
                 // Go there
                 walkTo(nPos);
