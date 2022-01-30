@@ -163,6 +163,7 @@ void Ghost::setState(GhostState nState) {
         setNextState(GhostState::local, rng.GetFloat(2500, 15000*getAggression()));
     } break;
     case GhostState::hunt: {
+        behavior->onHuntStart();
         setNextState(GhostState::local, behavior->huntDuration*1000.0f);
     } break;
     default: {}
@@ -310,6 +311,10 @@ float Default::getCurrentSpeed() {
 
 PlayerWDistance Default::getPlayerToChase() {
     return ghost->getClosestPlayer();
+}
+
+void Default::onHuntStart() {
+    speedup = 0.0f;
 }
 }
 }
