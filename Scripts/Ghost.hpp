@@ -50,7 +50,7 @@ struct GhostBehavior {
     unsigned gracePeriod = 3;
     unsigned smudgeEffectDuration = 90;
     float speedup = 0.0f;
-    float agression = 0.0f;
+    float agression = 1.0f;
     bool superHardThrows = false;
 
     virtual ~GhostBehavior() {}
