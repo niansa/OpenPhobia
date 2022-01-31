@@ -33,6 +33,10 @@ enum class GhostState {
 struct PlayerWDistance {
     Player *player = nullptr;
     float distance;
+
+    bool hasValue() {
+        return player;
+    }
 };
 
 struct GhostAppearance {
