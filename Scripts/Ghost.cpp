@@ -346,7 +346,7 @@ float Default::getCurrentSpeed() {
     auto playerToChase = getPlayerToChase();
     if (ghost->getState() == GhostState::hunt && playerToChase.hasValue() && ghost->canSeePlayer(playerToChase)) {
         speedup = Min(speedup + 0.001f, 1.75f);
-    } else {
+    } else if (speedup != 0.0f) {
         speedup = Max(speedup - 0.005f, 0.0f);
     }
     return 1.0f + speedup;
