@@ -24,7 +24,7 @@ class EMFEmitter final : public LogicComponent {
 public:
     using LogicComponent::LogicComponent;
 
-    virtual void FixedUpdate(float) override;
+    void FixedUpdate(float) override;
 
     unsigned getLevel() {
         return static_cast<unsigned>(level);

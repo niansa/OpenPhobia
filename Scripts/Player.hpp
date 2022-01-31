@@ -37,9 +37,9 @@ public:
 
     using LogicComponent::LogicComponent;
 
-    virtual void Start() override;
-    virtual void FixedUpdate(float timeStep) override;
-    virtual void Update(float timeStep) override;
+    void Start() override;
+    void FixedUpdate(float timeStep) override;
+    void Update(float timeStep) override;
 
     void grab(Node *node);
     void drop();

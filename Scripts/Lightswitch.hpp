@@ -28,9 +28,9 @@ class Lightswitch final : public Useable {
 public:
     using Useable::Useable;
 
-    virtual void Start() override;
-    virtual void TurnOn() override;
-    virtual void TurnOff() override;
+    void Start() override;
+    void TurnOn() override;
+    void TurnOff() override;
 
     void ghostyDim(bool enable);
 };

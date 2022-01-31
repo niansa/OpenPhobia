@@ -23,9 +23,9 @@ class Flashlight final : public Equipment {
 public:
     using Equipment::Equipment;
 
-    virtual void Start() override;
-    virtual void TurnOn() override;
-    virtual void TurnOff() override;
+    void Start() override;
+    void TurnOn() override;
+    void TurnOff() override;
 };
 }
 #endif // PLAYER_HPP

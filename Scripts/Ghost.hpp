@@ -54,10 +54,10 @@ struct GhostBehavior {
 namespace GhostBehaviors {
 struct Default : public GhostBehavior {
     Default() {}
-    virtual float getCurrentSpeed();
-    virtual PlayerWDistance getPlayerToChase();
-    virtual unsigned getHuntMultiplier() {return 0;}
-    virtual void onHuntStart();
+    float getCurrentSpeed() override;
+    PlayerWDistance getPlayerToChase() override;
+    unsigned getHuntMultiplier() override {return 0;}
+    void onHuntStart() override;
 };
 }
 
@@ -93,8 +93,8 @@ class Ghost final : public LogicComponent {
 public:
     using LogicComponent::LogicComponent;
 
-    virtual void Start() override;
-    virtual void FixedUpdate(float) override;
+    void Start() override;
+    void FixedUpdate(float) override;
 
     void setGhostBehavior(eastl::unique_ptr<GhostBehavior> nval) {
         behavior = std::move(nval);

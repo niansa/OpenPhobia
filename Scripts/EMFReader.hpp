@@ -23,10 +23,10 @@ class EMFReader final : public Equipment {
 public:
     using Equipment::Equipment;
 
-    virtual void Start() override;
-    virtual void FixedUpdate(float) override;
-    virtual void TurnOn() override;
-    virtual void TurnOff() override;
+    void Start() override;
+    void FixedUpdate(float) override;
+    void TurnOn() override;
+    void TurnOff() override;
 
     void setLevel(uint8_t level);
 };
