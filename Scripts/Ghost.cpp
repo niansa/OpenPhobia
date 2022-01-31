@@ -123,10 +123,19 @@ void Ghost::FixedUpdate(float) {
         case GhostState::roaming: {
             if (currentPath.empty()) {
                 // Get random location around the ghost
-                constexpr float maxDist = 3.0f;
-                auto nPos = GetNode()->GetWorldPosition() + rng.GetVector3(Vector3(-maxDist, 0.0f, -maxDist), Vector3(maxDist, 0.0f, maxDist));
-                // Go there
-                walkTo(nPos);
+                Vector3 nPos;
+                do {
+                    constexpr float maxDist = 3.0f,
+                                    minDist = 1.0f;
+                    nPos = rng.GetVector3(Vector3(minDist, 0.0f, minDist), Vector3(maxDist, 0.0f, maxDist));
+                    if (rng.GetBool(0.5f)) {
+                        nPos.x_ = -nPos.x_;
+                    }
+                    if (rng.GetBool(0.5f)) {
+                        nPos.z_ = -nPos.z_;
+                    }
+                    // Go there
+                } while (!walkTo(GetNode()->GetWorldPosition() + nPos));
             }
         } break;
         default: {}
@@ -328,7 +337,7 @@ float Ghost::getDistanceToPlayer(Player *player) {
 namespace GhostBehaviors {
 float Default::getCurrentSpeed() {
     auto playerToChase = getPlayerToChase();
-    if (playerToChase.hasValue() && ghost->canSeePlayer(playerToChase)) {
+    if (ghost->getState() == GhostState::hunt && playerToChase.hasValue() && ghost->canSeePlayer(playerToChase)) {
         speedup += 0.001f;
     } else {
         speedup = 0.0f;

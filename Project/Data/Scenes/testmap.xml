@@ -15,8 +15,8 @@
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="13.3184 1.44427 -4.29182" />
-		<attribute name="Camera Rotation" value="0.710621 0.113511 0.688619 -0.0890889" />
+		<attribute name="Camera Position" value="8.60828 3.69041 -3.77739" />
+		<attribute name="Camera Rotation" value="0.665982 0.177926 -0.694017 0.207728" />
 	</component>
 	<component type="RenderPipeline" id="839">
 		<attribute name="Color Space" value="LDR Linear" />
@@ -68,9 +68,7 @@
 					<node id="1694">
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Name" value="Lightbulb" />
-						<attribute name="Tags">
-							<string value="Scripted" />
-						</attribute>
+						<attribute name="Tags" />
 						<attribute name="Position" value="5.65425 2.04918 -4.05296" />
 						<attribute name="Rotation" value="0.707107 0.707107 0 0" />
 						<attribute name="Scale" value="1 1 1" />
