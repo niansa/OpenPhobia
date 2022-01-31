@@ -156,42 +156,49 @@ void Ghost::setState(GhostState nState) {
     currentPath.clear();
     // Set ghost visibility
     appearance->SetDeepEnabled(state == GhostState::reveal || state == GhostState::hunt);
-    // State dependent code
-    switch (state) {
-    case GhostState::local: {
-        // Handle previous state
-        if (oldState == GhostState::hunt) {
-            // Reset hunt timer
-            lastHuntTimer.Reset();
-            // Warp back home
-            kinematicController->Warp(homePosition);
-        } else {
-            // Go back home
-            walkTo(homePosition);
+
+    // Check that behavior has loaded
+    if (behavior) {
+        // State dependent code
+        switch (state) {
+        case GhostState::local: {
+            // Handle previous state
+            if (oldState == GhostState::hunt) {
+                // Reset hunt timer
+                lastHuntTimer.Reset();
+                // Warp back home
+                kinematicController->Warp(homePosition);
+            } else {
+                // Go back home
+                walkTo(homePosition);
+            }
+            // Find and define next state
+            GhostState nState;
+            auto teamSanity = levelManager->getTeamSanity();
+            if (teamSanity < behavior->sanityThreshold + behavior->getHuntMultiplier() && lastHuntTimer.GetMSec(false) > (behavior->huntCooldown - 1) * 1000 && rng.GetBool(teamSanity>25?0.25f:0.5f)) {
+                nState = GhostState::hunt;
+            } else if (rng.GetBool(0.025f*getAggression())) {
+                nState = GhostState::reveal;
+            } else  {
+                nState = GhostState::roaming;
+            }
+            setNextState(nState, rng.GetFloat(1000, 1000/getAggression()));
+        } break;
+        case GhostState::roaming: {
+            setNextState(GhostState::local, rng.GetFloat(5000, 20000*getAggression()));
+        } break;
+        case GhostState::reveal: {
+            setNextState(GhostState::local, rng.GetFloat(2500, 15000*getAggression()));
+        } break;
+        case GhostState::hunt: {
+            behavior->onHuntStart();
+            setNextState(GhostState::local, behavior->huntDuration*1000.0f);
+        } break;
+        default: {}
         }
-        // Find and define next state
-        GhostState nState;
-        auto teamSanity = levelManager->getTeamSanity();
-        if (behavior && teamSanity < behavior->sanityThreshold + behavior->getHuntMultiplier() && lastHuntTimer.GetMSec(false) > (behavior->huntCooldown - 1) * 1000 && rng.GetBool(teamSanity>25?0.25f:0.5f)) {
-            nState = GhostState::hunt;
-        } else if (rng.GetBool(0.025f*getAggression())) {
-            nState = GhostState::reveal;
-        } else  {
-            nState = GhostState::roaming;
-        }
-        setNextState(nState, rng.GetFloat(1000, 1000/getAggression()));
-    } break;
-    case GhostState::roaming: {
-        setNextState(GhostState::local, rng.GetFloat(5000, 20000*getAggression()));
-    } break;
-    case GhostState::reveal: {
-        setNextState(GhostState::local, rng.GetFloat(2500, 15000*getAggression()));
-    } break;
-    case GhostState::hunt: {
-        behavior->onHuntStart();
-        setNextState(GhostState::local, behavior->huntDuration*1000.0f);
-    } break;
-    default: {}
+    } else {
+        // Behavior is not loaded - just start roaming after 15 seconds
+        setNextState(GhostState::roaming, 15000.0f);
     }
 }
 
@@ -240,7 +247,7 @@ void Ghost::useBody(RigidBody *body) {
 }
 
 float Ghost::getAggression() const {
-    return Max(0.01f, (-(float(levelManager->getTeamSanity())-100))/100) * baseAgression;
+    return Max(0.01f, (-(float(levelManager->getTeamSanity())-100))/100) * baseAgression * behavior->agression;
 }
 
 void Ghost::updateClosestPlayer() {
@@ -351,6 +358,27 @@ PlayerWDistance Default::getPlayerToChase() {
 
 void Default::onHuntStart() {
     speedup = 0.0f;
+}
+
+
+float Raiju::getCurrentSpeed() {
+    auto bSpeed = Default::getCurrentSpeed();
+    // Check if there is any turned on electronic turned on nearby
+    for (auto body : ghost->getCloseBodies()) {
+        if (body.body_ && body.distance_ <= 5.0f) {
+            auto node = body.body_->GetNode();
+            if (node->HasTag("Useable")) {
+                auto script = static_cast<Useable *>(node->GetComponent(node->GetName()));
+                if (script->isTurnedOn()) {
+                    // Make it faster
+                    bSpeed += 1.0f;
+                    break;
+                }
+            }
+        }
+    }
+    // Return final speed
+    return bSpeed;
 }
 }
 }

@@ -47,7 +47,11 @@ struct GhostBehavior {
     unsigned huntDuration = 30;
     unsigned sanityThreshold = 50;
     unsigned huntCooldown = 30;
+    unsigned gracePeriod = 3;
+    unsigned smudgeEffectDuration = 30; // <- TODO: verify
     float speedup = 0.0f;
+    float agression = 0.0f;
+    bool superHardThrows = false;
 
     virtual ~GhostBehavior() {}
     virtual float getCurrentSpeed() = 0;
@@ -62,6 +66,50 @@ struct Default : public GhostBehavior {
     PlayerWDistance getPlayerToChase() override;
     unsigned getHuntMultiplier() override {return 0;}
     void onHuntStart() override;
+};
+
+struct Shade : public Default {
+    Shade() {
+        sanityThreshold = 35;
+        agression = 0.25f;
+    }
+};
+struct Spirit : public Default {
+    Spirit() {
+        smudgeEffectDuration = 120; // <- TODO: verify
+    }
+};
+struct Poltergeist : public Default {
+    Poltergeist() {
+        superHardThrows = true;
+    }
+};
+struct Oni : public Default {
+    Oni() {
+        superHardThrows = true;
+        agression = 1.75f;
+    }
+};
+struct Raiju : public Default {
+    Raiju() {
+        sanityThreshold = 65;
+    }
+
+    float getCurrentSpeed() override;
+};
+struct Daemon : public Default {
+    Daemon() {
+        sanityThreshold = 70;
+        agression = 1.25f;
+    }
+};
+struct Yokai : public Default {
+    Yokai() {
+        sanityThreshold = 80;
+    }
+};
+struct Revenant : public Default {
+    Revenant() {}
 };
 }
 
