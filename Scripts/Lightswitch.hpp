@@ -7,6 +7,7 @@ class Lightswitch;
 #define LIGHTSWITCH_HPP
 #include "../easyscript/Namespace.hpp"
 #include "Useable.hpp"
+#include "Lightbulb.hpp"
 
 #include <Urho3D/Input/Input.h>
 #include <Urho3D/Scene/Node.h>
@@ -21,7 +22,7 @@ namespace Game {
 class Lightswitch final : public Useable {
     URHO3D_OBJECT(Lightswitch, Useable);
 
-    eastl::vector<Light*> lightBulbs;
+    eastl::vector<Lightbulb*> lightBulbs;
     Timer cooldown;
     bool ghostyDimmed = false;
 

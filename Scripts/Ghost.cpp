@@ -139,9 +139,8 @@ void Ghost::FixedUpdate(float) {
 }
 
 void Ghost::setState(GhostState nState) {
-    if (state == GhostState::hunt) {
-        lastHuntTimer.Reset();
-    }
+    // Backup old state
+    auto oldState = state;
     // Set new state
     state = nState;
     // Stop walking
@@ -151,8 +150,16 @@ void Ghost::setState(GhostState nState) {
     // State dependent code
     switch (state) {
     case GhostState::local: {
-        // Go back home
-        kinematicController->Warp(homePosition);
+        // Handle previous state
+        if (oldState == GhostState::hunt) {
+            // Reset hunt timer
+            lastHuntTimer.Reset();
+            // Warp back home
+            kinematicController->Warp(homePosition);
+        } else {
+            // Go back home
+            walkTo(homePosition);
+        }
         // Find and define next state
         GhostState nState;
         auto teamSanity = levelManager->getTeamSanity();

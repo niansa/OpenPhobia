@@ -1,5 +1,5 @@
 #include "Lightswitch.hpp"
-#include "../LevelManager.hpp"
+#include "Lightbulb.hpp"
 
 #include <Urho3D/Graphics/StaticModel.h>
 #include <Urho3D/Graphics/Material.h>
@@ -12,10 +12,9 @@ void Lightswitch::Start() {
     ghostUseCooldown = 100;
     // Find all
     for (auto node : GetNode()->GetParent()->GetChildren(true)) {
-        if (node->GetName() != "Lightbulb") {
-            continue;
+        if (node->HasComponent<Lightbulb>()) {
+            lightBulbs.push_back(node->GetComponent<Lightbulb>());
         }
-        lightBulbs.push_back(node->GetComponent<Light>());
     }
     // Turn on light if turned on by default
     if (GetNode()->HasTag("DefaultOn")) {
@@ -27,20 +26,14 @@ void Lightswitch::Start() {
 }
 
 void Lightswitch::TurnOn() {
-    cooldown.Reset();
-    ghostyDim(false);
-    // Turn on light sources
     for (auto lightBulb : lightBulbs) {
-        //GetNode()->SetRotation(Quaternion(Vector3{0, -90, 0}));
-        lightBulb->SetEnabled(true);
+        lightBulb->TurnOn();
     }
 }
 
 void Lightswitch::TurnOff() {
-    // Turn off light sources
     for (auto lightBulb : lightBulbs) {
-        lightBulb->SetEnabled(false);
-        //GetNode()->SetRotation(Quaternion(Vector3{0, -90, 180}));
+        lightBulb->TurnOff();
     }
 }
 
@@ -48,12 +41,12 @@ void Lightswitch::ghostyDim(bool enable) {
     constexpr float dim = 0.75f;
     if (enable && !ghostyDimmed) {
         for (auto lightBulb : lightBulbs) {
-            lightBulb->SetBrightness(lightBulb->GetBrightness()*dim);
+            lightBulb->getLight()->SetBrightness(lightBulb->getLight()->GetBrightness()*dim);
         }
         ghostyDimmed = true;
     } else if (!enable && ghostyDimmed) {
         for (auto lightBulb : lightBulbs) {
-            lightBulb->SetBrightness(lightBulb->GetBrightness()/dim);
+            lightBulb->getLight()->SetBrightness(lightBulb->getLight()->GetBrightness()/dim);
         }
         ghostyDimmed = false;
     }
