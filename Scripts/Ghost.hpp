@@ -48,7 +48,7 @@ struct GhostBehavior {
     unsigned sanityThreshold = 50;
     unsigned huntCooldown = 30;
     unsigned gracePeriod = 3;
-    unsigned smudgeEffectDuration = 30; // <- TODO: verify
+    unsigned smudgeEffectDuration = 90;
     float speedup = 0.0f;
     float agression = 0.0f;
     bool superHardThrows = false;
@@ -76,7 +76,7 @@ struct Shade : public Default {
 };
 struct Spirit : public Default {
     Spirit() {
-        smudgeEffectDuration = 120; // <- TODO: verify
+        smudgeEffectDuration = 180;
     }
 };
 struct Poltergeist : public Default {
@@ -101,6 +101,8 @@ struct Daemon : public Default {
     Daemon() {
         sanityThreshold = 70;
         agression = 1.25f;
+        huntCooldown = 20;
+        smudgeEffectDuration = 60;
     }
 };
 struct Yokai : public Default {
