@@ -345,9 +345,9 @@ namespace GhostBehaviors {
 float Default::getCurrentSpeed() {
     auto playerToChase = getPlayerToChase();
     if (ghost->getState() == GhostState::hunt && playerToChase.hasValue() && ghost->canSeePlayer(playerToChase)) {
-        speedup += 0.001f;
+        speedup = Min(speedup + 0.001f, 1.75f);
     } else {
-        speedup = 0.0f;
+        speedup = Max(speedup - 0.005f, 0.0f);
     }
     return 1.0f + speedup;
 }

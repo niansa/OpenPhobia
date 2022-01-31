@@ -157,9 +157,6 @@ public:
     void setGhostBehavior(eastl::unique_ptr<GhostBehavior> nval) {
         behavior = std::move(nval);
     }
-    void addHuntDuration(unsigned ival) {
-        behavior->huntDuration += ival;
-    }
 
     bool isVisible() {
         return appearance->IsEnabled();
