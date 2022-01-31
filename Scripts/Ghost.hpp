@@ -110,6 +110,8 @@ struct Yokai : public Default {
 };
 struct Revenant : public Default {
     Revenant() {}
+
+    float getCurrentSpeed() override;
 };
 }
 

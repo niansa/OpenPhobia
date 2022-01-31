@@ -380,5 +380,18 @@ float Raiju::getCurrentSpeed() {
     // Return final speed
     return bSpeed;
 }
+
+
+float Revenant::getCurrentSpeed() {
+    auto bSpeed = Default::getCurrentSpeed();
+    // Add speed if the ghost is able to see the player
+    if (ghost->canSeePlayer(getPlayerToChase())) {
+        bSpeed += 1.5f;
+    } else {
+        bSpeed -= 0.5f;
+    }
+    // Return final speed
+    return bSpeed;
+}
 }
 }
