@@ -365,13 +365,13 @@ float Raiju::getCurrentSpeed() {
     auto bSpeed = Default::getCurrentSpeed();
     // Check if there is any turned on electronic turned on nearby
     for (auto body : ghost->getCloseBodies()) {
-        if (body.body_ && body.distance_ <= 5.0f) {
+        if (body.body_ && body.distance_ <= 3.0f) {
             auto node = body.body_->GetNode();
             if (node->HasTag("Useable")) {
                 auto script = static_cast<Useable *>(node->GetComponent(node->GetName()));
                 if (script->isTurnedOn()) {
                     // Make it faster
-                    bSpeed += 1.0f;
+                    bSpeed += 1.5f;
                     break;
                 }
             }
@@ -386,7 +386,7 @@ float Revenant::getCurrentSpeed() {
     auto bSpeed = Default::getCurrentSpeed();
     // Add speed if the ghost is able to see the player
     if (ghost->canSeePlayer(getPlayerToChase())) {
-        bSpeed += 1.5f;
+        bSpeed += 2.0f;
     } else {
         bSpeed -= 0.5f;
     }
