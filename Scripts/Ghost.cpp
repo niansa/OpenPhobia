@@ -52,6 +52,8 @@ void Ghost::Start() {
         Material *mat = model->GetMaterial();
         mat->SetShaderParameter("MatEmissiveColor", Variant(appearanceInfo->color));
     }
+    // Set initial home position
+    homePosition = GetNode()->GetWorldPosition();
     // Set initial ghost state
     setState(GhostState::local);
     // Start its animation
@@ -63,14 +65,14 @@ void Ghost::FixedUpdate(float) {
     followPath();
     // Interact
     if (isVisible() || rng.GetBool(0.0025f * getAggression())) {
-        // Get all bodies nearby
-        eastl::vector<PhysicsRaycastResult> results;
-        constexpr float range = 1.0f;
-        SphereCastMultipleDS(physicsWorld, results, Ray(GetNode()->GetWorldPosition(), GetNode()->GetWorldDirection()), range, range);
-        // Throw or use an object
-        if (!results.empty()) {
+        // Throw or use an object in range
+        if (!closeBodies.empty()) {
             for (unsigned triesLeft = 25; triesLeft != 0; triesLeft--) {
-                auto body = results[rng.GetInt(0, results.size()-1)].body_;
+                auto result = closeBodies[rng.GetInt(0, closeBodies.size()-1)];
+                if (result.distance_ > 1.0f) {
+                    continue;
+                }
+                auto body = result.body_;
                 if (body) {
                     if (body->GetNode()->HasTag("GhostInteractable") && body->GetNode()->GetParent()->GetName() != "Hand") {
                         if (body->GetNode()->HasTag("Grabbable")) {
@@ -98,6 +100,13 @@ void Ghost::FixedUpdate(float) {
         setState(GhostState::hunt);
     }
 #   endif
+    // Low frequency timed clode
+    if (lowFreqStepTimer.GetMSec(false) > 2500) {
+        // Update list of close objects
+        updateCloseBodies();
+        // Reset step timer
+        lowFreqStepTimer.Reset();
+    }
     // Timed code
     if (stepTimer.GetMSec(false) > 200) {
         // Update closest player
@@ -106,8 +115,9 @@ void Ghost::FixedUpdate(float) {
         switch (state) {
         case GhostState::hunt: {
             if (canSeePlayer(behavior->getPlayerToChase())) {
-                chasePlayer();
-                break;
+                if (chasePlayer()) {
+                    break;
+                }
             }
         }
         case GhostState::roaming: {
@@ -121,10 +131,10 @@ void Ghost::FixedUpdate(float) {
         } break;
         default: {}
         }
-        // Reset step timer
-        stepTimer.Reset();
         // Potential state switch
         trySwitchState();
+        // Reset step timer
+        stepTimer.Reset();
     }
 }
 
@@ -142,7 +152,7 @@ void Ghost::setState(GhostState nState) {
     switch (state) {
     case GhostState::local: {
         // Go back home
-        walkTo(homePosition);
+        kinematicController->Warp(homePosition);
         // Find and define next state
         GhostState nState;
         auto teamSanity = levelManager->getTeamSanity();
@@ -159,7 +169,6 @@ void Ghost::setState(GhostState nState) {
         setNextState(GhostState::local, rng.GetFloat(5000, 20000*getAggression()));
     } break;
     case GhostState::reveal: {
-        homePosition = GetNode()->GetWorldPosition();
         setNextState(GhostState::local, rng.GetFloat(2500, 15000*getAggression()));
     } break;
     case GhostState::hunt: {
@@ -230,13 +239,23 @@ void Ghost::updateClosestPlayer() {
     }
 }
 
-void Ghost::walkTo(const Vector3& pos) {
-    navMesh->FindPath(currentPath, GetNode()->GetWorldPosition(), pos);
+void Ghost::updateCloseBodies() {
+    constexpr float range = 25.0f;
+    SphereCastMultipleDS(physicsWorld, closeBodies, Ray(GetNode()->GetWorldPosition(), GetNode()->GetWorldDirection()), range, range);
+    // Hotfix: Put in distance values manually
+    for (auto& result : closeBodies) {
+        result.distance_ = (GetNode()->GetWorldPosition() - result.position_).Length();
+    }
 }
 
-void Ghost::chasePlayer() {
+bool Ghost::walkTo(const Vector3& pos) {
+    navMesh->FindPath(currentPath, GetNode()->GetWorldPosition(), pos);
+    return !currentPath.empty();
+}
+
+bool Ghost::chasePlayer() {
     auto [player, playerDistance] = behavior->getPlayerToChase();
-    walkTo(player->GetNode()->GetWorldPosition());
+    return player?walkTo(player->GetNode()->GetWorldPosition()):false;
 }
 
 void Ghost::followPath() {

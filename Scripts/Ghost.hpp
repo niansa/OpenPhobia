@@ -67,7 +67,7 @@ class Ghost final : public LogicComponent {
     URHO3D_OBJECT(Ghost, LogicComponent);
 
     RandomEngine rng;
-    Timer stepTimer, stateTimer, navigationTimer;
+    Timer stepTimer, lowFreqStepTimer, stateTimer, navigationTimer;
     KinematicCharacterController* kinematicController;
     PhysicsWorld *physicsWorld;
     LevelManager *levelManager;
@@ -83,11 +83,13 @@ class Ghost final : public LogicComponent {
     ea::vector<Vector3> currentPath;
     PlayerWDistance closestPlayer;
     Vector3 homePosition;
+    eastl::vector<PhysicsRaycastResult> closeBodies;
 
     float baseAgression = 1.f;
     unsigned maxHuntSanity = 50;
 
     void updateClosestPlayer();
+    void updateCloseBodies();
     void followPath();
 
 public:
@@ -133,13 +135,16 @@ public:
     PlayerWDistance getClosestPlayer() {
         return closestPlayer;
     }
+    const eastl::vector<PhysicsRaycastResult>& getCloseBodies() {
+        return closeBodies;
+    }
 
     void setState(GhostState nState);
     void throwBody(RigidBody *body);
     void useBody(RigidBody *body);
     float getAggression() const;
-    void walkTo(const Vector3& pos);
-    void chasePlayer();
+    bool walkTo(const Vector3& pos);
+    bool chasePlayer();
     bool canSeePlayer(PlayerWDistance player);
     float getDistanceToPlayer(Player *player);
 };
