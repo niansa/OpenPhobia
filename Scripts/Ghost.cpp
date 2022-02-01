@@ -114,6 +114,11 @@ void Ghost::FixedUpdate(float) {
         // State-dependent code
         switch (state) {
         case GhostState::hunt: {
+            // Use last hunt timer as grace period timer
+            if (lastHuntTimer.GetMSec(false) < behavior->gracePeriod * 1000.0f) {
+                break;
+            }
+            // Chase player if possible
             if (canSeePlayer(behavior->getPlayerToChase())) {
                 if (chasePlayer()) {
                     break;
@@ -191,6 +196,7 @@ void Ghost::setState(GhostState nState) {
             setNextState(GhostState::local, rng.GetFloat(2500, 15000*getAggression()));
         } break;
         case GhostState::hunt: {
+            lastHuntTimer.Reset();
             behavior->onHuntStart();
             setNextState(GhostState::local, behavior->huntDuration*1000.0f);
         } break;
