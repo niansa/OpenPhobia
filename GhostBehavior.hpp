@@ -9,6 +9,10 @@ struct GhostBehavior;
 #include "easyscript/Namespace.hpp"
 #include "Evidence.hpp"
 
+#include <EASTL/string.h>
+#include <EASTL/map.h>
+#include <EASTL/unique_ptr.h>
+
 
 
 namespace Game {
@@ -25,6 +29,7 @@ struct PlayerWDistance {
 };
 
 struct GhostBehavior {
+    eastl::string name;
     Ghost *ghost;
     unsigned huntDuration = 30;
     unsigned sanityThreshold = 50;
@@ -42,7 +47,9 @@ struct GhostBehavior {
     virtual unsigned getHuntMultiplier() = 0;
     virtual void onHuntStart() = 0;
     virtual float getFlashlightBlinkSpeed() = 0;
+    virtual bool hasEvidence(Evidence::Type) = 0;
 };
+
 namespace GhostBehaviors {
 struct Default : public GhostBehavior {
     Default() {}
@@ -51,10 +58,13 @@ struct Default : public GhostBehavior {
     unsigned getHuntMultiplier() override {return 0;}
     void onHuntStart() override;
     float getFlashlightBlinkSpeed() override;
+    bool hasEvidence(Evidence::Type checkedFor) override {
+        return Evidence::hasEvidence(evidence, checkedFor);
+    }
 };
-
 struct Spirit : public Default {
     Spirit() {
+        name = "Spirit";
         using namespace Evidence;
         evidence = EMFLevelFive | SpiritBox | GhostWriting;
         smudgeEffectDuration = 180;
@@ -62,12 +72,14 @@ struct Spirit : public Default {
 };
 struct Wraith : public Default {
     Wraith() {
+        name = "Wraith";
         using namespace Evidence;
         evidence = EMFLevelFive | SpiritBox | DOTSProjection;
     }
 };
 struct Phantom : public Default {
     Phantom() {
+        name = "Phantom";
         using namespace Evidence;
         evidence = SpiritBox | Fingerprints | DOTSProjection;
     }
@@ -76,6 +88,7 @@ struct Phantom : public Default {
 };
 struct Poltergeist : public Default {
     Poltergeist() {
+        name = "Poltergeist";
         using namespace Evidence;
         evidence = SpiritBox | Fingerprints | GhostWriting;
         superHardThrows = true;
@@ -83,18 +96,21 @@ struct Poltergeist : public Default {
 };
 struct Banshee : public Default {
     Banshee() {
+        name = "Banshee";
         using namespace Evidence;
         evidence = SpiritBox | GhostOrbs | Fingerprints;
     }
 };
 struct Jinn : public Default {
     Jinn() {
+        name = "Jinn";
         using namespace Evidence;
         evidence = EMFLevelFive | Fingerprints | FreezingTemps;
     }
 };
 struct Mare : public Default {
     Mare() {
+        name = "Mare";
         using namespace Evidence;
         evidence = SpiritBox | GhostOrbs | GhostWriting;
         sanityThreshold = 60; // <- TODO: Use sanity modifier instead
@@ -102,6 +118,7 @@ struct Mare : public Default {
 };
 struct Revenant : public Default {
     Revenant() {
+        name = "Revenant";
         using namespace Evidence;
         evidence = GhostOrbs | GhostWriting | FreezingTemps;
     }
@@ -110,6 +127,7 @@ struct Revenant : public Default {
 };
 struct Shade : public Default {
     Shade() {
+        name = "Shade";
         using namespace Evidence;
         evidence = EMFLevelFive | GhostWriting | FreezingTemps;
         sanityThreshold = 35;
@@ -118,6 +136,7 @@ struct Shade : public Default {
 };
 struct Demon : public Default {
     Demon() {
+        name = "Demon";
         using namespace Evidence;
         evidence = Fingerprints | GhostWriting | FreezingTemps;
         sanityThreshold = 70;
@@ -128,12 +147,14 @@ struct Demon : public Default {
 };
 struct Yurei : public Default {
     Yurei() {
+        name = "Yurei";
         using namespace Evidence;
         evidence = GhostOrbs | FreezingTemps | DOTSProjection;
     }
 };
 struct Oni : public Default {
     Oni() {
+        name = "Oni";
         using namespace Evidence;
         evidence = EMFLevelFive | FreezingTemps | DOTSProjection;
         superHardThrows = true;
@@ -142,6 +163,7 @@ struct Oni : public Default {
 };
 struct Yokai : public Default {
     Yokai() {
+        name = "Yokai";
         using namespace Evidence;
         evidence = SpiritBox | GhostOrbs | DOTSProjection;
         sanityThreshold = 80; // <- TODO: Use sanity modifier instead
@@ -149,38 +171,44 @@ struct Yokai : public Default {
 };
 struct Hantu : public Default {
     Hantu() {
+        name = "Hantu";
         using namespace Evidence;
         evidence = Fingerprints | GhostOrbs | FreezingTemps;
     }
 };
 struct Goryo : public Default {
     Goryo() {
+        name = "Goryo";
         using namespace Evidence;
         evidence = EMFLevelFive | Fingerprints | DOTSProjection;
     }
 };
 struct Myling : public Default {
     Myling() {
+        name = "Myling";
         using namespace Evidence;
         evidence = EMFLevelFive | Fingerprints | GhostWriting;
     }
 };
 struct Onryo : public Default {
     Onryo() {
+        name = "Onryo";
         using namespace Evidence;
         evidence = SpiritBox | GhostOrbs | FreezingTemps;
     }
 };
 struct Twins : public Default {
     Twins() {
+        name = "The Twins";
         using namespace Evidence;
         evidence = EMFLevelFive | SpiritBox | FreezingTemps;
     }
 };
 struct Raiju : public Default {
     Raiju() {
+        name = "Raiju";
         using namespace Evidence;
-        evidence = ÉMFLevelFive | GhostOrbs | DOTSProjection;
+        evidence = EMFLevelFive | GhostOrbs | DOTSProjection;
         sanityThreshold = 65; // <- TODO: Use sanity modifier instead
     }
 
@@ -188,16 +216,46 @@ struct Raiju : public Default {
 };
 struct Obake : public Default {
     Obake() {
+        name = "Obake";
         using namespace Evidence;
         evidence = EMFLevelFive | Fingerprints | GhostOrbs;
     }
 };
 struct Mimic : public Default {
     Mimic() {
+        name = "The Mimic";
         using namespace Evidence;
         evidence = SpiritBox | Fingerprints | FreezingTemps | GhostOrbs;
     }
 };
 }
+
+enum class GhostType {
+    Spirit,
+    Wraith,
+    Phantom,
+    Poltergeist,
+    Banshee,
+    Jinn,
+    Mare,
+    Revenant,
+    Shade,
+    Demon,
+    Yurei,
+    Oni,
+    Yokai,
+    Hantu,
+    Goryo,
+    Myling,
+    Onryo,
+    Twins,
+    Raiju,
+    Obake,
+    Mimic,
+    _lowest = Spirit,
+    _highest = Mimic
+};
+
+eastl::unique_ptr<GhostBehavior> getGhostBehavior(GhostType);
 }
 #endif // GHOSTBEHAVIOR_HPP

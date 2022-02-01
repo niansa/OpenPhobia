@@ -2,9 +2,11 @@
 #include "easyscript/Namespace.hpp"
 #include "Scripts/Player.hpp"
 #include "Scripts/Ghost.hpp"
+#include "GhostBehavior.hpp"
 
 #include <Urho3D/UI/UI.h>
 #include <Urho3D/UI/Sprite.h>
+#include <Urho3D/Math/RandomEngine.h>
 #include <Urho3D/Resource/ResourceCache.h>
 #include <Urho3D/Graphics/Texture2D.h>
 
@@ -42,7 +44,7 @@ void LevelManager::Start() {
     ghost = nodes[0]->GetComponent<Ghost>();
 
     // Load ghost stuff  TODO: Based on difficulty
-    auto ghostBehavior = eastl::make_unique<GhostBehaviors::Default>();
+    auto ghostBehavior = getGhostBehavior(GhostType(RandomEngine().GetUInt(unsigned(GhostType::_lowest), unsigned(GhostType::_highest))));
     ghostBehavior->ghost = ghost;
     ghost->setGhostBehavior(std::move(ghostBehavior));
 }

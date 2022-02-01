@@ -11,7 +11,7 @@ namespace GhostBehaviors {
 float Default::getCurrentSpeed() {
     auto playerToChase = getPlayerToChase();
     if (ghost->getState() == GhostState::hunt && playerToChase.hasValue() && ghost->canSeePlayer(playerToChase)) {
-        speedup = Min(speedup + 0.004f, 3.5f);
+        speedup = Min(speedup + 0.0025f, 3.5f);
     } else if (speedup != 0.0f) {
         speedup = Max(speedup - 0.005f, 0.0f);
     }
@@ -27,7 +27,25 @@ void Default::onHuntStart() {
 }
 
 float Default::getFlashlightBlinkSpeed() {
-    return ghost->rng.GetFloat(100.0f, 200.0f);
+    return ghost->rng.GetFloat(50.0f, 200.0f);
+}
+
+
+float Phantom::getFlashlightBlinkSpeed() {
+    return ghost->rng.GetFloat(250.0f, 750.0f);
+}
+
+
+float Revenant::getCurrentSpeed() {
+    auto bSpeed = Default::getCurrentSpeed();
+    // Add speed if the ghost is able to see the player
+    if (ghost->canSeePlayer(getPlayerToChase())) {
+        bSpeed += 2.0f;
+    } else {
+        bSpeed -= 0.5f;
+    }
+    // Return final speed
+    return bSpeed;
 }
 
 
@@ -50,23 +68,33 @@ float Raiju::getCurrentSpeed() {
     // Return final speed
     return bSpeed;
 }
-
-
-float Phantom::getFlashlightBlinkSpeed() {
-    return ghost->rng.GetFloat(250.0f, 750.0f);
 }
 
-
-float Revenant::getCurrentSpeed() {
-    auto bSpeed = Default::getCurrentSpeed();
-    // Add speed if the ghost is able to see the player
-    if (ghost->canSeePlayer(getPlayerToChase())) {
-        bSpeed += 2.0f;
-    } else {
-        bSpeed -= 0.5f;
+eastl::unique_ptr<GhostBehavior> getGhostBehavior(GhostType t) {
+#   define handlecase(name) case GhostType::name: return eastl::make_unique<GhostBehaviors::name>()
+    switch (t) {
+    handlecase(Spirit);
+    handlecase(Wraith);
+    handlecase(Phantom);
+    handlecase(Poltergeist);
+    handlecase(Banshee);
+    handlecase(Jinn);
+    handlecase(Mare);
+    handlecase(Revenant);
+    handlecase(Shade);
+    handlecase(Demon);
+    handlecase(Yurei);
+    handlecase(Oni);
+    handlecase(Yokai);
+    handlecase(Hantu);
+    handlecase(Goryo);
+    handlecase(Myling);
+    handlecase(Onryo);
+    handlecase(Twins);
+    handlecase(Raiju);
+    handlecase(Obake);
+    handlecase(Mimic);
+    default: return nullptr;
     }
-    // Return final speed
-    return bSpeed;
-}
 }
 }
