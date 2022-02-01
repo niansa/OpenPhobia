@@ -30,13 +30,15 @@ public:
         }
         return levelManager;
     }
+    Ghost *getGhost() {
+        return getLevelManager()->getGhost();
+    }
     float getDistanceToGhost() {
-        auto ghost = levelManager->getGhost();
-        auto ghostNode = ghost->GetNode();
+        auto ghostNode = getGhost()->GetNode();
         return (ghostNode->GetWorldPosition() - GetNode()->GetWorldPosition()).Length();
     }
     bool isDistorted() {
-        return getDistanceToGhost() < 10.0f;
+        return getDistanceToGhost() < 10.0f && getGhost()->isVisible();
     }
 };
 }

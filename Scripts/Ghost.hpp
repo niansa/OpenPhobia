@@ -58,6 +58,7 @@ struct GhostBehavior {
     virtual PlayerWDistance getPlayerToChase() = 0;
     virtual unsigned getHuntMultiplier() = 0;
     virtual void onHuntStart() = 0;
+    virtual float getFlashlightBlinkSpeed() = 0;
 };
 namespace GhostBehaviors {
 struct Default : public GhostBehavior {
@@ -66,6 +67,7 @@ struct Default : public GhostBehavior {
     PlayerWDistance getPlayerToChase() override;
     unsigned getHuntMultiplier() override {return 0;}
     void onHuntStart() override;
+    float getFlashlightBlinkSpeed() override;
 };
 
 struct Shade : public Default {
@@ -83,6 +85,11 @@ struct Poltergeist : public Default {
     Poltergeist() {
         superHardThrows = true;
     }
+};
+struct Phantom : public Default {
+    Phantom() {}
+
+    float getFlashlightBlinkSpeed() override;
 };
 struct Oni : public Default {
     Oni() {
@@ -154,6 +161,9 @@ public:
     void Start() override;
     void FixedUpdate(float) override;
 
+    GhostBehavior *getGhostBehavior() {
+        return behavior.get();
+    }
     void setGhostBehavior(eastl::unique_ptr<GhostBehavior> nval) {
         behavior = std::move(nval);
     }
@@ -163,7 +173,7 @@ public:
     }
 
     bool hasNextState() {
-        return nextStateIn != NAN;
+        return !isnan(nextStateIn);
     }
     void clearNextState() {
         nextStateIn = NAN;

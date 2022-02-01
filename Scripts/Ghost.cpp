@@ -345,7 +345,7 @@ namespace GhostBehaviors {
 float Default::getCurrentSpeed() {
     auto playerToChase = getPlayerToChase();
     if (ghost->getState() == GhostState::hunt && playerToChase.hasValue() && ghost->canSeePlayer(playerToChase)) {
-        speedup = Min(speedup + 0.001f, 1.75f);
+        speedup = Min(speedup + 0.004f, 3.5f);
     } else if (speedup != 0.0f) {
         speedup = Max(speedup - 0.005f, 0.0f);
     }
@@ -358,6 +358,10 @@ PlayerWDistance Default::getPlayerToChase() {
 
 void Default::onHuntStart() {
     speedup = 0.0f;
+}
+
+float Default::getFlashlightBlinkSpeed() {
+    return ghost->rng.GetFloat(100.0f, 200.0f);
 }
 
 
@@ -379,6 +383,11 @@ float Raiju::getCurrentSpeed() {
     }
     // Return final speed
     return bSpeed;
+}
+
+
+float Phantom::getFlashlightBlinkSpeed() {
+    return ghost->rng.GetFloat(250.0f, 750.0f);
 }
 
 

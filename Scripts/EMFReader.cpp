@@ -17,9 +17,9 @@ void EMFReader::Start() {
 void EMFReader::FixedUpdate(float) {
     if (turnedOn) {
         unsigned emfLevel = 1;
-        auto ghost = getLevelManager()->getGhost();
+        auto ghost = getGhost();
         // Go crazy if there is a visible ghost nearby; otherwise show correct values
-        if (ghost->isVisible() && isDistorted()) {
+        if (isDistorted()) {
             emfLevel = ghost->rng.GetUInt(1, static_cast<unsigned>(EMFLevel::reveal)+1);
         } else {
             // Get objects nearby

@@ -30,7 +30,7 @@
 			<attribute name="Bounding Box Min" value="-1000 -1000 -1000" />
 			<attribute name="Bounding Box Max" value="1000 1000 1000" />
 			<attribute name="Ambient Color" value="0.25 0.25 0.25 1" />
-			<attribute name="Ambient Brightness" value="0.100000" />
+			<attribute name="Ambient Brightness" value="0.000000" />
 			<attribute name="Background Brightness" value="0.010000" />
 		</component>
 		<component type="SoundSource" id="149">
