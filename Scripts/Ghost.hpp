@@ -97,8 +97,8 @@ struct Raiju : public Default {
 
     float getCurrentSpeed() override;
 };
-struct Daemon : public Default {
-    Daemon() {
+struct Demon : public Default {
+    Demon() {
         sanityThreshold = 70;
         agression = 1.25f;
         huntCooldown = 20;
