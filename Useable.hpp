@@ -25,20 +25,24 @@ public:
     virtual void Use() {
         if (turnedOn) {
             TurnOff();
-            turnedOn = false;
         } else {
             TurnOn();
-            turnedOn = true;
         }
     }
     void GhostUse(bool respectCooldown = true) {
         if (!respectCooldown || ghostUseTimer.GetMSec(false) > ghostUseCooldown) {
-            Use();
+            if (turnedOn) {
+                GhostTurnOff();
+            } else {
+                GhostTurnOn();
+            }
             ghostUseTimer.Reset();
         }
     }
-    virtual void TurnOn() {}
-    virtual void TurnOff() {}
+    virtual void TurnOn() {turnedOn = true;}
+    virtual void TurnOff() {turnedOn = false;}
+    virtual void GhostTurnOn() {TurnOn();}
+    virtual void GhostTurnOff() {TurnOff();}
 
     bool isTurnedOn() {
         return turnedOn;

@@ -52,6 +52,9 @@ public:
     Ghost *getGhost() {
         return ghost;
     }
+    bool isGhostLoaded() {
+        return ghost;
+    }
     const eastl::vector<Player*> &getPlayers() const {
         return players;
     }

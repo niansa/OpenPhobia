@@ -25,8 +25,8 @@ public:
 
     void Start() override;
     void FixedUpdate(float) override;
-    void TurnOn() override;
-    void TurnOff() override;
+    void TurnOn(void) override;
+    void TurnOff(void) override;
 
     void setLevel(uint8_t level);
 };

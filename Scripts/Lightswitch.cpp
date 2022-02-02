@@ -1,5 +1,6 @@
 #include "Lightswitch.hpp"
 #include "Lightbulb.hpp"
+#include "Ghost.hpp"
 
 #include <Urho3D/Graphics/StaticModel.h>
 #include <Urho3D/Graphics/Material.h>
@@ -8,6 +9,8 @@
 
 namespace Game {
 void Lightswitch::Start() {
+    // Get level manager
+    levelManager = GetGlobalVar("LevelManager").GetCustom<LevelManager*>();
     // Set ghost use cooldown
     ghostUseCooldown = 100;
     // Find all
@@ -26,15 +29,37 @@ void Lightswitch::Start() {
 }
 
 void Lightswitch::TurnOn() {
-    for (auto lightBulb : lightBulbs) {
-        lightBulb->TurnOn();
+    if (levelManager->getGhost()->getState() != GhostState::hunt) {
+        forceTurnOn();
     }
 }
 
 void Lightswitch::TurnOff() {
+    if (!levelManager->isGhostLoaded() || levelManager->getGhost()->getState() != GhostState::hunt) {
+        forceTurnOff();
+    }
+}
+
+void Lightswitch::GhostTurnOn() {
+    forceTurnOn();
+}
+
+void Lightswitch::GhostTurnOff() {
+    forceTurnOff();
+}
+
+void Lightswitch::forceTurnOn() {
+    for (auto lightBulb : lightBulbs) {
+        lightBulb->TurnOn();
+    }
+    turnedOn = true;
+}
+
+void Lightswitch::forceTurnOff() {
     for (auto lightBulb : lightBulbs) {
         lightBulb->TurnOff();
     }
+    turnedOn = false;
 }
 
 void Lightswitch::ghostyDim(bool enable) {

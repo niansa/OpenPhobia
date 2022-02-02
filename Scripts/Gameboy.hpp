@@ -22,8 +22,8 @@ class Gameboy final : public Useable {
 public:
     using Useable::Useable;
 
-    void TurnOn() override;
-    void TurnOff() override;
+    void TurnOn(void) override;
+    void TurnOff(void) override;
 };
 }
 #endif // PLAYER_HPP

@@ -40,6 +40,7 @@ void Flashlight::TurnOn() {
             lightBulb->GetComponent<Light>()->SetEnabled(true);
         }
     }
+    turnedOn = true;
 }
 
 void Flashlight::TurnOff() {
@@ -48,5 +49,6 @@ void Flashlight::TurnOff() {
             lightBulb->GetComponent<Light>()->SetEnabled(false);
         }
     }
+    turnedOn = false;
 }
 }

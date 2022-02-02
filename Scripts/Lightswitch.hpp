@@ -8,6 +8,7 @@ class Lightswitch;
 #include "../easyscript/Namespace.hpp"
 #include "Useable.hpp"
 #include "Lightbulb.hpp"
+#include "LevelManager.hpp"
 
 #include <Urho3D/Input/Input.h>
 #include <Urho3D/Scene/Node.h>
@@ -22,6 +23,7 @@ namespace Game {
 class Lightswitch final : public Useable {
     URHO3D_OBJECT(Lightswitch, Useable);
 
+    LevelManager *levelManager;
     eastl::vector<Lightbulb*> lightBulbs;
     Timer cooldown;
     bool ghostyDimmed = false;
@@ -32,7 +34,11 @@ public:
     void Start() override;
     void TurnOn() override;
     void TurnOff() override;
+    void GhostTurnOn() override;
+    void GhostTurnOff() override;
 
+    void forceTurnOn();
+    void forceTurnOff();
     void ghostyDim(bool enable);
 };
 }

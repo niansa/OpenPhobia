@@ -17,10 +17,9 @@ void EMFReader::Start() {
 void EMFReader::FixedUpdate(float) {
     if (turnedOn) {
         unsigned emfLevel = 1;
-        auto ghost = getGhost();
         // Go crazy if there is a visible ghost nearby; otherwise show correct values
         if (isDistorted()) {
-            emfLevel = ghost->rng.GetUInt(1, static_cast<unsigned>(EMFLevel::reveal)+1);
+            emfLevel = getGhost()->rng.GetUInt(1, static_cast<unsigned>(EMFLevel::reveal)+1);
         } else {
             // Get objects nearby
             eastl::vector<PhysicsRaycastResult> result;
@@ -45,17 +44,21 @@ void EMFReader::FixedUpdate(float) {
 
 void EMFReader::TurnOn() {
     leds->GetChild(unsigned(0))->SetEnabled(true);
+    turnedOn = true;
 }
 
 void EMFReader::TurnOff() {
     for (const auto led : leds->GetChildren()) {
         led->SetEnabled(false);
     }
+    turnedOn = false;
 }
 
 void EMFReader::setLevel(uint8_t level) {
     // Reset
-    TurnOff();
+    for (const auto led : leds->GetChildren()) {
+        led->SetEnabled(false);
+    }
     // Set level
     for (unsigned led = 0; led != level; led++) {
         leds->GetChild(led)->SetEnabled(true);
