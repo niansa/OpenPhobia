@@ -207,7 +207,6 @@ void Ghost::setState(GhostState nState) {
             // Play hunt sound TODO: Fixup
             auto huntSound = GetNode()->GetOrCreateComponent<SoundSource3D>();
             huntSound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/ghostSingMix.ogg"));
-            huntSound->SetPositionAttr(0.0f);
             setNextState(GhostState::local, behavior->huntDuration*1000.0f);
         } break;
         default: {}
