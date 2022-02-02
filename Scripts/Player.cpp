@@ -8,6 +8,8 @@
 #include <Urho3D/Graphics/Camera.h>
 #include <Urho3D/Graphics/Octree.h>
 #include <Urho3D/Graphics/OctreeQuery.h>
+#include <Urho3D/Audio/Audio.h>
+#include <Urho3D/Audio/SoundListener.h>
 #include <Urho3D/UI/UI.h>
 
 
@@ -23,8 +25,12 @@ void Player::Start() {
 
     auto* renderer = GetSubsystem<Renderer>();
 
+    // Set viewport camera
     SharedPtr<Viewport> viewport(new Viewport(context_, GetScene(), head->GetComponent<Camera>()));
     renderer->SetViewport(0, viewport);
+
+    // Set audio audio listener
+    GetSubsystem<Audio>()->SetListener(GetNode()->GetComponent<SoundListener>());
 }
 
 void Player::FixedUpdate(float timeStep) {
