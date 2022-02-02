@@ -260,11 +260,13 @@ float Ghost::getAggression() const {
 void Ghost::updateClosestPlayer() {
     closestPlayer.player = nullptr;
     closestPlayer.distance = 100.f;
+    bool canSeeClosestPlayer = false;
     for (auto player : levelManager->getPlayers()) {
-        auto distance = getDistanceToPlayer(player);
-        if (distance < closestPlayer.distance) {
-            closestPlayer.distance = distance;
-            closestPlayer.player = player;
+        auto p = getPlayerWDistance(player);
+        auto canSeeP = canSeePlayer(p);
+        if (p.distance < closestPlayer.distance || (!canSeeClosestPlayer && canSeeP)) {
+            closestPlayer = p;
+            canSeeClosestPlayer = canSeeP;
         }
     }
 }
@@ -336,11 +338,28 @@ void Ghost::followPath() {
 }
 
 bool Ghost::canSeePlayer(PlayerWDistance player) {
+    // Check if player is close enough
+    if (player.distance > behavior->ghostVisionRange) {
+        return false;
+    }
+    // Check if player is actually visible
     auto vectorToPlayer = player.player->GetNode()->GetWorldPosition() - GetNode()->GetWorldPosition();
     auto vectorForward = GetNode()->GetWorldDirection();
     ea::vector<PhysicsRaycastResult> hits;
     physicsWorld->Raycast(hits, Ray(GetNode()->GetWorldPosition(), vectorToPlayer.Normalized()), vectorToPlayer.Length());
-    return hits.size() <= 1;
+    if (hits.size() <= 1) {
+        return true;
+    }
+    // Check if player has electronics turned on
+    auto playerHand = player.player->getHand();
+    if (playerHand && playerHand->HasTag("Useable")) {
+        auto script = static_cast<Useable *>(playerHand->GetComponent(playerHand->GetName()));
+        if (script->isTurnedOn()) {
+            return true;
+        }
+    }
+    // Finally, give up looking for the player :P
+    return false;
 }
 
 float Ghost::getDistanceToPlayer(Player *player) {

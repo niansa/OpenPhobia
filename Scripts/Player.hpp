@@ -41,6 +41,10 @@ public:
     void FixedUpdate(float timeStep) override;
     void Update(float timeStep) override;
 
+    Node *getHand() {
+        return hand;
+    }
+
     void grab(Node *node);
     void drop();
 };

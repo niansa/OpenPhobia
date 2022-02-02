@@ -113,6 +113,10 @@ public:
         return closeBodies;
     }
 
+    PlayerWDistance getPlayerWDistance(Player *p) {
+        return {p, getDistanceToPlayer(p)};
+    }
+
     void setState(GhostState nState);
     void throwBody(RigidBody *body);
     void useBody(RigidBody *body);
