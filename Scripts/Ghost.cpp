@@ -219,9 +219,16 @@ void Ghost::throwBody(RigidBody *body) {
     // Get random power
     auto power = getAggression()>0.5f?rng.GetFloat(0.75f, 2.25f):rng.GetFloat(0.25f, 1.75f);
     body->SetLinearVelocity(dir*power);
+    // Get emf level to emit
+    EMFLevel level;
+    if (behavior->hasEvidence(Evidence::EMFLevelFive) && rng.GetBool(0.25f)) {
+        level = EMFLevel::five;
+    } else {
+        level = EMFLevel::throw_;
+    }
     // Make it emit emf
     auto emitter = body->GetNode()->GetOrCreateComponent<EMFEmitter>();
-    emitter->setLevel(EMFLevel::throw_);
+    emitter->setLevel(level);
     emitter->timeoutIn(20);
 }
 
@@ -247,9 +254,16 @@ void Ghost::useBody(RigidBody *body) {
         // Just use it whatever it is
         script->GhostUse();
     }
+    // Get emf level to emit
+    EMFLevel level;
+    if (behavior->hasEvidence(Evidence::EMFLevelFive) && rng.GetBool(0.25f)) {
+        level = EMFLevel::five;
+    } else {
+        level = EMFLevel::touch;
+    }
     // Make it emit emf
     auto emitter = body->GetNode()->GetOrCreateComponent<EMFEmitter>();
-    emitter->setLevel(EMFLevel::touch);
+    emitter->setLevel(level);
     emitter->timeoutIn(15);
 }
 
