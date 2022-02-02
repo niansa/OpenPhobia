@@ -128,7 +128,7 @@ void Player::Update(float timeStep) {
         // Raycast
         auto ray = head->GetComponent<Camera>()->GetScreenRay(float(pos.x_) / graphics->GetWidth(), float(pos.y_) / graphics->GetHeight());
         ea::vector<RayQueryResult> results;
-        RayOctreeQuery query(results, ray, RAY_TRIANGLE, grabRange, DRAWABLE_GEOMETRY);
+        RayOctreeQuery query(results, ray, RAY_TRIANGLE, interactRange, DRAWABLE_GEOMETRY);
         GetScene()->GetComponent<Octree>()->RaycastSingle(query);
         // Get first result
         if (!results.empty()) {
