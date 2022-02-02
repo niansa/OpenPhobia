@@ -18,6 +18,8 @@
 #include <Urho3D/Graphics/AnimationController.h>
 #include <Urho3D/Graphics/AnimatedModel.h>
 #include <Urho3D/Graphics/Material.h>
+#include <Urho3D/Audio/Sound.h>
+#include <Urho3D/Audio/SoundSource3D.h>
 #include <Urho3D/Math/Color.h>
 #include <Urho3D/Resource/ResourceCache.h>
 #ifndef NDEBUG
@@ -172,6 +174,8 @@ void Ghost::setState(GhostState nState) {
             if (oldState == GhostState::hunt) {
                 // Reset hunt timer
                 lastHuntTimer.Reset();
+                // Stop hunt sound
+                GetNode()->GetComponent<SoundSource3D>()->Stop();
                 // Warp back home
                 kinematicController->Warp(homePosition);
             } else {
@@ -197,8 +201,13 @@ void Ghost::setState(GhostState nState) {
             setNextState(GhostState::local, rng.GetFloat(2500, 15000*getAggression()));
         } break;
         case GhostState::hunt: {
+            // Reset stuff
             lastHuntTimer.Reset();
             behavior->onHuntStart();
+            // Play hunt sound TODO: Fixup
+            auto huntSound = GetNode()->GetOrCreateComponent<SoundSource3D>();
+            huntSound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/ghostSingMix.ogg"));
+            huntSound->SetPositionAttr(0.0f);
             setNextState(GhostState::local, behavior->huntDuration*1000.0f);
         } break;
         default: {}
