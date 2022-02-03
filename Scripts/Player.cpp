@@ -30,7 +30,7 @@ void Player::Start() {
     renderer->SetViewport(0, viewport);
 
     // Set audio audio listener
-    GetSubsystem<Audio>()->SetListener(GetNode()->GetComponent<SoundListener>());
+    GetSubsystem<Audio>()->SetListener(head->GetComponent<SoundListener>());
 }
 
 void Player::FixedUpdate(float timeStep) {
