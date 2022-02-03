@@ -29,6 +29,7 @@ public:
     void TurnOff(void) override;
 
     void setLevel(uint8_t level);
+    void playClick();
 };
 }
 #endif // EMFREADER_HPP

@@ -5,6 +5,9 @@
 
 #include <Urho3D/Physics/RigidBody.h>
 #include <Urho3D/Math/Ray.h>
+#include <Urho3D/Resource/ResourceCache.h>
+#include <Urho3D/Audio/Sound.h>
+#include <Urho3D/Audio/SoundSource3D.h>
 
 
 
@@ -45,6 +48,7 @@ void EMFReader::FixedUpdate(float) {
 void EMFReader::TurnOn() {
     leds->GetChild(unsigned(0))->SetEnabled(true);
     turnedOn = true;
+    playClick();
 }
 
 void EMFReader::TurnOff() {
@@ -52,6 +56,7 @@ void EMFReader::TurnOff() {
         led->SetEnabled(false);
     }
     turnedOn = false;
+    playClick();
 }
 
 void EMFReader::setLevel(uint8_t level) {
@@ -63,5 +68,13 @@ void EMFReader::setLevel(uint8_t level) {
     for (unsigned led = 0; led != level; led++) {
         leds->GetChild(led)->SetEnabled(true);
     }
+}
+
+void EMFReader::playClick() {
+    auto clickSound = GetNode()->CreateComponent<SoundSource3D>();
+    clickSound->SetFarDistance(5.0f);
+    clickSound->SetNearDistance(0.2f);
+    clickSound->SetAutoRemoveMode(AutoRemoveMode::REMOVE_COMPONENT);
+    clickSound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/click80.wav"));
 }
 }
