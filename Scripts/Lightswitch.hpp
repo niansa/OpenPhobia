@@ -40,6 +40,7 @@ public:
     void forceTurnOn();
     void forceTurnOff();
     void ghostyDim(bool enable);
+    void playClick();
 };
 }
 #endif // PLAYER_HPP

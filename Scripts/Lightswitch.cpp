@@ -4,6 +4,9 @@
 
 #include <Urho3D/Graphics/StaticModel.h>
 #include <Urho3D/Graphics/Material.h>
+#include <Urho3D/Resource/ResourceCache.h>
+#include <Urho3D/Audio/Sound.h>
+#include <Urho3D/Audio/SoundSource3D.h>
 
 
 
@@ -53,6 +56,7 @@ void Lightswitch::forceTurnOn() {
         lightBulb->TurnOn();
     }
     turnedOn = true;
+    playClick();
 }
 
 void Lightswitch::forceTurnOff() {
@@ -60,6 +64,7 @@ void Lightswitch::forceTurnOff() {
         lightBulb->TurnOff();
     }
     turnedOn = false;
+    playClick();
 }
 
 void Lightswitch::ghostyDim(bool enable) {
@@ -75,5 +80,13 @@ void Lightswitch::ghostyDim(bool enable) {
         }
         ghostyDimmed = false;
     }
+}
+
+void Lightswitch::playClick() {
+    auto clickSound = GetNode()->CreateComponent<SoundSource3D>();
+    clickSound->SetFarDistance(20.0f);
+    clickSound->SetNearDistance(0.5f);
+    clickSound->SetAutoRemoveMode(AutoRemoveMode::REMOVE_COMPONENT);
+    clickSound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/click10.wav"));
 }
 }
