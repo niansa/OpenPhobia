@@ -31,6 +31,8 @@ public:
     void Start() override;
     void TurnOn() override;
     void TurnOff() override;
+
+    void playClick();
 };
 }
 #endif // PLAYER_HPP

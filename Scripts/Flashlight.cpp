@@ -1,6 +1,10 @@
 #include "Flashlight.hpp"
 #include "../LevelManager.hpp"
 
+#include <Urho3D/Resource/ResourceCache.h>
+#include <Urho3D/Audio/Sound.h>
+#include <Urho3D/Audio/SoundSource3D.h>
+
 
 
 namespace Game {
@@ -41,6 +45,7 @@ void Flashlight::TurnOn() {
         }
     }
     turnedOn = true;
+    playClick();
 }
 
 void Flashlight::TurnOff() {
@@ -50,5 +55,14 @@ void Flashlight::TurnOff() {
         }
     }
     turnedOn = false;
+    playClick();
+}
+
+void Flashlight::playClick() {
+    auto clickSound = GetNode()->CreateComponent<SoundSource3D>();
+    clickSound->SetFarDistance(5.0f);
+    clickSound->SetNearDistance(0.2f);
+    clickSound->SetAutoRemoveMode(AutoRemoveMode::REMOVE_COMPONENT);
+    clickSound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/click1.wav"));
 }
 }
