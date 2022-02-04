@@ -1,9 +1,11 @@
 {
+	"defaultScene": "",
 	"pipeline": {
 		"flavors": [
 			{
 				"name": "default",
-				"settings": []
+				"platforms": [],
+				"settings": {}
 			}
 		]
 	},
