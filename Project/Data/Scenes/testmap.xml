@@ -5,8 +5,8 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="1865" />
-	<attribute name="Next Replicated Component ID" value="1986" />
+	<attribute name="Next Replicated Node ID" value="1867" />
+	<attribute name="Next Replicated Component ID" value="1988" />
 	<attribute name="Next Local Node ID" value="16777300" />
 	<attribute name="Next Local Component ID" value="16777344" />
 	<attribute name="Variables" />
@@ -15,8 +15,8 @@
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="26.1483 5.11927 1.72402" />
-		<attribute name="Camera Rotation" value="-0.214012 -0.00159029 0.958623 -0.187718" />
+		<attribute name="Camera Position" value="11.5042 3.78656 -7.22367" />
+		<attribute name="Camera Rotation" value="0.6702 0.379525 0.535583 -0.34633" />
 	</component>
 	<component type="RenderPipeline" id="839">
 		<attribute name="Color Space" value="LDR Linear" />
@@ -985,6 +985,31 @@
 				<component type="CollisionShape" id="1982" />
 				<component type="RigidBody" id="1983">
 					<attribute name="Physics Position" value="21.1373 1.21197 -6.37971" />
+					<attribute name="Is Trigger" value="true" />
+				</component>
+			</node>
+		</node>
+		<node id="1865">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Utilityroom" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="0 0 0" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<node id="1866">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="RoomBoundary" />
+				<attribute name="Tags">
+					<string value="Scripted" />
+				</attribute>
+				<attribute name="Position" value="15.1867 1.21197 -8.95494" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="6.35 2.5 3.9" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="1986" />
+				<component type="RigidBody" id="1987">
+					<attribute name="Physics Position" value="15.1867 1.21197 -8.95494" />
 					<attribute name="Is Trigger" value="true" />
 				</component>
 			</node>
