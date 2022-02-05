@@ -5,18 +5,18 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="1893" />
-	<attribute name="Next Replicated Component ID" value="2029" />
-	<attribute name="Next Local Node ID" value="16777308" />
-	<attribute name="Next Local Component ID" value="16777356" />
+	<attribute name="Next Replicated Node ID" value="1897" />
+	<attribute name="Next Replicated Component ID" value="2033" />
+	<attribute name="Next Local Node ID" value="16777310" />
+	<attribute name="Next Local Component ID" value="16777359" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D;Lightmaps/Textures/Lightmap-0.png" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="5.72034 1.31847 -3.32372" />
-		<attribute name="Camera Rotation" value="0.98334 0.117892 -0.137788 -0.0125538" />
+		<attribute name="Camera Position" value="5.11706 2.38259 -4.15539" />
+		<attribute name="Camera Rotation" value="0.948135 0.315929 0.0102002 -0.0335502" />
 	</component>
 	<component type="RenderPipeline" id="839">
 		<attribute name="Color Space" value="LDR Linear" />
@@ -1652,7 +1652,7 @@
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Spawn_EMFReader" />
 			<attribute name="Tags" />
-			<attribute name="Position" value="5.4273 1.00576 -2.18641" />
+			<attribute name="Position" value="4.7581 1.00576 -2.18641" />
 			<attribute name="Rotation" value="1 0 0 0" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
