@@ -38,7 +38,7 @@ public:
         return (ghostNode->GetWorldPosition() - GetNode()->GetWorldPosition()).Length();
     }
     bool isDistorted() {
-        return getDistanceToGhost() < 10.0f && getGhost()->isVisible();
+        return getDistanceToGhost() < getGhost()->behavior->electricDistortionRange && getGhost()->isVisible();
     }
 };
 }

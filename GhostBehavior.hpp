@@ -38,6 +38,9 @@ struct GhostBehavior {
     unsigned smudgeEffectDuration = 90;
     float electricVisionRange = 10.0f;
     float hearingRange = 10.0f;
+    float electricDistortionRange = 10.0f;
+    float vocalRange = 20.0f;
+    float footstepRange = 20.0f;
     float speedup = 0.0f;
     float agression = 1.0f;
     bool superHardThrows = false;
@@ -192,6 +195,7 @@ struct Myling : public Default {
         name = "Myling";
         using namespace Evidence;
         evidence = EMFLevelFive | Fingerprints | GhostWriting;
+        footstepRange = 10.0f;
     }
 };
 struct Onryo : public Default {

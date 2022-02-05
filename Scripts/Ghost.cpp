@@ -220,7 +220,7 @@ void Ghost::setState(GhostState nState) {
                 behavior->onHuntStart();
                 // Play hunt sound TODO: Fixup
                 auto huntSound = GetNode()->GetOrCreateComponent<SoundSource3D>();
-                huntSound->SetFarDistance(25.0f);
+                huntSound->SetFarDistance(behavior->vocalRange);
                 huntSound->SetNearDistance(1.0f);
                 huntSound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/ghostSingMale.ogg"));
             }
