@@ -392,16 +392,14 @@ bool Ghost::canSeePlayer(PlayerWDistance player) {
     if (hits.size() <= 1) {
         return true;
     }
-    // Check if player is close enough
-    if (player.distance > behavior->electricVisionRange) {
-        return false;
-    }
     // Check if player has electronics turned on
-    auto playerHand = player.player->getHand();
-    if (playerHand && playerHand->HasTag("Useable")) {
-        auto script = static_cast<Useable *>(playerHand->GetComponent(playerHand->GetName()));
-        if (script->isTurnedOn()) {
-            return true;
+    if (player.distance < behavior->electricVisionRange) {
+        auto playerHand = player.player->getHand();
+        if (playerHand && playerHand->HasTag("Useable")) {
+            auto script = static_cast<Useable *>(playerHand->GetComponent(playerHand->GetName()));
+            if (script->isTurnedOn()) {
+                return true;
+            }
         }
     }
     // Finally, give up looking for the player :P
