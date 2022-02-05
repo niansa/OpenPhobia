@@ -242,7 +242,7 @@ void Ghost::throwBody(RigidBody *body) {
         dir.y_ = -dir.y_;
     }
     // Get random power
-    auto power = getAggression()>0.5f?rng.GetFloat(0.75f, 2.25f):rng.GetFloat(0.25f, 1.75f);
+    auto power = behavior->superHardThrows?rng.GetFloat(0.75f, 2.0f):rng.GetFloat(0.25f, 1.75f);
     body->SetLinearVelocity(dir*power);
     // Get emf level to emit
     EMFLevel level;
