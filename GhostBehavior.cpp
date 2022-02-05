@@ -68,6 +68,14 @@ float Raiju::getCurrentSpeed() {
     // Return final speed
     return bSpeed;
 }
+
+bool Obake::hasEvidence(Evidence::Type checkedFor) {
+    auto fres = Default::hasEvidence(checkedFor);
+    if (checkedFor == Evidence::Fingerprints && ghost->rng.GetBool(0.25f)) {
+        fres = false;
+    }
+    return true;
+}
 }
 
 eastl::unique_ptr<GhostBehavior> getGhostBehavior(GhostType t) {

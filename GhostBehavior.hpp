@@ -223,6 +223,8 @@ struct Obake : public Default {
         using namespace Evidence;
         evidence = EMFLevelFive | Fingerprints | GhostOrbs;
     }
+
+    bool hasEvidence(Evidence::Type checkedFor) override;
 };
 struct Mimic : public Default {
     Mimic() {
