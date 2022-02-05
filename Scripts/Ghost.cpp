@@ -126,14 +126,19 @@ void Ghost::FixedUpdate(float) {
             }
         } break;
         case GhostState::reveal: {
-            auto playerToChase = getClosestPlayer();
-            // Run after player if initially close enough
-            if (playerToChase.distance < 3.0f) {
-                walkTo(playerToChase.player->GetNode()->GetWorldPosition());
-            }
+            // RevealMode-dependent code
+            switch (revealMode) {
+            case RevealMode::chasing: {
+                walkTo(getClosestPlayer().player->GetNode()->GetWorldPosition());
+            } break;
+            default: {}
+            };
             // End reveal early if needed
-            if (getDistanceToPlayer(playerToChase.player) < 1.5f) {
-                setState(GhostState::local);
+            for (auto player : levelManager->getPlayers()) {
+                if (getDistanceToPlayer(player) < 1.0f) {
+                    setState(GhostState::local);
+                    break;
+                }
             }
         } break;
         case GhostState::hunt: {
@@ -207,12 +212,20 @@ void Ghost::setState(GhostState nState) {
         case GhostState::local: {
             // Handle previous state
             if (oldState == GhostState::hunt) {
+                // Stop vocal sound
+                GetNode()->GetComponent<SoundSource3D>()->Stop();
                 // Reset hunt timer
                 lastHuntTimer.Reset();
-                // Stop hunt sound
-                GetNode()->GetComponent<SoundSource3D>()->Stop();
                 // Warp back home
                 kinematicController->Warp(homePosition);
+            } else if (oldState == GhostState::reveal) {
+                if (revealMode == RevealMode::standing) {
+                    // Stop vocal sound
+                    GetNode()->GetComponent<SoundSource3D>()->Stop();
+                } else {
+                    // Play scream
+                    GetNode()->GetComponent<SoundSource3D>()->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/screamShort.wav"));
+                }
             } else {
                 // Go back home
                 walkTo(homePosition);
@@ -236,7 +249,14 @@ void Ghost::setState(GhostState nState) {
         case GhostState::reveal: {
             updateClosestPlayer();
             if (getClosestPlayer().hasValue()) {
-                setNextState(GhostState::local, rng.GetUInt(1000, Max(10000.0f*getAggression(), 1000)));
+                revealMode = behavior->getRevealMode(getClosestPlayer().distance);
+                if (revealMode != RevealMode::airball) {
+                    // Play reveal sound
+                    auto sound = GetNode()->GetOrCreateComponent<SoundSource3D>();
+                    sound->SetFarDistance(behavior->vocalRange);
+                    sound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/ghostSingMix.ogg"));
+                }
+                setNextState(GhostState::local, rng.GetUInt(2500, Max(15000.0f*getAggression(), 1500)));
             } else {
                 setState(GhostState::local);
             }
@@ -252,11 +272,10 @@ void Ghost::setState(GhostState nState) {
             if (oldState != GhostState::hunt) {
                 lastHuntTimer.Reset();
                 behavior->onHuntStart();
-                // Play hunt sound TODO: Fixup
-                auto huntSound = GetNode()->GetOrCreateComponent<SoundSource3D>();
-                huntSound->SetFarDistance(behavior->vocalRange);
-                huntSound->SetNearDistance(1.0f);
-                huntSound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/ghostSingMale.ogg"));
+                // Play hunt sound
+                auto sound = GetNode()->GetOrCreateComponent<SoundSource3D>();
+                sound->SetFarDistance(behavior->vocalRange);
+                sound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/ghostSingMale.ogg"));
             }
             setNextState(GhostState::local, behavior->huntDuration);
         } break;

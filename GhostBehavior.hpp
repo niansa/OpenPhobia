@@ -19,6 +19,12 @@ namespace Game {
 class Ghost;
 class Player;
 
+enum class RevealMode {
+    standing,
+    chasing,
+    airball
+};
+
 struct PlayerWDistance {
     Player *player = nullptr;
     float distance;
@@ -55,6 +61,7 @@ struct GhostBehavior {
     virtual void onHuntStart() = 0;
     virtual float getBlinkSpeed() = 0;
     virtual bool hasEvidence(Evidence::Type) = 0;
+    virtual RevealMode getRevealMode(float playerDistance) = 0;
 };
 
 namespace GhostBehaviors {
@@ -68,6 +75,7 @@ struct Default : public GhostBehavior {
     bool hasEvidence(Evidence::Type checkedFor) override {
         return Evidence::hasEvidence(evidence, checkedFor);
     }
+    virtual RevealMode getRevealMode(float playerDistance);
 };
 struct Spirit : public Default {
     Spirit() {

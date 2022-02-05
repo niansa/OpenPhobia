@@ -55,6 +55,7 @@ class Ghost final : public LogicComponent {
     eastl::unique_ptr<GhostBehavior> behavior = nullptr;
     DynamicNavigationMesh *navMesh;
     ea::vector<Vector3> currentPath;
+    RevealMode revealMode;
     RoomBoundary *mostRecentRoom = nullptr;
     PlayerWDistance closestPlayer;
     Vector3 homePosition;
@@ -100,8 +101,6 @@ public:
         }
     }
     void setNextState(GhostState nState, unsigned in) {
-        printf("Current state %i, next state (%i) in %ums\n", state, nState, in);
-        fflush(stdout);
         stateTimer.Reset();
         nextState = nState;
         nextStateIn = in;

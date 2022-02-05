@@ -34,6 +34,16 @@ float Default::getBlinkSpeed() {
     return ghost->rng.GetFloat(80.0f, 300.0f);
 }
 
+RevealMode Default::getRevealMode(float playerDistance) {
+    if (playerDistance < 2.0f) {
+        return RevealMode::standing;
+    } else if (playerDistance < 3.0f) {
+        return RevealMode::chasing;
+    } else {
+        return RevealMode::airball;
+    }
+}
+
 
 float Phantom::getBlinkSpeed() {
     return ghost->rng.GetFloat(1000.0f, 2000.0f);
