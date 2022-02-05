@@ -5,18 +5,18 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="1875" />
-	<attribute name="Next Replicated Component ID" value="2003" />
-	<attribute name="Next Local Node ID" value="16777304" />
-	<attribute name="Next Local Component ID" value="16777350" />
+	<attribute name="Next Replicated Node ID" value="1889" />
+	<attribute name="Next Replicated Component ID" value="2026" />
+	<attribute name="Next Local Node ID" value="16777308" />
+	<attribute name="Next Local Component ID" value="16777356" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D;Lightmaps/Textures/Lightmap-0.png" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="14.6439 1.90966 -3.69758" />
-		<attribute name="Camera Rotation" value="0.601417 0.0542369 0.788154 -0.119038" />
+		<attribute name="Camera Position" value="5.21989 2.58328 -4.32043" />
+		<attribute name="Camera Rotation" value="0.945373 0.323589 0.0161826 -0.0360405" />
 	</component>
 	<component type="RenderPipeline" id="839">
 		<attribute name="Color Space" value="LDR Linear" />
@@ -201,6 +201,74 @@
 					</component>
 				</node>
 			</node>
+			<node id="1879">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Items" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="0 0 0" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<node id="1880">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="" />
+					<attribute name="Tags">
+						<string value="Grabbable" />
+						<string value="GhostInteractable" />
+					</attribute>
+					<attribute name="Position" value="5.93207 0.904152 -2.23074" />
+					<attribute name="Rotation" value="0.362446 0 0.932005 0" />
+					<attribute name="Scale" value="0.1 0.1 0.1" />
+					<attribute name="Variables" />
+					<component type="StaticModel" id="2007">
+						<attribute name="Model" value="Model;Models/ScrivaniaCup.mdl" />
+						<attribute name="Material" value="Material;Materials/Ceramic.xml" />
+					</component>
+					<component type="RigidBody" id="2008">
+						<attribute name="Physics Rotation" value="0.362446 0 0.932005 0" />
+						<attribute name="Physics Position" value="5.93207 0.904152 -2.23074" />
+						<attribute name="Mass" value="1.000000" />
+						<attribute name="Linear Damping" value="0.800000" />
+						<attribute name="Angular Damping" value="0.600000" />
+						<attribute name="Collision Layer" value="2" />
+						<attribute name="Is Kinematic" value="true" />
+					</component>
+					<component type="CollisionShape" id="2009">
+						<attribute name="Shape Type" value="Cylinder" />
+						<attribute name="Size" value="1.05 1.1 1.05" />
+						<attribute name="Offset Position" value="0.1 0.65 -0.1" />
+					</component>
+				</node>
+				<node id="1881">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="" />
+					<attribute name="Tags">
+						<string value="Grabbable" />
+						<string value="GhostInteractable" />
+					</attribute>
+					<attribute name="Position" value="5.49402 0.906557 -2.28132" />
+					<attribute name="Rotation" value="-0.987414 0 0.158158 -0" />
+					<attribute name="Scale" value="0.5 0.5 0.5" />
+					<attribute name="Variables" />
+					<component type="StaticModel" id="2010">
+						<attribute name="Model" value="Model;Models/TeaPot.mdl" />
+						<attribute name="Material" value="Material;Props/modern-furniture/Materials/SteelSilver.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
+					</component>
+					<component type="RigidBody" id="2011">
+						<attribute name="Physics Rotation" value="0.987414 0 -0.158158 0" />
+						<attribute name="Physics Position" value="5.49402 0.906557 -2.28132" />
+						<attribute name="Mass" value="2.700000" />
+						<attribute name="Linear Damping" value="0.800000" />
+						<attribute name="Angular Damping" value="0.700000" />
+						<attribute name="Collision Layer" value="2" />
+						<attribute name="Is Kinematic" value="true" />
+					</component>
+					<component type="CollisionShape" id="2012">
+						<attribute name="Shape Type" value="ConvexHull" />
+						<attribute name="Model" value="Model;Models/TeaPot.mdl" />
+					</component>
+				</node>
+			</node>
 			<node id="1859">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="RoomBoundary" />
@@ -215,6 +283,31 @@
 					<attribute name="Is Enabled" value="false" />
 					<attribute name="Model" value="Model;Models/Box.mdl" />
 					<attribute name="Material" value="Material;" />
+				</component>
+			</node>
+			<node id="1887">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="" />
+				<attribute name="Tags">
+					<string value="Grabbable" />
+					<string value="GhostInteractable" />
+				</attribute>
+				<attribute name="Position" value="6.89849 0.925255 -2.33175" />
+				<attribute name="Rotation" value="-0.694926 -0.694926 0.130684 -0.130684" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="2020">
+					<attribute name="Model" value="Model;Props/Kitchen/Models/SM_Knife_08_Utensils_0.mdl" />
+					<attribute name="Material" value="Material;Props/Kitchen/Materials/Utensils.xml" />
+				</component>
+				<component type="RigidBody" id="2021">
+					<attribute name="Physics Rotation" value="0.694926 0.694926 -0.130684 0.130684" />
+					<attribute name="Physics Position" value="6.89849 0.925255 -2.33175" />
+					<attribute name="Mass" value="1.000000" />
+					<attribute name="Linear Damping" value="0.800000" />
+					<attribute name="Angular Damping" value="0.400000" />
+					<attribute name="Collision Layer" value="2" />
+					<attribute name="Is Kinematic" value="true" />
 				</component>
 			</node>
 		</node>
@@ -322,7 +415,7 @@
 						<string value="Grabbable" />
 						<string value="GhostInteractable" />
 					</attribute>
-					<attribute name="Position" value="15.5106 0.366926 -4.29223" />
+					<attribute name="Position" value="15.9824 0.366926 -3.99124" />
 					<attribute name="Rotation" value="1 0 0 0" />
 					<attribute name="Scale" value="0.1 0.1 0.1" />
 					<attribute name="Variables" />
@@ -331,7 +424,7 @@
 						<attribute name="Material" value="Material;Materials/Ceramic.xml" />
 					</component>
 					<component type="RigidBody" id="1889">
-						<attribute name="Physics Position" value="15.5106 0.366926 -4.29223" />
+						<attribute name="Physics Position" value="15.9824 0.366926 -3.99124" />
 						<attribute name="Mass" value="1.000000" />
 						<attribute name="Linear Damping" value="0.800000" />
 						<attribute name="Angular Damping" value="0.400000" />
@@ -342,6 +435,35 @@
 						<attribute name="Shape Type" value="Cylinder" />
 						<attribute name="Size" value="1 1.1 1" />
 						<attribute name="Offset Position" value="0.1 0.65 -0.1" />
+					</component>
+				</node>
+				<node id="1888">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="" />
+					<attribute name="Tags">
+						<string value="Grabbable" />
+						<string value="GhostInteractable" />
+					</attribute>
+					<attribute name="Position" value="15.6145 0.372493 -4.15707" />
+					<attribute name="Rotation" value="-0.987414 0 0.158158 -0" />
+					<attribute name="Scale" value="0.25 0.25 0.25" />
+					<attribute name="Variables" />
+					<component type="StaticModel" id="2023">
+						<attribute name="Model" value="Model;Models/TeaPot.mdl" />
+						<attribute name="Material" value="Material;Props/modern-furniture/Materials/Glass.xml;Props/modern-furniture/Materials/CeramicWhite.xml" />
+					</component>
+					<component type="RigidBody" id="2024">
+						<attribute name="Physics Rotation" value="0.987414 0 -0.158158 0" />
+						<attribute name="Physics Position" value="15.6145 0.372493 -4.15707" />
+						<attribute name="Mass" value="1.100000" />
+						<attribute name="Linear Damping" value="0.800000" />
+						<attribute name="Angular Damping" value="0.700000" />
+						<attribute name="Collision Layer" value="2" />
+						<attribute name="Is Kinematic" value="true" />
+					</component>
+					<component type="CollisionShape" id="2025">
+						<attribute name="Shape Type" value="ConvexHull" />
+						<attribute name="Model" value="Model;Models/TeaPot.mdl" />
 					</component>
 				</node>
 			</node>

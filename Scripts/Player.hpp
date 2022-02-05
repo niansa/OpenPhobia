@@ -24,7 +24,9 @@ class LevelManager;
 class Player final : public LogicComponent {
     URHO3D_OBJECT(Player, LogicComponent);
 
-    static constexpr float walkSpeed = 0.03f,
+    static constexpr float walkSpeed = 1.6f,
+                           runSpeed = 3.0f,
+                           stamina = 5000.0f,
                            grabRange = 2.f,
                            interactRange = 4.0f,
                            throwDistance = 0.5f;

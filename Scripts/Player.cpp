@@ -74,7 +74,7 @@ void Player::FixedUpdate(float timeStep) {
         }
 
         // Walk
-        kinematicController->SetWalkDirection(GetNode()->GetRotation() * moveDir * walkSpeed);
+        kinematicController->SetWalkDirection(GetNode()->GetRotation() * moveDir * walkSpeed / 60.0f);
     }
 }
 
