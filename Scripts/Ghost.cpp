@@ -236,7 +236,7 @@ void Ghost::setState(GhostState nState) {
         case GhostState::reveal: {
             updateClosestPlayer();
             if (getClosestPlayer().hasValue()) {
-                setNextState(GhostState::local, rng.GetUInt(2500, Max(15000.0f*getAggression(), 1500)));
+                setNextState(GhostState::local, rng.GetUInt(1000, Max(10000.0f*getAggression(), 1000)));
             } else {
                 setState(GhostState::local);
             }
