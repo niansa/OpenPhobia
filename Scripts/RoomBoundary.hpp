@@ -29,6 +29,13 @@ public:
     Node *getRoom() {
         return GetNode()->GetParent();
     }
+    eastl::string getRoomName() {
+        if (this) {
+            return getRoom()->GetName();
+        } else {
+            return "Hallway";
+        }
+    }
 
     bool isNodeInside(Node *otherNode);
 };

@@ -4,6 +4,7 @@
 #include "EMFEmitter.hpp"
 #include "Lightswitch.hpp"
 #include "GhostBehavior.hpp"
+#include "RoomBoundary.hpp"
 #include "../SphereCastMultiple.hpp"
 #include "../LevelManager.hpp"
 
