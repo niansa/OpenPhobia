@@ -31,12 +31,12 @@ struct PlayerWDistance {
 struct GhostBehavior {
     eastl::string name;
     Ghost *ghost;
-    unsigned huntDuration = 30;
+    unsigned huntDuration = 30000;
     unsigned sanityThreshold = 50;
-    unsigned huntCooldown = 25;
+    unsigned huntCooldown = 25000;
     unsigned interactionCooldown = 4000;
-    unsigned gracePeriod = 3;
-    unsigned smudgeEffectDuration = 90;
+    unsigned gracePeriod = 3000;
+    unsigned smudgeEffectDuration = 90000;
     float electricVisionRange = 10.0f;
     float hearingRange = 10.0f;
     float electricDistortionRange = 10.0f;

@@ -135,7 +135,7 @@ void Ghost::FixedUpdate(float) {
                 blinkTimer.Reset();
             }
             // Use last hunt timer as grace period timer
-            if (lastHuntTimer.GetMSec(false) < behavior->gracePeriod * 1000.0f) {
+            if (lastHuntTimer.GetMSec(false) < behavior->gracePeriod) {
                 break;
             }
             // Get player to chase
@@ -209,7 +209,7 @@ void Ghost::setState(GhostState nState) {
             // Find and define next state
             GhostState nState;
             auto teamSanity = levelManager->getTeamSanity();
-            if (teamSanity < behavior->sanityThreshold + behavior->getHuntMultiplier() && lastHuntTimer.GetMSec(false) > (behavior->huntCooldown - 1) * 1000 && rng.GetBool(teamSanity>25?0.25f:0.5f)) {
+            if (teamSanity < behavior->sanityThreshold + behavior->getHuntMultiplier() && lastHuntTimer.GetMSec(false) > (behavior->huntCooldown - 1000)/* && rng.GetBool(teamSanity>25?0.25f:0.5f)*/) {
                 nState = GhostState::hunt;
             } else if (rng.GetBool(0.025f*getAggression())) {
                 nState = GhostState::reveal;
@@ -241,7 +241,7 @@ void Ghost::setState(GhostState nState) {
                 huntSound->SetNearDistance(1.0f);
                 huntSound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/ghostSingMale.ogg"));
             }
-            setNextState(GhostState::local, behavior->huntDuration*1000.0f);
+            setNextState(GhostState::local, behavior->huntDuration);
         } break;
         default: {}
         }
