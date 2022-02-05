@@ -36,7 +36,8 @@ struct GhostBehavior {
     unsigned huntCooldown = 25;
     unsigned gracePeriod = 3;
     unsigned smudgeEffectDuration = 90;
-    float ghostVisionRange = 25.0f;
+    float electricVisionRange = 10.0f;
+    float hearingRange = 10.0f;
     float speedup = 0.0f;
     float agression = 1.0f;
     bool superHardThrows = false;
@@ -169,7 +170,7 @@ struct Yokai : public Default {
         using namespace Evidence;
         evidence = SpiritBox | GhostOrbs | DOTSProjection;
         sanityThreshold = 80; // <- TODO: Use sanity modifier instead
-        ghostVisionRange = 10.0f;
+        hearingRange = 2.0f;
     }
 };
 struct Hantu : public Default {

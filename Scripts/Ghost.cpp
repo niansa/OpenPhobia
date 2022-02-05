@@ -380,10 +380,6 @@ void Ghost::followPath() {
 }
 
 bool Ghost::canSeePlayer(PlayerWDistance player) {
-    // Check if player is close enough
-    if (player.distance > behavior->ghostVisionRange) {
-        return false;
-    }
     // Check if player is inside house
     if (!player.player->isInsideHouse()) {
         return false;
@@ -395,6 +391,10 @@ bool Ghost::canSeePlayer(PlayerWDistance player) {
     physicsWorld->Raycast(hits, Ray(GetNode()->GetWorldPosition(), vectorToPlayer.Normalized()), vectorToPlayer.Length());
     if (hits.size() <= 1) {
         return true;
+    }
+    // Check if player is close enough
+    if (player.distance > behavior->electricVisionRange) {
+        return false;
     }
     // Check if player has electronics turned on
     auto playerHand = player.player->getHand();
