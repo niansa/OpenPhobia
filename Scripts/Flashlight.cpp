@@ -26,7 +26,7 @@ void Flashlight::Update(float) {
                     light->SetBrightness(bNes);
                 }
             }
-            nextBlinkIn = getGhost()->getGhostBehavior()->getFlashlightBlinkSpeed();
+            nextBlinkIn = getGhost()->rng.GetFloat(50.0f, 200.0f);
             blinkTimer.Reset();
         }
     } else {

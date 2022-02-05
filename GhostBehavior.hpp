@@ -52,7 +52,7 @@ struct GhostBehavior {
     virtual PlayerWDistance getPlayerToChase() = 0;
     virtual unsigned getHuntMultiplier() = 0;
     virtual void onHuntStart() = 0;
-    virtual float getFlashlightBlinkSpeed() = 0;
+    virtual float getBlinkSpeed() = 0;
     virtual bool hasEvidence(Evidence::Type) = 0;
 };
 
@@ -63,7 +63,7 @@ struct Default : public GhostBehavior {
     PlayerWDistance getPlayerToChase() override;
     unsigned getHuntMultiplier() override {return 0;}
     void onHuntStart() override;
-    float getFlashlightBlinkSpeed() override;
+    float getBlinkSpeed() override;
     bool hasEvidence(Evidence::Type checkedFor) override {
         return Evidence::hasEvidence(evidence, checkedFor);
     }
@@ -90,7 +90,7 @@ struct Phantom : public Default {
         evidence = SpiritBox | Fingerprints | DOTSProjection;
     }
 
-    float getFlashlightBlinkSpeed() override;
+    float getBlinkSpeed() override;
 };
 struct Poltergeist : public Default {
     Poltergeist() {

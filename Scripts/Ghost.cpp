@@ -118,6 +118,12 @@ void Ghost::FixedUpdate(float) {
         // State-dependent code
         switch (state) {
         case GhostState::hunt: {
+            // Switch blink
+            if (blinkTimer.GetMSec(false) > nextBlinkIn) {
+                appearance->SetDeepEnabled(!appearance->IsEnabled());
+                nextBlinkIn = behavior->getBlinkSpeed();
+                blinkTimer.Reset();
+            }
             // Use last hunt timer as grace period timer
             if (lastHuntTimer.GetMSec(false) < behavior->gracePeriod * 1000.0f) {
                 break;

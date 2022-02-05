@@ -26,13 +26,13 @@ void Default::onHuntStart() {
     speedup = 0.0f;
 }
 
-float Default::getFlashlightBlinkSpeed() {
-    return ghost->rng.GetFloat(50.0f, 200.0f);
+float Default::getBlinkSpeed() {
+    return ghost->rng.GetFloat(80.0f, 300.0f);
 }
 
 
-float Phantom::getFlashlightBlinkSpeed() {
-    return ghost->rng.GetFloat(250.0f, 750.0f);
+float Phantom::getBlinkSpeed() {
+    return ghost->rng.GetFloat(1000.0f, 2000.0f);
 }
 
 

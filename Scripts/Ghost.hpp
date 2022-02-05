@@ -41,7 +41,7 @@ class Ghost final : public LogicComponent {
     URHO3D_OBJECT(Ghost, LogicComponent);
 
     RandomEngine rng;
-    Timer stepTimer, lowFreqStepTimer, stateTimer, navigationTimer;
+    Timer stepTimer, lowFreqStepTimer, stateTimer, navigationTimer, lastHuntTimer, blinkTimer;
     KinematicCharacterController* kinematicController;
     PhysicsWorld *physicsWorld;
     LevelManager *levelManager;
@@ -51,7 +51,7 @@ class Ghost final : public LogicComponent {
     GhostState state;
     GhostState nextState;
     float nextStateIn = NAN;
-    Timer lastHuntTimer;
+    float nextBlinkIn = 0.0f;
     eastl::unique_ptr<GhostBehavior> behavior = nullptr;
     DynamicNavigationMesh *navMesh;
     ea::vector<Vector3> currentPath;
@@ -80,7 +80,7 @@ public:
     }
 
     bool isVisible() {
-        return appearance->IsEnabled();
+        return state == GhostState::reveal || state == GhostState::hunt;
     }
 
     bool hasNextState() {
