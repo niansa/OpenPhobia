@@ -114,8 +114,6 @@ void Ghost::FixedUpdate(float) {
     }
     // Timed code
     if (stepTimer.GetMSec(false) > 200) {
-        // Update closest player
-        updateClosestPlayer();
         // State-dependent code
         switch (state) {
         case GhostState::local: {
@@ -127,7 +125,20 @@ void Ghost::FixedUpdate(float) {
                 }
             }
         } break;
+        case GhostState::reveal: {
+            auto playerToChase = getClosestPlayer();
+            // Run after player if initially close enough
+            if (playerToChase.distance < 3.0f) {
+                walkTo(playerToChase.player->GetNode()->GetWorldPosition());
+            }
+            // End reveal early if needed
+            if (getDistanceToPlayer(playerToChase.player) < 1.5f) {
+                setState(GhostState::local);
+            }
+        } break;
         case GhostState::hunt: {
+            // Update closest player
+            updateClosestPlayer();
             // Switch blink
             if (blinkTimer.GetMSec(false) > nextBlinkIn) {
                 appearance->SetDeepEnabled(!appearance->IsEnabled());
@@ -219,11 +230,17 @@ void Ghost::setState(GhostState nState) {
             setNextState(nState, rng.GetUInt(5000, Clamp<unsigned>(20000.0f/(getAggression()*4.0f), 5000, 30000)));
         } break;
         case GhostState::roaming: {
+            updateClosestPlayer();
             setNextState(GhostState::local, rng.GetUInt(5000, Max(20000.0f*getAggression(), 5000)));
         } break;
         case GhostState::reveal: {
+            updateClosestPlayer();
+            if (getClosestPlayer().hasValue()) {
+                setNextState(GhostState::local, rng.GetUInt(2500, Max(15000.0f*getAggression(), 1500)));
+            } else {
+                setState(GhostState::local);
+            }
             appearance->SetDeepEnabled(true);
-            setNextState(GhostState::local, rng.GetUInt(2500, Max(15000.0f*getAggression(), 1500)));
         } break;
         case GhostState::hunt: {
             // Check that hunt is allowed to start
