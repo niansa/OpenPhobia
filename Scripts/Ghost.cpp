@@ -117,6 +117,15 @@ void Ghost::FixedUpdate(float) {
         updateClosestPlayer();
         // State-dependent code
         switch (state) {
+        case GhostState::local: {
+            if (currentPath.empty()) {
+                auto cRoom = getCurrentRoom();
+                if (cRoom) {
+                    // Go to random location inside of the room
+                    walkTo(rng.GetVector3(cRoom->getBoundingBox()));
+                }
+            }
+        } break;
         case GhostState::hunt: {
             // Switch blink
             if (blinkTimer.GetMSec(false) > nextBlinkIn) {
@@ -131,7 +140,7 @@ void Ghost::FixedUpdate(float) {
             // Get player to chase
             auto playerToChase = behavior->getPlayerToChase();
             // Kill player if possible
-            if (playerToChase.distance < 0.5f) {
+            if (playerToChase.distance < 0.75f) {
                 playerToChase.player->startKillingPlayer();
                 setState(behavior->endHuntOnDeath?GhostState::local:GhostState::hunt);
             }
@@ -147,8 +156,8 @@ void Ghost::FixedUpdate(float) {
                 // Get random location around the ghost
                 Vector3 nPos;
                 do {
-                    constexpr float maxDist = 3.0f,
-                                    minDist = 1.0f;
+                    constexpr float maxDist = 10.0f,
+                                    minDist = 5.0f;
                     nPos = rng.GetVector3(Vector3(minDist, 0.0f, minDist), Vector3(maxDist, 0.0f, maxDist));
                     if (rng.GetBool(0.5f)) {
                         nPos.x_ = -nPos.x_;
@@ -209,11 +218,11 @@ void Ghost::setState(GhostState nState) {
             setNextState(nState, rng.GetFloat(1000, 1000/getAggression()));
         } break;
         case GhostState::roaming: {
-            setNextState(GhostState::local, rng.GetFloat(5000, 20000*getAggression()));
+            setNextState(GhostState::local, rng.GetFloat(5000, Min(20000*getAggression(), 5000)));
         } break;
         case GhostState::reveal: {
             appearance->SetDeepEnabled(true);
-            setNextState(GhostState::local, rng.GetFloat(2500, 15000*getAggression()));
+            setNextState(GhostState::local, rng.GetFloat(2500, Min(15000*getAggression(), 1500)));
         } break;
         case GhostState::hunt: {
             // Check that hunt is allowed to start
@@ -422,6 +431,12 @@ float Ghost::getDistanceToPlayer(Player *player) {
 }
 
 RoomBoundary *Ghost::getCurrentRoom() {
-    return levelManager->getNodeRoom(GetNode());
+    auto fres = levelManager->getNodeRoom(GetNode());
+    if (fres) {
+        mostRecentRoom = fres;
+    } else {
+        fres = mostRecentRoom;
+    }
+    return fres;
 }
 }

@@ -55,6 +55,7 @@ class Ghost final : public LogicComponent {
     eastl::unique_ptr<GhostBehavior> behavior = nullptr;
     DynamicNavigationMesh *navMesh;
     ea::vector<Vector3> currentPath;
+    RoomBoundary *mostRecentRoom = nullptr;
     PlayerWDistance closestPlayer;
     Vector3 homePosition;
     eastl::vector<PhysicsRaycastResult> closeBodies;

@@ -36,6 +36,9 @@ public:
             return "Hallway";
         }
     }
+    const BoundingBox &getBoundingBox() {
+        return bBox;
+    }
 
     bool isNodeInside(Node *otherNode);
 };
