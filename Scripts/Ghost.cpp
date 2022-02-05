@@ -127,6 +127,7 @@ void Ghost::FixedUpdate(float) {
             // Kill player if possible
             if (playerToChase.distance < 0.5f) {
                 playerToChase.player->startKillingPlayer();
+                setState(behavior->endHuntOnDeath?GhostState::local:GhostState::hunt);
             }
             // Chase player if possible
             if (canSeePlayer(playerToChase)) {
@@ -208,14 +209,21 @@ void Ghost::setState(GhostState nState) {
             setNextState(GhostState::local, rng.GetFloat(2500, 15000*getAggression()));
         } break;
         case GhostState::hunt: {
+            // Check that hunt is allowed to start
+            if (!levelManager->isAnyPlayerInHouse()) {
+                setState(GhostState::local);
+                break;
+            }
             // Reset stuff
-            lastHuntTimer.Reset();
-            behavior->onHuntStart();
-            // Play hunt sound TODO: Fixup
-            auto huntSound = GetNode()->GetOrCreateComponent<SoundSource3D>();
-            huntSound->SetFarDistance(25.0f);
-            huntSound->SetNearDistance(1.0f);
-            huntSound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/ghostSingMale.ogg"));
+            if (oldState != GhostState::hunt) {
+                lastHuntTimer.Reset();
+                behavior->onHuntStart();
+                // Play hunt sound TODO: Fixup
+                auto huntSound = GetNode()->GetOrCreateComponent<SoundSource3D>();
+                huntSound->SetFarDistance(25.0f);
+                huntSound->SetNearDistance(1.0f);
+                huntSound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/ghostSingMale.ogg"));
+            }
             setNextState(GhostState::local, behavior->huntDuration*1000.0f);
         } break;
         default: {}

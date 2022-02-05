@@ -72,8 +72,17 @@ unsigned LevelManager::getTeamSanity() const {
     }
 }
 
+bool LevelManager::isAnyPlayerInHouse() {
+    for (auto player : players) {
+        if (player->isInsideHouse()) {
+            return true;
+        }
+    }
+    return false;
+}
+
 RoomBoundary *LevelManager::getNodeRoom(Node *node) {
-    for (auto room : getRooms()) {
+    for (auto room : rooms) {
         if (room->isNodeInside(node)) {
             return room;
         }

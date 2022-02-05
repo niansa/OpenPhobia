@@ -40,6 +40,7 @@ struct GhostBehavior {
     float speedup = 0.0f;
     float agression = 1.0f;
     bool superHardThrows = false;
+    bool endHuntOnDeath = true;
     Evidence::Type evidence = 0;
 
     virtual ~GhostBehavior() {}

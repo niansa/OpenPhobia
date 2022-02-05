@@ -69,6 +69,7 @@ public:
         return house;
     }
 
+    bool isAnyPlayerInHouse();
     RoomBoundary *getNodeRoom(Node *node);
 };
 }
