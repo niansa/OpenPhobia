@@ -212,6 +212,7 @@ void Ghost::setState(GhostState nState) {
             setNextState(GhostState::local, rng.GetFloat(5000, 20000*getAggression()));
         } break;
         case GhostState::reveal: {
+            appearance->SetDeepEnabled(true);
             setNextState(GhostState::local, rng.GetFloat(2500, 15000*getAggression()));
         } break;
         case GhostState::hunt: {
