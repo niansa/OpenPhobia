@@ -1438,6 +1438,7 @@
 	"Drawable2D",
 	"DropDownList",
 	"DropFile",
+	"DummyBody",
 	"DumpShaders",
 	"Dynamic Vertex Buffer",
 	"DynamicNavigationMesh",

@@ -2,6 +2,8 @@
 #include "easyscript/Namespace.hpp"
 #include "Scripts/Player.hpp"
 #include "Scripts/Ghost.hpp"
+#include "Scripts/RoomBoundary.hpp"
+#include "Scripts/HouseBoundary.hpp"
 #include "GhostBehavior.hpp"
 
 #include <Urho3D/UI/UI.h>
@@ -42,6 +44,15 @@ void LevelManager::Start() {
     nodes.clear();
     scene->GetNodesWithTag(nodes, "Ghost");
     ghost = nodes[0]->GetComponent<Ghost>();
+    nodes.clear();
+    scene->GetNodesWithTag(nodes, "Scripted");
+    for (auto node : nodes) {
+        if (node->HasComponent<RoomBoundary>()) {
+            rooms.push_back(node->GetComponent<RoomBoundary>());
+        } else if (node->HasComponent<HouseBoundary>()) {
+            house = node->GetComponent<HouseBoundary>();
+        }
+    }
 
     // Load ghost stuff  TODO: Based on difficulty
     auto ghostBehavior = getGhostBehavior(GhostType(RandomEngine().GetUInt(unsigned(GhostType::_lowest), unsigned(GhostType::_highest))));
@@ -59,5 +70,14 @@ unsigned LevelManager::getTeamSanity() const {
     } else {
         return 100;
     }
+}
+
+RoomBoundary *LevelManager::getNodeRoom(Node *node) {
+    for (auto room : getRooms()) {
+        if (room->isNodeInside(node)) {
+            return room;
+        }
+    }
+    return nullptr;
 }
 }

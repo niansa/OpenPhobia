@@ -18,6 +18,9 @@ class Player;
 
 
 namespace Game {
+class RoomBoundary;
+class LevelManager;
+
 class Player final : public LogicComponent {
     URHO3D_OBJECT(Player, LogicComponent);
 
@@ -26,6 +29,7 @@ class Player final : public LogicComponent {
                            interactRange = 4.0f,
                            throwDistance = 0.5f;
 
+    LevelManager *levelManager;
     Node *head;
     Node *handP;
     Node *hand = nullptr;
@@ -45,9 +49,14 @@ public:
     Node *getHand() {
         return hand;
     }
+    Node *getHead() {
+        return head;
+    }
 
     void grab(Node *node);
     void drop();
+    RoomBoundary *getCurrentRoom();
+    bool isInsideHouse();
 };
 }
 #endif // PLAYER_HPP

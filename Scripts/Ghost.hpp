@@ -125,6 +125,7 @@ public:
     bool chasePlayer();
     bool canSeePlayer(PlayerWDistance player);
     float getDistanceToPlayer(Player *player);
+    RoomBoundary *getCurrentRoom();
 };
 }
 #endif // GHOST_HPP

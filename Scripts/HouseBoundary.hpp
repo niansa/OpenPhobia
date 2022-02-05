@@ -6,7 +6,7 @@ class HouseBoundary;
 #ifndef HOUSEBOUNDARY_HPP
 #define HOUSEBOUNDARY_HPP
 #include "../easyscript/Namespace.hpp"
-#include "Useable.hpp"
+#include "RoomBoundary.hpp"
 
 #include <Urho3D/Scene/Node.h>
 #include <Urho3D/Scene/LogicComponent.h>
@@ -14,12 +14,12 @@ class HouseBoundary;
 
 
 namespace Game {
-class HouseBoundary final : public LogicComponent {
-    URHO3D_OBJECT(HouseBoundary, LogicComponent);
+class HouseBoundary final : public RoomBoundary {
+    URHO3D_OBJECT(HouseBoundary, RoomBoundary);
 
 public:
-    using LogicComponent::LogicComponent;
+    using RoomBoundary::RoomBoundary;
 
 };
 }
-#endif // PLAYER_HPP
+#endif // HOUSEBOUNDARY_HPP

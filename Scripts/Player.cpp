@@ -1,5 +1,7 @@
 #include "Player.hpp"
 #include "Useable.hpp"
+#include "RoomBoundary.hpp"
+#include "HouseBoundary.hpp"
 #include "../LevelManager.hpp"
 
 #include <Urho3D/Physics/CollisionShape.h>
@@ -18,6 +20,7 @@ namespace Game {
 void Player::Start() {
     head = GetNode()->GetChild("Head");
     handP = head->GetChild("Hand");
+    levelManager = GetGlobalVar("LevelManager").GetCustom<LevelManager*>();
     collisionShape = GetNode()->GetComponent<CollisionShape>();
     kinematicController = GetNode()->CreateComponent<KinematicCharacterController>();
     kinematicController->SetHeight(GetNode()->GetScale().y_);
@@ -171,5 +174,13 @@ void Player::drop() {
     body->SetTrigger(false);
     body->SetLinearVelocity(head->GetWorldDirection()*4);
     hand = nullptr;
+}
+
+RoomBoundary *Player::getCurrentRoom() {
+    return levelManager->getNodeRoom(GetNode());
+}
+
+bool Player::isInsideHouse() {
+    return levelManager->getHouse()->isNodeInside(GetNode());
 }
 }

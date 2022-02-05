@@ -18,11 +18,15 @@ class LevelManager;
 namespace Game {
 class Ghost;
 class Player;
+class RoomBoundary;
+class HouseBoundary;
 
 class LevelManager : public SceneManager {
     eastl::string level = "testmap";
     Ghost *ghost = nullptr;
     eastl::vector<Player*> players;
+    eastl::vector<RoomBoundary*> rooms;
+    HouseBoundary *house;
 
 public:
     using SceneManager::SceneManager;
@@ -58,6 +62,14 @@ public:
     const eastl::vector<Player*> &getPlayers() const {
         return players;
     }
+    const eastl::vector<RoomBoundary*> &getRooms() const {
+        return rooms;
+    }
+    HouseBoundary *getHouse() const {
+        return house;
+    }
+
+    RoomBoundary *getNodeRoom(Node *node);
 };
 }
 #endif // LEVELMANAGER_HPP

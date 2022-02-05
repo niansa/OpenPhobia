@@ -286,6 +286,9 @@ void Ghost::updateClosestPlayer() {
     closestPlayer.distance = 100.f;
     bool canSeeClosestPlayer = false;
     for (auto player : levelManager->getPlayers()) {
+        if (!player->isInsideHouse()) {
+            continue;
+        }
         auto p = getPlayerWDistance(player);
         auto canSeeP = canSeePlayer(p);
         if (p.distance < closestPlayer.distance || (!canSeeClosestPlayer && canSeeP)) {
@@ -366,8 +369,12 @@ bool Ghost::canSeePlayer(PlayerWDistance player) {
     if (player.distance > behavior->ghostVisionRange) {
         return false;
     }
+    // Check if player is inside house
+    if (!player.player->isInsideHouse()) {
+        return false;
+    }
     // Check if player is actually visible
-    auto vectorToPlayer = player.player->GetNode()->GetWorldPosition() - GetNode()->GetWorldPosition();
+    auto vectorToPlayer = player.player->getHead()->GetWorldPosition() - GetNode()->GetWorldPosition();
     auto vectorForward = GetNode()->GetWorldDirection();
     ea::vector<PhysicsRaycastResult> hits;
     physicsWorld->Raycast(hits, Ray(GetNode()->GetWorldPosition(), vectorToPlayer.Normalized()), vectorToPlayer.Length());
@@ -388,5 +395,9 @@ bool Ghost::canSeePlayer(PlayerWDistance player) {
 
 float Ghost::getDistanceToPlayer(Player *player) {
     return (GetNode()->GetWorldPosition() - player->GetNode()->GetWorldPosition()).Length();
+}
+
+RoomBoundary *Ghost::getCurrentRoom() {
+    return levelManager->getNodeRoom(GetNode());
 }
 }
