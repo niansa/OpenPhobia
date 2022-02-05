@@ -68,7 +68,7 @@ void Ghost::FixedUpdate(float) {
     // Keep following the currentPath
     followPath();
     // Interact
-    if (isVisible() || rng.GetBool(0.0025f * getAggression())) {
+    if ((isVisible() || rng.GetBool(0.25f * getAggression())) && interactionTimer.GetMSec(false) > behavior->interactionCooldown) {
         // Throw or use an object in range
         if (!closeBodies.empty()) {
             for (unsigned triesLeft = 25; triesLeft != 0; triesLeft--) {
@@ -85,6 +85,7 @@ void Ghost::FixedUpdate(float) {
                         if (body->GetNode()->HasTag("Useable")) {
                             useBody(body);
                         }
+                        interactionTimer.Reset();
                         break;
                     }
                 }
@@ -215,14 +216,14 @@ void Ghost::setState(GhostState nState) {
             } else  {
                 nState = GhostState::roaming;
             }
-            setNextState(nState, rng.GetFloat(10000, Max(10000/getAggression(), 30000)));
+            setNextState(nState, rng.GetUInt(5000, Clamp<unsigned>(20000.0f/(getAggression()*4.0f), 5000, 30000)));
         } break;
         case GhostState::roaming: {
-            setNextState(GhostState::local, rng.GetFloat(5000, Min(20000*getAggression(), 5000)));
+            setNextState(GhostState::local, rng.GetUInt(5000, Max(20000.0f*getAggression(), 5000)));
         } break;
         case GhostState::reveal: {
             appearance->SetDeepEnabled(true);
-            setNextState(GhostState::local, rng.GetFloat(2500, Min(15000*getAggression(), 1500)));
+            setNextState(GhostState::local, rng.GetUInt(2500, Max(15000.0f*getAggression(), 1500)));
         } break;
         case GhostState::hunt: {
             // Check that hunt is allowed to start
@@ -246,7 +247,7 @@ void Ghost::setState(GhostState nState) {
         }
     } else {
         // Behavior is not loaded - just start roaming after 15 seconds
-        setNextState(GhostState::roaming, 15000.0f);
+        setNextState(GhostState::roaming, 15000);
     }
 }
 

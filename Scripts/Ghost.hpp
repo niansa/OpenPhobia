@@ -41,7 +41,7 @@ class Ghost final : public LogicComponent {
     URHO3D_OBJECT(Ghost, LogicComponent);
 
     RandomEngine rng;
-    Timer stepTimer, lowFreqStepTimer, stateTimer, navigationTimer, lastHuntTimer, blinkTimer;
+    Timer stepTimer, lowFreqStepTimer, stateTimer, navigationTimer, lastHuntTimer, blinkTimer, interactionTimer;
     KinematicCharacterController* kinematicController;
     PhysicsWorld *physicsWorld;
     LevelManager *levelManager;
@@ -50,8 +50,8 @@ class Ghost final : public LogicComponent {
     AnimationController *animationController;
     GhostState state;
     GhostState nextState;
-    float nextStateIn = NAN;
-    float nextBlinkIn = 0.0f;
+    eastl::optional<unsigned> nextStateIn;
+    unsigned nextBlinkIn = 0;
     eastl::unique_ptr<GhostBehavior> behavior = nullptr;
     DynamicNavigationMesh *navMesh;
     ea::vector<Vector3> currentPath;
@@ -85,10 +85,10 @@ public:
     }
 
     bool hasNextState() {
-        return !isnan(nextStateIn);
+        return nextStateIn.has_value();
     }
     void clearNextState() {
-        nextStateIn = NAN;
+        nextStateIn.reset();
     }
     void switchState() {
         clearNextState();
@@ -99,7 +99,9 @@ public:
             switchState();
         }
     }
-    void setNextState(GhostState nState, float in) {
+    void setNextState(GhostState nState, unsigned in) {
+        printf("Current state %i, next state (%i) in %ums\n", state, nState, in);
+        fflush(stdout);
         stateTimer.Reset();
         nextState = nState;
         nextStateIn = in;

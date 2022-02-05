@@ -15,8 +15,8 @@
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="10.9693 6.92845 -11.6573" />
-		<attribute name="Camera Rotation" value="0.835459 0.533772 -0.122998 0.0443619" />
+		<attribute name="Camera Position" value="5.72034 1.31847 -3.32372" />
+		<attribute name="Camera Rotation" value="0.98334 0.117892 -0.137788 -0.0125538" />
 	</component>
 	<component type="RenderPipeline" id="839">
 		<attribute name="Color Space" value="LDR Linear" />
@@ -266,6 +266,7 @@
 					<component type="CollisionShape" id="2012">
 						<attribute name="Shape Type" value="ConvexHull" />
 						<attribute name="Model" value="Model;Models/TeaPot.mdl" />
+						<attribute name="Collision Margin" value="0.010000" />
 					</component>
 				</node>
 			</node>

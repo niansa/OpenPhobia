@@ -34,6 +34,7 @@ struct GhostBehavior {
     unsigned huntDuration = 30;
     unsigned sanityThreshold = 50;
     unsigned huntCooldown = 25;
+    unsigned interactionCooldown = 4000;
     unsigned gracePeriod = 3;
     unsigned smudgeEffectDuration = 90;
     float electricVisionRange = 10.0f;
