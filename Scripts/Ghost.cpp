@@ -215,7 +215,7 @@ void Ghost::setState(GhostState nState) {
             } else  {
                 nState = GhostState::roaming;
             }
-            setNextState(nState, rng.GetFloat(1000, 1000/getAggression()));
+            setNextState(nState, rng.GetFloat(10000, Max(10000/getAggression(), 30000)));
         } break;
         case GhostState::roaming: {
             setNextState(GhostState::local, rng.GetFloat(5000, Min(20000*getAggression(), 5000)));
