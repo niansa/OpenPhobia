@@ -387,11 +387,15 @@ void Ghost::followPath() {
 }
 
 bool Ghost::canSeePlayer(PlayerWDistance player) {
-    // Check if player is inside house
+    // Check that player is valid
+    if (!player.player) {
+        return false;
+    }
+    // Check that player is inside house
     if (!player.player->isInsideHouse()) {
         return false;
     }
-    // Check if player is actually visible
+    // Check if player is in line of sight
     auto vectorToPlayer = player.player->getHead()->GetWorldPosition() - GetNode()->GetWorldPosition();
     auto vectorForward = GetNode()->GetWorldDirection();
     ea::vector<PhysicsRaycastResult> hits;
