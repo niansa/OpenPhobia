@@ -55,6 +55,7 @@ public:
 
     void grab(Node *node);
     void drop();
+    void startKillingPlayer() {}
     RoomBoundary *getCurrentRoom();
     bool isInsideHouse();
 };

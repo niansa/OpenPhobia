@@ -122,8 +122,14 @@ void Ghost::FixedUpdate(float) {
             if (lastHuntTimer.GetMSec(false) < behavior->gracePeriod * 1000.0f) {
                 break;
             }
+            // Get player to chase
+            auto playerToChase = behavior->getPlayerToChase();
+            // Kill player if possible
+            if (playerToChase.distance < 0.5f) {
+                playerToChase.player->startKillingPlayer();
+            }
             // Chase player if possible
-            if (canSeePlayer(behavior->getPlayerToChase())) {
+            if (canSeePlayer(playerToChase)) {
                 if (chasePlayer()) {
                     break;
                 }
