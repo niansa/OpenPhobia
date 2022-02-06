@@ -57,9 +57,9 @@ float Jinn::getCurrentSpeed() {
         // Add speed if the ghost is able to see the player
         auto player = getPlayerToChase();
         if (ghost->canSeePlayer(player) && player.distance > 2.0f) {
-            bSpeed = 2.0f;
+            return 2.0f;
         } else {
-            bSpeed = Default::getCurrentSpeed();
+            return Default::getCurrentSpeed();
         }
     }
 }
