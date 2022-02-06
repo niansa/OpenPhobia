@@ -1,5 +1,6 @@
 #include "Player.hpp"
 #include "Useable.hpp"
+#include "Door.hpp"
 #include "RoomBoundary.hpp"
 #include "HouseBoundary.hpp"
 #include "../LevelManager.hpp"
@@ -148,6 +149,8 @@ void Player::Update(float timeStep) {
                     auto script = static_cast<Useable *>(node->GetComponent(node->GetName()));
                     script->Use();
                     break;
+                } else if (node->HasComponent<Door>()) {
+                    node->GetComponent<Door>()->Activate();
                 }
                 // Retry with parent node
                 node = node->GetParent();

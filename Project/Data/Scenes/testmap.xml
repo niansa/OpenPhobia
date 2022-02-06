@@ -5,18 +5,18 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="1901" />
-	<attribute name="Next Replicated Component ID" value="2037" />
-	<attribute name="Next Local Node ID" value="16777312" />
-	<attribute name="Next Local Component ID" value="16777362" />
+	<attribute name="Next Replicated Node ID" value="1920" />
+	<attribute name="Next Replicated Component ID" value="2058" />
+	<attribute name="Next Local Node ID" value="16777318" />
+	<attribute name="Next Local Component ID" value="16777371" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D;Lightmaps/Textures/Lightmap-0.png" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="8.12101 2.42471 -5.76524" />
-		<attribute name="Camera Rotation" value="0.965602 -0.0371567 -0.254327 -0.0393693" />
+		<attribute name="Camera Position" value="6.54427 2.50543 -4.31977" />
+		<attribute name="Camera Rotation" value="-0.344594 -0.0945039 0.906599 -0.224504" />
 	</component>
 	<component type="RenderPipeline" id="839">
 		<attribute name="Color Space" value="LDR Linear" />
@@ -1457,13 +1457,13 @@
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="" />
 				<attribute name="Tags" />
-				<attribute name="Position" value="4.04173 1.21013 -6.04022" />
+				<attribute name="Position" value="4.04173 1.21013 -6.03538" />
 				<attribute name="Rotation" value="1 0 0 0" />
 				<attribute name="Scale" value="0.8 2.5 0.1" />
 				<attribute name="Variables" />
 				<component type="CollisionShape" id="1816" />
 				<component type="RigidBody" id="1817">
-					<attribute name="Physics Position" value="4.04173 1.21013 -6.04022" />
+					<attribute name="Physics Position" value="4.04173 1.21013 -6.03538" />
 				</component>
 				<component type="StaticModel" id="1821">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1616,6 +1616,90 @@
 					<attribute name="Physics Position" value="18.3034 1.21 -4.437" />
 				</component>
 				<component type="StaticModel" id="1848">
+					<attribute name="Model" value="Model;Models/Box.mdl" />
+					<attribute name="Material" value="Material;" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+		</node>
+	</node>
+	<node id="1905">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Doors" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<node id="1910">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Door" />
+			<attribute name="Tags">
+				<string value="Scripted" />
+			</attribute>
+			<attribute name="Position" value="4.86834 0 -6.02494" />
+			<attribute name="Rotation" value="-4.37114e-08 0 -0 1" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<node id="1915">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Frame" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="0 0 0" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="2049">
+					<attribute name="Model" value="Model;Models/SimpleDoor_Frame.mdl" />
+					<attribute name="Material" value="Material;Materials/ambientgc/Wood049.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="1917">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="RotOff" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="-0.435142 -0.247597 0.101234" />
+				<attribute name="Rotation" value="1 0 0 8.54904e-09" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<node id="1918">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="Door" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="0 0 0" />
+					<attribute name="Rotation" value="1 0 0 0" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<component type="StaticModel" id="2050">
+						<attribute name="Model" value="Model;Models/SimpleDoor.mdl" />
+						<attribute name="Material" value="Material;Materials/ambientgc/Wood049.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
+						<attribute name="Cast Shadows" value="true" />
+					</component>
+					<component type="RigidBody" id="2054">
+						<attribute name="Physics Rotation" value="-5.22604e-08 0 0 1" />
+						<attribute name="Physics Position" value="5.30348 0.247597 -5.92371" />
+						<attribute name="Is Kinematic" value="true" />
+					</component>
+					<component type="CollisionShape" id="2055">
+						<attribute name="Shape Type" value="ConvexHull" />
+						<attribute name="Model" value="Model;Models/SimpleDoor.mdl" />
+					</component>
+				</node>
+			</node>
+			<node id="1919">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Top" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="-0.00434397 -2.23754 -0.0104237" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="0.9 0.45 0.1" />
+				<attribute name="Variables" />
+				<component type="CollisionShape" id="2051" />
+				<component type="RigidBody" id="2052">
+					<attribute name="Physics Position" value="4.87268 2.23754 -6.03537" />
+				</component>
+				<component type="StaticModel" id="2053">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
 					<attribute name="Material" value="Material;" />
 					<attribute name="Cast Shadows" value="true" />
