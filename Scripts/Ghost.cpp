@@ -212,6 +212,7 @@ void Ghost::roam() {
     if (currentPath.empty()) {
         // Get random location around the ghost
         Vector3 nPos;
+        unsigned tries = 0;
         do {
             constexpr float maxDist = 10.0f,
                             minDist = 5.0f;
@@ -221,6 +222,10 @@ void Ghost::roam() {
             }
             if (rng.GetBool(0.5f)) {
                 nPos.z_ = -nPos.z_;
+            }
+            // Make sure to not get stuck
+            if (tries++ == 10000) {
+                break;
             }
             // Go there
         } while (!walkTo(GetNode()->GetWorldPosition() + nPos));
