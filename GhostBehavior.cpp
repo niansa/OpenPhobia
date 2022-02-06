@@ -28,8 +28,10 @@ PlayerWDistance Default::getPlayerToChase() {
     return ghost->getClosestPlayer();
 }
 
-void Default::onHuntStart() {
-    speedup = 0.0f;
+void Default::onStateChange(const eastl::string& nState) {
+    if (nState == "Hunt") {
+        speedup = 0.0f;
+    }
 }
 
 float Default::getBlinkSpeed() {
@@ -58,10 +60,9 @@ float Jinn::getCurrentSpeed() {
         auto player = getPlayerToChase();
         if (ghost->canSeePlayer(player) && player.distance > 2.0f) {
             return 2.0f;
-        } else {
-            return Default::getCurrentSpeed();
         }
     }
+    return Default::getCurrentSpeed();
 }
 
 

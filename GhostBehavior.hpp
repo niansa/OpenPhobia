@@ -53,7 +53,7 @@ struct GhostBehavior {
     virtual float getCurrentSpeed() = 0;
     virtual PlayerWDistance getPlayerToChase() = 0;
     virtual unsigned getHuntMultiplier() = 0;
-    virtual void onHuntStart() = 0;
+    virtual void onStateChange(const eastl::string& nState) = 0;
     virtual float getBlinkSpeed() = 0;
     virtual bool hasEvidence(Evidence::Type) = 0;
     virtual RevealMode getRevealMode(float playerDistance) = 0;
@@ -65,12 +65,12 @@ struct Default : public GhostBehavior {
     float getCurrentSpeed() override;
     PlayerWDistance getPlayerToChase() override;
     unsigned getHuntMultiplier() override {return 0;}
-    void onHuntStart() override;
+    void onStateChange(const eastl::string& nState) override;
     float getBlinkSpeed() override;
     bool hasEvidence(Evidence::Type checkedFor) override {
         return Evidence::hasEvidence(evidence, checkedFor);
     }
-    virtual RevealMode getRevealMode(float playerDistance);
+    RevealMode getRevealMode(float playerDistance) override;
 };
 struct Spirit : public Default {
     Spirit() {
