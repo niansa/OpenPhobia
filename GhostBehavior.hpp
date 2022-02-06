@@ -117,6 +117,8 @@ struct Jinn : public Default {
         using namespace Evidence;
         evidence = EMFLevelFive | Fingerprints | FreezingTemps;
     }
+
+    float getCurrentSpeed() override;
 };
 struct Mare : public Default {
     Mare() {

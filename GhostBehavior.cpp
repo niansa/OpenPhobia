@@ -52,6 +52,19 @@ float Phantom::getBlinkSpeed() {
 }
 
 
+float Jinn::getCurrentSpeed() {
+    if (ghost->getState() == "Hunt") {
+        // Add speed if the ghost is able to see the player
+        auto player = getPlayerToChase();
+        if (ghost->canSeePlayer(player) && player.distance > 2.0f) {
+            bSpeed = 2.0f;
+        } else {
+            bSpeed = Default::getCurrentSpeed();
+        }
+    }
+}
+
+
 float Revenant::getCurrentSpeed() {
     auto bSpeed = Default::getCurrentSpeed();
     if (ghost->getState() == "Hunt") {
