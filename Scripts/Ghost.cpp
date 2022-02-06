@@ -120,7 +120,9 @@ void Ghost::FixedUpdate(float) {
     trySwitchState();
 }
 
-void Ghost::setState(eastl::string nState) {
+void Ghost::setState(const eastl::string& nState) {
+    // Backup old state
+    auto oState = eastl::move(state);
     // Set new state
     state = nState;
     // Stop walking
@@ -133,7 +135,7 @@ void Ghost::setState(eastl::string nState) {
         // Remove old state script
         if (stateScript) {
             stateScript->Deinitialize();
-            stateScript->Remove();
+            GetNode()->RemoveComponent("Ghost"+oState);
         }
         // Create new one
         stateScript = reinterpret_cast<GhostStateScript*>(GetNode()->CreateComponent("Ghost"+nState));
@@ -255,11 +257,6 @@ void Ghost::updateCloseBodies() {
 bool Ghost::walkTo(const Vector3& pos) {
     navMesh->FindPath(currentPath, GetNode()->GetWorldPosition(), pos);
     return !currentPath.empty();
-}
-
-bool Ghost::chasePlayer() {
-    auto [player, playerDistance] = behavior->getPlayerToChase();
-    return player?walkTo(player->GetNode()->GetWorldPosition()):false;
 }
 
 void Ghost::followPath() {

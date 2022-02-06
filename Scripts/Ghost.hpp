@@ -92,7 +92,7 @@ public:
             switchState();
         }
     }
-    void setNextState(eastl::string nState, unsigned in) {
+    void setNextState(const eastl::string& nState, unsigned in) {
         stateTimer.Reset();
         nextState = nState;
         nextStateIn = in;
@@ -111,13 +111,12 @@ public:
         return {p, getDistanceToPlayer(p)};
     }
 
-    void setState(eastl::string nState);
+    void setState(const eastl::string& nState);
     void throwBody(RigidBody *body);
     void useBody(RigidBody *body);
     float getAggression() const;
     void roam();
     bool walkTo(const Vector3& pos);
-    bool chasePlayer();
     bool canSeePlayer(PlayerWDistance player);
     float getDistanceToPlayer(Player *player);
     RoomBoundary *getCurrentRoom();
