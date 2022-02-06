@@ -68,9 +68,12 @@ public:
     HouseBoundary *getHouse() const {
         return house;
     }
+    RoomBoundary *getNodeRoom(Node *node) {
+        return getPosRoom(node->GetWorldPosition());
+    }
 
     bool isAnyPlayerInHouse();
-    RoomBoundary *getNodeRoom(Node *node);
+    RoomBoundary *getPosRoom(Vector3 pos);
 };
 }
 #endif // LEVELMANAGER_HPP

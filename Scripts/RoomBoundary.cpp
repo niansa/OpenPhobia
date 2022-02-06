@@ -12,7 +12,7 @@ void RoomBoundary::Start() {
     levelManager = GetGlobalVar("LevelManager").GetCustom<LevelManager*>();
 }
 
-bool RoomBoundary::isNodeInside(Node *otherNode) {
-    return bBox.IsInside(otherNode->GetWorldPosition()) == Intersection::INSIDE;
+bool RoomBoundary::isPosInside(Vector3 pos) {
+    return bBox.IsInside(pos) == Intersection::INSIDE;
 }
 }

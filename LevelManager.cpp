@@ -81,9 +81,9 @@ bool LevelManager::isAnyPlayerInHouse() {
     return false;
 }
 
-RoomBoundary *LevelManager::getNodeRoom(Node *node) {
+RoomBoundary *LevelManager::getPosRoom(Vector3 pos) {
     for (auto room : rooms) {
-        if (room->isNodeInside(node)) {
+        if (room->isPosInside(pos)) {
             return room;
         }
     }

@@ -60,6 +60,7 @@ void Ghost::Start() {
     }
     // Set initial home position
     homePosition = GetNode()->GetWorldPosition();
+    getCurrentRoom();
     // Set initial ghost state
     setState("Local");
     // Start its animation
@@ -109,8 +110,6 @@ void Ghost::FixedUpdate(float) {
 #   endif
     // Low frequency timed clode
     if (lowFreqStepTimer.GetMSec(false) > 2500) {
-        // Update closest player
-        updateClosestPlayer();
         // Update list of close objects
         updateCloseBodies();
         // Reset step timer
@@ -349,5 +348,9 @@ RoomBoundary *Ghost::getCurrentRoom() {
         fres = mostRecentRoom;
     }
     return fres;
+}
+
+RoomBoundary *Ghost::getFavoriteRoom() {
+    return levelManager->getPosRoom(homePosition);;
 }
 }

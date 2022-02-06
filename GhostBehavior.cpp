@@ -24,6 +24,7 @@ float Default::getCurrentSpeed() {
 }
 
 PlayerWDistance Default::getPlayerToChase() {
+    ghost->updateClosestPlayer();
     return ghost->getClosestPlayer();
 }
 
@@ -38,7 +39,7 @@ float Default::getBlinkSpeed() {
 RevealMode Default::getRevealMode(float playerDistance) {
     if (playerDistance < 2.0f) {
         return RevealMode::standing;
-    } else if (playerDistance < 3.0f) {
+    } else if (playerDistance < 10.0f) {
         return RevealMode::chasing;
     } else {
         return RevealMode::airball;

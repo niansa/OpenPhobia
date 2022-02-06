@@ -45,27 +45,32 @@ void GhostHunt::FixedUpdate(float) {
     if (GetGhost()->lastHuntTimer.GetMSec(false) < GetGhost()->behavior->gracePeriod) {
         return;
     }
-    // Get player to chase
-    auto playerToChase = GetGhost()->behavior->getPlayerToChase();
-    if (playerToChase.hasValue()) {
-        // Kill player if possible
-        if (playerToChase.distance < 0.75f) {
-            playerToChase.player->startKillingPlayer();
-            if (GetGhost()->behavior->endHuntOnDeath) {
-                GetGhost()->setState("Local");
-            } else {
-                restart();
-            }
-        }
-        // Chase player if possible
-        if (GetGhost()->canSeePlayer(playerToChase)) {
-            if (chasePlayer()) {
+    // Don't run this piece of code as often
+    if (stepTimer.GetMSec(false) > 250) {
+        stepTimer.Reset();
+        // Get player to chase
+        auto playerToChase = GetGhost()->behavior->getPlayerToChase();
+        if (playerToChase.hasValue()) {
+            // Kill player if possible
+            if (playerToChase.distance < 0.75f) {
+                playerToChase.player->startKillingPlayer();
+                if (GetGhost()->behavior->endHuntOnDeath) {
+                    GetGhost()->setState("Local");
+                } else {
+                    restart();
+                }
                 return;
             }
+            // Chase player if possible
+            if (GetGhost()->canSeePlayer(playerToChase)) {
+                if (chasePlayer()) {
+                    return;
+                }
+            }
         }
+        // Just roam around
+        GetGhost()->roam();
     }
-    // Just roam around
-    GetGhost()->roam();
 }
 
 bool GhostHunt::chasePlayer() {

@@ -10,6 +10,7 @@
 
 namespace Game {
 void GhostReveal::Initialize() {
+    GetGhost()->updateClosestPlayer();
     if (GetGhost()->getClosestPlayer().hasValue()) {
         revealMode = GetGhost()->behavior->getRevealMode(GetGhost()->getClosestPlayer().distance);
         if (revealMode != RevealMode::airball) {
@@ -17,6 +18,9 @@ void GhostReveal::Initialize() {
             auto sound = GetNode()->GetOrCreateComponent<SoundSource3D>();
             sound->SetFarDistance(GetGhost()->behavior->vocalRange);
             sound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/ghostSingMix.ogg"));
+        }
+        if (revealMode == RevealMode::chasing) {
+            GetGhost()->walkTo(GetGhost()->getClosestPlayer().player->GetNode()->GetWorldPosition());
         }
         GetGhost()->appearance->SetDeepEnabled(true);
         GetGhost()->setNextState("Local", GetGhost()->rng.GetUInt(2500, Max(15000.0f*GetGhost()->getAggression(), 1500)));
@@ -36,14 +40,11 @@ void GhostReveal::Deinitialize() {
 }
 
 void GhostReveal::FixedUpdate(float) {
-    // RevealMode-dependent code
-    switch (revealMode) {
-    case RevealMode::chasing: {
-        GetGhost()->walkTo(GetGhost()->getClosestPlayer().player->GetNode()->GetWorldPosition());
-    } break;
-    default: {}
-    };
     // End reveal early if needed
+    if (revealMode == RevealMode::chasing && GetGhost()->currentPath.empty()) {
+        GetGhost()->setState("Local");
+        return;
+    }
     for (auto player : GetGhost()->levelManager->getPlayers()) {
         if (GetGhost()->getDistanceToPlayer(player) < 1.0f) {
             GetGhost()->setState("Local");

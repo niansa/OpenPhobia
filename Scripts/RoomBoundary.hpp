@@ -39,8 +39,11 @@ public:
     const BoundingBox &getBoundingBox() {
         return bBox;
     }
+    bool isNodeInside(Node *otherNode) {
+        return isPosInside(otherNode->GetWorldPosition());
+    }
 
-    bool isNodeInside(Node *otherNode);
+    bool isPosInside(Vector3 pos);
 };
 }
 #endif // ROOMBOUNDARY_HPP

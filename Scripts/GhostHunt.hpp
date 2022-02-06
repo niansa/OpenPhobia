@@ -18,7 +18,7 @@ class Ghost;
 class GhostHunt final : public GhostStateScript {
     URHO3D_OBJECT(GhostHunt, GhostStateScript);
 
-    Timer blinkTimer;
+    Timer blinkTimer, stepTimer;
     unsigned nextBlinkIn = 0;
 
 public:
