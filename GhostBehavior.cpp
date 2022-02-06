@@ -59,7 +59,7 @@ float Jinn::getCurrentSpeed() {
         // Add speed if the ghost is able to see the player
         auto player = getPlayerToChase();
         if (ghost->canSeePlayer(player) && player.distance > 2.0f) {
-            return 2.0f;
+            return 2.5f;
         }
     }
     return Default::getCurrentSpeed();
@@ -67,17 +67,14 @@ float Jinn::getCurrentSpeed() {
 
 
 float Revenant::getCurrentSpeed() {
-    auto bSpeed = Default::getCurrentSpeed();
     if (ghost->getState() == "Hunt") {
         // Add speed if the ghost is able to see the player
         if (ghost->canSeePlayer(getPlayerToChase())) {
-            bSpeed += 2.0f;
+            return 2.0f;
         } else {
-            bSpeed -= 0.5f;
+            return 0.5f;
         }
     }
-    // Return final speed
-    return bSpeed;
 }
 
 
