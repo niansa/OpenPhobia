@@ -5,8 +5,10 @@
 #include "Lightswitch.hpp"
 #include "GhostBehavior.hpp"
 #include "RoomBoundary.hpp"
+#include "GhostReveal.hpp"
 #include "../SphereCastMultiple.hpp"
 #include "../LevelManager.hpp"
+#include "../GhostState.hpp"
 
 #include <Urho3D/Math/Ray.h>
 #include <Urho3D/Physics/RigidBody.h>
@@ -59,7 +61,7 @@ void Ghost::Start() {
     // Set initial home position
     homePosition = GetNode()->GetWorldPosition();
     // Set initial ghost state
-    setState(GhostState::local);
+    setState("Local");
     // Start its animation
     animationController->Play("Objects/Ghost/Animations/Idle.ani", 1, true);
 }
@@ -96,194 +98,50 @@ void Ghost::FixedUpdate(float) {
     // Debug keys
     auto input = GetSubsystem<Input>();
     if (input->GetKeyDown(Key::KEY_M)) {
-        setState(GhostState::roaming);
+        setState("Roam");
     } else if (input->GetKeyDown(Key::KEY_R)) {
-        setState(GhostState::reveal);
+        setState("Reveal");
     } else if (input->GetKeyDown(Key::KEY_L)) {
-        setState(GhostState::local);
+        setState("Local");
     } else if (input->GetKeyDown(Key::KEY_H)) {
-        setState(GhostState::hunt);
+        setState("Hunt");
     }
 #   endif
     // Low frequency timed clode
     if (lowFreqStepTimer.GetMSec(false) > 2500) {
+        // Update closest player
+        updateClosestPlayer();
         // Update list of close objects
         updateCloseBodies();
         // Reset step timer
         lowFreqStepTimer.Reset();
     }
-    // Timed code
-    if (stepTimer.GetMSec(false) > 200) {
-        // State-dependent code
-        switch (state) {
-        case GhostState::local: {
-            if (currentPath.empty()) {
-                auto cRoom = getCurrentRoom();
-                if (cRoom) {
-                    // Go to random location inside of the room
-                    walkTo(rng.GetVector3(cRoom->getBoundingBox()));
-                }
-            }
-        } break;
-        case GhostState::reveal: {
-            // RevealMode-dependent code
-            switch (revealMode) {
-            case RevealMode::chasing: {
-                walkTo(getClosestPlayer().player->GetNode()->GetWorldPosition());
-            } break;
-            default: {}
-            };
-            // End reveal early if needed
-            for (auto player : levelManager->getPlayers()) {
-                if (getDistanceToPlayer(player) < 1.0f) {
-                    setState(GhostState::local);
-                    break;
-                }
-            }
-        } break;
-        case GhostState::hunt: {
-            // Update closest player
-            updateClosestPlayer();
-            // Switch blink
-            if (blinkTimer.GetMSec(false) > nextBlinkIn) {
-                appearance->SetDeepEnabled(!appearance->IsEnabled());
-                nextBlinkIn = behavior->getBlinkSpeed();
-                blinkTimer.Reset();
-            }
-            // Use last hunt timer as grace period timer
-            if (lastHuntTimer.GetMSec(false) < behavior->gracePeriod) {
-                break;
-            }
-            // Get player to chase
-            auto playerToChase = behavior->getPlayerToChase();
-            // Kill player if possible
-            if (playerToChase.distance < 0.75f) {
-                playerToChase.player->startKillingPlayer();
-                setState(behavior->endHuntOnDeath?GhostState::local:GhostState::hunt);
-            }
-            // Chase player if possible
-            if (canSeePlayer(playerToChase)) {
-                if (chasePlayer()) {
-                    break;
-                }
-            }
-        }
-        case GhostState::roaming: {
-            if (currentPath.empty()) {
-                // Get random location around the ghost
-                Vector3 nPos;
-                do {
-                    constexpr float maxDist = 10.0f,
-                                    minDist = 5.0f;
-                    nPos = rng.GetVector3(Vector3(minDist, 0.0f, minDist), Vector3(maxDist, 0.0f, maxDist));
-                    if (rng.GetBool(0.5f)) {
-                        nPos.x_ = -nPos.x_;
-                    }
-                    if (rng.GetBool(0.5f)) {
-                        nPos.z_ = -nPos.z_;
-                    }
-                    // Go there
-                } while (!walkTo(GetNode()->GetWorldPosition() + nPos));
-            }
-        } break;
-        default: {}
-        }
-        // Potential state switch
-        trySwitchState();
-        // Reset step timer
-        stepTimer.Reset();
-    }
+    // Potential state switch
+    trySwitchState();
 }
 
-void Ghost::setState(GhostState nState) {
-    // Backup old state
-    auto oldState = state;
+void Ghost::setState(eastl::string nState) {
     // Set new state
     state = nState;
     // Stop walking
     currentPath.clear();
-    // Set ghost visibility
-    appearance->SetDeepEnabled(state == GhostState::reveal || state == GhostState::hunt);
+    // Get invisible
+    appearance->SetDeepEnabled(false);
 
     // Check that behavior has loaded
     if (behavior) {
-        // State dependent code
-        switch (state) {
-        case GhostState::local: {
-            // Handle previous state
-            if (oldState == GhostState::hunt) {
-                // Stop vocal sound
-                GetNode()->GetComponent<SoundSource3D>()->Stop();
-                // Reset hunt timer
-                lastHuntTimer.Reset();
-                // Warp back home
-                kinematicController->Warp(homePosition);
-            } else if (oldState == GhostState::reveal) {
-                if (revealMode == RevealMode::standing) {
-                    // Stop vocal sound
-                    GetNode()->GetComponent<SoundSource3D>()->Stop();
-                } else {
-                    // Play scream
-                    GetNode()->GetComponent<SoundSource3D>()->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/screamShort.wav"));
-                }
-            } else {
-                // Go back home
-                walkTo(homePosition);
-            }
-            // Find and define next state
-            GhostState nState;
-            auto teamSanity = levelManager->getTeamSanity();
-            if (teamSanity < behavior->sanityThreshold + behavior->getHuntMultiplier() && lastHuntTimer.GetMSec(false) > (behavior->huntCooldown - 1000)/* && rng.GetBool(teamSanity>25?0.25f:0.5f)*/) {
-                nState = GhostState::hunt;
-            } else if (rng.GetBool(0.025f*getAggression())) {
-                nState = GhostState::reveal;
-            } else  {
-                nState = GhostState::roaming;
-            }
-            setNextState(nState, rng.GetUInt(5000, Clamp<unsigned>(20000.0f/(getAggression()*4.0f), 5000, 30000)));
-        } break;
-        case GhostState::roaming: {
-            updateClosestPlayer();
-            setNextState(GhostState::local, rng.GetUInt(5000, Max(20000.0f*getAggression(), 5000)));
-        } break;
-        case GhostState::reveal: {
-            updateClosestPlayer();
-            if (getClosestPlayer().hasValue()) {
-                revealMode = behavior->getRevealMode(getClosestPlayer().distance);
-                if (revealMode != RevealMode::airball) {
-                    // Play reveal sound
-                    auto sound = GetNode()->GetOrCreateComponent<SoundSource3D>();
-                    sound->SetFarDistance(behavior->vocalRange);
-                    sound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/ghostSingMix.ogg"));
-                }
-                setNextState(GhostState::local, rng.GetUInt(2500, Max(15000.0f*getAggression(), 1500)));
-            } else {
-                setState(GhostState::local);
-            }
-            appearance->SetDeepEnabled(true);
-        } break;
-        case GhostState::hunt: {
-            // Check that hunt is allowed to start
-            if (!levelManager->isAnyPlayerInHouse()) {
-                setState(GhostState::local);
-                break;
-            }
-            // Reset stuff
-            if (oldState != GhostState::hunt) {
-                lastHuntTimer.Reset();
-                behavior->onHuntStart();
-                // Play hunt sound
-                auto sound = GetNode()->GetOrCreateComponent<SoundSource3D>();
-                sound->SetFarDistance(behavior->vocalRange);
-                sound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/ghostSingMale.ogg"));
-            }
-            setNextState(GhostState::local, behavior->huntDuration);
-        } break;
-        default: {}
+        // Remove old state script
+        if (stateScript) {
+            stateScript->Deinitialize();
+            stateScript->Remove();
         }
+        // Create new one
+        stateScript = reinterpret_cast<GhostStateScript*>(GetNode()->CreateComponent("Ghost"+nState));
+        stateScript->ghost = this;
+        stateScript->Initialize();
     } else {
         // Behavior is not loaded - just start roaming after 15 seconds
-        setNextState(GhostState::roaming, 15000);
+        setNextState("Roam", 15000);
     }
 }
 
@@ -347,6 +205,25 @@ void Ghost::useBody(RigidBody *body) {
 
 float Ghost::getAggression() const {
     return Max(0.01f, (-(float(levelManager->getTeamSanity())-100))/100) * baseAgression * behavior->agression;
+}
+
+void Ghost::roam() {
+    if (currentPath.empty()) {
+        // Get random location around the ghost
+        Vector3 nPos;
+        do {
+            constexpr float maxDist = 10.0f,
+                            minDist = 5.0f;
+            nPos = rng.GetVector3(Vector3(minDist, 0.0f, minDist), Vector3(maxDist, 0.0f, maxDist));
+            if (rng.GetBool(0.5f)) {
+                nPos.x_ = -nPos.x_;
+            }
+            if (rng.GetBool(0.5f)) {
+                nPos.z_ = -nPos.z_;
+            }
+            // Go there
+        } while (!walkTo(GetNode()->GetWorldPosition() + nPos));
+    }
 }
 
 void Ghost::updateClosestPlayer() {

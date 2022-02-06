@@ -2,6 +2,7 @@
 #include "Useable.hpp"
 #include "Scripts/Player.hpp"
 #include "Scripts/Ghost.hpp"
+#include "Scripts/GhostReveal.hpp"
 #include "easyscript/Namespace.hpp"
 
 
@@ -9,7 +10,7 @@
 namespace Game {
 namespace GhostBehaviors {
 float Default::getCurrentSpeed() {
-    if (ghost->getState() == GhostState::hunt) {
+    if (ghost->getState() == "Hunt") {
         auto playerToChase = getPlayerToChase();
         if (playerToChase.hasValue() && ghost->canSeePlayer(playerToChase)) {
             speedup = Min(speedup + 0.0015f, 3.5f);
@@ -52,7 +53,7 @@ float Phantom::getBlinkSpeed() {
 
 float Revenant::getCurrentSpeed() {
     auto bSpeed = Default::getCurrentSpeed();
-    if (ghost->getState() == GhostState::hunt) {
+    if (ghost->getState() == "Hunt") {
         // Add speed if the ghost is able to see the player
         if (ghost->canSeePlayer(getPlayerToChase())) {
             bSpeed += 2.0f;
@@ -67,7 +68,7 @@ float Revenant::getCurrentSpeed() {
 
 float Raiju::getCurrentSpeed() {
     auto bSpeed = Default::getCurrentSpeed();
-    if (ghost->getState() == GhostState::hunt) {
+    if (ghost->getState() == "Hunt") {
         // Check if there is any turned on electronic turned on nearby
         for (auto body : ghost->getCloseBodies()) {
             if (body.body_ && body.distance_ <= 3.0f) {

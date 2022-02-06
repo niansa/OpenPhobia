@@ -40,7 +40,7 @@ add_subdirectory(easyscript)
 
 # Game executable
 add_executable(Game
-    main.cpp LevelManager.cpp LevelManager.hpp Useable.hpp Equipment.hpp EMF.hpp GhostBehavior.cpp GhostBehavior.hpp Evidence.hpp
+    main.cpp LevelManager.cpp LevelManager.hpp Useable.hpp Equipment.hpp EMF.hpp GhostBehavior.cpp GhostBehavior.hpp GhostState.hpp Evidence.hpp
     SphereCastMultiple.cpp SphereCastMultiple.hpp
 
 )

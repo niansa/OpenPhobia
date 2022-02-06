@@ -18,12 +18,7 @@ struct GhostBehavior;
 namespace Game {
 class Ghost;
 class Player;
-
-enum class RevealMode {
-    standing,
-    chasing,
-    airball
-};
+enum class RevealMode;
 
 struct PlayerWDistance {
     Player *player = nullptr;

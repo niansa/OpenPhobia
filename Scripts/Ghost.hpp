@@ -8,6 +8,7 @@ class Ghost;
 #include "../easyscript/Namespace.hpp"
 #include "../LevelManager.hpp"
 #include "../GhostBehavior.hpp"
+#include "../GhostState.hpp"
 
 #include <Urho3D/Scene/LogicComponent.h>
 #include <Urho3D/Math/RandomEngine.h>
@@ -24,13 +25,6 @@ class Ghost;
 namespace Game {
 class Player;
 
-enum class GhostState {
-    local,
-    roaming,
-    reveal,
-    hunt
-};
-
 struct GhostAppearance {
     Color color;
 };
@@ -41,21 +35,19 @@ class Ghost final : public LogicComponent {
     URHO3D_OBJECT(Ghost, LogicComponent);
 
     RandomEngine rng;
-    Timer stepTimer, lowFreqStepTimer, stateTimer, navigationTimer, lastHuntTimer, blinkTimer, interactionTimer;
+    Timer lowFreqStepTimer, stateTimer, navigationTimer, lastHuntTimer, interactionTimer;
     KinematicCharacterController* kinematicController;
     PhysicsWorld *physicsWorld;
     LevelManager *levelManager;
     const GhostAppearance *appearanceInfo;
     Node *appearance;
     AnimationController *animationController;
-    GhostState state;
-    GhostState nextState;
+    eastl::string state, nextState;
     eastl::optional<unsigned> nextStateIn;
-    unsigned nextBlinkIn = 0;
+    GhostStateScript *stateScript = nullptr;
     eastl::unique_ptr<GhostBehavior> behavior = nullptr;
     DynamicNavigationMesh *navMesh;
     ea::vector<Vector3> currentPath;
-    RevealMode revealMode;
     RoomBoundary *mostRecentRoom = nullptr;
     PlayerWDistance closestPlayer;
     Vector3 homePosition;
@@ -82,7 +74,7 @@ public:
     }
 
     bool isVisible() {
-        return state == GhostState::reveal || state == GhostState::hunt;
+        return state == "Reveal" || state == "Hunt"; //TODO: Don't just depent on these
     }
 
     bool hasNextState() {
@@ -100,12 +92,12 @@ public:
             switchState();
         }
     }
-    void setNextState(GhostState nState, unsigned in) {
+    void setNextState(eastl::string nState, unsigned in) {
         stateTimer.Reset();
         nextState = nState;
         nextStateIn = in;
     }
-    GhostState getState() {
+    const eastl::string& getState() {
         return state;
     }
     PlayerWDistance getClosestPlayer() {
@@ -119,10 +111,11 @@ public:
         return {p, getDistanceToPlayer(p)};
     }
 
-    void setState(GhostState nState);
+    void setState(eastl::string nState);
     void throwBody(RigidBody *body);
     void useBody(RigidBody *body);
     float getAggression() const;
+    void roam();
     bool walkTo(const Vector3& pos);
     bool chasePlayer();
     bool canSeePlayer(PlayerWDistance player);
