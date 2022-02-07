@@ -98,13 +98,13 @@ void Ghost::FixedUpdate(float) {
 #   ifndef NDEBUG
     // Debug keys
     auto input = GetSubsystem<Input>();
-    if (input->GetKeyDown(Key::KEY_M)) {
+    if (input->GetKeyPress(Key::KEY_M)) {
         setState("Roam");
-    } else if (input->GetKeyDown(Key::KEY_R)) {
+    } else if (input->GetKeyPress(Key::KEY_R)) {
         setState("Reveal");
-    } else if (input->GetKeyDown(Key::KEY_L)) {
+    } else if (input->GetKeyPress(Key::KEY_L)) {
         setState("Local");
-    } else if (input->GetKeyDown(Key::KEY_H)) {
+    } else if (input->GetKeyPress(Key::KEY_H)) {
         setState("Hunt");
     }
 #   endif
