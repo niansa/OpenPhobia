@@ -5,18 +5,18 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="1940" />
-	<attribute name="Next Replicated Component ID" value="2086" />
-	<attribute name="Next Local Node ID" value="16777320" />
-	<attribute name="Next Local Component ID" value="16777374" />
+	<attribute name="Next Replicated Node ID" value="1945" />
+	<attribute name="Next Replicated Component ID" value="2090" />
+	<attribute name="Next Local Node ID" value="16777322" />
+	<attribute name="Next Local Component ID" value="16777377" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D;Lightmaps/Textures/Lightmap-0.png" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="9.47945 6.30671 -7.58425" />
-		<attribute name="Camera Rotation" value="0.913179 0.389483 0.0796562 -0.0897883" />
+		<attribute name="Camera Position" value="14.1014 3.79587 -2.32551" />
+		<attribute name="Camera Rotation" value="-0.0785487 -0.0865196 0.922723 -0.367323" />
 	</component>
 	<component type="RenderPipeline" id="839">
 		<attribute name="Color Space" value="LDR Linear" />
@@ -583,7 +583,7 @@
 					<attribute name="Is Enabled" value="true" />
 					<attribute name="Name" value="" />
 					<attribute name="Tags" />
-					<attribute name="Position" value="12.8385 -0.000923302 -6.0514" />
+					<attribute name="Position" value="13.7072 -0.000923302 -6.0514" />
 					<attribute name="Rotation" value="-4.37114e-08 2.03547e-17 -1 -4.65661e-10" />
 					<attribute name="Scale" value="0.002 0.002 0.002" />
 					<attribute name="Variables" />
@@ -743,7 +743,7 @@
 					<attribute name="Is Enabled" value="true" />
 					<attribute name="Name" value="" />
 					<attribute name="Tags" />
-					<attribute name="Position" value="12.8947 0.585175 -6.76191" />
+					<attribute name="Position" value="13.7047 0.585175 -6.76191" />
 					<attribute name="Rotation" value="4.37114e-08 -2.03547e-17 1 4.65661e-10" />
 					<attribute name="Scale" value="1 1 1" />
 					<attribute name="Variables" />
@@ -758,7 +758,7 @@
 					</component>
 					<component type="RigidBody" id="1952">
 						<attribute name="Physics Rotation" value="4.37114e-08 -2.03547e-17 1 4.65661e-10" />
-						<attribute name="Physics Position" value="12.8947 0.585175 -6.76191" />
+						<attribute name="Physics Position" value="13.7047 0.585175 -6.76191" />
 					</component>
 				</node>
 			</node>
