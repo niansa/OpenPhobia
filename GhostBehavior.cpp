@@ -75,6 +75,7 @@ float Revenant::getCurrentSpeed() {
             return 0.5f;
         }
     }
+    return 1.0f;
 }
 
 
