@@ -321,10 +321,9 @@ bool Ghost::canSeePlayer(PlayerWDistance player) {
     }
     // Check if player is in line of sight
     auto vectorToPlayer = player.player->getHead()->GetWorldPosition() - GetNode()->GetWorldPosition();
-    auto vectorForward = GetNode()->GetWorldDirection();
     ea::vector<PhysicsRaycastResult> hits;
     physicsWorld->Raycast(hits, Ray(GetNode()->GetWorldPosition(), vectorToPlayer.Normalized()), vectorToPlayer.Length());
-    if (hits.size() <= 1) {
+    if (hits.size() == 0) {
         return true;
     }
     // Check if player has electronics turned on
