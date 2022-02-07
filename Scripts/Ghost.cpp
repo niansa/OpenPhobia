@@ -310,7 +310,7 @@ void Ghost::followPath() {
     }
 }
 
-bool Ghost::canSeePlayer(PlayerWDistance player) {
+bool Ghost::canSeePlayer(PlayerWDistance player, bool includeElectronics) {
     // Check that player is valid
     if (!player.player) {
         return false;
@@ -327,7 +327,7 @@ bool Ghost::canSeePlayer(PlayerWDistance player) {
         return true;
     }
     // Check if player has electronics turned on
-    if (player.distance < behavior->electricVisionRange) {
+    if (includeElectronics && player.distance < behavior->electricVisionRange) {
         auto playerHand = player.player->getHand();
         if (playerHand && playerHand->HasTag("Useable")) {
             auto script = static_cast<Useable *>(playerHand->GetComponent(playerHand->GetName()));

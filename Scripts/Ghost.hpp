@@ -117,7 +117,7 @@ public:
     float getAggression() const;
     void roam();
     bool walkTo(const Vector3& pos);
-    bool canSeePlayer(PlayerWDistance player);
+    bool canSeePlayer(PlayerWDistance player, bool includeElectronics = false);
     float getDistanceToPlayer(Player *player);
     RoomBoundary *getCurrentRoom();
     RoomBoundary *getFavoriteRoom();

@@ -62,7 +62,7 @@ void GhostHunt::FixedUpdate(float) {
                 return;
             }
             // Chase player if possible
-            if (GetGhost()->canSeePlayer(playerToChase)) {
+            if (GetGhost()->canSeePlayer(playerToChase, true)) {
                 if (chasePlayer()) {
                     return;
                 }
