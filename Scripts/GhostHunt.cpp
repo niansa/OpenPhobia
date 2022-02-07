@@ -41,8 +41,8 @@ void GhostHunt::FixedUpdate(float) {
         nextBlinkIn = GetGhost()->behavior->getBlinkSpeed();
         blinkTimer.Reset();
     }
-    // Use last hunt timer as grace period timer
-    if (GetGhost()->lastHuntTimer.GetMSec(false) < GetGhost()->behavior->gracePeriod) {
+    // Grace period
+    if (gracePeriodTimer.GetMSec(false) < GetGhost()->behavior->gracePeriod) {
         return;
     }
     // Don't run this piece of code as often
