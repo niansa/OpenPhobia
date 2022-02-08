@@ -15,8 +15,6 @@ void GhostHunt::Initialize() {
         GetGhost()->setState("Local");
         return;
     }
-    // Get visible
-    GetGhost()->appearance->SetDeepEnabled(true);
     // Play hunt sound
     auto sound = GetNode()->GetOrCreateComponent<SoundSource3D>();
     sound->SetFarDistance(GetGhost()->behavior->vocalRange);
@@ -35,15 +33,15 @@ void GhostHunt::Deinitialize() {
 }
 
 void GhostHunt::FixedUpdate(float) {
+    // Grace period
+    if (gracePeriodTimer.GetMSec(false) < GetGhost()->behavior->gracePeriod) {
+        return;
+    }
     // Switch blink
     if (blinkTimer.GetMSec(false) > nextBlinkIn) {
         GetGhost()->appearance->SetDeepEnabled(!GetGhost()->appearance->IsEnabled());
         nextBlinkIn = GetGhost()->behavior->getBlinkSpeed();
         blinkTimer.Reset();
-    }
-    // Grace period
-    if (gracePeriodTimer.GetMSec(false) < GetGhost()->behavior->gracePeriod) {
-        return;
     }
     // Don't run this piece of code as often
     if (stepTimer.GetMSec(false) > 250) {
