@@ -96,8 +96,27 @@ float Revenant::getCurrentSpeed() {
 }
 
 
+float Shade::getAgressionMultiplier() {
+    ghost->updateClosestPlayer();
+    if (ghost->getClosestPlayer().distance < 7.5f/*TBV*/) {
+        return 0.5f;
+    } else {
+        return 1.0f;
+    }
+}
+
+
 float Oni::getThrowPower() {
     return ghost->rng.GetFloat(0.75f, 2.0f);
+}
+
+float Oni::getAgressionMultiplier() {
+    ghost->updateClosestPlayer();
+    if (ghost->getClosestPlayer().distance < 7.5f/*TBV*/) {
+        return 1.5f;
+    } else {
+        return 1.0f;
+    }
 }
 
 

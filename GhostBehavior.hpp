@@ -63,6 +63,7 @@ struct GhostBehavior {
     virtual float getCurrentSpeed() = 0;
     virtual PlayerWDistance getPlayerToChase() = 0;
     virtual unsigned getHuntMultiplier() = 0;
+    virtual float getAgressionMultiplier() = 0;
     virtual void onStateChange(const eastl::string& nState) = 0;
     virtual void onInteraction(InteractionType::Type type) = 0;
     virtual float getBlinkSpeed() = 0;
@@ -78,6 +79,7 @@ struct Default : public GhostBehavior {
     float getCurrentSpeed() override;
     PlayerWDistance getPlayerToChase() override;
     unsigned getHuntMultiplier() override {return 0;}
+    float getAgressionMultiplier() override {return 1.0f;}
     void onStateChange(const eastl::string& nState) override;
     void onInteraction(InteractionType::Type type) override {};
     float getBlinkSpeed() override;
@@ -163,6 +165,8 @@ struct Shade : public Default {
         sanityThreshold = 35;
         agression = 0.25f;
     }
+
+    float getAgressionMultiplier() override;
 };
 struct Demon : public Default {
     Demon() {
@@ -191,6 +195,7 @@ struct Oni : public Default {
     }
 
     float getThrowPower() override;
+    float getAgressionMultiplier() override;
 };
 struct Yokai : public Default {
     Yokai() {
