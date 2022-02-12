@@ -64,6 +64,7 @@ public:
     using LogicComponent::LogicComponent;
 
     void Start() override;
+    void Update(float) override;
     void FixedUpdate(float) override;
 
     GhostBehavior *getGhostBehavior() {

@@ -67,13 +67,7 @@ void Ghost::Start() {
     animationController->Play("Objects/Ghost/Animations/Idle.ani", 1, true);
 }
 
-void Ghost::FixedUpdate(float) {
-    // Keep following the currentPath
-    followPath();
-    // Interact
-    if ((isVisible() || rng.GetBool(0.25f * getAggression())) && interactionTimer.GetMSec(false) > behavior->interactionCooldown) {
-        tryInteract();
-    }
+void Ghost::Update(float) {
 #   ifndef NDEBUG
     // Debug keys
     auto input = GetSubsystem<Input>();
@@ -85,8 +79,19 @@ void Ghost::FixedUpdate(float) {
         setState("Local");
     } else if (input->GetKeyPress(Key::KEY_H)) {
         setState("Hunt");
+    } else if (input->GetKeyPress(Key::KEY_I)) {
+        tryInteract();
     }
 #   endif
+}
+
+void Ghost::FixedUpdate(float) {
+    // Keep following the currentPath
+    followPath();
+    // Interact
+    if ((isVisible() || rng.GetBool(0.25f * getAggression())) && interactionTimer.GetMSec(false) > behavior->interactionCooldown) {
+        tryInteract();
+    }
     // Low frequency timed clode
     auto lfst = lowFreqStepTimer.GetMSec(false);
     if (lfst > 2500) {

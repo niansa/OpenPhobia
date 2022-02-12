@@ -41,7 +41,7 @@ void GhostReveal::Deinitialize() {
         GetNode()->GetComponent<SoundSource3D>()->Stop();
     } else {
         // Play scream
-        GetNode()->GetComponent<SoundSource3D>()->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/screamShort.wav"));
+        GetNode()->GetOrCreateComponent<SoundSource3D>()->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/screamShort.wav"));
     }
 }
 
