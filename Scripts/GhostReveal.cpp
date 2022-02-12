@@ -37,8 +37,10 @@ void GhostReveal::Initialize() {
 
 void GhostReveal::Deinitialize() {
     if (revealMode == RevealMode::standing) {
-        // Stop vocal sound
-        GetNode()->GetComponent<SoundSource3D>()->Stop();
+        if (GetNode()->HasComponent<SoundSource3D>()) {
+            // Stop vocal sound
+            GetNode()->GetComponent<SoundSource3D>()->Stop();
+        }
     } else {
         // Play scream
         GetNode()->GetOrCreateComponent<SoundSource3D>()->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/screamShort.wav"));
