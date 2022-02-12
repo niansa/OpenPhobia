@@ -20,6 +20,16 @@ class Ghost;
 class Player;
 enum class RevealMode;
 
+namespace InteractionType {
+using Type = uint8_t;
+enum : Type {
+    touch = 0b10,
+    throw_ = 0b01,
+    any = 0b11,
+    none = 0b00
+};
+}
+
 struct PlayerWDistance {
     Player *player = nullptr;
     float distance;
@@ -45,16 +55,18 @@ struct GhostBehavior {
     float footstepRange = 20.0f;
     float speedup = 0.0f;
     float agression = 1.0f;
-    bool superHardThrows = false;
     bool endHuntOnDeath = true;
     Evidence::Type evidence = 0;
 
     virtual ~GhostBehavior() {}
+    virtual void FrequentUpdate(float) = 0;
     virtual float getCurrentSpeed() = 0;
     virtual PlayerWDistance getPlayerToChase() = 0;
     virtual unsigned getHuntMultiplier() = 0;
     virtual void onStateChange(const eastl::string& nState) = 0;
+    virtual void onInteraction(InteractionType::Type type) = 0;
     virtual float getBlinkSpeed() = 0;
+    virtual float getThrowPower() = 0;
     virtual bool hasEvidence(Evidence::Type) = 0;
     virtual RevealMode getRevealMode(float playerDistance) = 0;
 };
@@ -62,11 +74,14 @@ struct GhostBehavior {
 namespace GhostBehaviors {
 struct Default : public GhostBehavior {
     Default() {}
+    void FrequentUpdate(float) override {}
     float getCurrentSpeed() override;
     PlayerWDistance getPlayerToChase() override;
     unsigned getHuntMultiplier() override {return 0;}
     void onStateChange(const eastl::string& nState) override;
+    void onInteraction(InteractionType::Type type) override {};
     float getBlinkSpeed() override;
+    float getThrowPower() override;
     bool hasEvidence(Evidence::Type checkedFor) override {
         return Evidence::hasEvidence(evidence, checkedFor);
     }
@@ -86,6 +101,8 @@ struct Wraith : public Default {
         using namespace Evidence;
         evidence = EMFLevelFive | SpiritBox | DOTSProjection;
     }
+
+    void FrequentUpdate(float) override;
 };
 struct Phantom : public Default {
     Phantom() {
@@ -101,8 +118,9 @@ struct Poltergeist : public Default {
         name = "Poltergeist";
         using namespace Evidence;
         evidence = SpiritBox | Fingerprints | GhostWriting;
-        superHardThrows = true;
     }
+
+    void onInteraction(InteractionType::Type type) override;
 };
 struct Banshee : public Default {
     Banshee() {
@@ -169,9 +187,10 @@ struct Oni : public Default {
         name = "Oni";
         using namespace Evidence;
         evidence = EMFLevelFive | FreezingTemps | DOTSProjection;
-        superHardThrows = true;
         agression = 1.75f;
     }
+
+    float getThrowPower() override;
 };
 struct Yokai : public Default {
     Yokai() {

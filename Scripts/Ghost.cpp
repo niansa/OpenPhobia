@@ -72,28 +72,7 @@ void Ghost::FixedUpdate(float) {
     followPath();
     // Interact
     if ((isVisible() || rng.GetBool(0.25f * getAggression())) && interactionTimer.GetMSec(false) > behavior->interactionCooldown) {
-        // Throw or use an object in range
-        if (!closeBodies.empty()) {
-            for (unsigned triesLeft = 25; triesLeft != 0; triesLeft--) {
-                auto result = closeBodies[rng.GetInt(0, closeBodies.size()-1)];
-                if (result.distance_ > 1.0f) {
-                    continue;
-                }
-                auto body = result.body_;
-                if (body) {
-                    if (body->GetNode()->HasTag("GhostInteractable") && body->GetNode()->GetParent()->GetName() != "Hand") {
-                        if (body->GetNode()->HasTag("Grabbable")) {
-                            throwBody(body);
-                        }
-                        if (body->GetNode()->HasTag("Useable")) {
-                            useBody(body);
-                        }
-                        interactionTimer.Reset();
-                        break;
-                    }
-                }
-            }
-        }
+        tryInteract();
     }
 #   ifndef NDEBUG
     // Debug keys
@@ -109,7 +88,10 @@ void Ghost::FixedUpdate(float) {
     }
 #   endif
     // Low frequency timed clode
-    if (lowFreqStepTimer.GetMSec(false) > 2500) {
+    auto lfst = lowFreqStepTimer.GetMSec(false);
+    if (lfst > 2500) {
+        // Run behavior update
+        behavior->FrequentUpdate(lfst);
         // Update list of close objects
         updateCloseBodies();
         // Reset step timer
@@ -146,6 +128,36 @@ void Ghost::setState(const eastl::string& nState) {
     }
 }
 
+InteractionType::Type Ghost::tryInteract(InteractionType::Type type) {
+    // Try to throw/touch an object in range
+    if (!closeBodies.empty()) {
+        for (unsigned triesLeft = 25; triesLeft != 0; triesLeft--) {
+            auto result = closeBodies[rng.GetInt(0, closeBodies.size()-1)];
+            if (result.distance_ > 1.0f) {
+                continue;
+            }
+            auto body = result.body_;
+            if (body) {
+                if (body->GetNode()->HasTag("GhostInteractable") && body->GetNode()->GetParent()->GetName() != "Hand") {
+                    if (body->GetNode()->HasTag("Grabbable") && type & InteractionType::throw_) {
+                        behavior->onInteraction(InteractionType::throw_);
+                        throwBody(body);
+                        interactionTimer.Reset();
+                        return InteractionType::throw_;
+                    }
+                    if (body->GetNode()->HasTag("Useable") && type & InteractionType::touch) {
+                        behavior->onInteraction(InteractionType::touch);
+                        useBody(body);
+                        interactionTimer.Reset();
+                        return InteractionType::touch;
+                    }
+                }
+            }
+        }
+    }
+    return InteractionType::none;
+}
+
 void Ghost::throwBody(RigidBody *body) {
     body->SetKinematic(false);
     // Get random direction
@@ -154,7 +166,7 @@ void Ghost::throwBody(RigidBody *body) {
         dir.y_ = -dir.y_;
     }
     // Get random power
-    auto power = behavior->superHardThrows?rng.GetFloat(0.75f, 2.0f):rng.GetFloat(0.25f, 1.75f);
+    auto power = behavior->getThrowPower();
     body->SetLinearVelocity(dir*power);
     // Get emf level to emit
     EMFLevel level;

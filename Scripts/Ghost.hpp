@@ -112,6 +112,7 @@ public:
     }
 
     void setState(const eastl::string& nState);
+    InteractionType::Type tryInteract(InteractionType::Type type = InteractionType::any);
     void throwBody(RigidBody *body);
     void useBody(RigidBody *body);
     float getAggression() const;

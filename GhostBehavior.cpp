@@ -38,6 +38,10 @@ float Default::getBlinkSpeed() {
     return ghost->rng.GetFloat(80.0f, 300.0f);
 }
 
+float Default::getThrowPower() {
+    return ghost->rng.GetFloat(0.25f, 1.75f);
+}
+
 RevealMode Default::getRevealMode(float playerDistance) {
     if (playerDistance < 2.0f) {
         return RevealMode::standing;
@@ -45,6 +49,19 @@ RevealMode Default::getRevealMode(float playerDistance) {
         return RevealMode::chasing;
     } else {
         return RevealMode::airball;
+    }
+}
+
+
+void Wraith::FrequentUpdate(float) {
+
+}
+
+
+void Poltergeist::onInteraction(InteractionType::Type type) {
+    // Do double-throw sometimes
+    if (type == InteractionType::throw_ && ghost->rng.GetBool(0.2f/*TBV*/)) {
+        ghost->tryInteract(InteractionType::throw_);
     }
 }
 
@@ -76,6 +93,11 @@ float Revenant::getCurrentSpeed() {
         }
     }
     return 1.0f;
+}
+
+
+float Oni::getThrowPower() {
+    return ghost->rng.GetFloat(0.75f, 2.0f);
 }
 
 
