@@ -34,8 +34,6 @@ public:
     void Start() override;
     void TurnOn() override;
     void TurnOff() override;
-    void GhostTurnOn() override;
-    void GhostTurnOff() override;
 
     void forceTurnOn();
     void forceTurnOff();

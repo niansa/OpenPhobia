@@ -43,14 +43,6 @@ void Lightswitch::TurnOff() {
     }
 }
 
-void Lightswitch::GhostTurnOn() {
-    forceTurnOn();
-}
-
-void Lightswitch::GhostTurnOff() {
-    forceTurnOff();
-}
-
 void Lightswitch::forceTurnOn() {
     for (auto lightBulb : lightBulbs) {
         lightBulb->TurnOn();
