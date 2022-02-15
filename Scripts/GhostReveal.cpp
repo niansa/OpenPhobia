@@ -16,8 +16,11 @@ void GhostReveal::Initialize() {
     auto closestPlayer = GetGhost()->getClosestPlayer();
     // Check that the ghost can see the player (and the player the ghost :P)
     if (closestPlayer.hasValue() && GetGhost()->canSeePlayer(closestPlayer)) {
+        // Get random player
+        auto& players = GetGhost()->levelManager->getPlayers();
+        auto player = players[GetGhost()->rng.GetUInt(0, players.size())];
         // Get reveal mode from behavior
-        revealMode = GetGhost()->behavior->getRevealMode(GetGhost()->getClosestPlayer().distance);
+        revealMode = GetGhost()->behavior->getRevealMode(player);
         // Play reveal sound (sometimes)
         if (GetGhost()->rng.GetBool(0.5f)) {
             auto sound = GetNode()->GetOrCreateComponent<SoundSource3D>();

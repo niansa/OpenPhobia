@@ -1,5 +1,6 @@
 #include "GhostBehavior.hpp"
 #include "Useable.hpp"
+#include "Scripts/HouseBoundary.hpp"
 #include "Scripts/Player.hpp"
 #include "Scripts/Ghost.hpp"
 #include "Scripts/GhostReveal.hpp"
@@ -42,10 +43,11 @@ float Default::getThrowPower() {
     return ghost->rng.GetFloat(0.25f, 1.75f);
 }
 
-RevealMode Default::getRevealMode(float playerDistance) {
-    if (playerDistance < 2.0f) {
+RevealMode Default::getRevealMode(Player *player) {
+    auto distance = ghost->getDistanceToPlayer(player);
+    if (distance < 2.0f) {
         return RevealMode::standing;
-    } else if (playerDistance < 10.0f) {
+    } else if (distance < 10.0f) {
         return RevealMode::chasing;
     } else {
         return RevealMode::airball;
@@ -127,7 +129,7 @@ float Raiju::getCurrentSpeed() {
         for (auto body : ghost->getCloseBodies()) {
             if (body.body_ && body.distance_ <= 3.0f) {
                 auto node = body.body_->GetNode();
-                if (node->HasTag("Useable")) {
+                if (ghost->levelManager->getHouse()->isNodeInside(node) && node->HasTag("Useable")) {
                     auto script = static_cast<Useable *>(node->GetComponent(node->GetName()));
                     if (script->isTurnedOn()) {
                         // Make it faster

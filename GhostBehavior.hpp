@@ -69,7 +69,7 @@ struct GhostBehavior {
     virtual float getBlinkSpeed() = 0;
     virtual float getThrowPower() = 0;
     virtual bool hasEvidence(Evidence::Type) = 0;
-    virtual RevealMode getRevealMode(float playerDistance) = 0;
+    virtual RevealMode getRevealMode(Player *player) = 0;
 };
 
 namespace GhostBehaviors {
@@ -87,7 +87,7 @@ struct Default : public GhostBehavior {
     bool hasEvidence(Evidence::Type checkedFor) override {
         return Evidence::hasEvidence(evidence, checkedFor);
     }
-    RevealMode getRevealMode(float playerDistance) override;
+    RevealMode getRevealMode(Player *player) override;
 };
 struct Spirit : public Default {
     Spirit() {
