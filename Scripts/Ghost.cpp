@@ -361,6 +361,10 @@ float Ghost::getDistanceToPlayer(Player *player) {
     return (GetNode()->GetWorldPosition() - player->GetNode()->GetWorldPosition()).Length();
 }
 
+EMFEmitter *Ghost::spawnEMFSpot() {
+    return EMFEmitter::spawnSpot(GetScene(), GetNode()->GetWorldPosition());
+}
+
 RoomBoundary *Ghost::getCurrentRoom() {
     auto fres = levelManager->getNodeRoom(GetNode());
     if (fres) {

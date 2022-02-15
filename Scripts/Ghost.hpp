@@ -24,6 +24,7 @@ class Ghost;
 
 namespace Game {
 class Player;
+class EMFEmitter;
 
 struct GhostAppearance {
     Color color;
@@ -124,6 +125,7 @@ public:
     bool walkTo(const Vector3& pos);
     bool canSeePlayer(PlayerWDistance player, bool includeElectronics = false);
     float getDistanceToPlayer(Player *player);
+    EMFEmitter *spawnEMFSpot();
     RoomBoundary *getCurrentRoom();
     RoomBoundary *getFavoriteRoom();
 };
