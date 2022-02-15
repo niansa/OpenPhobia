@@ -44,6 +44,7 @@ float Default::getThrowPower() {
 }
 
 RevealMode Default::getRevealMode(Player *player) {
+    // DNV
     auto distance = ghost->getDistanceToPlayer(player);
     if (distance < 2.0f) {
         return RevealMode::standing;

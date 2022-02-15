@@ -5,6 +5,7 @@
 #include "Lightswitch.hpp"
 #include "GhostBehavior.hpp"
 #include "RoomBoundary.hpp"
+#include "HouseBoundary.hpp"
 #include "GhostReveal.hpp"
 #include "../SphereCastMultiple.hpp"
 #include "../LevelManager.hpp"

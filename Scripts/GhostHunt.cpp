@@ -73,7 +73,12 @@ void GhostHunt::FixedUpdate(float) {
 
 bool GhostHunt::chasePlayer() {
     auto player = GetGhost()->behavior->getPlayerToChase();
-    return player.hasValue()?GetGhost()->walkTo(player.player->GetNode()->GetWorldPosition()):false;
+    if (player.hasValue()) {
+        auto pos = player.player->GetNode()->GetWorldPosition();
+        pos.y_ = GetGhost()->GetNode()->GetWorldPosition().y_;
+        return GetGhost()->walkTo(pos);
+    }
+    return false;
 }
 
 void GhostHunt::restart() {
