@@ -101,6 +101,9 @@ public:
     const eastl::string& getState() {
         return state;
     }
+    float getStateDuration() {
+        return nextStateIn.value_or(0);
+    }
     PlayerWDistance getClosestPlayer() {
         return closestPlayer;
     }

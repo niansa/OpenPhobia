@@ -20,6 +20,7 @@ class EMFEmitter final : public LogicComponent {
     EMFLevel level = EMFLevel::basic;
     Timer timer;
     float timeout = 0;
+    AutoRemoveMode removeMode = AutoRemoveMode::REMOVE_COMPONENT;
 
 public:
     using LogicComponent::LogicComponent;
@@ -32,10 +33,15 @@ public:
     void setLevel(EMFLevel level) {
         this->level = level;
     }
-    void timeoutIn(float seconds) {
-        timeout = seconds * 1000;
+    void setAutoRemoveMode(AutoRemoveMode mode) {
+        removeMode = mode;
+    }
+    void timeoutIn(float ms) {
+        timeout = ms;
         timer.Reset();
     }
+
+    static EMFEmitter *spawnSpot(Scene *scene, const Vector3& position);
 };
 }
 #endif // EMFEMITTER_HPP

@@ -1,6 +1,7 @@
 #include "GhostReveal.hpp"
 #include "Ghost.hpp"
 #include "Player.hpp"
+#include "EMFEmitter.hpp"
 
 #include <Urho3D/Resource/ResourceCache.h>
 #include <Urho3D/Audio/Sound.h>
@@ -30,6 +31,10 @@ void GhostReveal::Initialize() {
         // Manifest
         GetGhost()->appearance->SetDeepEnabled(true);
         GetGhost()->setNextState("Local", GetGhost()->rng.GetUInt(2500, Max(15000.0f*GetGhost()->getAggression(), 1500)));
+        // Spawn EMF Spot
+        auto emitter = EMFEmitter::spawnSpot(GetScene(), GetGhost()->GetNode()->GetWorldPosition());
+        emitter->setLevel(EMFLevel::reveal);
+        emitter->timeoutIn(defaultEmfTimeout);
     } else {
         GetGhost()->setState("Local");
     }

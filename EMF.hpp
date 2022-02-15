@@ -11,4 +11,6 @@ enum class EMFLevel {
     reveal = 4,
     five = 5
 };
+
+constexpr float defaultEmfTimeout = 20000.0f;
 }

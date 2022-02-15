@@ -183,7 +183,7 @@ void Ghost::throwBody(RigidBody *body) {
     // Make it emit emf
     auto emitter = body->GetNode()->GetOrCreateComponent<EMFEmitter>();
     emitter->setLevel(level);
-    emitter->timeoutIn(20);
+    emitter->timeoutIn(defaultEmfTimeout);
 }
 
 void Ghost::useBody(RigidBody *body) {
@@ -218,7 +218,7 @@ void Ghost::useBody(RigidBody *body) {
     // Make it emit emf
     auto emitter = body->GetNode()->GetOrCreateComponent<EMFEmitter>();
     emitter->setLevel(level);
-    emitter->timeoutIn(20);
+    emitter->timeoutIn(defaultEmfTimeout);
 }
 
 float Ghost::getAggression() const {
