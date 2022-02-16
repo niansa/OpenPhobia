@@ -16,7 +16,6 @@ class Ghost;
 #include <Urho3D/Scene/Node.h>
 #include <Urho3D/Physics/RigidBody.h>
 #include <Urho3D/Physics/PhysicsWorld.h>
-#include <Urho3D/Physics/KinematicCharacterController.h>
 #include <Urho3D/Graphics/AnimationController.h>
 #include <Urho3D/Navigation/DynamicNavigationMesh.h>
 
@@ -37,7 +36,7 @@ class Ghost final : public LogicComponent {
 
     RandomEngine rng;
     Timer lowFreqStepTimer, stateTimer, navigationTimer, lastHuntTimer, interactionTimer;
-    KinematicCharacterController* kinematicController;
+    RigidBody* body;
     PhysicsWorld *physicsWorld;
     LevelManager *levelManager;
     const GhostAppearance *appearanceInfo;

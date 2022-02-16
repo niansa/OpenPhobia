@@ -16,7 +16,6 @@
 #include <Urho3D/Physics/PhysicsWorld.h>
 #include <Urho3D/Math/RandomEngine.h>
 #include <Urho3D/Math/Ray.h>
-#include <Urho3D/Physics/KinematicCharacterController.h>
 #include <Urho3D/Physics/PhysicsWorld.h>
 #include <Urho3D/Navigation/DynamicNavigationMesh.h>
 #include <Urho3D/Graphics/AnimationController.h>
@@ -45,9 +44,11 @@ void Ghost::Start() {
     animationController = appearance->GetChild("Model")->GetComponent<AnimationController>();
     navMesh = GetScene()->GetChild("SceneMain")->GetComponent<DynamicNavigationMesh>();
     // Create kinematic controller
-    kinematicController = GetNode()->CreateComponent<KinematicCharacterController>();
-    kinematicController->SetCollisionLayerAndMask(10, 1);
-    kinematicController->SetStepHeight(0.05);
+    body = GetNode()->CreateComponent<RigidBody>();
+    body->SetCollisionLayerAndMask(0, 0);
+    body->SetUseGravity(false);
+    body->SetTrigger(true);
+    body->SetMass(1.0f);
     // Find physics world
     physicsWorld = GetScene()->GetComponent<PhysicsWorld>();
     // Get random ghost appearance
@@ -286,6 +287,12 @@ void Ghost::followPath() {
         auto nextWaypoint = currentPath[0];
         nextWaypoint.y_ = GetNode()->GetWorldPosition().y_;
 
+        // Skip waypoints at ghost position
+        if (nextWaypoint == body->GetPosition()) {
+            currentPath.pop_front();
+            return;
+        }
+
 #       ifndef NDEBUG
         // Show debug waypoint thing (slow)
         for (auto node : GetScene()->GetChildren(false)) {
@@ -302,19 +309,18 @@ void Ghost::followPath() {
         mesh->SetModel(cache->GetResource<Model>("Models/Box.mdl"));
 #       endif
 
-        // Get distance and stuff
-        float move = behavior->getCurrentSpeed() / 60.f;
-        float distance = (GetNode()->GetWorldPosition() - nextWaypoint).Length();
-        if (move > distance)
-            move = distance;
+        // Get distance and move speed
+        float speed = behavior->getCurrentSpeed();
+        float distance = (body->GetPosition() - nextWaypoint).Length();
+        //speed = Min(speed, distance);
 
-        // Remove waypoint if it was reached
+        // Remove waypoint if it was reached or timeout teleport
         if (distance < 0.1f) {
             navigationTimer.Reset();
             currentPath.pop_front();
             return;
         } else if (navigationTimer.GetMSec(false) > 5000.f) {
-            kinematicController->Warp(nextWaypoint);
+            body->SetPosition(nextWaypoint);
             navigationTimer.Reset();
             currentPath.pop_front();
             return;
@@ -322,9 +328,9 @@ void Ghost::followPath() {
 
         // Rotate toward next waypoint to reach and move
         GetNode()->LookAt(nextWaypoint, Vector3::UP);
-        kinematicController->SetWalkDirection(GetNode()->GetWorldDirection() * move);
+        body->SetLinearVelocity(GetNode()->GetWorldDirection() * speed);
     } else {
-        kinematicController->SetWalkDirection(Vector3::ZERO);
+        body->SetLinearVelocity(Vector3::ZERO);
     }
 }
 

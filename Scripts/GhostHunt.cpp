@@ -29,7 +29,7 @@ void GhostHunt::Deinitialize() {
     // Reset hunt timer
     GetGhost()->lastHuntTimer.Reset();
     // Warp back home
-    GetGhost()->kinematicController->Warp(GetGhost()->homePosition);
+    GetGhost()->body->SetPosition(GetGhost()->homePosition);
 }
 
 void GhostHunt::FixedUpdate(float) {

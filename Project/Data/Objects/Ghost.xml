@@ -5,18 +5,18 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="92" />
-	<attribute name="Next Replicated Component ID" value="24" />
-	<attribute name="Next Local Node ID" value="16777478" />
-	<attribute name="Next Local Component ID" value="16777252" />
+	<attribute name="Next Replicated Node ID" value="94" />
+	<attribute name="Next Replicated Component ID" value="26" />
+	<attribute name="Next Local Node ID" value="16777480" />
+	<attribute name="Next Local Component ID" value="16777255" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="3.32312 0.699294 0.274346" />
-		<attribute name="Camera Rotation" value="0.682771 0.0567808 -0.725915 0.0603929" />
+		<attribute name="Camera Position" value="3.32311 0.699293 0.274349" />
+		<attribute name="Camera Rotation" value="0.678571 0.0445211 -0.73161 0.0480245" />
 	</component>
 	<component type="RenderPipeline" id="8" />
 	<node id="3">
@@ -31,13 +31,26 @@
 			<attribute name="Light Type" value="Directional" />
 		</component>
 	</node>
+	<node id="93">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="FloorHelper" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="2.5 1e-06 2.5" />
+		<attribute name="Variables" />
+		<component type="StaticModel" id="25">
+			<attribute name="Model" value="Model;Models/Box.mdl" />
+			<attribute name="Material" value="Material;" />
+		</component>
+	</node>
 	<node id="83">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Ghost" />
 		<attribute name="Tags">
 			<string value="Ghost" />
 		</attribute>
-		<attribute name="Position" value="0 0 0" />
+		<attribute name="Position" value="0 0.843234 0" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
