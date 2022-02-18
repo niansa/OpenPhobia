@@ -172,7 +172,7 @@ void Player::Update(float timeStep) {
             // Get door
             if (node->HasComponent<Door>()) {
                 auto door = node->GetComponent<Door>();
-                door->push(1.0f);
+                door->push(-1.0f);
             }
         }
     }

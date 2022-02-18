@@ -16,12 +16,8 @@ namespace Game {
 class Door final : public LogicComponent {
     URHO3D_OBJECT(Door, LogicComponent);
 
-    float power;
-
     RigidBody *doorBody;
     Node *doorNode;
-
-    bool moving = true;
 
 public:
     using LogicComponent::LogicComponent;

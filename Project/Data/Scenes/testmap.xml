@@ -5,18 +5,18 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="2028" />
-	<attribute name="Next Replicated Component ID" value="2189" />
-	<attribute name="Next Local Node ID" value="16777362" />
-	<attribute name="Next Local Component ID" value="16777437" />
+	<attribute name="Next Replicated Node ID" value="2072" />
+	<attribute name="Next Replicated Component ID" value="2256" />
+	<attribute name="Next Local Node ID" value="16777378" />
+	<attribute name="Next Local Component ID" value="16777461" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D;Lightmaps/Textures/Lightmap-0.png" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="4.52414 4.44617 -3.11968" />
-		<attribute name="Camera Rotation" value="0.088702 -0.0103722 0.878339 -0.469621" />
+		<attribute name="Camera Position" value="8.61123 2.96794 -6.09543" />
+		<attribute name="Camera Rotation" value="-0.301031 -0.162672 0.886771 -0.310733" />
 	</component>
 	<component type="RenderPipeline" id="839">
 		<attribute name="Color Space" value="LDR Linear" />
@@ -1729,7 +1729,7 @@
 				<attribute name="Name" value="Door" />
 				<attribute name="Tags" />
 				<attribute name="Position" value="-0.434442 -0.248804 0.100849" />
-				<attribute name="Rotation" value="0.916569 -0.00466296 0.399843 -0.00217428" />
+				<attribute name="Rotation" value="1 0 0 0" />
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="2109">
@@ -1738,7 +1738,7 @@
 					<attribute name="Cast Shadows" value="true" />
 				</component>
 				<component type="RigidBody" id="2110">
-					<attribute name="Physics Rotation" value="0.00217791 -0.400835 -0.00466581 0.916136" />
+					<attribute name="Physics Rotation" value="-4.37114e-08 0 0 1" />
 					<attribute name="Physics Position" value="5.30276 0.248804 -5.92411" />
 					<attribute name="Mass" value="1.000000" />
 				</component>
@@ -1757,53 +1757,7 @@
 			<attribute name="Rotation" value="-4.37114e-08 0 -0 1" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
-			<node id="1925">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="Frame" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="0 0 0" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="1 1 1" />
-				<attribute name="Variables" />
-				<component type="StaticModel" id="2062">
-					<attribute name="Model" value="Model;Models/SimpleDoor_Frame.mdl" />
-					<attribute name="Material" value="Material;Materials/ambientgc/Wood049.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
-					<attribute name="Cast Shadows" value="true" />
-				</component>
-			</node>
-			<node id="1926">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="RotOff" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="-0.435142 -0.247597 0.101234" />
-				<attribute name="Rotation" value="1 0 0 8.54904e-09" />
-				<attribute name="Scale" value="1 1 1" />
-				<attribute name="Variables" />
-				<node id="1927">
-					<attribute name="Is Enabled" value="true" />
-					<attribute name="Name" value="Door" />
-					<attribute name="Tags" />
-					<attribute name="Position" value="0 0 0" />
-					<attribute name="Rotation" value="1 0 0 0" />
-					<attribute name="Scale" value="1 1 1" />
-					<attribute name="Variables" />
-					<component type="StaticModel" id="2063">
-						<attribute name="Model" value="Model;Models/SimpleDoor.mdl" />
-						<attribute name="Material" value="Material;Materials/ambientgc/Wood049.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
-						<attribute name="Cast Shadows" value="true" />
-					</component>
-					<component type="RigidBody" id="2064">
-						<attribute name="Physics Rotation" value="-5.22604e-08 0 0 1" />
-						<attribute name="Physics Position" value="8.09726 0.247597 -7.82787" />
-						<attribute name="Is Kinematic" value="true" />
-					</component>
-					<component type="CollisionShape" id="2065">
-						<attribute name="Shape Type" value="ConvexHull" />
-						<attribute name="Model" value="Model;Models/SimpleDoor.mdl" />
-					</component>
-				</node>
-			</node>
-			<node id="1928">
+			<node id="2032">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="Top" />
 				<attribute name="Tags" />
@@ -1811,15 +1765,74 @@
 				<attribute name="Rotation" value="1 0 0 0" />
 				<attribute name="Scale" value="0.9 0.45 0.1" />
 				<attribute name="Variables" />
-				<component type="CollisionShape" id="2066" />
-				<component type="RigidBody" id="2067">
+				<component type="CollisionShape" id="2193" />
+				<component type="RigidBody" id="2194">
 					<attribute name="Physics Rotation" value="-4.37114e-08 0 0 1" />
-					<attribute name="Physics Position" value="7.66647 2.23754 -7.93952" />
+					<attribute name="Physics Position" value="4.87268 2.23754 -6.03536" />
 				</component>
-				<component type="StaticModel" id="2068">
+				<component type="StaticModel" id="2195">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
 					<attribute name="Material" value="Material;" />
 					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="2033">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Hinge" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="-0.419931 0 0.0608368" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="Constraint" id="2196">
+					<attribute name="Constraint Type" value="Hinge" />
+					<attribute name="Position" value="-0.015 0 0.04" />
+					<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Other Body Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Other Body NodeID" value="2035" />
+					<attribute name="Low Limit" value="-90 0" />
+				</component>
+				<component type="RigidBody" id="2243">
+					<attribute name="Physics Rotation" value="-4.37114e-08 0 0 1" />
+					<attribute name="Physics Position" value="8.08205 3.67115e-08 -7.86826" />
+				</component>
+			</node>
+			<node id="2034">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Frame" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="0 0 -1.12688e-16" />
+				<attribute name="Rotation" value="1 1.31435e-15 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="2198">
+					<attribute name="Model" value="Model;Models/SimpleDoor_Frame.mdl" />
+					<attribute name="Material" value="Material;Materials/ambientgc/Wood049.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="2035">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Door" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="-0.434442 -0.248804 0.100849" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="2199">
+					<attribute name="Model" value="Model;Models/SimpleDoor.mdl" />
+					<attribute name="Material" value="Material;Materials/ambientgc/Wood049.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+				<component type="CollisionShape" id="2201">
+					<attribute name="Shape Type" value="ConvexHull" />
+					<attribute name="Model" value="Model;Models/SimpleDoor.mdl" />
+					<attribute name="Collision Margin" value="0.000000" />
+				</component>
+				<component type="RigidBody" id="2242">
+					<attribute name="Physics Rotation" value="-4.37114e-08 0 0 1" />
+					<attribute name="Physics Position" value="8.09656 0.248804 -7.82825" />
+					<attribute name="Mass" value="1.000000" />
 				</component>
 			</node>
 		</node>
@@ -1831,53 +1844,7 @@
 			<attribute name="Rotation" value="-4.37114e-08 0 -0 1" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
-			<node id="1931">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="Frame" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="0 0 0" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="1 1 1" />
-				<attribute name="Variables" />
-				<component type="StaticModel" id="2072">
-					<attribute name="Model" value="Model;Models/SimpleDoor_Frame.mdl" />
-					<attribute name="Material" value="Material;Materials/ambientgc/Wood049.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
-					<attribute name="Cast Shadows" value="true" />
-				</component>
-			</node>
-			<node id="1932">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="RotOff" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="-0.435142 -0.247597 0.101234" />
-				<attribute name="Rotation" value="1 0 0 8.54904e-09" />
-				<attribute name="Scale" value="1 1 1" />
-				<attribute name="Variables" />
-				<node id="1933">
-					<attribute name="Is Enabled" value="true" />
-					<attribute name="Name" value="Door" />
-					<attribute name="Tags" />
-					<attribute name="Position" value="0 0 0" />
-					<attribute name="Rotation" value="1 0 0 0" />
-					<attribute name="Scale" value="1 1 1" />
-					<attribute name="Variables" />
-					<component type="StaticModel" id="2073">
-						<attribute name="Model" value="Model;Models/SimpleDoor.mdl" />
-						<attribute name="Material" value="Material;Materials/ambientgc/Wood049.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
-						<attribute name="Cast Shadows" value="true" />
-					</component>
-					<component type="RigidBody" id="2074">
-						<attribute name="Physics Rotation" value="-5.22604e-08 0 0 1" />
-						<attribute name="Physics Position" value="9.21318 0.247597 -3.87077" />
-						<attribute name="Is Kinematic" value="true" />
-					</component>
-					<component type="CollisionShape" id="2075">
-						<attribute name="Shape Type" value="ConvexHull" />
-						<attribute name="Model" value="Model;Models/SimpleDoor.mdl" />
-					</component>
-				</node>
-			</node>
-			<node id="1934">
+			<node id="2036">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="Top" />
 				<attribute name="Tags" />
@@ -1885,15 +1852,74 @@
 				<attribute name="Rotation" value="1 0 0 0" />
 				<attribute name="Scale" value="0.9 0.45 0.1" />
 				<attribute name="Variables" />
-				<component type="CollisionShape" id="2076" />
-				<component type="RigidBody" id="2077">
+				<component type="CollisionShape" id="2202" />
+				<component type="RigidBody" id="2203">
 					<attribute name="Physics Rotation" value="-4.37114e-08 0 0 1" />
-					<attribute name="Physics Position" value="8.78238 2.23754 -3.98242" />
+					<attribute name="Physics Position" value="4.87268 2.23754 -6.03536" />
 				</component>
-				<component type="StaticModel" id="2078">
+				<component type="StaticModel" id="2204">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
 					<attribute name="Material" value="Material;" />
 					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="2037">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Hinge" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="-0.419931 0 0.0608368" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="Constraint" id="2205">
+					<attribute name="Constraint Type" value="Hinge" />
+					<attribute name="Position" value="-0.015 0 0.04" />
+					<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Other Body Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Other Body NodeID" value="2039" />
+					<attribute name="Low Limit" value="-90 0" />
+				</component>
+				<component type="RigidBody" id="2248">
+					<attribute name="Physics Rotation" value="-4.37114e-08 0 0 1" />
+					<attribute name="Physics Position" value="9.19797 3.67115e-08 -3.91116" />
+				</component>
+			</node>
+			<node id="2038">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Frame" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="0 0 -1.12688e-16" />
+				<attribute name="Rotation" value="1 1.31435e-15 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="2207">
+					<attribute name="Model" value="Model;Models/SimpleDoor_Frame.mdl" />
+					<attribute name="Material" value="Material;Materials/ambientgc/Wood049.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="2039">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Door" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="-0.434442 -0.248804 0.100849" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="2208">
+					<attribute name="Model" value="Model;Models/SimpleDoor.mdl" />
+					<attribute name="Material" value="Material;Materials/ambientgc/Wood049.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+				<component type="CollisionShape" id="2210">
+					<attribute name="Shape Type" value="ConvexHull" />
+					<attribute name="Model" value="Model;Models/SimpleDoor.mdl" />
+					<attribute name="Collision Margin" value="0.000000" />
+				</component>
+				<component type="RigidBody" id="2249">
+					<attribute name="Physics Rotation" value="-4.37114e-08 0 0 1" />
+					<attribute name="Physics Position" value="9.21248 0.248804 -3.87115" />
+					<attribute name="Mass" value="1.000000" />
 				</component>
 			</node>
 		</node>
@@ -1905,53 +1931,7 @@
 			<attribute name="Rotation" value="-3.09086e-08 -0.707107 -3.09086e-08 -0.707107" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
-			<node id="1936">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="Frame" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="0 0 0" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="1 1 1" />
-				<attribute name="Variables" />
-				<component type="StaticModel" id="2079">
-					<attribute name="Model" value="Model;Models/SimpleDoor_Frame.mdl" />
-					<attribute name="Material" value="Material;Materials/ambientgc/Wood049.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
-					<attribute name="Cast Shadows" value="true" />
-				</component>
-			</node>
-			<node id="1937">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="RotOff" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="-0.435142 -0.247597 0.101234" />
-				<attribute name="Rotation" value="1 0 0 8.54904e-09" />
-				<attribute name="Scale" value="1 1 1" />
-				<attribute name="Variables" />
-				<node id="1938">
-					<attribute name="Is Enabled" value="true" />
-					<attribute name="Name" value="Door" />
-					<attribute name="Tags" />
-					<attribute name="Position" value="0 0 0" />
-					<attribute name="Rotation" value="1 0 0 0" />
-					<attribute name="Scale" value="1 1 1" />
-					<attribute name="Variables" />
-					<component type="StaticModel" id="2080">
-						<attribute name="Model" value="Model;Models/SimpleDoor.mdl" />
-						<attribute name="Material" value="Material;Materials/ambientgc/Wood049.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
-						<attribute name="Cast Shadows" value="true" />
-					</component>
-					<component type="RigidBody" id="2081">
-						<attribute name="Physics Rotation" value="2.48635e-08 0.707107 2.48635e-08 0.707107" />
-						<attribute name="Physics Position" value="12.1362 0.247597 -6.03564" />
-						<attribute name="Is Kinematic" value="true" />
-					</component>
-					<component type="CollisionShape" id="2082">
-						<attribute name="Shape Type" value="ConvexHull" />
-						<attribute name="Model" value="Model;Models/SimpleDoor.mdl" />
-					</component>
-				</node>
-			</node>
-			<node id="1939">
+			<node id="2040">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="Top" />
 				<attribute name="Tags" />
@@ -1959,15 +1939,74 @@
 				<attribute name="Rotation" value="1 0 0 0" />
 				<attribute name="Scale" value="0.9 0.45 0.1" />
 				<attribute name="Variables" />
-				<component type="CollisionShape" id="2083" />
-				<component type="RigidBody" id="2084">
-					<attribute name="Physics Rotation" value="3.09086e-08 0.707107 3.09086e-08 0.707107" />
-					<attribute name="Physics Position" value="12.0246 2.23754 -5.60484" />
+				<component type="CollisionShape" id="2211" />
+				<component type="RigidBody" id="2212">
+					<attribute name="Physics Rotation" value="-4.37114e-08 0 0 1" />
+					<attribute name="Physics Position" value="4.87268 2.23754 -6.03536" />
 				</component>
-				<component type="StaticModel" id="2085">
+				<component type="StaticModel" id="2213">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
 					<attribute name="Material" value="Material;" />
 					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="2041">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Hinge" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="-0.419931 0 0.0608368" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="Constraint" id="2214">
+					<attribute name="Constraint Type" value="Hinge" />
+					<attribute name="Position" value="-0.015 0 0.04" />
+					<attribute name="Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Other Body Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Other Body NodeID" value="2043" />
+					<attribute name="Low Limit" value="-90 0" />
+				</component>
+				<component type="RigidBody" id="2251">
+					<attribute name="Physics Rotation" value="3.09086e-08 0.707107 3.09086e-08 0.707107" />
+					<attribute name="Physics Position" value="12.0958 -3.67115e-08 -6.02043" />
+				</component>
+			</node>
+			<node id="2042">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Frame" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="0 0 -1.12688e-16" />
+				<attribute name="Rotation" value="1 1.31435e-15 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="2216">
+					<attribute name="Model" value="Model;Models/SimpleDoor_Frame.mdl" />
+					<attribute name="Material" value="Material;Materials/ambientgc/Wood049.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+			</node>
+			<node id="2043">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Door" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="-0.434442 -0.248804 0.100849" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="StaticModel" id="2217">
+					<attribute name="Model" value="Model;Models/SimpleDoor.mdl" />
+					<attribute name="Material" value="Material;Materials/ambientgc/Wood049.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
+					<attribute name="Cast Shadows" value="true" />
+				</component>
+				<component type="CollisionShape" id="2219">
+					<attribute name="Shape Type" value="ConvexHull" />
+					<attribute name="Model" value="Model;Models/SimpleDoor.mdl" />
+					<attribute name="Collision Margin" value="0.000000" />
+				</component>
+				<component type="RigidBody" id="2250">
+					<attribute name="Physics Rotation" value="3.09086e-08 0.707107 3.09086e-08 0.707107" />
+					<attribute name="Physics Position" value="12.1358 0.248804 -6.03494" />
+					<attribute name="Mass" value="1.000000" />
 				</component>
 			</node>
 		</node>

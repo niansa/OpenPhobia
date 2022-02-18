@@ -19,28 +19,31 @@ void GhostReveal::Initialize() {
         // Get random player
         auto& players = GetGhost()->levelManager->getPlayers();
         auto player = players[GetGhost()->rng.GetUInt(0, players.size())];
-        // Get reveal mode from behavior
-        revealMode = GetGhost()->behavior->getRevealMode(player);
-        // Play reveal sound (sometimes)
-        if (GetGhost()->rng.GetBool(0.5f)) {
-            auto sound = GetNode()->GetOrCreateComponent<SoundSource3D>();
-            sound->SetFarDistance(GetGhost()->behavior->vocalRange);
-            sound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/ghostSingMix.ogg"));
+        // Check that player is inside the house
+        if (player->isInsideHouse()) {
+            // Get reveal mode from behavior
+            revealMode = GetGhost()->behavior->getRevealMode(player);
+            // Play reveal sound (sometimes)
+            if (GetGhost()->rng.GetBool(0.5f)) {
+                auto sound = GetNode()->GetOrCreateComponent<SoundSource3D>();
+                sound->SetFarDistance(GetGhost()->behavior->vocalRange);
+                sound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/ghostSingMix.ogg"));
+            }
+            // Walk towards player if in chasing mode
+            if (revealMode == RevealMode::chasing) {
+                GetGhost()->walkTo(closestPlayer.player->GetNode()->GetWorldPosition());
+            }
+            // Manifest
+            GetGhost()->appearance->SetDeepEnabled(true);
+            GetGhost()->setNextState("Local", GetGhost()->rng.GetUInt(2500, Max(15000.0f*GetGhost()->getAggression(), 1500)));
+            // Spawn EMF Spot
+            auto emitter = GetGhost()->spawnEMFSpot();
+            emitter->setLevel(EMFLevel::reveal);
+            emitter->timeoutIn(defaultEmfTimeout);
+            return;
         }
-        // Walk towards player if in chasing mode
-        if (revealMode == RevealMode::chasing) {
-            GetGhost()->walkTo(closestPlayer.player->GetNode()->GetWorldPosition());
-        }
-        // Manifest
-        GetGhost()->appearance->SetDeepEnabled(true);
-        GetGhost()->setNextState("Local", GetGhost()->rng.GetUInt(2500, Max(15000.0f*GetGhost()->getAggression(), 1500)));
-        // Spawn EMF Spot
-        auto emitter = GetGhost()->spawnEMFSpot();
-        emitter->setLevel(EMFLevel::reveal);
-        emitter->timeoutIn(defaultEmfTimeout);
-    } else {
-        GetGhost()->setState("Local");
     }
+    GetGhost()->setState("Local");
 }
 
 void GhostReveal::Deinitialize() {

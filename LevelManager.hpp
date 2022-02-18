@@ -78,6 +78,9 @@ public:
     const eastl::vector<RoomBoundary*> &getRooms() const {
         return rooms;
     }
+    auto &getRng() {
+        return rng;
+    }
     HouseBoundary *getHouse() const {
         return house;
     }
