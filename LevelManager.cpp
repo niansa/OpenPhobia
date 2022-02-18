@@ -5,6 +5,7 @@
 #include "Scripts/RoomBoundary.hpp"
 #include "Scripts/HouseBoundary.hpp"
 #include "GhostBehavior.hpp"
+#include "GhostIdentity.hpp"
 
 #include <Urho3D/UI/UI.h>
 #include <Urho3D/UI/Sprite.h>
@@ -54,8 +55,12 @@ void LevelManager::Start() {
         }
     }
 
-    // Load ghost stuff  TODO: Based on difficulty
-    auto ghostBehavior = getGhostBehavior(GhostType(RandomEngine().GetUInt(unsigned(GhostType::_lowest), unsigned(GhostType::_highest))));
+    // Load ghost identity
+    ghostIdentitySeed = rng.GetUInt();
+    ghostIdentity = GhostIdentity(ghostIdentitySeed);
+
+    // Load ghost AI stuff  TODO: Based on difficulty
+    auto ghostBehavior = getGhostBehavior(GhostType(rng.GetUInt(unsigned(GhostType::_lowest), unsigned(GhostType::_highest))));
     ghostBehavior->ghost = ghost;
     ghost->setGhostBehavior(std::move(ghostBehavior));
 }

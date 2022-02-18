@@ -7,8 +7,10 @@ class LevelManager;
 #define LEVELMANAGER_HPP
 #include "easyscript/Namespace.hpp"
 #include "easyscript/SceneManager.hpp"
+#include "GhostIdentity.hpp"
 
 #include <Urho3D/Engine/Application.h>
+#include <Urho3D/Math/RandomEngine.h>
 #include <Urho3D/RenderPipeline/RenderPipeline.h>
 #include <Urho3D/RenderPipeline/BloomPass.h>
 #include <Urho3D/RenderPipeline/SceneProcessor.h>
@@ -20,13 +22,17 @@ class Ghost;
 class Player;
 class RoomBoundary;
 class HouseBoundary;
+struct GhostIdentity;
 
 class LevelManager : public SceneManager {
+    RandomEngine rng;
     eastl::string level = "testmap";
     Ghost *ghost = nullptr;
     eastl::vector<Player*> players;
     eastl::vector<RoomBoundary*> rooms;
     HouseBoundary *house;
+    GhostIdentity ghostIdentity;
+    unsigned ghostIdentitySeed;
 
 public:
     using SceneManager::SceneManager;
