@@ -35,7 +35,7 @@ class Ghost final : public LogicComponent {
     URHO3D_OBJECT(Ghost, LogicComponent);
 
     RandomEngine rng;
-    Timer lowFreqStepTimer, stateTimer, navigationTimer, lastHuntTimer, interactionTimer;
+    Timer lowFreqStepTimer, stateTimer, navigationTimer, lastHuntTimer, interactionTimer, roamTimer;
     RigidBody* body;
     PhysicsWorld *physicsWorld;
     LevelManager *levelManager;
@@ -44,6 +44,7 @@ class Ghost final : public LogicComponent {
     AnimationController *animationController;
     eastl::string state, nextState;
     eastl::optional<unsigned> nextStateIn;
+    unsigned nextRoamIn = 0;
     GhostStateScript *stateScript = nullptr;
     eastl::unique_ptr<GhostBehavior> behavior = nullptr;
     DynamicNavigationMesh *navMesh;
@@ -119,7 +120,7 @@ public:
     void throwBody(RigidBody *body);
     void useBody(RigidBody *body);
     float getAggression() const;
-    void roam();
+    void roam(bool far = false, bool respectTimer = true);
     bool walkTo(const Vector3& pos);
     bool canSeePlayer(PlayerWDistance player, bool includeElectronics = false);
     float getDistanceToPlayer(Player *player);

@@ -67,7 +67,7 @@ void GhostHunt::FixedUpdate(float) {
             }
         }
         // Just roam around
-        GetGhost()->roam();
+        GetGhost()->roam(true, false);
     }
 }
 

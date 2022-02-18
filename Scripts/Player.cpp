@@ -149,11 +149,30 @@ void Player::Update(float timeStep) {
                     auto script = static_cast<Useable *>(node->GetComponent(node->GetName()));
                     script->Use();
                     break;
-                } else if (node->HasComponent<Door>()) {
-                    node->GetComponent<Door>()->Activate();
                 }
                 // Retry with parent node
                 node = node->GetParent();
+            }
+        }
+    }
+
+    // Drag doors
+    if (input->GetMouseButtonDown(MouseButtonFlags::Enum::MOUSEB_LEFT)) {
+        auto *ui = GetSubsystem<UI>();
+        auto *graphics = GetSubsystem<Graphics>();
+        IntVector2 pos = ui->GetCursorPosition();
+        // Raycast
+        auto ray = head->GetComponent<Camera>()->GetScreenRay(float(pos.x_) / graphics->GetWidth(), float(pos.y_) / graphics->GetHeight());
+        ea::vector<RayQueryResult> results;
+        RayOctreeQuery query(results, ray, RAY_TRIANGLE, interactRange, DRAWABLE_GEOMETRY);
+        GetScene()->GetComponent<Octree>()->RaycastSingle(query);
+        // Get first result
+        if (!results.empty()) {
+            auto node = results[0].node_->GetParent();
+            // Get door
+            if (node->HasComponent<Door>()) {
+                auto door = node->GetComponent<Door>();
+                door->push(1.0f);
             }
         }
     }

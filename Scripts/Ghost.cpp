@@ -227,15 +227,26 @@ float Ghost::getAggression() const {
     return Max(0.01f, (-(float(levelManager->getTeamSanity())-100))/100) * levelManager->getGhostIdentity().agression * behavior->agression;
 }
 
-void Ghost::roam() {
+void Ghost::roam(bool far, bool respectTimer) {
     if (currentPath.empty()) {
+        if (respectTimer) {
+            if (!nextRoamIn) {
+                // Reset timer
+                roamTimer.Reset();
+                nextRoamIn = rng.GetUInt(1000, 7500);
+                return;
+            } else if (roamTimer.GetMSec(false) < nextRoamIn) {
+                return;
+            }
+        }
         // Get random location around the ghost
         Vector3 nPos;
         unsigned tries = 0;
         do {
-            constexpr float maxDist = 10.0f,
+            constexpr float maxDist = 5.0f,
+                            farMaxDist = 50.0f,
                             minDist = 5.0f;
-            nPos = rng.GetVector3(Vector3(minDist, 0.0f, minDist), Vector3(maxDist, 0.0f, maxDist));
+            nPos = rng.GetVector3(Vector3(minDist, 0.0f, minDist), Vector3(maxDist, 0.0f, far?farMaxDist:maxDist));
             if (rng.GetBool(0.5f)) {
                 nPos.x_ = -nPos.x_;
             }
@@ -244,10 +255,11 @@ void Ghost::roam() {
             }
             // Make sure to not get stuck
             if (tries++ == 10000) {
-                break;
+                return;
             }
             // Go there
-        } while (!walkTo(GetNode()->GetWorldPosition() + nPos));
+        } while (!walkTo(GetNode()->GetWorldPosition() + nPos) || (currentPath.size() > 8 && !far));
+        nextRoamIn = 0;
     }
 }
 
@@ -319,7 +331,7 @@ void Ghost::followPath() {
             navigationTimer.Reset();
             currentPath.pop_front();
             return;
-        } else if (navigationTimer.GetMSec(false) > 5000.f) {
+        } else if (navigationTimer.GetMSec(false) > 25000.f) {
             body->SetPosition(nextWaypoint);
             navigationTimer.Reset();
             currentPath.pop_front();
@@ -335,8 +347,8 @@ void Ghost::followPath() {
 }
 
 bool Ghost::canSeePlayer(PlayerWDistance player, bool includeElectronics) {
-    // Check that player is valid
-    if (!player.player) {
+    // Check that player has a value
+    if (!player.hasValue()) {
         return false;
     }
     // Check that player is inside house
