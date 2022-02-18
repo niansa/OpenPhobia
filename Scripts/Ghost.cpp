@@ -224,7 +224,7 @@ void Ghost::useBody(RigidBody *body) {
 }
 
 float Ghost::getAggression() const {
-    return Max(0.01f, (-(float(levelManager->getTeamSanity())-100))/100) * baseAgression * behavior->agression;
+    return Max(0.01f, (-(float(levelManager->getTeamSanity())-100))/100) * levelManager->getGhostIdentity().agression * behavior->agression;
 }
 
 void Ghost::roam() {

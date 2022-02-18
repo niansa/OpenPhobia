@@ -53,7 +53,6 @@ class Ghost final : public LogicComponent {
     Vector3 homePosition;
     eastl::vector<PhysicsRaycastResult> closeBodies;
 
-    float baseAgression = 1.f;
     unsigned maxHuntSanity = 50;
 
     void updateClosestPlayer();

@@ -28,5 +28,8 @@ GhostIdentity::GhostIdentity(unsigned seed) {
 
     // Get random type
     type = static_cast<GhostType>(rng.GetUInt(unsigned(GhostType::_lowest), unsigned(GhostType::_highest)));
+
+    // Get random agression
+    agression = rng.GetFloat(0.8f, 1.3f);
 }
 }

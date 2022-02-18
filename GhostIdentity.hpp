@@ -50,6 +50,7 @@ struct GhostIdentity {
     unsigned age;
     enum Gender : bool {male = 0, female = 1} gender;
     GhostType type;
+    float agression;
 
     GhostIdentity() {}
     GhostIdentity(unsigned seed);

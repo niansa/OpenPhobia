@@ -69,6 +69,9 @@ public:
     bool isGhostLoaded() {
         return ghost;
     }
+    const auto& getGhostIdentity() {
+        return ghostIdentity;
+    }
     const eastl::vector<Player*> &getPlayers() const {
         return players;
     }
