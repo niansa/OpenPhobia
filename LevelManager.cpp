@@ -35,34 +35,43 @@ void LevelManager::Start() {
         crosshair->SetPosition(-(crosshair->GetSize().x_ / 2), -(crosshair->GetSize().y_ / 2));
         crosshair->SetTexture(crosshairTextureFile);
     }
+}
 
-    // Find important components
+void LevelManager::loadEnv() {
     eastl::vector<Node*> nodes;
+    // Find players
     scene->GetNodesWithTag(nodes, "Player");
     for (auto node : nodes) {
         players.push_back(node->GetComponent<Player>());
     }
     nodes.clear();
+
+    // Find ghost and configure ghost if found
     scene->GetNodesWithTag(nodes, "Ghost");
-    ghost = nodes[0]->GetComponent<Ghost>();
-    nodes.clear();
-    scene->GetNodesWithTag(nodes, "Scripted");
-    for (auto node : nodes) {
-        if (node->HasComponent<RoomBoundary>()) {
-            rooms.push_back(node->GetComponent<RoomBoundary>());
-        } else if (node->HasComponent<HouseBoundary>()) {
-            house = node->GetComponent<HouseBoundary>();
+    if (!nodes.empty()) {
+        // Get ghost
+        ghost = nodes[0]->GetComponent<Ghost>();
+        nodes.clear();
+        scene->GetNodesWithTag(nodes, "Scripted");
+        for (auto node : nodes) {
+            if (node->HasComponent<RoomBoundary>()) {
+                rooms.push_back(node->GetComponent<RoomBoundary>());
+            } else if (node->HasComponent<HouseBoundary>()) {
+                house = node->GetComponent<HouseBoundary>();
+            }
         }
+
+        // Load ghost identity
+        ghostIdentitySeed = rng.GetUInt();
+        ghostIdentity = GhostIdentity(ghostIdentitySeed);
+
+        // Load ghost AI stuff  TODO: Based on difficulty
+        auto ghostBehavior = getGhostBehavior(ghostIdentity.type);
+        ghostBehavior->ghost = ghost;
+        ghost->setGhostBehavior(std::move(ghostBehavior));
+    } else {
+        ghost = nullptr;
     }
-
-    // Load ghost identity
-    ghostIdentitySeed = rng.GetUInt();
-    ghostIdentity = GhostIdentity(ghostIdentitySeed);
-
-    // Load ghost AI stuff  TODO: Based on difficulty
-    auto ghostBehavior = getGhostBehavior(GhostType(rng.GetUInt(unsigned(GhostType::_lowest), unsigned(GhostType::_highest))));
-    ghostBehavior->ghost = ghost;
-    ghost->setGhostBehavior(std::move(ghostBehavior));
 }
 
 unsigned LevelManager::getTeamSanity() const {

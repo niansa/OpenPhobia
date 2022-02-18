@@ -1,5 +1,6 @@
 #include "GhostBehavior.hpp"
 #include "Useable.hpp"
+#include "GhostIdentity.hpp"
 #include "Scripts/HouseBoundary.hpp"
 #include "Scripts/Player.hpp"
 #include "Scripts/Ghost.hpp"
@@ -150,7 +151,7 @@ bool Obake::hasEvidence(Evidence::Type checkedFor) {
     if (checkedFor == Evidence::Fingerprints && ghost->rng.GetBool(0.25f)) {
         fres = false;
     }
-    return true;
+    return fres;
 }
 }
 

@@ -19,6 +19,7 @@ namespace Game {
 class Ghost;
 class Player;
 enum class RevealMode;
+enum class GhostType;
 
 namespace InteractionType {
 using Type = uint8_t;
@@ -269,32 +270,6 @@ struct Mimic : public Default {
     }
 };
 }
-
-enum class GhostType {
-    Spirit,
-    Wraith,
-    Phantom,
-    Poltergeist,
-    Banshee,
-    Jinn,
-    Mare,
-    Revenant,
-    Shade,
-    Demon,
-    Yurei,
-    Oni,
-    Yokai,
-    Hantu,
-    Goryo,
-    Myling,
-    Onryo,
-    Twins,
-    Raiju,
-    Obake,
-    Mimic,
-    _lowest = Spirit,
-    _highest = Mimic
-};
 
 eastl::unique_ptr<GhostBehavior> getGhostBehavior(GhostType);
 }

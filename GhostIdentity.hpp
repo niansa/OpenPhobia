@@ -15,6 +15,32 @@ struct GhostIdentity;
 
 
 namespace Game {
+enum class GhostType {
+    Spirit,
+    Wraith,
+    Phantom,
+    Poltergeist,
+    Banshee,
+    Jinn,
+    Mare,
+    Revenant,
+    Shade,
+    Demon,
+    Yurei,
+    Oni,
+    Yokai,
+    Hantu,
+    Goryo,
+    Myling,
+    Onryo,
+    Twins,
+    Raiju,
+    Obake,
+    Mimic,
+    _lowest = Spirit,
+    _highest = Mimic
+};
+
 struct GhostIdentity {
     const static eastl::vector<eastl::string_view> firstNamesMale,
                                                    firstNamesFemale,
@@ -23,6 +49,7 @@ struct GhostIdentity {
     eastl::string_view firstName, lastName;
     unsigned age;
     enum Gender : bool {male = 0, female = 1} gender;
+    GhostType type;
 
     GhostIdentity() {}
     GhostIdentity(unsigned seed);

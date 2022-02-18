@@ -25,5 +25,8 @@ GhostIdentity::GhostIdentity(unsigned seed) {
 
     // Get random age
     age = rng.GetUInt(10, 90);
+
+    // Get random type
+    type = static_cast<GhostType>(rng.GetUInt(unsigned(GhostType::_lowest), unsigned(GhostType::_highest)));
 }
 }

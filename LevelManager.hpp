@@ -49,6 +49,8 @@ public:
         renderSettings.renderBufferManager_.colorSpace_ = RenderPipelineColorSpace::LinearLDR;
         renderSettings.AdjustToSupported(app->GetContext());
         renderPipeline->SetSettings(renderSettings);
+        // Load environment
+        loadEnv();
     }
     void loadLevel(eastl::string nlevel) {
         level = nlevel;
@@ -56,8 +58,10 @@ public:
     }
 
     void Start();
-
+    void loadEnv();
     unsigned getTeamSanity() const;
+    bool isAnyPlayerInHouse();
+    RoomBoundary *getPosRoom(Vector3 pos);
 
     Ghost *getGhost() {
         return ghost;
@@ -77,9 +81,6 @@ public:
     RoomBoundary *getNodeRoom(Node *node) {
         return getPosRoom(node->GetWorldPosition());
     }
-
-    bool isAnyPlayerInHouse();
-    RoomBoundary *getPosRoom(Vector3 pos);
 };
 }
 #endif // LEVELMANAGER_HPP
