@@ -13,18 +13,17 @@ const eastl::vector<eastl::string_view> GhostIdentity::firstNamesMale = {"Jack",
 GhostIdentity::GhostIdentity(unsigned seed) {
     RandomEngine rng(seed);
 
-    // Get gender
+    // Get random gender
     gender = static_cast<Gender>(rng.GetBool(0.5f));
 
     // Get name list to use
-    const eastl::vector<eastl::string_view>& firstNames =
-            gender == male ? firstNamesMale : firstNamesFemale;
+    const auto& firstNames = (gender == male)?firstNamesMale:firstNamesFemale;
 
     // Get random first and last name
     firstName = firstNames[rng.GetUInt(0, firstNames.size())];
     lastName = lastNames[rng.GetUInt(0, lastNames.size())];
 
-    // Get age
+    // Get random age
     age = rng.GetUInt(10, 90);
 }
 }
