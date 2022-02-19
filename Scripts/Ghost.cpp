@@ -12,6 +12,8 @@
 #include "../LevelManager.hpp"
 #include "../GhostState.hpp"
 
+#include <random>
+#include <algorithm>
 #include <Urho3D/Math/Ray.h>
 #include <Urho3D/Physics/RigidBody.h>
 #include <Urho3D/Physics/PhysicsWorld.h>
@@ -91,13 +93,13 @@ void Ghost::Update(float) {
 void Ghost::FixedUpdate(float) {
     // Keep following the currentPath
     followPath();
-    // Interact
-    if ((isVisible() || rng.GetBool(0.01f * getAggression())) && interactionTimer.GetMSec(false) > behavior->interactionCooldown) {
-        tryInteract();
-    }
     // Low frequency timed clode
     auto lfst = lowFreqStepTimer.GetMSec(false);
     if (lfst > 2500) {
+        // Interact
+        if ((isVisible() || rng.GetBool(0.01f * getAggression())) && interactionTimer.GetMSec(false) > behavior->interactionCooldown) {
+            tryInteract();
+        }
         // Run behavior update
         behavior->FrequentUpdate(lfst);
         // Update list of close objects
@@ -137,6 +139,8 @@ void Ghost::setState(const eastl::string& nState) {
 }
 
 InteractionType::Type Ghost::tryInteract(InteractionType::Type type) {
+    // Shuffle close bodies  Note: EA STL shuffle seems to be broken so STL one is in use instead
+    std::shuffle(closeBodies.begin(), closeBodies.end(), std::mt19937(rng.GetUInt()));
     // Try to throw/touch an object in range
     for (auto result : closeBodies) {
         if (result.distance_ > 2.5f) {
@@ -144,27 +148,28 @@ InteractionType::Type Ghost::tryInteract(InteractionType::Type type) {
         }
         auto body = result.body_;
         if (body) {
-            auto node = body->GetNode();
-            if (node->HasTag("GhostInteractable") && node->GetParent()->GetName() != "Hand") {
-                if (type & InteractionType::touch) {
-                    if (rng.GetBool(0.5f) && node->GetName() == "Door" && node->GetParent()->HasComponent<Door>()) {
-                        behavior->onInteraction(InteractionType::touch);
-                        pushDoor(node->GetParent()->GetComponent<Door>());
-                        interactionTimer.Reset();
-                        return InteractionType::touch;
+            for (auto node = body->GetNode(); node; node = node->GetParent()) {
+                if (node->HasTag("GhostInteractable") && node->GetParent()->GetName() != "Hand") {
+                    if (type & InteractionType::touch) {
+                        if (rng.GetBool(0.5f) && node->HasComponent<Door>()) {
+                            behavior->onInteraction(InteractionType::touch);
+                            pushDoor(node->GetComponent<Door>());
+                            interactionTimer.Reset();
+                            return InteractionType::touch;
+                        }
+                        if (rng.GetBool(0.5f) && node->HasTag("Useable")) {
+                            behavior->onInteraction(InteractionType::touch);
+                            useNode(node);
+                            interactionTimer.Reset();
+                            return InteractionType::touch;
+                        }
                     }
-                    if (rng.GetBool(0.5f) && node->HasTag("Useable")) {
-                        behavior->onInteraction(InteractionType::touch);
-                        useNode(node);
+                    if (type & InteractionType::throw_ && node->HasTag("Grabbable")) {
+                        behavior->onInteraction(InteractionType::throw_);
+                        throwBody(body);
                         interactionTimer.Reset();
-                        return InteractionType::touch;
+                        return InteractionType::throw_;
                     }
-                }
-                if (type & InteractionType::throw_ && node->HasTag("Grabbable")) {
-                    behavior->onInteraction(InteractionType::throw_);
-                    throwBody(body);
-                    interactionTimer.Reset();
-                    return InteractionType::throw_;
                 }
             }
         }
@@ -217,9 +222,9 @@ void Ghost::useNode(Node *node) {
 }
 
 void Ghost::pushDoor(Door *door) {
-    door->impulsePush(rng.GetFloat(-1.0, 1.0));
+    door->impulsePush(rng.GetFloat(-0.2, 0.2));
     // Make it emit emf
-    auto emitter = door->GetNode()->GetOrCreateComponent<EMFEmitter>();
+    auto emitter = door->GetNode()->GetChild("Door")->GetOrCreateComponent<EMFEmitter>();
     emitter->setLevel(behavior->getEMFLevel(EMFLevel::touch));
     emitter->timeoutIn(defaultEmfTimeout);
 }
