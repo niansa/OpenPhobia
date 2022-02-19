@@ -16,6 +16,9 @@ void Door::Start() {
     doorNode = GetNode()->GetChild("Door");
     // Get door body
     doorBody = doorNode->GetComponent<RigidBody>();
+    // Set damping
+    doorBody->SetAngularDamping(0.8f);
+    doorBody->SetLinearDamping(0.8f);
     // Get constraint min/max angle
     auto constraint = GetNode()->GetChild("Hinge")->GetComponent<Constraint>();
     minAngle = constraint->GetLowLimit().x_;
@@ -32,8 +35,9 @@ void Door::Start() {
 
 void Door::FixedUpdate(float) {
     // Snap door in place when closed
-    if (getRelativeAngle() < 0.05f) {
-        //doorBody->SetKinematic(true);
+    if (isClosed()) {
+        doorBody->SetAngularVelocity(Vector3::ZERO);
+        doorBody->SetLinearVelocity(Vector3::ZERO);
     }
 }
 
@@ -49,22 +53,17 @@ float Door::getRelativeOpenAngle() const {
     return fabsf(minAngle-maxAngle);
 }
 
-void Door::push(float power) {
-    //doorBody->SetKinematic(false);
+bool Door::getSmartDir() const {
+    return getRelativeAngle() < getRelativeOpenAngle() / 2;
+}
+
+void Door::push(float power, bool direction) {
     if (negDir) {
         power = -power;
     }
-    doorBody->ApplyTorque({0.0f, power, 0.0f});
-}
-
-void Door::pushAutoDir(float power) {
-    auto currentAngle = getRelativeAngle();
-    auto openAngle = getRelativeOpenAngle();
-    // Get direction
-    if (currentAngle < openAngle / 2) {
+    if (direction) {
         power = -power;
     }
-    // Push
-    push(power);
+    doorBody->ApplyTorque({0.0f, power, 0.0f});
 }
 }

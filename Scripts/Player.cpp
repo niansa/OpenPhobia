@@ -158,26 +158,29 @@ void Player::Update(float timeStep) {
 
     // Drag doors
     if (input->GetMouseButtonDown(MouseButtonFlags::Enum::MOUSEB_LEFT)) {
-        auto *ui = GetSubsystem<UI>();
-        auto *graphics = GetSubsystem<Graphics>();
-        IntVector2 pos = ui->GetCursorPosition();
-        // Raycast
-        auto ray = head->GetComponent<Camera>()->GetScreenRay(float(pos.x_) / graphics->GetWidth(), float(pos.y_) / graphics->GetHeight());
-        ea::vector<RayQueryResult> results;
-        RayOctreeQuery query(results, ray, RAY_TRIANGLE, interactRange, DRAWABLE_GEOMETRY);
-        GetScene()->GetComponent<Octree>()->RaycastSingle(query);
-        // Get first result
-        if (!results.empty()) {
-            auto node = results[0].node_->GetParent();
-            // Get door
-            if (node->HasComponent<Door>()) {
-                auto door = node->GetComponent<Door>();
-                lastDoor = door;
+        if (!lastDoor) {
+            auto *ui = GetSubsystem<UI>();
+            auto *graphics = GetSubsystem<Graphics>();
+            IntVector2 pos = ui->GetCursorPosition();
+            // Raycast
+            auto ray = head->GetComponent<Camera>()->GetScreenRay(float(pos.x_) / graphics->GetWidth(), float(pos.y_) / graphics->GetHeight());
+            ea::vector<RayQueryResult> results;
+            RayOctreeQuery query(results, ray, RAY_TRIANGLE, interactRange, DRAWABLE_GEOMETRY);
+            GetScene()->GetComponent<Octree>()->RaycastSingle(query);
+            // Get first result
+            if (!results.empty()) {
+                auto node = results[0].node_->GetParent();
+                // Get door
+                if (node->HasComponent<Door>()) {
+                    auto door = node->GetComponent<Door>();
+                    lastDoor = door;
+                    lastDoorDir = door->getSmartDir();
+                }
             }
         }
         // Push the last door found
         if (lastDoor) {
-            lastDoor->pushAutoDir();
+            lastDoor->push(1.5f, lastDoorDir);
         }
     } else {
         lastDoor = nullptr;

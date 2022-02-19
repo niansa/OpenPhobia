@@ -46,12 +46,15 @@ public:
     float getOpenAngle() const {
         return negDir?minAngle:maxAngle;
     }
+    bool isClosed() const {
+        return getRelativeAngle() < 2.5f;
+    }
 
     float getAngle() const;
     float getRelativeAngle() const;
     float getRelativeOpenAngle() const;
-    void push(float power = 5.0f);
-    void pushAutoDir(float power = 1.0f);
+    bool getSmartDir() const;
+    void push(float power, bool direction = false);
 };
 }
 #endif // DOOR_HPP

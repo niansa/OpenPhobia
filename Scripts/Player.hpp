@@ -37,6 +37,7 @@ class Player final : public LogicComponent {
     Node *handP;
     Node *hand = nullptr;
     Door *lastDoor = nullptr;
+    bool lastDoorDir;
 
     CollisionShape* collisionShape;
     KinematicCharacterController* kinematicController;
