@@ -3,6 +3,7 @@
 #include "Useable.hpp"
 #include "EMFEmitter.hpp"
 #include "Lightswitch.hpp"
+#include "Door.hpp"
 #include "GhostBehavior.hpp"
 #include "RoomBoundary.hpp"
 #include "HouseBoundary.hpp"
@@ -58,7 +59,7 @@ void Ghost::Start() {
     appearance->GetChild("Model")->GetComponents<AnimatedModel>(models);
     for (auto model : models) {
         Material *mat = model->GetMaterial();
-        mat->SetShaderParameter("MatEmissiveColor", Variant(appearanceInfo->color));
+        mat->SetShaderParameter("MatEmissiveColor", Variant(appearanceInfo->color)); // DNV
     }
     // Set initial home position
     homePosition = GetNode()->GetWorldPosition();
@@ -91,7 +92,7 @@ void Ghost::FixedUpdate(float) {
     // Keep following the currentPath
     followPath();
     // Interact
-    if ((isVisible() || rng.GetBool(0.25f * getAggression())) && interactionTimer.GetMSec(false) > behavior->interactionCooldown) {
+    if ((isVisible() || rng.GetBool(0.01f * getAggression())) && interactionTimer.GetMSec(false) > behavior->interactionCooldown) {
         tryInteract();
     }
     // Low frequency timed clode
@@ -137,31 +138,38 @@ void Ghost::setState(const eastl::string& nState) {
 
 InteractionType::Type Ghost::tryInteract(InteractionType::Type type) {
     // Try to throw/touch an object in range
-    if (!closeBodies.empty()) {
-        for (unsigned triesLeft = 25; triesLeft != 0; triesLeft--) {
-            auto result = closeBodies[rng.GetInt(0, closeBodies.size()-1)];
-            if (result.distance_ > 1.0f) {
-                continue;
-            }
-            auto body = result.body_;
-            if (body) {
-                if (body->GetNode()->HasTag("GhostInteractable") && body->GetNode()->GetParent()->GetName() != "Hand") {
-                    if (body->GetNode()->HasTag("Grabbable") && type & InteractionType::throw_) {
-                        behavior->onInteraction(InteractionType::throw_);
-                        throwBody(body);
-                        interactionTimer.Reset();
-                        return InteractionType::throw_;
-                    }
-                    if (body->GetNode()->HasTag("Useable") && type & InteractionType::touch) {
+    for (auto result : closeBodies) {
+        if (result.distance_ > 2.5f) {
+            continue;
+        }
+        auto body = result.body_;
+        if (body) {
+            auto node = body->GetNode();
+            if (node->HasTag("GhostInteractable") && node->GetParent()->GetName() != "Hand") {
+                if (type & InteractionType::touch) {
+                    if (rng.GetBool(0.5f) && node->GetName() == "Door" && node->GetParent()->HasComponent<Door>()) {
                         behavior->onInteraction(InteractionType::touch);
-                        useBody(body);
+                        pushDoor(node->GetParent()->GetComponent<Door>());
+                        interactionTimer.Reset();
+                        return InteractionType::touch;
+                    }
+                    if (rng.GetBool(0.5f) && node->HasTag("Useable")) {
+                        behavior->onInteraction(InteractionType::touch);
+                        useNode(node);
                         interactionTimer.Reset();
                         return InteractionType::touch;
                     }
                 }
+                if (type & InteractionType::throw_ && node->HasTag("Grabbable")) {
+                    behavior->onInteraction(InteractionType::throw_);
+                    throwBody(body);
+                    interactionTimer.Reset();
+                    return InteractionType::throw_;
+                }
             }
         }
     }
+    // Give up
     return InteractionType::none;
 }
 
@@ -175,21 +183,13 @@ void Ghost::throwBody(RigidBody *body) {
     // Get random power
     auto power = behavior->getThrowPower();
     body->SetLinearVelocity(dir*power);
-    // Get emf level to emit
-    EMFLevel level;
-    if (behavior->hasEvidence(Evidence::EMFLevelFive) && rng.GetBool(0.25f)) {
-        level = EMFLevel::five;
-    } else {
-        level = EMFLevel::throw_;
-    }
     // Make it emit emf
     auto emitter = body->GetNode()->GetOrCreateComponent<EMFEmitter>();
-    emitter->setLevel(level);
+    emitter->setLevel(behavior->getEMFLevel(EMFLevel::throw_));
     emitter->timeoutIn(defaultEmfTimeout);
 }
 
-void Ghost::useBody(RigidBody *body) {
-    auto node = body->GetNode();
+void Ghost::useNode(Node *node) {
     auto script = static_cast<Useable *>(node->GetComponent(node->GetName()));
     // Check if node is lightswitch
     if (node->GetName() == "Lightswitch") {
@@ -210,16 +210,17 @@ void Ghost::useBody(RigidBody *body) {
         // Just use it whatever it is
         script->GhostUse();
     }
-    // Get emf level to emit
-    EMFLevel level;
-    if (behavior->hasEvidence(Evidence::EMFLevelFive) && rng.GetBool(0.25f)) {
-        level = EMFLevel::five;
-    } else {
-        level = EMFLevel::touch;
-    }
     // Make it emit emf
-    auto emitter = body->GetNode()->GetOrCreateComponent<EMFEmitter>();
-    emitter->setLevel(level);
+    auto emitter = node->GetOrCreateComponent<EMFEmitter>();
+    emitter->setLevel(behavior->getEMFLevel(EMFLevel::touch));
+    emitter->timeoutIn(defaultEmfTimeout);
+}
+
+void Ghost::pushDoor(Door *door) {
+    door->impulsePush(rng.GetFloat(-1.0, 1.0));
+    // Make it emit emf
+    auto emitter = door->GetNode()->GetOrCreateComponent<EMFEmitter>();
+    emitter->setLevel(behavior->getEMFLevel(EMFLevel::touch));
     emitter->timeoutIn(defaultEmfTimeout);
 }
 

@@ -43,18 +43,21 @@ void GhostReveal::Initialize() {
             return;
         }
     }
+    aborted = true;
     GetGhost()->setState("Local");
 }
 
 void GhostReveal::Deinitialize() {
-    if (revealMode == RevealMode::standing) {
-        if (GetNode()->HasComponent<SoundSource3D>()) {
-            // Stop vocal sound
-            GetNode()->GetComponent<SoundSource3D>()->Stop();
+    if (!aborted) {
+        if (revealMode == RevealMode::standing) {
+            if (GetNode()->HasComponent<SoundSource3D>()) {
+                // Stop vocal sound
+                GetNode()->GetComponent<SoundSource3D>()->Stop();
+            }
+        } else {
+            // Play scream
+            GetNode()->GetOrCreateComponent<SoundSource3D>()->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/screamShort.wav"));
         }
-    } else {
-        // Play scream
-        GetNode()->GetOrCreateComponent<SoundSource3D>()->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/screamShort.wav"));
     }
 }
 

@@ -24,6 +24,7 @@ class Ghost;
 namespace Game {
 class Player;
 class EMFEmitter;
+class Door;
 
 struct GhostAppearance {
     Color color;
@@ -118,7 +119,8 @@ public:
     void setState(const eastl::string& nState);
     InteractionType::Type tryInteract(InteractionType::Type type = InteractionType::any);
     void throwBody(RigidBody *body);
-    void useBody(RigidBody *body);
+    void useNode(Node *node);
+    void pushDoor(Door *door);
     float getAggression() const;
     void roam(bool far = false, bool respectTimer = true);
     bool walkTo(const Vector3& pos);

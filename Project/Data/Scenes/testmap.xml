@@ -15,8 +15,8 @@
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="6.70296 3.86222 -6.70279" />
-		<attribute name="Camera Rotation" value="0.258887 0.0849541 0.838897 -0.471181" />
+		<attribute name="Camera Position" value="7.93945 3.01861 -7.98959" />
+		<attribute name="Camera Rotation" value="0.242959 0.0561881 0.876634 -0.411493" />
 	</component>
 	<component type="RenderPipeline" id="839">
 		<attribute name="Color Space" value="LDR Linear" />
@@ -1665,6 +1665,7 @@
 			<attribute name="Name" value="Door" />
 			<attribute name="Tags">
 				<string value="Scripted" />
+				<string value="GhostInteractable" />
 			</attribute>
 			<attribute name="Position" value="4.86834 0 -6.02494" />
 			<attribute name="Rotation" value="-4.37114e-08 0 -0 1" />
@@ -1754,6 +1755,7 @@
 			<attribute name="Name" value="Door" />
 			<attribute name="Tags">
 				<string value="Scripted" />
+				<string value="GhostInteractable" />
 			</attribute>
 			<attribute name="Position" value="7.66212 0 -7.9291" />
 			<attribute name="Rotation" value="-4.37114e-08 0 -0 1" />
@@ -1843,6 +1845,7 @@
 			<attribute name="Name" value="Door" />
 			<attribute name="Tags">
 				<string value="Scripted" />
+				<string value="GhostInteractable" />
 			</attribute>
 			<attribute name="Position" value="8.77804 0 -3.972" />
 			<attribute name="Rotation" value="-4.37114e-08 0 -0 1" />
@@ -1932,6 +1935,7 @@
 			<attribute name="Name" value="Door" />
 			<attribute name="Tags">
 				<string value="Scripted" />
+				<string value="GhostInteractable" />
 			</attribute>
 			<attribute name="Position" value="12.035 0 -5.6005" />
 			<attribute name="Rotation" value="-3.09086e-08 -0.707107 -3.09086e-08 -0.707107" />

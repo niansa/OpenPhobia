@@ -23,6 +23,7 @@ class GhostReveal final : public GhostStateScript {
     URHO3D_OBJECT(GhostReveal, GhostStateScript);
 
     RevealMode revealMode;
+    bool aborted = false;
 
 public:
     using GhostStateScript::GhostStateScript;

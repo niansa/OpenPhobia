@@ -18,6 +18,7 @@ struct GhostBehavior;
 namespace Game {
 class Ghost;
 class Player;
+enum class EMFLevel;
 enum class RevealMode;
 enum class GhostType;
 
@@ -46,7 +47,7 @@ struct GhostBehavior {
     unsigned huntDuration = 30000;
     unsigned sanityThreshold = 50;
     unsigned huntCooldown = 25000;
-    unsigned interactionCooldown = 4000;
+    unsigned interactionCooldown = 2000;
     unsigned gracePeriod = 3000;
     unsigned smudgeEffectDuration = 90000;
     float electricVisionRange = 10.0f;
@@ -65,6 +66,7 @@ struct GhostBehavior {
     virtual PlayerWDistance getPlayerToChase() = 0;
     virtual unsigned getHuntMultiplier() = 0;
     virtual float getAgressionMultiplier() = 0;
+    virtual EMFLevel getEMFLevel(EMFLevel level) = 0;
     virtual void onStateChange(const eastl::string& nState) = 0;
     virtual void onInteraction(InteractionType::Type type) = 0;
     virtual float getBlinkSpeed() = 0;
@@ -81,6 +83,7 @@ struct Default : public GhostBehavior {
     PlayerWDistance getPlayerToChase() override;
     unsigned getHuntMultiplier() override {return 0;}
     float getAgressionMultiplier() override {return 1.0f;}
+    EMFLevel getEMFLevel(EMFLevel expected) override;
     void onStateChange(const eastl::string& nState) override;
     void onInteraction(InteractionType::Type type) override {};
     float getBlinkSpeed() override;

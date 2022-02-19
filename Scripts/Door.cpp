@@ -66,4 +66,14 @@ void Door::push(float power, bool direction) {
     }
     doorBody->ApplyTorque({0.0f, power, 0.0f});
 }
+
+void Door::impulsePush(float power, bool direction) {
+    if (negDir) {
+        power = -power;
+    }
+    if (direction) {
+        power = -power;
+    }
+    doorBody->ApplyTorqueImpulse({0.0f, power, 0.0f});
+}
 }

@@ -55,6 +55,7 @@ public:
     float getRelativeOpenAngle() const;
     bool getSmartDir() const;
     void push(float power, bool direction = false);
+    void impulsePush(float power, bool direction = false);
 };
 }
 #endif // DOOR_HPP

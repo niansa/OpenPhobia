@@ -1,6 +1,7 @@
 #include "GhostBehavior.hpp"
 #include "Useable.hpp"
 #include "GhostIdentity.hpp"
+#include "EMF.hpp"
 #include "Scripts/HouseBoundary.hpp"
 #include "Scripts/Player.hpp"
 #include "Scripts/Ghost.hpp"
@@ -28,6 +29,14 @@ float Default::getCurrentSpeed() {
 PlayerWDistance Default::getPlayerToChase() {
     ghost->updateClosestPlayer();
     return ghost->getClosestPlayer();
+}
+
+EMFLevel Default::getEMFLevel(EMFLevel expected) {
+    if (hasEvidence(Evidence::EMFLevelFive) && ghost->rng.GetBool(0.25f)) {
+        return EMFLevel::five;
+    } else {
+        return expected;
+    }
 }
 
 void Default::onStateChange(const eastl::string& nState) {
