@@ -172,9 +172,15 @@ void Player::Update(float timeStep) {
             // Get door
             if (node->HasComponent<Door>()) {
                 auto door = node->GetComponent<Door>();
-                door->push(GetNode()->GetWorldDirection());
+                lastDoor = door;
             }
         }
+        // Push the last door found
+        if (lastDoor) {
+            lastDoor->push(-head->GetWorldDirection());
+        }
+    } else {
+        lastDoor = nullptr;
     }
 }
 

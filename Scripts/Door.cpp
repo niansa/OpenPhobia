@@ -23,11 +23,20 @@ void Door::Start() {
     push(rng.GetFloat(0.0f, 10.0f));
 }
 
+void Door::FixedUpdate(float) {
+    // Snap door in place when closed
+    auto a = (doorBody->GetRotation() - GetNode()->GetWorldRotation()).EulerAngles();
+    if (a.y_ < 0.2f) {
+        doorBody->SetAngularVelocity(Vector3::ZERO);
+        doorBody->SetLinearVelocity(Vector3::ZERO);
+    }
+}
+
 void Door::push(float power) {
     doorBody->ApplyTorque({0.0f, -power, 0.0f});
 }
 
 void Door::push(const Vector3& direction, float power) {
-    doorBody->ApplyTorque(direction*power);
+    doorBody->ApplyForce(direction*power);
 }
 }

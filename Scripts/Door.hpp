@@ -23,9 +23,10 @@ public:
     using LogicComponent::LogicComponent;
 
     void Start() override;
+    void FixedUpdate(float) override;
 
-    void push(float power = 1.0f);
-    void push(const Vector3& direction, float power = 1.0f);
+    void push(float power = 5.0f);
+    void push(const Vector3& direction, float power = 5.0f);
 };
 }
 #endif // DOOR_HPP

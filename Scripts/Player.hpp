@@ -20,6 +20,7 @@ class Player;
 namespace Game {
 class RoomBoundary;
 class LevelManager;
+class Door;
 
 class Player final : public LogicComponent {
     URHO3D_OBJECT(Player, LogicComponent);
@@ -35,6 +36,7 @@ class Player final : public LogicComponent {
     Node *head;
     Node *handP;
     Node *hand = nullptr;
+    Door *lastDoor = nullptr;
 
     CollisionShape* collisionShape;
     KinematicCharacterController* kinematicController;
