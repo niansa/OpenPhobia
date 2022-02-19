@@ -15,8 +15,8 @@
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="8.61123 2.96794 -6.09543" />
-		<attribute name="Camera Rotation" value="-0.301031 -0.162672 0.886771 -0.310733" />
+		<attribute name="Camera Position" value="6.70296 3.86222 -6.70279" />
+		<attribute name="Camera Rotation" value="0.258887 0.0849541 0.838897 -0.471181" />
 	</component>
 	<component type="RenderPipeline" id="839">
 		<attribute name="Color Space" value="LDR Linear" />
@@ -1752,7 +1752,9 @@
 		<node id="1924">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Door" />
-			<attribute name="Tags" />
+			<attribute name="Tags">
+				<string value="Scripted" />
+			</attribute>
 			<attribute name="Position" value="7.66212 0 -7.9291" />
 			<attribute name="Rotation" value="-4.37114e-08 0 -0 1" />
 			<attribute name="Scale" value="1 1 1" />
@@ -1839,7 +1841,9 @@
 		<node id="1930">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Door" />
-			<attribute name="Tags" />
+			<attribute name="Tags">
+				<string value="Scripted" />
+			</attribute>
 			<attribute name="Position" value="8.77804 0 -3.972" />
 			<attribute name="Rotation" value="-4.37114e-08 0 -0 1" />
 			<attribute name="Scale" value="1 1 1" />
@@ -1926,7 +1930,9 @@
 		<node id="1935">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Door" />
-			<attribute name="Tags" />
+			<attribute name="Tags">
+				<string value="Scripted" />
+			</attribute>
 			<attribute name="Position" value="12.035 0 -5.6005" />
 			<attribute name="Rotation" value="-3.09086e-08 -0.707107 -3.09086e-08 -0.707107" />
 			<attribute name="Scale" value="1 1 1" />

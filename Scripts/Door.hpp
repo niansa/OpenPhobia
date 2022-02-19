@@ -25,6 +25,7 @@ public:
     void Start() override;
 
     void push(float power = 1.0f);
+    void push(const Vector3& direction, float power = 1.0f);
 };
 }
 #endif // DOOR_HPP

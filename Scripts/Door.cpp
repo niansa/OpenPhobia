@@ -15,6 +15,8 @@ void Door::Start() {
     doorNode = GetNode()->GetChild("Door");
     // Get door body
     doorBody = doorNode->GetComponent<RigidBody>();
+    // Make door body kinematic
+    //doorBody->SetKinematic(true);
     // Set the right collision layer and mask
     doorBody->SetCollisionLayerAndMask(1, 1);
     // Push door by random value
@@ -22,6 +24,10 @@ void Door::Start() {
 }
 
 void Door::push(float power) {
-    doorBody->ApplyForce({0.0f, -power, 0.0f});
+    doorBody->ApplyTorque({0.0f, -power, 0.0f});
+}
+
+void Door::push(const Vector3& direction, float power) {
+    doorBody->ApplyTorque(direction*power);
 }
 }
