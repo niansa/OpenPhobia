@@ -177,7 +177,7 @@ void Player::Update(float timeStep) {
         }
         // Push the last door found
         if (lastDoor) {
-            lastDoor->push(-head->GetWorldDirection());
+            lastDoor->pushAutoDir();
         }
     } else {
         lastDoor = nullptr;
