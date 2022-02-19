@@ -222,7 +222,7 @@ void Ghost::useNode(Node *node) {
 }
 
 void Ghost::pushDoor(Door *door) {
-    door->impulsePush(rng.GetFloat(-0.2, 0.2));
+    door->impulsePush(rng.GetFloat(0.0f, 0.4f), door->getSmartDir());
     // Make it emit emf
     auto emitter = door->GetNode()->GetChild("Door")->GetOrCreateComponent<EMFEmitter>();
     emitter->setLevel(behavior->getEMFLevel(EMFLevel::touch));
