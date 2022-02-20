@@ -21,6 +21,7 @@ void GhostReveal::Initialize() {
         auto player = players[GetGhost()->rng.GetUInt(0, players.size())];
         // Check that player is inside the house
         if (player->isInsideHouse()) {
+            // TODO: Teleport ghost to some location around the player
             // Get reveal mode from behavior
             revealMode = GetGhost()->behavior->getRevealMode(player);
             // Play reveal sound (sometimes)

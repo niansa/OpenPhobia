@@ -365,7 +365,7 @@ bool Ghost::canSeePlayer(PlayerWDistance player, bool includeElectronics) {
     auto vectorToPlayer = player.player->getHead()->GetWorldPosition() - GetNode()->GetWorldPosition();
     ea::vector<PhysicsRaycastResult> hits;
     physicsWorld->Raycast(hits, Ray(GetNode()->GetWorldPosition(), vectorToPlayer.Normalized()), vectorToPlayer.Length());
-    if (hits.size() == 0) {
+    if (hits.size() <= 1) {
         return true;
     }
     // Check if player has electronics turned on
