@@ -5,17 +5,17 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="51" />
-	<attribute name="Next Replicated Component ID" value="62" />
-	<attribute name="Next Local Node ID" value="16777258" />
-	<attribute name="Next Local Component ID" value="16777280" />
+	<attribute name="Next Replicated Node ID" value="65" />
+	<attribute name="Next Replicated Component ID" value="77" />
+	<attribute name="Next Local Node ID" value="16777264" />
+	<attribute name="Next Local Component ID" value="16777289" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="5.25888 1.35875 2.93477" />
-		<attribute name="Camera Rotation" value="0.531866 0.0481149 -0.842011 0.0762916" />
+		<attribute name="Camera Position" value="-2.09844 2.75417 -2.06501" />
+		<attribute name="Camera Rotation" value="0.893998 0.273685 0.339251 -0.103792" />
 	</component>
 	<component type="RenderPipeline" id="3" />
 	<component type="PhysicsWorld" id="6" />
@@ -29,15 +29,15 @@
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
-		<component type="CollisionShape" id="5">
-			<attribute name="Size" value="0.4 1.85 0.2" />
-			<attribute name="Collision Margin" value="0.010000" />
+		<component type="Light" id="70">
+			<attribute name="Color" value="0 1 0.032258 1" />
+			<attribute name="Range" value="0.500000" />
 		</component>
 		<node id="5">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Head" />
 			<attribute name="Tags" />
-			<attribute name="Position" value="0 0.856845 0.0901322" />
+			<attribute name="Position" value="0 0.7 0.0901322" />
 			<attribute name="Rotation" value="1 0 0 0" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />

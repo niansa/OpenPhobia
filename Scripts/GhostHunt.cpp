@@ -13,6 +13,7 @@ namespace Game {
 void GhostHunt::Initialize() {
     // Check that hunt is allowed to start
     if (!GetGhost()->levelManager->isAnyPlayerInHouse()) {
+        aborted = true;
         GetGhost()->setState("Local");
         return;
     }
@@ -24,13 +25,15 @@ void GhostHunt::Initialize() {
 }
 
 void GhostHunt::Deinitialize() {
-    GetGhost()->lastHuntTimer.Reset();
-    // Stop vocal sound
-    GetNode()->GetComponent<SoundSource3D>()->Stop();
-    // Reset hunt timer
-    GetGhost()->lastHuntTimer.Reset();
-    // Warp back home
-    GetGhost()->body->SetPosition(GetGhost()->homePosition);
+    if (!aborted) {
+        GetGhost()->lastHuntTimer.Reset();
+        // Stop vocal sound
+        GetNode()->GetComponent<SoundSource3D>()->Stop();
+        // Reset hunt timer
+        GetGhost()->lastHuntTimer.Reset();
+        // Warp back home
+        GetGhost()->body->SetPosition(GetGhost()->homePosition);
+    }
 }
 
 void GhostHunt::FixedUpdate(float) {
@@ -51,7 +54,7 @@ void GhostHunt::FixedUpdate(float) {
         auto playerToChase = GetGhost()->behavior->getPlayerToChase();
         if (playerToChase.hasValue()) {
             // Kill player if possible
-            if (playerToChase.distance < 0.75f && GetGhost()->canSeePlayer(playerToChase)) {
+            if (playerToChase.distance < 1.0f && GetGhost()->canSeePlayer(playerToChase)) {
                 playerToChase.player->startKillingPlayer();
                 if (GetGhost()->behavior->endHuntOnDeath) {
                     GetGhost()->setState("Local");

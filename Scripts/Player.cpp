@@ -22,10 +22,13 @@ void Player::Start() {
     head = GetNode()->GetChild("Head");
     handP = head->GetChild("Hand");
     levelManager = GetGlobalVar("LevelManager").GetCustom<LevelManager*>();
-    collisionShape = GetNode()->GetComponent<CollisionShape>();
     kinematicController = GetNode()->CreateComponent<KinematicCharacterController>();
-    kinematicController->SetHeight(GetNode()->GetScale().y_);
+    kinematicController->SetHeight(1.85f);
+    //kinematicController->SetOffset({0.0f, -(kinematicController->GetHeight()/2), 0.0f});
     kinematicController->SetCollisionLayerAndMask(1, 1);
+    printf("!!!!!!!!!!!!!!!!!!!!!! Body height: %f\n", kinematicController->GetHeight());
+    fflush(stdout);
+    head->SetPosition({0.0f, kinematicController->GetHeight()*0.75f, 0.0f});
 
     auto* renderer = GetSubsystem<Renderer>();
 
@@ -47,7 +50,7 @@ void Player::FixedUpdate(float timeStep) {
 
     // Position check
     if (GetNode()->GetWorldPosition().y_ < -10) {
-        kinematicController->SetTransform(GetNode()->GetParent()->GetWorldPosition(), {0, 0, 0});
+        GetNode()->SetWorldPosition(GetNode()->GetParent()->GetWorldPosition()); // TODO: broken
         return;
     }
 
@@ -75,7 +78,7 @@ void Player::FixedUpdate(float timeStep) {
         }
 
         // Walk
-        kinematicController->SetWalkDirection(GetNode()->GetRotation() * moveDir * walkSpeed / 60.0f);
+        kinematicController->SetWalkIncrement(GetNode()->GetRotation() * moveDir * walkSpeed / 60.0f);
     }
 }
 

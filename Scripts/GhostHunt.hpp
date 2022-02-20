@@ -20,6 +20,7 @@ class GhostHunt final : public GhostStateScript {
 
     Timer gracePeriodTimer, blinkTimer, stepTimer;
     unsigned nextBlinkIn = 0;
+    bool aborted = false;
 
 public:
     using GhostStateScript::GhostStateScript;
