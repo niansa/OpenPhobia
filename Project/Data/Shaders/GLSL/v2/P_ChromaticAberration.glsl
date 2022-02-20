@@ -136,6 +136,11 @@ vec3 render( vec2 uv )
     return srgb2lin(texture( sDiffMap, uv ).rgb );
 }
 
+float nrand( vec2 n )
+{
+    return fract(sin(dot(n.xy, vec2(12.9898, 78.233)))* 43758.5453);
+}
+
 void main()
 {
     vec2 screenSize = textureSize(sDiffMap, 0);
