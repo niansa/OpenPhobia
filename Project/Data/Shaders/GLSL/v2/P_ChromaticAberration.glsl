@@ -174,7 +174,7 @@ void main()
 
     const int num_iter = 7;
     const float stepsiz = 1.0 / (float(num_iter)-1.0);
-    float rnd = fract(1.61803398875*cDeltaTime+texture(sNormalMap, vScreenPos.xy/vec2(textureSize(sNormalMap,0)), -10.0 ).x ); //nrand( uv + fract(iTime) );
+    float rnd = nrand( uv + fract(cElapsedTime));
     float t = rnd * stepsiz;
 
     vec3 sumcol = vec3(0.0);
