@@ -66,9 +66,6 @@ vec3 yuv2rgb( vec3 yuv )
     return rgb;
 }
 
-
-// ====
-
 //note: from https://www.shadertoy.com/view/XslGz8
 vec2 radialdistort(vec2 coord, vec2 amt)
 {
@@ -107,8 +104,6 @@ vec2 distort( vec2 uv, float t, vec2 min_distort, vec2 max_distort )
     return brownConradyDistortion( uv, 75.0 * dist.x );
 }
 
-// ====
-
 vec3 spectrum_offset_yuv( float t )
 {
     vec3 yuv = vec3( 1.0, 0.0, -1.0*t ); //cyan-orange
@@ -122,17 +117,6 @@ vec3 spectrum_offset( float t )
 
 vec3 render( vec2 uv )
 {
-    #define DEBUG
-    #if defined( DEBUG )
-    if ( uv.x > 0.7 && uv.y > 0.7 )
-    {
-        float d = length( vec2(0.77)- uv );
-        d = min( d, length( vec2(0.82)- uv ) );
-        d = min( d, length( vec2(0.875)- uv ) );
-        return vec3( step( d, 0.025) );
-    }
-    #endif
-
     return srgb2lin(texture( sDiffMap, uv ).rgb );
 }
 
@@ -144,30 +128,6 @@ float nrand( vec2 n )
 void main()
 {
     vec2 screenSize = textureSize(sDiffMap, 0);
-
-    if ( vScreenPos.x > 0.7 &&  vScreenPos.y < 0.2 )
-    {
-        vec2 luv = remap( vScreenPos, vec2(0.7,0.0), vec2(1.0, 0.2) );
-        vec3 c;
-        c.r = step( luv.x, 1.0/3.0);
-        c.g = step( 1.0/3.0, luv.x )*step(luv.x, 2.0/3.0);
-        c.b = step( 2.0/3.0, luv.x );
-        c *= 0.4;
-
-        vec3 rgb = spectrum_offset_rgb( luv.x );
-        c += step( abs(rgb-luv.yyy), vec3(0.0125) );
-
-        if ( vScreenPos.y > 0.20125 )
-        {
-            c = spectrum_offset( luv.x );
-            if ( vScreenPos.y < 0.21 )
-                c = vec3(0.0);
-
-        }
-
-        gl_FragColor.rgb = c;
-        return;
-    }
 
     const float MAX_DIST_PX = 50.0;
     float max_distort_px = MAX_DIST_PX * 0.5; // INTENSITY
