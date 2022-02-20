@@ -7,10 +7,9 @@ struct GhostIdentity;
 #define GHOSTIDENTITY_HPP
 #include "easyscript/Namespace.hpp"
 
-#include <EASTL/string.h>
-#include <EASTL/string_view.h>
-#include <EASTL/vector.h>
 #include <cstdint>
+#include <Urho3D/Core/Context.h>
+#include <Urho3D/Audio/Sound.h>
 
 
 
@@ -51,9 +50,10 @@ struct GhostIdentity {
     enum Gender : bool {male = 0, female = 1} gender;
     GhostType type;
     float agression;
+    Sound *huntSound, *revealSound, *hissSound;
 
     GhostIdentity() {}
-    GhostIdentity(unsigned seed);
+    GhostIdentity(Context *ctx, unsigned seed);
 
     eastl::string getFullName() const {
         return eastl::string(firstName) + ' ' + eastl::string(lastName);

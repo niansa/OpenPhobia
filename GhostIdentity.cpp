@@ -1,5 +1,6 @@
 #include "GhostIdentity.hpp"
 #include "easyscript/Namespace.hpp"
+#include "SFX.hpp"
 
 #include <Urho3D/Math/RandomEngine.h>
 
@@ -10,7 +11,7 @@ const eastl::vector<eastl::string_view> GhostIdentity::firstNamesMale = {"Jack",
                                         GhostIdentity::firstNamesFemale = {"Ruth", "Betty", "Lisa", "Georgia", "Dorothy", "Jennifer", "Karen", "Barbara", "Julie", "Ann", "Nancy", "Lucy", "Judy", "Gloria", "Nellie", "Megan", "Susan", "Mary", "Becky", "Patricia", "Jane", "Carla", "Sandra", "Marcia", "Ellen", "Linda", "Margaret", "Maria", "Helen", "Donna", "Elizabeth", "Holly", "Stacey", "Ella", "Carol"},
                                         GhostIdentity::lastNames = {"Hall", "Anderson", "Wright", "Young", "Carter", "Brown", "Taylor", "Lewis", "Smith", "Moore", "Williams", "Johnson", "Dixon", "Jones", "Jackson", "Garcia", "Roberts", "Walker", "Harris", "Martin", "Clarke", "Baker", "Miller", "Hill", "White", "Robinson", "Wilson", "Martinez", "Thompson"};
 
-GhostIdentity::GhostIdentity(unsigned seed) {
+GhostIdentity::GhostIdentity(Context *ctx, unsigned seed) {
     RandomEngine rng(seed);
 
     // Get random gender
@@ -31,5 +32,10 @@ GhostIdentity::GhostIdentity(unsigned seed) {
 
     // Get random agression
     agression = rng.GetFloat(0.8f, 1.3f);
+
+    // Get ghost sounds
+    huntSound = getGhostSFX(ctx, rng, "hunt", gender);
+    revealSound = getGhostSFX(ctx, rng, "hunt", gender);
+    hissSound = getGhostSFX(ctx, rng, "hiss", gender);
 }
 }

@@ -63,6 +63,6 @@ void Flashlight::playClick() {
     clickSound->SetFarDistance(5.0f);
     clickSound->SetNearDistance(0.2f);
     clickSound->SetAutoRemoveMode(AutoRemoveMode::REMOVE_COMPONENT);
-    clickSound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/click1.wav"));
+    clickSound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/click/1.wav"));
 }
 }

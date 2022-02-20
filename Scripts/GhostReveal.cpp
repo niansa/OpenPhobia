@@ -27,7 +27,7 @@ void GhostReveal::Initialize() {
             if (GetGhost()->rng.GetBool(0.5f)) {
                 auto sound = GetNode()->GetOrCreateComponent<SoundSource3D>();
                 sound->SetFarDistance(GetGhost()->behavior->vocalRange);
-                sound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/ghostSingMix.ogg"));
+                sound->Play(GetGhost()->levelManager->getGhostIdentity().revealSound);
             }
             // Walk towards player if in chasing mode
             if (revealMode == RevealMode::chasing) {
@@ -55,8 +55,8 @@ void GhostReveal::Deinitialize() {
                 GetNode()->GetComponent<SoundSource3D>()->Stop();
             }
         } else {
-            // Play scream
-            GetNode()->GetOrCreateComponent<SoundSource3D>()->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/screamShort.wav"));
+            // Play hiss
+            GetNode()->GetOrCreateComponent<SoundSource3D>()->Play(GetGhost()->levelManager->getGhostIdentity().hissSound);
         }
     }
 }

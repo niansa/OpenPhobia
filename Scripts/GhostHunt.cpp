@@ -1,6 +1,7 @@
 #include "GhostHunt.hpp"
 #include "Ghost.hpp"
 #include "Player.hpp"
+#include "../SFX.hpp"
 
 #include <Urho3D/Resource/ResourceCache.h>
 #include <Urho3D/Audio/Sound.h>
@@ -18,7 +19,7 @@ void GhostHunt::Initialize() {
     // Play hunt sound
     auto sound = GetNode()->GetOrCreateComponent<SoundSource3D>();
     sound->SetFarDistance(GetGhost()->behavior->vocalRange);
-    sound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/ghostSingMale.ogg"));
+    sound->Play(GetGhost()->levelManager->getGhostIdentity().huntSound);
     restart();
 }
 

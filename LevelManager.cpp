@@ -63,7 +63,7 @@ void LevelManager::loadEnv() {
 
         // Load ghost identity
         ghostIdentitySeed = rng.GetUInt();
-        ghostIdentity = GhostIdentity(ghostIdentitySeed);
+        ghostIdentity = GhostIdentity(app->GetContext(), ghostIdentitySeed);
 
         // Load ghost AI stuff  TODO: Based on difficulty
         auto ghostBehavior = getGhostBehavior(ghostIdentity.type);

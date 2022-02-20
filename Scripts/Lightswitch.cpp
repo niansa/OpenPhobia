@@ -79,6 +79,6 @@ void Lightswitch::playClick() {
     clickSound->SetFarDistance(20.0f);
     clickSound->SetNearDistance(0.5f);
     clickSound->SetAutoRemoveMode(AutoRemoveMode::REMOVE_COMPONENT);
-    clickSound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/click10.wav"));
+    clickSound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/click/10.wav"));
 }
 }
