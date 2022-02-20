@@ -4554,6 +4554,7 @@
 	"SetUniform",
 	"Shader",
 	"ShaderCacheDir",
+	"Shaders",
 	"Shaders/GLSL/Basic.glsl",
 	"Shaders/GLSL/Samplers.glsl",
 	"Shaders/GLSL/Transform.glsl",
