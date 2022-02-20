@@ -51,7 +51,7 @@ void GhostHunt::FixedUpdate(float) {
         auto playerToChase = GetGhost()->behavior->getPlayerToChase();
         if (playerToChase.hasValue()) {
             // Kill player if possible
-            if (playerToChase.distance < 0.75f) {
+            if (playerToChase.distance < 0.75f && GetGhost()->canSeePlayer(playerToChase)) {
                 playerToChase.player->startKillingPlayer();
                 if (GetGhost()->behavior->endHuntOnDeath) {
                     GetGhost()->setState("Local");
