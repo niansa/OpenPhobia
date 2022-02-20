@@ -1,6 +1,7 @@
 #include "SFX.hpp"
 #include "easyscript/Namespace.hpp"
 
+#include <EASTL/sort.h>
 #include <Urho3D/Resource/ResourceCache.h>
 #include <Urho3D/IO/FileSystem.h>
 
@@ -15,6 +16,8 @@ void getFilesInDir(ResourceCache *resCache, ea::vector<ea::string> &files, const
     ea::vector<ea::string> fres;
     // Get all files in that dir
     resCache->Scan(fres, dir, "*", SCAN_FILES, true);
+    // Sort files
+    eastl::sort(fres.begin(), fres.end());
     // Append full resource path to files
     for (const auto& file : fres) {
         files.push_back(dir+file);
