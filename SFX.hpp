@@ -14,5 +14,6 @@
 
 namespace Game {
 Sound *getGhostSFX(Context *ctx, RandomEngine& rng, const eastl::string& kind, GhostIdentity::Gender gender);
+Sound *getClickSFX(Context *ctx, RandomEngine& rng, const eastl::string& kind);
 }
 #endif

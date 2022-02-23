@@ -26,8 +26,6 @@ void Player::Start() {
     kinematicController->SetHeight(1.85f);
     //kinematicController->SetOffset({0.0f, -(kinematicController->GetHeight()/2), 0.0f});
     kinematicController->SetCollisionLayerAndMask(1, 1);
-    printf("!!!!!!!!!!!!!!!!!!!!!! Body height: %f\n", kinematicController->GetHeight());
-    fflush(stdout);
     head->SetPosition({0.0f, kinematicController->GetHeight()*0.75f, 0.0f});
 
     auto* renderer = GetSubsystem<Renderer>();

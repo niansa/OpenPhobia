@@ -2,6 +2,7 @@
 #include "EMFEmitter.hpp"
 #include "../SphereCastMultiple.hpp"
 #include "../LevelManager.hpp"
+#include "../SFX.hpp"
 
 #include <Urho3D/Physics/RigidBody.h>
 #include <Urho3D/Math/Ray.h>
@@ -75,6 +76,6 @@ void EMFReader::playClick() {
     clickSound->SetFarDistance(5.0f);
     clickSound->SetNearDistance(0.2f);
     clickSound->SetAutoRemoveMode(AutoRemoveMode::REMOVE_COMPONENT);
-    clickSound->Play(GetSubsystem<ResourceCache>()->GetResource<Sound>("SFX/click/80.wav"));
+    clickSound->Play(getClickSFX(context_, getLevelManager()->getRng(), "emfreader"));
 }
 }

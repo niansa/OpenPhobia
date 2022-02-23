@@ -18,7 +18,7 @@ class Equipment;
 
 namespace Game {
 class Equipment : public Useable {
-protected:
+private:
     LevelManager *levelManager = nullptr;
 
 public:
