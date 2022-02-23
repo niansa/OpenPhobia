@@ -76,6 +76,6 @@ void EMFReader::playClick() {
     clickSound->SetFarDistance(5.0f);
     clickSound->SetNearDistance(0.2f);
     clickSound->SetAutoRemoveMode(AutoRemoveMode::REMOVE_COMPONENT);
-    clickSound->Play(getClickSFX(context_, getLevelManager()->getRng(), "emfreader"));
+    clickSound->Play(getMiscSFX(context_, getLevelManager()->getRng(), "emfreader"));
 }
 }

@@ -80,6 +80,6 @@ void Lightswitch::playClick() {
     clickSound->SetFarDistance(20.0f);
     clickSound->SetNearDistance(0.5f);
     clickSound->SetAutoRemoveMode(AutoRemoveMode::REMOVE_COMPONENT);
-    clickSound->Play(getClickSFX(context_, levelManager->getRng(), "lightswitch"));
+    clickSound->Play(getMiscSFX(context_, levelManager->getRng(), "lightswitch"));
 }
 }

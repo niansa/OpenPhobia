@@ -37,11 +37,11 @@ Sound *getGhostSFX(Context *ctx, RandomEngine& rng, const eastl::string& kind, G
     return resCache->GetResource<Sound>(files[rng.GetUInt(0, files.size())]);
 }
 
-Sound *getClickSFX(Context *ctx, RandomEngine& rng, const eastl::string& kind) {
+Sound *getMiscSFX(Context *ctx, RandomEngine& rng, const eastl::string& kind) {
     auto resCache = ctx->GetSubsystem<ResourceCache>();
     ea::vector<ea::string> files;
     // Get all files from viable paths
-    getFilesInDir(resCache, files, "SFX/click/"+kind+'/');
+    getFilesInDir(resCache, files, "SFX/misc/"+kind+'/');
     // Return random file
     return resCache->GetResource<Sound>(files[rng.GetUInt(0, files.size())]);
 }
