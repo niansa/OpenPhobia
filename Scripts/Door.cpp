@@ -30,7 +30,7 @@ void Door::Start() {
     // Set the right collision layer and mask
     doorBody->SetCollisionLayerAndMask(1, 1);
     // Push door by random value
-    impulsePush(rng.GetFloat(0.0f, 2.5f));
+    impulsePush(rng.GetFloat(0.0f, -0.15f));
 }
 
 void Door::FixedUpdate(float) {

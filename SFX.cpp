@@ -20,6 +20,9 @@ void getFilesInDir(ResourceCache *resCache, ea::vector<ea::string> &files, const
     eastl::sort(fres.begin(), fres.end());
     // Append full resource path to files
     for (const auto& file : fres) {
+        if (file.ends_with(".xml")) {
+            continue;
+        }
         files.push_back(dir+file);
     }
 }

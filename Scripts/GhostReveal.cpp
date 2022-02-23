@@ -1,7 +1,9 @@
 #include "GhostReveal.hpp"
 #include "Ghost.hpp"
 #include "Player.hpp"
+#include "Door.hpp"
 #include "EMFEmitter.hpp"
+#include "RoomBoundary.hpp"
 
 #include <Urho3D/Resource/ResourceCache.h>
 #include <Urho3D/Audio/Sound.h>
@@ -37,6 +39,24 @@ void GhostReveal::Initialize() {
             // Manifest
             GetGhost()->appearance->SetDeepEnabled(true);
             GetGhost()->setNextState("Local", GetGhost()->rng.GetUInt(2500, Max(15000.0f*GetGhost()->getAggression(), 1500)));
+            // Close room doors
+            if (GetGhost()->rng.GetBool(0.5f/*TBV*/)) {
+                // Get all rooms doors
+                for (auto body : GetGhost()->getCloseBodies()) {
+                    if (body.body_) {
+                        auto node = body.body_->GetNode();
+                        if (node->GetName() == "Door") {
+                            auto parentNode = node->GetParent();
+                            if (parentNode && GetGhost()->getCurrentRoom()->isNodeInside(parentNode)) {
+                                if (parentNode->HasComponent<Door>()) {
+                                    auto door = parentNode->GetComponent<Door>();
+                                    door->impulsePush(0.15f);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             // Spawn EMF Spot
             auto emitter = GetGhost()->spawnEMFSpot();
             emitter->setLevel(EMFLevel::reveal);
