@@ -14,6 +14,7 @@ class Ghost;
 #include <Urho3D/Math/RandomEngine.h>
 #include <Urho3D/Core/Timer.h>
 #include <Urho3D/Scene/Node.h>
+#include <Urho3D/Audio/SoundSource3D.h>
 #include <Urho3D/Physics/RigidBody.h>
 #include <Urho3D/Physics/PhysicsWorld.h>
 #include <Urho3D/Graphics/AnimationController.h>
@@ -36,13 +37,14 @@ class Ghost final : public LogicComponent {
     URHO3D_OBJECT(Ghost, LogicComponent);
 
     RandomEngine rng;
-    Timer lowFreqStepTimer, stateTimer, navigationTimer, lastHuntTimer, interactionTimer, roamTimer;
+    Timer lowFreqStepTimer, stateTimer, navigationTimer, lastHuntTimer, interactionTimer, roamTimer, footstepTimer;
     RigidBody* body;
     PhysicsWorld *physicsWorld;
     LevelManager *levelManager;
     const GhostAppearance *appearanceInfo;
     Node *appearance;
     AnimationController *animationController;
+    SoundSource3D *feet;
     eastl::string state, nextState;
     eastl::optional<unsigned> nextStateIn;
     unsigned nextRoamIn = 0;
@@ -60,6 +62,7 @@ class Ghost final : public LogicComponent {
     void updateClosestPlayer();
     void updateCloseBodies();
     void followPath();
+    void playFootstep();
 
 public:
     using LogicComponent::LogicComponent;

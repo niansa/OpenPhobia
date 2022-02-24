@@ -4,6 +4,7 @@
 #include "EMFEmitter.hpp"
 #include "Lightswitch.hpp"
 #include "Door.hpp"
+#include "SFX.hpp"
 #include "GhostBehavior.hpp"
 #include "RoomBoundary.hpp"
 #include "HouseBoundary.hpp"
@@ -63,6 +64,8 @@ void Ghost::Start() {
         Material *mat = model->GetMaterial();
         mat->SetShaderParameter("MatEmissiveColor", Variant(appearanceInfo->color)); // DNV
     }
+    // Create feet
+    feet = GetNode()->CreateChild("Feet")->CreateComponent<SoundSource3D>();
     // Set initial home position
     homePosition = GetNode()->GetWorldPosition();
     getCurrentRoom();
@@ -312,7 +315,7 @@ void Ghost::followPath() {
         }
 
 #       ifndef NDEBUG
-        // Show debug waypoint thing (slow)
+        // Show debug waypoint marker (slow)
         for (auto node : GetScene()->GetChildren(false)) {
             if (node->GetName() == "DebugNavBox") {
                 node->Remove();
@@ -347,8 +350,20 @@ void Ghost::followPath() {
         // Rotate toward next waypoint to reach and move
         GetNode()->LookAt(nextWaypoint, Vector3::UP);
         body->SetLinearVelocity(GetNode()->GetWorldDirection() * speed);
+
+        // Play footstep
+        playFootstep();
     } else {
         body->SetLinearVelocity(Vector3::ZERO);
+    }
+}
+
+void Ghost::playFootstep() {
+    if (footstepTimer.GetMSec(false) > behavior->getCurrentSpeed()*500.0f) {
+        feet->SetFarDistance(behavior->footstepRange);
+        feet->SetGain(0.5f);
+        feet->Play(getMiscSFX(context_, rng, "ghost"));
+        footstepTimer.Reset();
     }
 }
 
