@@ -359,7 +359,7 @@ void Ghost::followPath() {
 }
 
 void Ghost::playFootstep() {
-    if (footstepTimer.GetMSec(false) > behavior->getCurrentSpeed()*500.0f) {
+    if (footstepTimer.GetMSec(false) > -(behavior->getCurrentSpeed() - 2.0) * 1000.0f) {
         feet->SetFarDistance(behavior->footstepRange);
         feet->SetGain(0.5f);
         feet->Play(getMiscSFX(context_, rng, "ghost"));
