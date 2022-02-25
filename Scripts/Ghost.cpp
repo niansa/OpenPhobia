@@ -360,9 +360,11 @@ void Ghost::followPath() {
 
 void Ghost::playFootstep() {
     if (footstepTimer.GetMSec(false) > -Min(behavior->getCurrentSpeed()*0.75f - 2.0f, -0.3f) * 1000.0f) {
-        feet->SetFarDistance(behavior->footstepRange);
-        feet->SetGain(0.5f);
-        feet->Play(getMiscSFX(context_, rng, "ghost"));
+        if (isVisible()/*or paramic/salt*/) {
+            feet->SetFarDistance(behavior->footstepRange);
+            feet->SetGain(0.5f);
+            feet->Play(getMiscSFX(context_, rng, "ghost"));
+        }
         footstepTimer.Reset();
     }
 }
