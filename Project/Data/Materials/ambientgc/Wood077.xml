@@ -4,6 +4,8 @@
 	<texture unit="diffuse" name="Materials/ambientgc/Textures/Wood077_1K_Color.png" />
 	<texture unit="normal" name="Materials/ambientgc/Textures/Wood077_1K_Normal.png" />
 	<texture unit="specular" name="Materials/ambientgc/Textures/Wood077_1K_Specular.png" />
+	<parameter name="Metallic" value="1.000000" />
+	<parameter name="Roughness" value="1.000000" />
 	<parameter name="MatEmissiveColor" value="0 0 0" />
 	<parameter name="MatSpecColor" value="0 0 0 1" />
 	<parameter name="VOffset" value="0 1 0 0" />
