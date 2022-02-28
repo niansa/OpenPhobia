@@ -16,14 +16,21 @@ void getFilesInDir(ResourceCache *resCache, ea::vector<ea::string> &files, const
     ea::vector<ea::string> fres;
     // Get all files in that dir
     resCache->Scan(fres, dir, "*", SCAN_FILES, true);
+    for (const auto& filename : fres) {
+        printf("Found U: %s\n", filename.c_str());
+    }
     // Sort files
     eastl::sort(fres.begin(), fres.end());
+    fres.erase(eastl::unique(fres.begin(), fres.end()), fres.end());
+    for (const auto& filename : fres) {
+        printf("Found S: %s\n", filename.c_str());
+    }
     // Append full resource path to files
-    for (const auto& file : fres) {
-        if (file.ends_with(".xml")) {
+    for (const auto& filename : fres) {
+        if (filename.ends_with(".xml")) {
             continue;
         }
-        files.push_back(dir+file);
+        files.push_back(dir+filename);
     }
 }
 
@@ -35,6 +42,23 @@ Sound *getGhostSFX(Context *ctx, RandomEngine& rng, const eastl::string& kind, G
     getFilesInDir(resCache, files, "SFX/ghost/neutral/"+kind+'/');
     // Return random file
     return resCache->GetResource<Sound>(files[rng.GetUInt(0, files.size())]);
+}
+
+Sound *getStepSFX(Context *ctx, RandomEngine &rng, const eastl::string& kind, bool right) {
+    auto resCache = ctx->GetSubsystem<ResourceCache>();
+    ea::vector<ea::string> files;
+    // Get all files from viable paths
+    getFilesInDir(resCache, files, "SFX/steps/"+kind+'/');
+    // Play specified step or random
+    if (rng.GetBool(0.90f)) {
+        if (right && files.size() != 1) {
+            return resCache->GetResource<Sound>(files[1]);
+        } else {
+            return resCache->GetResource<Sound>(files[0]);
+        }
+    } else {
+        return resCache->GetResource<Sound>(files[rng.GetUInt(0, files.size())]);
+    }
 }
 
 Sound *getMiscSFX(Context *ctx, RandomEngine& rng, const eastl::string& kind) {

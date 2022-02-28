@@ -37,7 +37,7 @@ class Ghost final : public LogicComponent {
     URHO3D_OBJECT(Ghost, LogicComponent);
 
     RandomEngine rng;
-    Timer lowFreqStepTimer, stateTimer, navigationTimer, lastHuntTimer, interactionTimer, roamTimer, footstepTimer;
+    Timer lowFreqStepTimer, stateTimer, lastHuntTimer, interactionTimer, roamTimer, footstepTimer;
     RigidBody* body;
     PhysicsWorld *physicsWorld;
     LevelManager *levelManager;
@@ -45,6 +45,7 @@ class Ghost final : public LogicComponent {
     Node *appearance;
     AnimationController *animationController;
     SoundSource3D *feet;
+    bool foot = 0;
     eastl::string state, nextState;
     eastl::optional<unsigned> nextStateIn;
     unsigned nextRoamIn = 0;

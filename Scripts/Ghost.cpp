@@ -335,14 +335,8 @@ void Ghost::followPath() {
         float distance = (body->GetPosition() - nextWaypoint).Length();
         //speed = Min(speed, distance);
 
-        // Remove waypoint if it was reached or timeout teleport
+        // Remove waypoint if it was reached
         if (distance < 0.1f) {
-            navigationTimer.Reset();
-            currentPath.pop_front();
-            return;
-        } else if (navigationTimer.GetMSec(false) > 25000.f) {
-            body->SetPosition(nextWaypoint);
-            navigationTimer.Reset();
             currentPath.pop_front();
             return;
         }
@@ -360,10 +354,11 @@ void Ghost::followPath() {
 
 void Ghost::playFootstep() {
     if (footstepTimer.GetMSec(false) > -Min(behavior->getCurrentSpeed()*0.75f - 2.0f, -0.3f) * 1000.0f) {
-        if (isVisible()/*or paramic/salt*/) {
+        if (isVisible()/*TODO: or paramic/salt*/) {
             feet->SetFarDistance(behavior->footstepRange);
             feet->SetGain(0.5f);
-            feet->Play(getMiscSFX(context_, rng, "ghost"));
+            feet->Play(getStepSFX(context_, rng, "ghost", foot));
+            foot = !foot;
         }
         footstepTimer.Reset();
     }

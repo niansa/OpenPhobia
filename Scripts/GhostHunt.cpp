@@ -41,7 +41,7 @@ void GhostHunt::FixedUpdate(float) {
     if (gracePeriodTimer.GetMSec(false) < GetGhost()->behavior->gracePeriod) {
         return;
     }
-    // Switch blink
+    // DNV: Switch blink
     if (blinkTimer.GetMSec(false) > nextBlinkIn) {
         GetGhost()->appearance->SetDeepEnabled(!GetGhost()->appearance->IsEnabled());
         nextBlinkIn = GetGhost()->behavior->getBlinkSpeed();
