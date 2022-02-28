@@ -16,15 +16,9 @@ void getFilesInDir(ResourceCache *resCache, ea::vector<ea::string> &files, const
     ea::vector<ea::string> fres;
     // Get all files in that dir
     resCache->Scan(fres, dir, "*", SCAN_FILES, true);
-    for (const auto& filename : fres) {
-        printf("Found U: %s\n", filename.c_str());
-    }
     // Sort files
     eastl::sort(fres.begin(), fres.end());
     fres.erase(eastl::unique(fres.begin(), fres.end()), fres.end());
-    for (const auto& filename : fres) {
-        printf("Found S: %s\n", filename.c_str());
-    }
     // Append full resource path to files
     for (const auto& filename : fres) {
         if (filename.ends_with(".xml")) {
