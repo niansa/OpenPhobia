@@ -72,7 +72,7 @@ void Wraith::FrequentUpdate(float) {
 
 
 void Poltergeist::onInteraction(InteractionType::Type type) {
-    // Do double-throw sometimes
+    // Do multi-throw sometimes
     if (type == InteractionType::throw_ && ghost->rng.GetBool(0.2f/*TBV*/)) {
         for (unsigned it = ghost->rng.GetUInt(1, ghost->getCloseBodies().size()/*TBV*/); it != 0; it--) {
             // TBV: Can each item only be thrown once?
