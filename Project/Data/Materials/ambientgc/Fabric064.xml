@@ -6,9 +6,9 @@
 	<texture unit="specular" name="Materials/ambientgc/Textures/Fabric064_1K_Specular.png" />
 	<parameter name="MatEmissiveColor" value="0 0 0" />
 	<parameter name="MatSpecColor" value="0 0 0 1" />
-	<parameter name="VOffset" value="0 1 0 0" />
 	<parameter name="MatDiffColor" value="1 1 1 1" />
-	<parameter name="UOffset" value="1 0 0 0" />
+    <parameter name="UOffset" value="4 0 0 0" />
+    <parameter name="VOffset" value="0 4 0 0" />
 	<parameter name="NormalScale" value="1.000000" />
 	<parameter name="MatEnvMapColor" value="1 1 1" />
 	<parameter name="DielectricReflectance" value="0.500000" />
