@@ -15,8 +15,8 @@
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="6.57933 1.90144 -4.34771" />
-		<attribute name="Camera Rotation" value="-0.496231 -0.122843 0.834334 -0.206279" />
+		<attribute name="Camera Position" value="12.9663 2.51512 -5.11385" />
+		<attribute name="Camera Rotation" value="0.773047 0.236401 0.562849 -0.172378" />
 	</component>
 	<component type="RenderPipeline" id="839">
 		<attribute name="Color Space" value="LDR Linear" />
@@ -718,7 +718,7 @@
 					<attribute name="Variables" />
 					<component type="StaticModel" id="1946">
 						<attribute name="Model" value="Model;Models/Box.mdl" />
-						<attribute name="Material" value="Material;Props/modern-furniture/Materials/FabricFlower.xml" />
+						<attribute name="Material" value="Material;Materials/ambientgc/Fabric064.xml" />
 						<attribute name="Cast Shadows" value="true" />
 					</component>
 				</node>
