@@ -11,7 +11,7 @@
 
 SFX and Ambience:
 "Atmosphere" by Lucas Calvo - mundosound.com
+"Phantom Scream" by VishwaJai - opengameart.org
 
 Textures:
-Crosshair:
-Calinou on opengameart is licensed under CC-BY-SA 3.0
+Crosshair - Calinou on opengameart is licensed under CC-BY-SA 3.0
