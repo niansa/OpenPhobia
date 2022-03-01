@@ -5,18 +5,18 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="2120" />
-	<attribute name="Next Replicated Component ID" value="2308" />
-	<attribute name="Next Local Node ID" value="16777400" />
-	<attribute name="Next Local Component ID" value="16777496" />
+	<attribute name="Next Replicated Node ID" value="6" />
+	<attribute name="Next Replicated Component ID" value="7" />
+	<attribute name="Next Local Node ID" value="16777218" />
+	<attribute name="Next Local Component ID" value="16777220" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D;Lightmaps/Textures/Lightmap-0.png" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="12.9663 2.51512 -5.11385" />
-		<attribute name="Camera Rotation" value="0.773047 0.236401 0.562849 -0.172378" />
+		<attribute name="Camera Position" value="6.63662 3.49726 -4.45864" />
+		<attribute name="Camera Rotation" value="0.862007 0.189223 -0.459318 0.100826" />
 	</component>
 	<component type="RenderPipeline" id="839">
 		<attribute name="Color Space" value="LDR Linear" />
@@ -272,6 +272,35 @@
 						<attribute name="Collision Margin" value="0.010000" />
 					</component>
 				</node>
+				<node id="1887">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="" />
+					<attribute name="Tags">
+						<string value="Grabbable" />
+						<string value="GhostInteractable" />
+					</attribute>
+					<attribute name="Position" value="6.89849 0.925255 -2.33175" />
+					<attribute name="Rotation" value="-0.694926 -0.694926 0.130684 -0.130684" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<component type="StaticModel" id="2020">
+						<attribute name="Model" value="Model;Props/Kitchen/Models/SM_Knife_08_Utensils_0.mdl" />
+						<attribute name="Material" value="Material;Props/Kitchen/Materials/Utensils.xml" />
+					</component>
+					<component type="RigidBody" id="2021">
+						<attribute name="Physics Rotation" value="0.694926 0.694926 -0.130684 0.130684" />
+						<attribute name="Physics Position" value="6.89849 0.925255 -2.33175" />
+						<attribute name="Mass" value="1.000000" />
+						<attribute name="Linear Damping" value="0.800000" />
+						<attribute name="Angular Damping" value="0.400000" />
+						<attribute name="Collision Layer" value="2" />
+						<attribute name="Is Kinematic" value="true" />
+					</component>
+					<component type="CollisionShape" id="2316">
+						<attribute name="Shape Type" value="ConvexHull" />
+						<attribute name="Model" value="Model;Props/Kitchen/Models/SM_Knife_08_Utensils_0.mdl" />
+					</component>
+				</node>
 			</node>
 			<node id="1859">
 				<attribute name="Is Enabled" value="true" />
@@ -287,31 +316,6 @@
 					<attribute name="Is Enabled" value="false" />
 					<attribute name="Model" value="Model;Models/Box.mdl" />
 					<attribute name="Material" value="Material;" />
-				</component>
-			</node>
-			<node id="1887">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="" />
-				<attribute name="Tags">
-					<string value="Grabbable" />
-					<string value="GhostInteractable" />
-				</attribute>
-				<attribute name="Position" value="6.89849 0.925255 -2.33175" />
-				<attribute name="Rotation" value="-0.694926 -0.694926 0.130684 -0.130684" />
-				<attribute name="Scale" value="1 1 1" />
-				<attribute name="Variables" />
-				<component type="StaticModel" id="2020">
-					<attribute name="Model" value="Model;Props/Kitchen/Models/SM_Knife_08_Utensils_0.mdl" />
-					<attribute name="Material" value="Material;Props/Kitchen/Materials/Utensils.xml" />
-				</component>
-				<component type="RigidBody" id="2021">
-					<attribute name="Physics Rotation" value="0.694926 0.694926 -0.130684 0.130684" />
-					<attribute name="Physics Position" value="6.89849 0.925255 -2.33175" />
-					<attribute name="Mass" value="1.000000" />
-					<attribute name="Linear Damping" value="0.800000" />
-					<attribute name="Angular Damping" value="0.400000" />
-					<attribute name="Collision Layer" value="2" />
-					<attribute name="Is Kinematic" value="true" />
 				</component>
 			</node>
 		</node>
