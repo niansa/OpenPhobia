@@ -16,7 +16,7 @@ void RoomBoundary::Start() {
     ea::vector<Node*> lightbulbNodes;
     GetScene()->GetChildrenWithComponent<Lightbulb>(lightbulbNodes, true);
     for (const auto& node : lightbulbNodes) {
-        if (isNodeInside(node)) {
+        if (isPosInside(node->GetWorldPosition())) {
             lightbulbs.push_back(node->GetComponent<Lightbulb>());
         }
     }
@@ -24,6 +24,15 @@ void RoomBoundary::Start() {
 
 bool RoomBoundary::isPosInside(Vector3 pos) {
     return bBox.IsInside(pos) == Intersection::INSIDE;
+}
+
+bool RoomBoundary::isNodeInside(Node *otherNode) {
+    if (otherNode->HasComponent<StaticModel>()) {
+        auto isInside = bBox.IsInside(otherNode->GetComponent<StaticModel>()->GetBoundingBox());
+        return isInside == Intersection::INSIDE || Intersection::INSIDE;
+    } else {
+        return isPosInside(otherNode->GetWorldPosition());
+    }
 }
 
 bool RoomBoundary::areAllLightsOff() {

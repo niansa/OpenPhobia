@@ -41,7 +41,7 @@ void GhostReveal::Initialize() {
             GetGhost()->setNextState("Local", GetGhost()->rng.GetUInt(2500, Max(15000.0f*GetGhost()->getAggression(), 1500)));
             // Close room doors
             if (GetGhost()->rng.GetBool(0.5f/*TBV*/)) {
-                // Get all rooms doors
+                // Get all rooms doors  TODO: Better implementation
                 for (auto body : GetGhost()->getCloseBodies()) {
                     if (body.body_) {
                         auto node = body.body_->GetNode();

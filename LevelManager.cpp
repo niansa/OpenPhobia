@@ -12,6 +12,7 @@
 #include <Urho3D/Math/RandomEngine.h>
 #include <Urho3D/Resource/ResourceCache.h>
 #include <Urho3D/Graphics/Texture2D.h>
+#include <Urho3D/Core/Assert.h>
 
 
 
@@ -44,18 +45,15 @@ void LevelManager::loadEnv() {
     for (auto node : nodes) {
         players.push_back(node->GetComponent<Player>());
     }
-    nodes.clear();
 
     // Boundaries
     scene->GetChildrenWithComponent<RoomBoundary>(nodes, true);
-    scene->GetChildrenWithComponent<HouseBoundary>(nodes, true);
     for (auto node : nodes) {
-        if (node->HasComponent<RoomBoundary>()) {
-            rooms.push_back(node->GetComponent<RoomBoundary>());
-        } else if (node->HasComponent<HouseBoundary>()) {
-            house = node->GetComponent<HouseBoundary>();
-        }
+        rooms.push_back(node->GetComponent<RoomBoundary>());
     }
+    scene->GetChildrenWithComponent<HouseBoundary>(nodes, true);
+    URHO3D_ASSERT(!nodes.empty(), "No house boundary could be found");
+    house = nodes[0]->GetComponent<HouseBoundary>();
     nodes.clear();
 
     // Find ghost and configure ghost if found
@@ -102,6 +100,16 @@ bool LevelManager::isAnyPlayerInHouse() {
 RoomBoundary *LevelManager::getPosRoom(Vector3 pos) {
     for (auto room : rooms) {
         if (room->isPosInside(pos)) {
+            return room;
+        }
+    }
+    return nullptr;
+}
+
+RoomBoundary *LevelManager::getNodeRoom(Node *node) {
+    auto lsize = rooms.size();
+    for (auto room : rooms) {
+        if (room->isNodeInside(node)) {
             return room;
         }
     }

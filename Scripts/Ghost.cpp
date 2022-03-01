@@ -29,6 +29,7 @@
 #include <Urho3D/Audio/SoundSource3D.h>
 #include <Urho3D/Math/Color.h>
 #include <Urho3D/Resource/ResourceCache.h>
+#include <Urho3D/Core/Assert.h>
 #ifndef NDEBUG
 #   include <Urho3D/Input/Input.h>
 #endif
@@ -68,7 +69,6 @@ void Ghost::Start() {
     feet = GetNode()->CreateChild("Feet")->CreateComponent<SoundSource3D>();
     // Set initial home position
     homePosition = GetNode()->GetWorldPosition();
-    getCurrentRoom();
     // Set initial ghost state
     setState("Local");
     // Start its animation
@@ -126,6 +126,10 @@ void Ghost::setState(const eastl::string& nState) {
 
     // Check that behavior has loaded
     if (behavior) {
+        // Make sure there is a last known room
+        if (!mostRecentRoom) {
+            getCurrentRoom();
+        }
         // Remove old state script
         if (stateScript) {
             stateScript->Deinitialize();
@@ -410,6 +414,7 @@ RoomBoundary *Ghost::getCurrentRoom() {
     if (fres) {
         mostRecentRoom = fres;
     } else {
+        URHO3D_ASSERT(mostRecentRoom != nullptr, "Initial room must not be null");
         fres = mostRecentRoom;
     }
     return fres;

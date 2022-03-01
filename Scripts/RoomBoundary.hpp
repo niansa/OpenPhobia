@@ -45,11 +45,9 @@ public:
     const eastl::vector<Lightbulb*> &getLightbulbs() {
         return lightbulbs;
     }
-    bool isNodeInside(Node *otherNode) {
-        return isPosInside(otherNode->GetWorldPosition());
-    }
 
     bool isPosInside(Vector3 pos);
+    bool isNodeInside(Node *otherNode);
     bool areAllLightsOff();
 };
 }

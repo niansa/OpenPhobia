@@ -5,6 +5,10 @@ class LevelManager;
 }
 #ifndef LEVELMANAGER_HPP
 #define LEVELMANAGER_HPP
+#ifndef NDEBUG
+#define URHO3D_DEBUG_ASSERT
+#endif
+
 #include "easyscript/Namespace.hpp"
 #include "easyscript/SceneManager.hpp"
 #include "GhostIdentity.hpp"
@@ -62,6 +66,7 @@ public:
     unsigned getTeamSanity() const;
     bool isAnyPlayerInHouse();
     RoomBoundary *getPosRoom(Vector3 pos);
+    RoomBoundary *getNodeRoom(Node *node);
 
     Ghost *getGhost() {
         return ghost;
@@ -83,9 +88,6 @@ public:
     }
     HouseBoundary *getHouse() const {
         return house;
-    }
-    RoomBoundary *getNodeRoom(Node *node) {
-        return getPosRoom(node->GetWorldPosition());
     }
 };
 }
