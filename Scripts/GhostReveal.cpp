@@ -50,7 +50,7 @@ void GhostReveal::Initialize() {
                             if (parentNode && GetGhost()->getCurrentRoom()->isNodeInside(parentNode)) {
                                 if (parentNode->HasComponent<Door>()) {
                                     auto door = parentNode->GetComponent<Door>();
-                                    door->impulsePush(0.15f);
+                                    door->impulsePush(0.1f);
                                 }
                             }
                         }
