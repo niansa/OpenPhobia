@@ -40,26 +40,30 @@ void LevelManager::Start() {
 void LevelManager::loadEnv() {
     eastl::vector<Node*> nodes;
     // Find players
-    scene->GetNodesWithTag(nodes, "Player");
+    scene->GetChildrenWithComponent<Player>(nodes, true);
     for (auto node : nodes) {
         players.push_back(node->GetComponent<Player>());
     }
     nodes.clear();
 
+    // Boundaries
+    scene->GetChildrenWithComponent<RoomBoundary>(nodes, true);
+    scene->GetChildrenWithComponent<HouseBoundary>(nodes, true);
+    for (auto node : nodes) {
+        if (node->HasComponent<RoomBoundary>()) {
+            rooms.push_back(node->GetComponent<RoomBoundary>());
+        } else if (node->HasComponent<HouseBoundary>()) {
+            house = node->GetComponent<HouseBoundary>();
+        }
+    }
+    nodes.clear();
+
     // Find ghost and configure ghost if found
-    scene->GetNodesWithTag(nodes, "Ghost");
+    scene->GetChildrenWithComponent<Ghost>(nodes, true);
     if (!nodes.empty()) {
         // Get ghost
         ghost = nodes[0]->GetComponent<Ghost>();
         nodes.clear();
-        scene->GetNodesWithTag(nodes, "Scripted");
-        for (auto node : nodes) {
-            if (node->HasComponent<RoomBoundary>()) {
-                rooms.push_back(node->GetComponent<RoomBoundary>());
-            } else if (node->HasComponent<HouseBoundary>()) {
-                house = node->GetComponent<HouseBoundary>();
-            }
-        }
 
         // Load ghost identity
         ghostIdentitySeed = rng.GetUInt();

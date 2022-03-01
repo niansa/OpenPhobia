@@ -236,7 +236,7 @@ float Ghost::getAggression() const {
     return Max(0.01f, (-(float(levelManager->getTeamSanity())-100))/100) * levelManager->getGhostIdentity().agression * behavior->agression;
 }
 
-void Ghost::roam(bool far, bool respectTimer) {
+void Ghost::roam(bool respectTimer) {
     if (currentPath.empty()) {
         if (respectTimer) {
             if (!nextRoamIn) {
@@ -255,7 +255,7 @@ void Ghost::roam(bool far, bool respectTimer) {
             constexpr float maxDist = 5.0f,
                             farMaxDist = 50.0f,
                             minDist = 5.0f;
-            nPos = rng.GetVector3(Vector3(minDist, 0.0f, minDist), Vector3(maxDist, 0.0f, far?farMaxDist:maxDist));
+            nPos = rng.GetVector3(Vector3(minDist, 0.0f, minDist), Vector3(maxDist, 0.0f, nextRoamFar?farMaxDist:maxDist));
             if (rng.GetBool(0.5f)) {
                 nPos.x_ = -nPos.x_;
             }
@@ -264,10 +264,13 @@ void Ghost::roam(bool far, bool respectTimer) {
             }
             // Make sure to not get stuck
             if (tries++ == 10000) {
+                nextRoamIn = 0;
                 return;
             }
             // Go there
-        } while (!walkTo(GetNode()->GetWorldPosition() + nPos) || (currentPath.size() > 8 && !far));
+        } while (!walkTo(GetNode()->GetWorldPosition() + nPos) || (currentPath.size() > 8 && !nextRoamFar));
+        // Reset stuff
+        nextRoamFar = false;
         nextRoamIn = 0;
     }
 }

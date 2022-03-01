@@ -149,8 +149,10 @@ struct Mare : public Default {
         name = "Mare";
         using namespace Evidence;
         evidence = SpiritBox | GhostOrbs | GhostWriting;
-        sanityThreshold = 60; // <- TODO: Use sanity modifier instead
     }
+
+    void onStateChange(const eastl::string& nState) override;
+    unsigned getHuntMultiplier() override;
 };
 struct Revenant : public Default {
     Revenant() {

@@ -49,6 +49,7 @@ class Ghost final : public LogicComponent {
     eastl::string state, nextState;
     eastl::optional<unsigned> nextStateIn;
     unsigned nextRoamIn = 0;
+    bool nextRoamFar = false;
     GhostStateScript *stateScript = nullptr;
     eastl::unique_ptr<GhostBehavior> behavior = nullptr;
     DynamicNavigationMesh *navMesh;
@@ -78,11 +79,9 @@ public:
     void setGhostBehavior(eastl::unique_ptr<GhostBehavior> nval) {
         behavior = std::move(nval);
     }
-
     bool isVisible() {
         return state == "Reveal" || state == "Hunt"; //TODO: Don't just depent on these
     }
-
     bool hasNextState() {
         return nextStateIn.has_value();
     }
@@ -119,6 +118,9 @@ public:
     PlayerWDistance getPlayerWDistance(Player *p) {
         return {p, getDistanceToPlayer(p)};
     }
+    void markNextRoamAsFar() {
+        nextRoamFar = true;
+    }
 
     void setState(const eastl::string& nState);
     InteractionType::Type tryInteract(InteractionType::Type type = InteractionType::any);
@@ -126,7 +128,7 @@ public:
     void useNode(Node *node);
     void pushDoor(Door *door);
     float getAggression() const;
-    void roam(bool far = false, bool respectTimer = true);
+    void roam(bool respectTimer = true);
     bool walkTo(const Vector3& pos);
     bool canSeePlayer(PlayerWDistance player, bool includeElectronics = false);
     float getDistanceToPlayer(Player *player);

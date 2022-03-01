@@ -99,6 +99,19 @@ float Jinn::getCurrentSpeed() {
 }
 
 
+void Mare::onStateChange(const eastl::string &nState) {
+    Default::onStateChange(nState);
+    // If there are no lights turned on in room, far roam
+    if (!ghost->getCurrentRoom()->areAllLightsOff()) {
+        ghost->markNextRoamAsFar();
+    }
+}
+
+unsigned Mare::getHuntMultiplier() {
+    return ghost->getCurrentRoom()->areAllLightsOff()?10:-10;
+}
+
+
 float Revenant::getCurrentSpeed() {
     if (ghost->getState() == "Hunt") {
         // Add speed if the ghost is able to see the player
