@@ -26,6 +26,7 @@ namespace Game {
 class Player;
 class EMFEmitter;
 class Door;
+class GhostIdentity;
 
 struct GhostAppearance {
     Color color;
@@ -120,6 +121,9 @@ public:
     }
     void markNextRoamAsFar() {
         nextRoamFar = true;
+    }
+    const GhostIdentity& getIdentity() {
+        return levelManager->getGhostIdentity();
     }
 
     void setState(const eastl::string& nState);

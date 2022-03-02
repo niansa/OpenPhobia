@@ -50,7 +50,7 @@ struct GhostIdentity {
     enum Gender : bool {male = 0, female = 1} gender;
     GhostType type;
     float agression;
-    Sound *huntSound, *revealSound, *hissSound;
+    Sound *huntSound, *revealSound;
 
     GhostIdentity() {}
     GhostIdentity(Context *ctx, unsigned seed);

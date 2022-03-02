@@ -36,6 +36,5 @@ GhostIdentity::GhostIdentity(Context *ctx, unsigned seed) {
     // Get ghost sounds
     huntSound = getGhostSFX(ctx, rng, "hunt", gender);
     revealSound = getGhostSFX(ctx, rng, "hunt", gender);
-    hissSound = getGhostSFX(ctx, rng, "hiss", gender);
 }
 }

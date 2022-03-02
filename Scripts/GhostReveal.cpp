@@ -4,6 +4,7 @@
 #include "Door.hpp"
 #include "EMFEmitter.hpp"
 #include "RoomBoundary.hpp"
+#include "../SFX.hpp"
 
 #include <Urho3D/Resource/ResourceCache.h>
 #include <Urho3D/Audio/Sound.h>
@@ -77,7 +78,9 @@ void GhostReveal::Deinitialize() {
             }
         } else {
             // Play hiss
-            GetNode()->GetOrCreateComponent<SoundSource3D>()->Play(GetGhost()->levelManager->getGhostIdentity().hissSound);
+            auto soundSource = GetNode()->GetOrCreateComponent<SoundSource3D>();
+            soundSource->SetGain(0.75f);
+            soundSource->Play(getGhostSFX(context_, GetGhost()->rng, "hiss", GetGhost()->getIdentity().gender));
         }
     }
 }
