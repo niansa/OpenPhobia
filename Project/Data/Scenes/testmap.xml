@@ -5,18 +5,18 @@
 	<attribute name="Smoothing Constant" value="50.000000" />
 	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
-	<attribute name="Next Replicated Node ID" value="10" />
-	<attribute name="Next Replicated Component ID" value="11" />
-	<attribute name="Next Local Node ID" value="16777220" />
-	<attribute name="Next Local Component ID" value="16777223" />
+	<attribute name="Next Replicated Node ID" value="14" />
+	<attribute name="Next Replicated Component ID" value="15" />
+	<attribute name="Next Local Node ID" value="16777222" />
+	<attribute name="Next Local Component ID" value="16777226" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<attribute name="Lightmaps" value="Texture2D;Lightmaps/Textures/Lightmap-0.png" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="4.69286 0.994022 -3.38828" />
-		<attribute name="Camera Rotation" value="0.993369 0.113662 -0.0171957 0.00196204" />
+		<attribute name="Camera Position" value="7.89132 3.14838 -3.6611" />
+		<attribute name="Camera Rotation" value="0.714286 0.195258 -0.648312 0.177094" />
 	</component>
 	<component type="RenderPipeline" id="839">
 		<attribute name="Color Space" value="LDR Linear" />
@@ -124,7 +124,6 @@
 					<component type="StaticModel" id="1910">
 						<attribute name="Model" value="Model;Props/modern-furniture/Models/Light3.mdl" />
 						<attribute name="Material" value="Material;Props/modern-furniture/Materials/Glass.xml;Props/modern-furniture/Materials/LightsWhite.xml" />
-						<attribute name="Global Illumination" value="Blend Light Probes" />
 						<attribute name="Lightmap Scale &amp; Offset" value="0.03125 0.03125 0.427734 0.00195312" />
 					</component>
 				</node>
@@ -979,7 +978,6 @@
 					<component type="StaticModel" id="1968">
 						<attribute name="Model" value="Model;Props/modern-furniture/Models/Shower.mdl" />
 						<attribute name="Material" value="Material;Props/modern-furniture/Materials/CeramicWhite.xml;Props/modern-furniture/Materials/SteelSilver.xml;Props/modern-furniture/Materials/PlasticCurtain.xml" />
-						<attribute name="Cast Shadows" value="true" />
 					</component>
 					<component type="CollisionShape" id="1969">
 						<attribute name="Shape Type" value="ConvexHull" />
