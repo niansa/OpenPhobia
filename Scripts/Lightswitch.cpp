@@ -33,7 +33,7 @@ void Lightswitch::Start() {
 }
 
 void Lightswitch::TurnOn() {
-    if (levelManager->getGhost()->getState() != "Hunt") {
+    if (!levelManager->isGhostLoaded() || levelManager->getGhost()->getState() != "Hunt") {
         forceTurnOn();
     }
 }

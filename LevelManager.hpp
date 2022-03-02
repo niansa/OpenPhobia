@@ -69,6 +69,7 @@ public:
     RoomBoundary *getNodeRoom(Node *node);
 
     Ghost *getGhost() {
+        URHO3D_ASSERT(!isGhostLoaded(), "Ghost requested before it loaded");
         return ghost;
     }
     bool isGhostLoaded() {
