@@ -51,6 +51,7 @@ public:
         renderSettings.sceneProcessor_.lightingMode_ = DirectLightingMode::Forward;
         renderSettings.sceneProcessor_.maxPixelLights_ = 10;
         renderSettings.renderBufferManager_.colorSpace_ = RenderPipelineColorSpace::LinearLDR;
+        renderSettings.shadowMapAllocator_.enableVarianceShadowMaps_ = true;
         renderSettings.chromaticAberration_ = 0.25f;
         renderPipeline->SetSettings(renderSettings);
         // Load environment
