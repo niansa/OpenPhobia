@@ -12,6 +12,7 @@ class GhostReveal;
 
 namespace Game {
 class Ghost;
+class Player;
 
 enum class RevealMode {
     standing,
@@ -24,6 +25,7 @@ class GhostReveal final : public GhostStateScript {
 
     RevealMode revealMode;
     bool aborted = false;
+    Player *target;
 
 public:
     using GhostStateScript::GhostStateScript;

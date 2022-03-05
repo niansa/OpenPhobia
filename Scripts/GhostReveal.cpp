@@ -19,14 +19,14 @@ void GhostReveal::Initialize() {
     auto closestPlayer = GetGhost()->getClosestPlayer();
     // Check that the ghost can see the player (and the player the ghost :P)
     if (closestPlayer.hasValue() && GetGhost()->canSeePlayer(closestPlayer)) {
-        // Get random player
+        // Get random player  DNV
         auto& players = GetGhost()->levelManager->getPlayers();
-        auto player = players[GetGhost()->rng.GetUInt(0, players.size())];
+        target = players[GetGhost()->rng.GetUInt(0, players.size())];
         // Check that player is inside the house
-        if (player->isInsideHouse()) {
+        if (target->isInsideHouse()) {
             // TODO: Teleport ghost to some location around the player
             // Get reveal mode from behavior
-            revealMode = GetGhost()->behavior->getRevealMode(player);
+            revealMode = GetGhost()->behavior->getRevealMode(target);
             // Play reveal sound (sometimes)
             if (GetGhost()->rng.GetBool(0.5f)) {
                 auto sound = GetNode()->GetOrCreateComponent<SoundSource3D>();
@@ -91,11 +91,9 @@ void GhostReveal::FixedUpdate(float) {
         GetGhost()->setState("Local");
         return;
     }
-    for (auto player : GetGhost()->levelManager->getPlayers()) {
-        if (GetGhost()->getDistanceToPlayer(player) < 1.0f) {
-            GetGhost()->setState("Local");
-            break;
-        }
+    if (GetGhost()->getDistanceToPlayer(target) < 1.0f) {
+        GetGhost()->setState("Local");
+        return;
     }
 }
 }
