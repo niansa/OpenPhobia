@@ -147,7 +147,8 @@ void Player::Update(float timeStep) {
             while (node) {
                 if (node->HasTag("Useable") && !node->HasTag("Grabbable")) {
                     // Use object
-                    auto script = static_cast<Useable *>(node->GetComponent(node->GetName()));
+                    printf("Interacting with %s\n", node->GetVar("Object").GetString().c_str());
+                    auto script = static_cast<Useable *>(node->GetComponent(node->GetVar("Object").GetString()));
                     script->Use();
                     break;
                 }
@@ -170,7 +171,8 @@ void Player::Update(float timeStep) {
             GetScene()->GetComponent<Octree>()->RaycastSingle(query);
             // Get first result
             if (!results.empty()) {
-                auto node = results[0].node_->GetParent();
+                auto node = results[0].node_;
+                printf("Object clicked: %s\n", node->GetName().c_str());
                 // Get door
                 if (node->HasComponent<Door>()) {
                     auto door = node->GetComponent<Door>();
@@ -181,7 +183,7 @@ void Player::Update(float timeStep) {
         }
         // Push the last door found
         if (lastDoor) {
-            lastDoor->push(1.5f, lastDoorDir);
+            lastDoor->push(0.75f, lastDoorDir);
         }
     } else {
         lastDoor = nullptr;
