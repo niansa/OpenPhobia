@@ -146,37 +146,34 @@ void Ghost::setState(const eastl::string& nState) {
 }
 
 InteractionType::Type Ghost::tryInteract(InteractionType::Type type) {
-    // Shuffle close bodies  Note: EA STL shuffle seems to be broken so STL one is in use instead
-    std::shuffle(closeBodies.begin(), closeBodies.end(), std::mt19937(rng.GetUInt()));
+    // Shuffle close nodes  Note: EA STL shuffle seems to be broken so STL one is in use instead
+    std::shuffle(closeNodes.begin(), closeNodes.end(), std::mt19937(rng.GetUInt()));
     // Try to throw/touch an object in range
-    for (auto result : closeBodies) {
-        if (result.distance_ > 2.5f) {
+    for (auto result : closeNodes) {
+        if (result.distance > 2.5f) {
             continue;
         }
-        auto body = result.body_;
-        if (body) {
-            for (auto node = body->GetNode(); node; node = node->GetParent()) {
-                if (node->HasTag("GhostInteractable") && node->GetParent()->GetName() != "Hand") {
-                    if (type & InteractionType::touch) {
-                        if (rng.GetBool(0.5f) && node->HasComponent<Door>()) {
-                            behavior->onInteraction(InteractionType::touch);
-                            pushDoor(node->GetComponent<Door>());
-                            interactionTimer.Reset();
-                            return InteractionType::touch;
-                        }
-                        if (rng.GetBool(0.5f) && node->HasTag("Useable")) {
-                            behavior->onInteraction(InteractionType::touch);
-                            useNode(node);
-                            interactionTimer.Reset();
-                            return InteractionType::touch;
-                        }
-                    }
-                    if (type & InteractionType::throw_ && node->HasTag("Grabbable")) {
-                        behavior->onInteraction(InteractionType::throw_);
-                        throwBody(body);
+        for (auto node = result.node; node; node = node->GetParent()) {
+            if (node->HasTag("GhostInteractable") && node->GetParent()->GetName() != "Hand") {
+                if (type & InteractionType::touch) {
+                    if (rng.GetBool(0.5f) && node->HasComponent<Door>()) {
+                        behavior->onInteraction(InteractionType::touch);
+                        pushDoor(node->GetComponent<Door>());
                         interactionTimer.Reset();
-                        return InteractionType::throw_;
+                        return InteractionType::touch;
                     }
+                    if (rng.GetBool(0.5f) && node->HasTag("Useable")) {
+                        behavior->onInteraction(InteractionType::touch);
+                        useNode(node);
+                        interactionTimer.Reset();
+                        return InteractionType::touch;
+                    }
+                }
+                if (type & InteractionType::throw_ && node->HasTag("Grabbable")) {
+                    behavior->onInteraction(InteractionType::throw_);
+                    throwBody(node->GetComponent<RigidBody>());
+                    interactionTimer.Reset();
+                    return InteractionType::throw_;
                 }
             }
         }
@@ -298,11 +295,7 @@ void Ghost::updateClosestPlayer() {
 
 void Ghost::updateCloseBodies() {
     constexpr float range = 25.0f;
-    SphereCast(GetScene(), GetNode()->GetWorldPosition(), range);
-    // Hotfix: Put in distance values manually
-    for (auto& result : closeBodies) {
-        result.distance_ = (GetNode()->GetWorldPosition() - result.position_).Length();
-    }
+    closeNodes = SphereCast(GetScene(), GetNode()->GetWorldPosition(), range);
 }
 
 bool Ghost::walkTo(const Vector3& pos) {
