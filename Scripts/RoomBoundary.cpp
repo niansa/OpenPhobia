@@ -4,12 +4,17 @@
 #include "Lightbulb.hpp"
 
 #include <Urho3D/Graphics/StaticModel.h>
+#include <Urho3D/Graphics/Zone.h>
 
 
 
 namespace Game {
 void RoomBoundary::Start() {
-    bBox = GetNode()->GetComponent<StaticModel>()->GetWorldBoundingBox();
+    if (GetNode()->HasComponent<StaticModel>()) {
+        bBox = GetNode()->GetComponent<StaticModel>()->GetWorldBoundingBox();
+    } else if (GetNode()->HasComponent<Zone>()) {
+        bBox = GetNode()->GetComponent<Zone>()->GetWorldBoundingBox();
+    }
     levelManager = GetGlobalVar("LevelManager").GetCustom<LevelManager*>();
 
     // Get lightbulbs in room

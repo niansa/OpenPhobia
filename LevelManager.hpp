@@ -30,7 +30,7 @@ struct GhostIdentity;
 
 class LevelManager : public SceneManager {
     RandomEngine rng;
-    eastl::string level = "testmap";
+    eastl::string level = "OldBrickHouse";
     Ghost *ghost = nullptr;
     eastl::vector<Player*> players;
     eastl::vector<RoomBoundary*> rooms;

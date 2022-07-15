@@ -38,7 +38,7 @@ add_subdirectory(easyscript)
 # Game executable
 add_executable(Game
     main.cpp LevelManager.cpp LevelManager.hpp Useable.hpp Equipment.hpp EMF.hpp GhostBehavior.cpp GhostBehavior.hpp GhostIdentity.cpp GhostIdentity.hpp SFX.cpp SFX.hpp GhostState.hpp Evidence.hpp
-    SphereCastMultiple.cpp SphereCastMultiple.hpp
+    SphereCast.cpp SphereCast.hpp
 )
 target_link_libraries(Game PUBLIC Urho3D rbfxeasyscript)
 

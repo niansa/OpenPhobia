@@ -9,7 +9,7 @@
 #include "RoomBoundary.hpp"
 #include "HouseBoundary.hpp"
 #include "GhostReveal.hpp"
-#include "../SphereCastMultiple.hpp"
+#include "../SphereCast.hpp"
 #include "../LevelManager.hpp"
 #include "../GhostState.hpp"
 
@@ -298,7 +298,7 @@ void Ghost::updateClosestPlayer() {
 
 void Ghost::updateCloseBodies() {
     constexpr float range = 25.0f;
-    SphereCastMultipleDS(physicsWorld, closeBodies, Ray(GetNode()->GetWorldPosition(), GetNode()->GetWorldDirection()), range, range);
+    SphereCast(GetScene(), GetNode()->GetWorldPosition(), range);
     // Hotfix: Put in distance values manually
     for (auto& result : closeBodies) {
         result.distance_ = (GetNode()->GetWorldPosition() - result.position_).Length();

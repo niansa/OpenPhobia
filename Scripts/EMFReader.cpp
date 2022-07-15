@@ -1,6 +1,6 @@
 #include "EMFReader.hpp"
 #include "EMFEmitter.hpp"
-#include "../SphereCastMultiple.hpp"
+#include "../SphereCast.hpp"
 #include "../LevelManager.hpp"
 #include "../SFX.hpp"
 
@@ -26,18 +26,13 @@ void EMFReader::FixedUpdate(float) {
             emfLevel = getGhost()->rng.GetUInt(1, static_cast<unsigned>(EMFLevel::reveal)+1);
         } else {
             // Get objects nearby
-            eastl::vector<PhysicsRaycastResult> result;
             constexpr float range = 1.f;
-            SphereCastMultiple(GetNode()->GetComponent<RigidBody>()->GetPhysicsWorld(), result, Ray(GetNode()->GetWorldPosition(), GetNode()->GetWorldDirection()), range, range);
-            SphereCastMultiple(GetNode()->GetComponent<RigidBody>()->GetPhysicsWorld(), result, Ray(GetNode()->GetWorldPosition(), - GetNode()->GetWorldDirection()), range/1.5, range/1.5);
+            const auto result = SphereCast(GetScene(), GetNode()->GetWorldPosition(), range);
             // Find emf emitters
-            for (const auto& body : result) {
-                if (body.body_) {
-                    auto node = body.body_->GetNode();
-                    if (node->HasComponent<EMFEmitter>()) {
-                        auto emitter = node->GetComponent<EMFEmitter>();
-                        emfLevel = Max(emfLevel, emitter->getLevel());
-                    }
+            for (const auto& node : result) {
+                if (node->HasComponent<EMFEmitter>()) {
+                    auto emitter = node->GetComponent<EMFEmitter>();
+                    emfLevel = Max(emfLevel, emitter->getLevel());
                 }
             }
         }

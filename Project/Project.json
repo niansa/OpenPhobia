@@ -10,6 +10,7 @@
 	"plugins": [],
 	"resourcePaths": [
 		"Data/",
+		"NonFree/",
 		"CoreData/"
 	],
 	"version": 1
