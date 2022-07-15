@@ -3,4 +3,4 @@
 	url = https://gitlab.com/niansa/easyscript
 [submodule "rbfx"]
 	path = rbfx
-	url = https://github.com/niansa/rbfx
+	url = https://github.com/rbfx/rbfx.git

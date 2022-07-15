@@ -101,7 +101,7 @@ void Player::Update(float timeStep) {
         // Grab item
         auto *ui = GetSubsystem<UI>();
         auto *graphics = GetSubsystem<Graphics>();
-        IntVector2 pos = ui->GetCursorPosition();
+        IntVector2 pos = ui->GetUICursorPosition();
         // Raycast
         auto ray = head->GetComponent<Camera>()->GetScreenRay(float(pos.x_) / graphics->GetWidth(), float(pos.y_) / graphics->GetHeight());
         ea::vector<RayQueryResult> results;
@@ -135,7 +135,7 @@ void Player::Update(float timeStep) {
     if (input->GetMouseButtonPress(MouseButtonFlags::Enum::MOUSEB_LEFT)) {
         auto *ui = GetSubsystem<UI>();
         auto *graphics = GetSubsystem<Graphics>();
-        IntVector2 pos = ui->GetCursorPosition();
+        IntVector2 pos = ui->GetUICursorPosition();
         // Raycast
         auto ray = head->GetComponent<Camera>()->GetScreenRay(float(pos.x_) / graphics->GetWidth(), float(pos.y_) / graphics->GetHeight());
         ea::vector<RayQueryResult> results;
@@ -162,7 +162,7 @@ void Player::Update(float timeStep) {
         if (!lastDoor) {
             auto *ui = GetSubsystem<UI>();
             auto *graphics = GetSubsystem<Graphics>();
-            IntVector2 pos = ui->GetCursorPosition();
+            IntVector2 pos = ui->GetUICursorPosition();
             // Raycast
             auto ray = head->GetComponent<Camera>()->GetScreenRay(float(pos.x_) / graphics->GetWidth(), float(pos.y_) / graphics->GetHeight());
             ea::vector<RayQueryResult> results;
