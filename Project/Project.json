@@ -7,6 +7,7 @@
 			}
 		]
 	},
+	"plugins": [],
 	"resourcePaths": [
 		"Data/",
 		"CoreData/"
