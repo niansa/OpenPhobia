@@ -147,7 +147,6 @@ void Player::Update(float timeStep) {
             while (node) {
                 if (node->HasTag("Useable") && !node->HasTag("Grabbable")) {
                     // Use object
-                    printf("Interacting with %s\n", node->GetVar("Object").GetString().c_str());
                     auto script = static_cast<Useable *>(node->GetComponent(node->GetVar("Object").GetString()));
                     script->Use();
                     break;

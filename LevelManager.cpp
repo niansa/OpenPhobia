@@ -17,6 +17,22 @@
 
 
 namespace Game {
+void LevelManager::reloadLevel() {
+    loadScene("Scenes/"+level+".xml");
+    // Apply graphics settings
+    auto renderPipeline = scene->GetOrCreateComponent<RenderPipeline>();
+    auto renderSettings = renderPipeline->GetSettings();
+    renderSettings.bloom_.enabled_ = false;
+    renderSettings.bloom_.intensity_ = 1.0f;
+    renderSettings.sceneProcessor_.lightingMode_ = DirectLightingMode::Forward;
+    renderSettings.sceneProcessor_.maxPixelLights_ = 10;
+    renderSettings.renderBufferManager_.colorSpace_ = RenderPipelineColorSpace::LinearLDR;
+    //renderSettings.chromaticAberration_ = 0.25f;
+    renderPipeline->SetSettings(renderSettings);
+    // Load environment
+    loadEnv();
+}
+
 void LevelManager::Start() {
     Variant v;
     v.SetCustom<LevelManager*>(this);
