@@ -1,0 +1,1894 @@
+{
+	"Assets": [
+		{
+			"key": "Props/modern-furniture/Models/Cushion4.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_CheeseGrater_Utensils_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Textures/PlasticCurtain.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Shelf.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Keyboard.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Wood006.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Marble016_2K_Normal.jpg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/PhotoCam/Materials/Camera.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Wood049_2K_Normal.jpg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Gameboy/Materials/mat_default_LitNormalMap.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Flashlight/Textures/bulb1_normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Plate_04_Dishes_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Gameboy/Materials/mat_alpha_LitNormalMap.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Quint.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Player.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Baker.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Dishes_metallicRoughness.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Wood049_2K_Specular.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Materials/Dishes_transparent.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Book.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Bed.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Pot_06_Top_Coockware_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/BooksCabinet/Materials/Books.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Ghost/Models/workerMesh.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Textures/FabricGrey.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Fabric052_1K_Normal.jpg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_WineGlass_Dishes_transparent_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Wood077_1K_Color.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Curtain.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/DirtyCar/Textures/large_car_glass_mat_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Trays_metallicRoughness.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Floor.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/BooksCabinet/Textures/Books_metallicRoughness.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/ghost/neutral/hiss/horrorghostscream_supershort.wav",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/SteelHair.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Knife_01_Utensils_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Ghost/Animations/Idle.ani",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_CuttingBoard_Trays_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/CeramicWhite.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Vase2.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Coockware_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Light1.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/Ceramic.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/DirtyCar/Textures/large_car_wheels_mat_normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Scenes/testmap.xml",
+			"value": {
+				"AssetModifiedTime": 1669320353
+			}
+		},
+		{
+			"key": "Objects/Gameboy/Textures/mat_default_metallicRoughness_1.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Fabric052_1K_Specular.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Lamp2.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Coockware_Dirty_metallicRoughness.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/Glass.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Materials/Utensils.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/PhotoCam/Textures/Camera_metallicRoughness.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/FabricGrey.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/PhotoCam/Textures/Glass_baseColor.png~",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Gameboy/Textures/mat_default_emissive.jpg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Fabric063_1K_Normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Lamp4.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Ghost/Models/group1.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/Piano.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Flashlight/Materials/lambert1.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Knife_06_Utensils_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/EMFReader/Textures/EMF_Reader_black_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/steps/ghost/wood03.ogg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Fork_Utensils_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/Wood.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_EggBeater_Utensils_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Light3.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_DishTray_02_Trays_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/PlasticCurtain.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Light4.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/surface_1.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Fabric064_1K_Color.jpg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Concrete036_2K_Color.jpg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Cushion3.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/DirtyCar/Materials/large_car_body_mat.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/misc/flashlight/1.wav",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Cushion1.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Materials/Trays.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/steps/gravel/gravel.ogg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/ghost/neutral/hunt/sing.ogg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Pan_02_Coockware_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Spoon_Utensils_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Dishes_transparent_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/misc/simple_table.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Plate_03_Dishes_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Textures/Concrete.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Toilet.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/DirtyCar/Textures/large_car_wheels_mat_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/SimpleDoor.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/surface_2.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Fabric064_1K_Normal.jpg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/EMFReader/Materials/EMF_Reader_black.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Ambience.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Dishes_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/EMFReader/Textures/EMF_Reader_normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Bricks075B_4K_Specular.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Mirror.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/GlassPanel.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Gameboy.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Materials/Dishes_Dirty_transparent.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Sofa2.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Books.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Flashlight/Textures/glass_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/steps/leaves/leaves02.ogg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/ScrivaniaCup.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/BooksCabinet/Textures/Books_normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Flashlight/Models/defaultMaterial.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/PianoChair/Textures/unwrapChekcerShader_metallicRoughness.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/LightsYellow.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_CuttingBoard_Small_Trays_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/EMFReader/Models/EMFReader_White.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Ghost/Materials/WaterGhostClothes.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/Lightswitch/Textures/07___Default_diffuse.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/steps/stone/stone01.ogg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/steps/leaves/leaves01.ogg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Monitor.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Flashlight/Textures/lambert1_normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Dishes_Dirty_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/PhotoCam/Textures/Glass_metallicRoughness.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Dishes_Dirty_metallicRoughness.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Wood049_2K_Color.jpg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/DirtyCar/Materials/large_car_wheels_mat.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Textures/Wood.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Lamp1.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Pot_06_Coockware_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/SteelBlack.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Vase1.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Materials/Coockware_Dirty.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Spatula_low_Utensils_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Textures/surface_bw.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Marble016_2K_Specular.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Gameboy/Textures/mat_default_normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Plate_05_Dishes_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Concrete036_2K_Specular.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Ambience/Atmosphere.ogg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Wood077.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Knife_03_Utensils_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/steps/ghost/wood02.ogg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Table.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Marble006_2K_Normal.jpg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/Cupboard.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Textures/FabricWhite.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/PianoChair/Materials/unwrapChekcerShader.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/BooksCabinet/Textures/Books_cabinet_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Textures/crosshair.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Wood077_1K_Specular.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/SimpleDoor_Frame.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Utensils_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Desk.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Pot_01_Coockware_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/ghost/neutral/hiss/horrorghostscream_medium.wav",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Wood049.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Marble006_2K_Specular.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Knife_02_Utensils_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Mouse.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/Mirror.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/FabricFlower.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Fabric064_1K_Specular.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Pot_01_Top_Coockware_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/BooksCabinet/Textures/Books_cabinet_normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Textures/surface_2.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/ghost/female/hunt/sing.ogg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Pan_01_Coockware_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/PaintWhite.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/BooksCabinet.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Bricks075B_4K_Color.jpg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Flashlight/Textures/lambert1_baseColor.jpeg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Coockware_metallicRoughness.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/PhotoCam/Textures/Camera_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Fabric063_1K_Specular.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Marble016_2K_Color.jpg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Bricks075B.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Mallet_Utensils_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/BooksCabinet/Textures/Books_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/BooksCabinet/Materials/Books_cabinet.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/Lightswitch.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Wood077_1K_Normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Ghost/Materials/WaterGhost.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Textures/FabricFlower.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Fabric063_1K_Color.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/Book.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/PianoChair/Textures/unwrapChekcerShader_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Knife_09_Utensils_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/steps/mud/mud02.ogg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/LightsWhite.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Dishes_transparent_metallicRoughness.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Textures/Patterns.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Ambience/Atmosphere.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Pot_04_Coockware_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Chair1.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/Piano/Materials/Piano_New_mat.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Bricks075B_4K_Normal.jpg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/misc/emfreader/80.wav",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/ghost/male/hunt/sing.ogg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/surface_bw.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Lamp3.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Cup_Dishes_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Concrete036_2K_Normal.jpg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Carpet.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/PhotoCam.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Cushion5.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/Piano/Textures/Piano_New_mat_baseColor.jpeg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Fabric064.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/Tile.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/Marble.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/Heartbeat.wav",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/Heartbeat.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/Screen.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/FabricWhite.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Knife_04_Utensils_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/PhotoCam/Textures/Glass_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Pot_03_Coockware_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Shower.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Chair2.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Flashlight/Materials/glass.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Gameboy/Models/Gameboy.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Wood066_4K_Normal.jpg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Sink.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/RibbonTrail.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Sofa1.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Flashlight/Textures/lambert1_metallicRoughness.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/ghost/neutral/hiss/horrorghostscream_long.wav",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Fridge.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/ghost/neutral/hiss/horrorghostscream_short.wav",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Knife_08_Utensils_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Marble006_2K_Color.jpg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Marble016.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Flashlight/Textures/bulb1_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/PhotoCam/Materials/Glass.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/EMFReader/Textures/EMF_Reader_white_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Plate_01_Dishes_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/DirtyCar.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Fabric052_1K_Color.jpg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Dishes_Dirty_transparent_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Flashlight.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/TVDesk.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_BigSpoon_Utensils_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Light2.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/EMFReader.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Knife_05_Utensils_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Flashlight/Materials/bulb1.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/Concrete.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/EMFReader/Materials/EMF_Reader_white.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Coockware_Dirty_normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Teacup_Dishes_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Ladle_Utensils_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_DishTray_01_Trays_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Lamp5.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/steps/wood/wood02.ogg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Textures/keyboard.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/steps/ghost/wood01.ogg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Knife_07_Utensils_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_DishTray_03_Trays_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Counter1.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Ghost.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/DirtyCar/Textures/large_car_body_mat_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/GlassPanelPillar.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Trays_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Knife_10_Utensils_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/PhotoCam/Textures/Glass_normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/ghost/female/hunt/sing.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/Lightswitch/Materials/07___Default.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/PhotoCam/Textures/Camera_normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/SteelSilver.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Wood066_4K_Specular.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Textures/Tiles.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/PhotoCam/Textures/Glass_baseColor-backup.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/steps/wood/wood03.ogg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/Lightswitch/Textures/07___Default_specularGlossiness.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Kitchen.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Fabric052.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Marble006.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/PlasticBlack.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Dishes_Dirty_normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Plane.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/PhotoCam/Models/PhotoCam.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Gameboy/Textures/mat_default_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Dishes_normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/FabircPatterns.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Utensils_normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/PianoChair.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Textures/Wood066_4K_Color.jpg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Materials/Dishes_Dirty.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Door.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Pot_03_Top_Coockware_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/steps/wood/wood01.ogg",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/DirtyCar/Textures/large_car_body_mat_normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/DirtyCar/Materials/large_car_glass_mat.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/misc/lightswitch/10.wav",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Pot_02_Coockware_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Plate_02_Dishes_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Trays_normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Materials/Dishes.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Materials/Coockware.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Cashier.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_TallGlass_Dishes_transparent_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Fabric063.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Materials/ambientgc/Concrete036.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Textures/SteelHair.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/FabricOrange.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Models/SM_Pot_05_Coockware_0.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/EMFReader/Models/EMFReader_Black.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Objects/Flashlight/Textures/glass_normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Coockware_normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/ghost/male/hunt/sing.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/Cushion2.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Coockware_Dirty_baseColor.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Textures/surface_1.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Textures/RibbonTrail.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "SFX/ghost/neutral/hunt/sing.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Textures/Marble.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Models/TV.mdl",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/Kitchen/Textures/Utensils_metallicRoughness.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Props/modern-furniture/Materials/Keyboard.xml",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		},
+		{
+			"key": "Models/PianoChair/Textures/unwrapChekcerShader_normal.png",
+			"value": {
+				"AssetModifiedTime": 1646435370
+			}
+		}
+	]
+}

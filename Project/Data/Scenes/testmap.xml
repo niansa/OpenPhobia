@@ -1685,15 +1685,12 @@
 		<node id="1910">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Door" />
-			<attribute name="Tags">
-				<string value="Scripted" />
-				<string value="GhostInteractable" />
-			</attribute>
+			<attribute name="Tags" />
 			<attribute name="Position" value="4.86834 0 -6.02494" />
 			<attribute name="Rotation" value="-4.37114e-08 0 -0 1" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables">
-				<variant name="Object" type="String" value="Door" />
+				<variant name="Object" type="None" value="" />
 			</attribute>
 			<node id="1915">
 				<attribute name="Is Enabled" value="true" />
@@ -1728,35 +1725,19 @@
 					<attribute name="Cast Shadows" value="true" />
 				</component>
 			</node>
-			<node id="1963">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="Hinge" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="-0.419931 0 0.0608368" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="1 1 1" />
-				<attribute name="Variables" />
-				<component type="Constraint" id="2123">
-					<attribute name="Constraint Type" value="Hinge" />
-					<attribute name="Position" value="-0.015 0 0.04" />
-					<attribute name="Rotation" value="0.707107 0.707107 0 0" />
-					<attribute name="Other Body Rotation" value="0.707107 0.707107 0 0" />
-					<attribute name="Other Body NodeID" value="1953" />
-					<attribute name="Low Limit" value="-90 0" />
-				</component>
-				<component type="RigidBody" id="2124">
-					<attribute name="Physics Rotation" value="-4.37114e-08 0 0 1" />
-					<attribute name="Physics Position" value="5.28827 3.67116e-08 -5.9641" />
-				</component>
-			</node>
 			<node id="1953">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="Door" />
-				<attribute name="Tags" />
+				<attribute name="Tags">
+					<string value="Scripted" />
+					<string value="GhostInteractable" />
+				</attribute>
 				<attribute name="Position" value="-0.434917 -0.248396 0.100825" />
 				<attribute name="Rotation" value="0.99999 -0.00263105 4.49878e-05 -0.003504" />
 				<attribute name="Scale" value="1 1 1" />
-				<attribute name="Variables" />
+				<attribute name="Variables">
+					<variant name="Object" type="String" value="Door" />
+				</attribute>
 				<component type="StaticModel" id="2109">
 					<attribute name="Model" value="Model;Models/SimpleDoor.mdl" />
 					<attribute name="Material" value="Material;Materials/ambientgc/Wood049.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
@@ -1765,7 +1746,6 @@
 				<component type="RigidBody" id="2110">
 					<attribute name="Physics Rotation" value="0.00350507 -4.55474e-05 -0.00261743 0.99999" />
 					<attribute name="Physics Position" value="5.30326 0.248384 -5.92412" />
-					<attribute name="Mass" value="1.000000" />
 				</component>
 				<component type="CollisionShape" id="2111">
 					<attribute name="Shape Type" value="ConvexHull" />
@@ -1777,15 +1757,12 @@
 		<node id="1924">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Door" />
-			<attribute name="Tags">
-				<string value="Scripted" />
-				<string value="GhostInteractable" />
-			</attribute>
+			<attribute name="Tags" />
 			<attribute name="Position" value="7.66212 0 -7.9291" />
 			<attribute name="Rotation" value="-4.37114e-08 0 -0 1" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables">
-				<variant name="Object" type="String" value="Door" />
+				<variant name="Object" type="None" value="" />
 			</attribute>
 			<node id="2032">
 				<attribute name="Is Enabled" value="true" />
@@ -1806,27 +1783,6 @@
 					<attribute name="Cast Shadows" value="true" />
 				</component>
 			</node>
-			<node id="2033">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="Hinge" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="-0.419931 0 0.0608368" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="1 1 1" />
-				<attribute name="Variables" />
-				<component type="Constraint" id="2196">
-					<attribute name="Constraint Type" value="Hinge" />
-					<attribute name="Position" value="-0.015 0 0.04" />
-					<attribute name="Rotation" value="0.707107 0.707107 0 0" />
-					<attribute name="Other Body Rotation" value="0.707107 0.707107 0 0" />
-					<attribute name="Other Body NodeID" value="2035" />
-					<attribute name="Low Limit" value="-90 0" />
-				</component>
-				<component type="RigidBody" id="2243">
-					<attribute name="Physics Rotation" value="-4.37114e-08 0 0 1" />
-					<attribute name="Physics Position" value="8.08205 3.67115e-08 -7.86826" />
-				</component>
-			</node>
 			<node id="2034">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="Frame" />
@@ -1844,11 +1800,16 @@
 			<node id="2035">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="Door" />
-				<attribute name="Tags" />
+				<attribute name="Tags">
+					<string value="Scripted" />
+					<string value="GhostInteractable" />
+				</attribute>
 				<attribute name="Position" value="-0.43493 -0.248185 0.100787" />
 				<attribute name="Rotation" value="0.999992 -0.00172522 4.32841e-05 -0.0035883" />
 				<attribute name="Scale" value="1 1 1" />
-				<attribute name="Variables" />
+				<attribute name="Variables">
+					<variant name="Object" type="String" value="Door" />
+				</attribute>
 				<component type="StaticModel" id="2199">
 					<attribute name="Model" value="Model;Models/SimpleDoor.mdl" />
 					<attribute name="Material" value="Material;Materials/ambientgc/Wood049.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
@@ -1862,22 +1823,18 @@
 				<component type="RigidBody" id="2242">
 					<attribute name="Physics Rotation" value="0.0035883 -4.32586e-05 -0.00172438 0.999992" />
 					<attribute name="Physics Position" value="8.09705 0.248185 -7.82831" />
-					<attribute name="Mass" value="1.000000" />
 				</component>
 			</node>
 		</node>
 		<node id="1930">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Door" />
-			<attribute name="Tags">
-				<string value="Scripted" />
-				<string value="GhostInteractable" />
-			</attribute>
+			<attribute name="Tags" />
 			<attribute name="Position" value="8.77804 0 -3.972" />
 			<attribute name="Rotation" value="-4.37114e-08 0 -0 1" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables">
-				<variant name="Object" type="String" value="Door" />
+				<variant name="Object" type="None" value="" />
 			</attribute>
 			<node id="2036">
 				<attribute name="Is Enabled" value="true" />
@@ -1898,27 +1855,6 @@
 					<attribute name="Cast Shadows" value="true" />
 				</component>
 			</node>
-			<node id="2037">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="Hinge" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="-0.419931 0 0.0608368" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="1 1 1" />
-				<attribute name="Variables" />
-				<component type="Constraint" id="2205">
-					<attribute name="Constraint Type" value="Hinge" />
-					<attribute name="Position" value="-0.015 0 0.04" />
-					<attribute name="Rotation" value="0.707107 0.707107 0 0" />
-					<attribute name="Other Body Rotation" value="0.707107 0.707107 0 0" />
-					<attribute name="Other Body NodeID" value="2039" />
-					<attribute name="Low Limit" value="-90 0" />
-				</component>
-				<component type="RigidBody" id="2248">
-					<attribute name="Physics Rotation" value="-4.37114e-08 0 0 1" />
-					<attribute name="Physics Position" value="9.19797 3.67115e-08 -3.91116" />
-				</component>
-			</node>
 			<node id="2038">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="Frame" />
@@ -1936,11 +1872,16 @@
 			<node id="2039">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="Door" />
-				<attribute name="Tags" />
+				<attribute name="Tags">
+					<string value="Scripted" />
+					<string value="GhostInteractable" />
+				</attribute>
 				<attribute name="Position" value="-0.434929 -0.24876 0.100887" />
 				<attribute name="Rotation" value="0.999987 -0.00376172 -0.000427915 -0.00339197" />
 				<attribute name="Scale" value="1 1 1" />
-				<attribute name="Variables" />
+				<attribute name="Variables">
+					<variant name="Object" type="String" value="Door" />
+				</attribute>
 				<component type="StaticModel" id="2208">
 					<attribute name="Model" value="Model;Models/SimpleDoor.mdl" />
 					<attribute name="Material" value="Material;Materials/ambientgc/Wood049.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
@@ -1954,22 +1895,18 @@
 				<component type="RigidBody" id="2249">
 					<attribute name="Physics Rotation" value="0.00339161 0.000440106 -0.00376483 0.999987" />
 					<attribute name="Physics Position" value="9.21297 0.248761 -3.87111" />
-					<attribute name="Mass" value="1.000000" />
 				</component>
 			</node>
 		</node>
 		<node id="1935">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Door" />
-			<attribute name="Tags">
-				<string value="Scripted" />
-				<string value="GhostInteractable" />
-			</attribute>
+			<attribute name="Tags" />
 			<attribute name="Position" value="12.035 0 -5.6005" />
 			<attribute name="Rotation" value="-3.09086e-08 -0.707107 -3.09086e-08 -0.707107" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables">
-				<variant name="Object" type="String" value="Door" />
+				<variant name="Object" type="None" value="" />
 			</attribute>
 			<node id="2040">
 				<attribute name="Is Enabled" value="true" />
@@ -1990,27 +1927,6 @@
 					<attribute name="Cast Shadows" value="true" />
 				</component>
 			</node>
-			<node id="2041">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="Hinge" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="-0.419931 0 0.0608368" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="1 1 1" />
-				<attribute name="Variables" />
-				<component type="Constraint" id="2214">
-					<attribute name="Constraint Type" value="Hinge" />
-					<attribute name="Position" value="-0.015 0 0.04" />
-					<attribute name="Rotation" value="0.707107 0.707107 0 0" />
-					<attribute name="Other Body Rotation" value="0.707107 0.707107 0 0" />
-					<attribute name="Other Body NodeID" value="2043" />
-					<attribute name="Low Limit" value="-90 0" />
-				</component>
-				<component type="RigidBody" id="2251">
-					<attribute name="Physics Rotation" value="3.09086e-08 0.707107 3.09086e-08 0.707107" />
-					<attribute name="Physics Position" value="12.0958 -3.67115e-08 -6.02043" />
-				</component>
-			</node>
 			<node id="2042">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="Frame" />
@@ -2028,11 +1944,16 @@
 			<node id="2043">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="Door" />
-				<attribute name="Tags" />
+				<attribute name="Tags">
+					<string value="Scripted" />
+					<string value="GhostInteractable" />
+				</attribute>
 				<attribute name="Position" value="-0.43493 -0.248805 0.100788" />
 				<attribute name="Rotation" value="-0.999985 0.00392403 0.00184414 0.00338173" />
 				<attribute name="Scale" value="1 1 1" />
-				<attribute name="Variables" />
+				<attribute name="Variables">
+					<variant name="Object" type="String" value="Door" />
+				</attribute>
 				<component type="StaticModel" id="2217">
 					<attribute name="Model" value="Model;Models/SimpleDoor.mdl" />
 					<attribute name="Material" value="Material;Materials/ambientgc/Wood049.xml;Props/modern-furniture/Materials/SteelSilver.xml" />
@@ -2046,7 +1967,6 @@
 				<component type="RigidBody" id="2250">
 					<attribute name="Physics Rotation" value="0.00516598 0.708401 -0.000383432 0.705792" />
 					<attribute name="Physics Position" value="12.1358 0.248805 -6.03543" />
-					<attribute name="Mass" value="1.000000" />
 				</component>
 			</node>
 		</node>
