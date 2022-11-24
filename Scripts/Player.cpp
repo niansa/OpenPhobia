@@ -101,7 +101,7 @@ void Player::Update(float timeStep) {
         // Grab item
         auto *ui = GetSubsystem<UI>();
         auto *graphics = GetSubsystem<Graphics>();
-        IntVector2 pos = ui->GetCursorPosition();
+        IntVector2 pos = ui->GetUICursorPosition();
         // Raycast
         auto ray = head->GetComponent<Camera>()->GetScreenRay(float(pos.x_) / graphics->GetWidth(), float(pos.y_) / graphics->GetHeight());
         ea::vector<RayQueryResult> results;
@@ -135,7 +135,7 @@ void Player::Update(float timeStep) {
     if (input->GetMouseButtonPress(MouseButtonFlags::Enum::MOUSEB_LEFT)) {
         auto *ui = GetSubsystem<UI>();
         auto *graphics = GetSubsystem<Graphics>();
-        IntVector2 pos = ui->GetCursorPosition();
+        IntVector2 pos = ui->GetUICursorPosition();
         // Raycast
         auto ray = head->GetComponent<Camera>()->GetScreenRay(float(pos.x_) / graphics->GetWidth(), float(pos.y_) / graphics->GetHeight());
         ea::vector<RayQueryResult> results;
@@ -147,7 +147,7 @@ void Player::Update(float timeStep) {
             while (node) {
                 if (node->HasTag("Useable") && !node->HasTag("Grabbable")) {
                     // Use object
-                    auto script = static_cast<Useable *>(node->GetComponent(node->GetName()));
+                    auto script = static_cast<Useable *>(node->GetComponent(node->GetVar("Object").GetString()));
                     script->Use();
                     break;
                 }
@@ -162,7 +162,7 @@ void Player::Update(float timeStep) {
         if (!lastDoor) {
             auto *ui = GetSubsystem<UI>();
             auto *graphics = GetSubsystem<Graphics>();
-            IntVector2 pos = ui->GetCursorPosition();
+            IntVector2 pos = ui->GetUICursorPosition();
             // Raycast
             auto ray = head->GetComponent<Camera>()->GetScreenRay(float(pos.x_) / graphics->GetWidth(), float(pos.y_) / graphics->GetHeight());
             ea::vector<RayQueryResult> results;
@@ -170,7 +170,8 @@ void Player::Update(float timeStep) {
             GetScene()->GetComponent<Octree>()->RaycastSingle(query);
             // Get first result
             if (!results.empty()) {
-                auto node = results[0].node_->GetParent();
+                auto node = results[0].node_;
+                printf("Object clicked: %s\n", node->GetName().c_str());
                 // Get door
                 if (node->HasComponent<Door>()) {
                     auto door = node->GetComponent<Door>();
@@ -181,7 +182,7 @@ void Player::Update(float timeStep) {
         }
         // Push the last door found
         if (lastDoor) {
-            lastDoor->push(1.5f, lastDoorDir);
+            lastDoor->push(0.75f, lastDoorDir);
         }
     } else {
         lastDoor = nullptr;

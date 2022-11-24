@@ -27,11 +27,11 @@ void EMFReader::FixedUpdate(float) {
         } else {
             // Get objects nearby
             constexpr float range = 1.f;
-            const auto result = SphereCast(GetScene(), GetNode()->GetWorldPosition(), range);
+            const auto results = SphereCast(GetScene(), GetNode()->GetWorldPosition(), range);
             // Find emf emitters
-            for (const auto& node : result) {
-                if (node->HasComponent<EMFEmitter>()) {
-                    auto emitter = node->GetComponent<EMFEmitter>();
+            for (const auto& result : results) {
+                if (result.node->HasComponent<EMFEmitter>()) {
+                    auto emitter = result.node->GetComponent<EMFEmitter>();
                     emfLevel = Max(emfLevel, emitter->getLevel());
                 }
             }
@@ -74,3 +74,4 @@ void EMFReader::playClick() {
     clickSound->Play(getMiscSFX(context_, getLevelManager()->getRng(), "emfreader"));
 }
 }
+

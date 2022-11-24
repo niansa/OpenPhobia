@@ -9,7 +9,12 @@
 
 
 namespace Game {
-eastl::vector<Node*> SphereCast(Scene *scene, const Vector3& position, float radius);
+struct SphereCastResult {
+    Node *node;
+    float distance;
+};
+
+eastl::vector<SphereCastResult> SphereCast(Scene *scene, const Vector3& position, float radius);
 }
 #endif
 

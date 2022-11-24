@@ -9,6 +9,7 @@ class Ghost;
 #include "../LevelManager.hpp"
 #include "../GhostBehavior.hpp"
 #include "../GhostState.hpp"
+#include "../SphereCast.hpp"
 
 #include <Urho3D/Scene/LogicComponent.h>
 #include <Urho3D/Math/RandomEngine.h>
@@ -58,7 +59,7 @@ class Ghost final : public LogicComponent {
     RoomBoundary *mostRecentRoom = nullptr;
     PlayerWDistance closestPlayer;
     Vector3 homePosition;
-    eastl::vector<PhysicsRaycastResult> closeBodies;
+    eastl::vector<SphereCastResult> closeNodes;
 
     unsigned maxHuntSanity = 50;
 
@@ -112,8 +113,8 @@ public:
     PlayerWDistance getClosestPlayer() {
         return closestPlayer;
     }
-    const eastl::vector<PhysicsRaycastResult>& getCloseBodies() {
-        return closeBodies;
+    const eastl::vector<SphereCastResult>& getCloseNodes() {
+        return closeNodes;
     }
 
     PlayerWDistance getPlayerWDistance(Player *p) {
@@ -142,3 +143,4 @@ public:
 };
 }
 #endif // GHOST_HPP
+

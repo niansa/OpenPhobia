@@ -60,18 +60,18 @@ void Lightswitch::forceTurnOff() {
     playClick();
 }
 
-void Lightswitch::ghostyDim(bool enable) {
+void Lightswitch::ghostlyDim(bool enable) {
     constexpr float dim = 0.75f;
-    if (enable && !ghostyDimmed) {
+    if (enable && !ghostlyDimmed) {
         for (auto lightBulb : lightBulbs) {
             lightBulb->getLight()->SetBrightness(lightBulb->getLight()->GetBrightness()*dim);
         }
-        ghostyDimmed = true;
-    } else if (!enable && ghostyDimmed) {
+        ghostlyDimmed = true;
+    } else if (!enable && ghostlyDimmed) {
         for (auto lightBulb : lightBulbs) {
             lightBulb->getLight()->SetBrightness(lightBulb->getLight()->GetBrightness()/dim);
         }
-        ghostyDimmed = false;
+        ghostlyDimmed = false;
     }
 }
 

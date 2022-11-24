@@ -26,7 +26,7 @@ class Lightswitch final : public Useable {
     LevelManager *levelManager;
     eastl::vector<Lightbulb*> lightBulbs;
     Timer cooldown;
-    bool ghostyDimmed = false;
+    bool ghostlyDimmed = false;
 
 public:
     using Useable::Useable;
@@ -35,9 +35,13 @@ public:
     void TurnOn() override;
     void TurnOff() override;
 
+    void addLightbulb(Lightbulb *bulb) {
+        lightBulbs.push_back(bulb);
+    }
+
     void forceTurnOn();
     void forceTurnOff();
-    void ghostyDim(bool enable);
+    void ghostlyDim(bool enable);
     void playClick();
 };
 }
