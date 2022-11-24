@@ -35,10 +35,6 @@ public:
     void TurnOn() override;
     void TurnOff() override;
 
-    void addLightbulb(Lightbulb *bulb) {
-        lightBulbs.push_back(bulb);
-    }
-
     void forceTurnOn();
     void forceTurnOff();
     void ghostyDim(bool enable);

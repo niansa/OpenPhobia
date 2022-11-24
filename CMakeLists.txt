@@ -47,8 +47,5 @@ add_custom_command(TARGET Game PRE_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy_directory
                        ${CMAKE_SOURCE_DIR}/Project $<TARGET_FILE_DIR:Game>/Project)
 add_custom_command(TARGET Game PRE_BUILD
-                   COMMAND ${CMAKE_COMMAND} -E copy_directory
-                       ${CMAKE_SOURCE_DIR}/rbfx/bin/CoreData $<TARGET_FILE_DIR:Game>/Project/CoreData)
-add_custom_command(TARGET Game PRE_BUILD
-                   COMMAND ${CMAKE_COMMAND} -E copy_directory
-                       ${CMAKE_SOURCE_DIR}/Project/NonFree $<TARGET_FILE_DIR:Game>/Project/Data)
+                  COMMAND ${CMAKE_COMMAND} -E copy_directory
+                      ${CMAKE_SOURCE_DIR}/rbfx/bin/CoreData $<TARGET_FILE_DIR:Game>/Project/CoreData)

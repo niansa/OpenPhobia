@@ -30,7 +30,7 @@ struct GhostIdentity;
 
 class LevelManager : public SceneManager {
     RandomEngine rng;
-    eastl::string level = "OldBrickHouse";
+    eastl::string level = "testmap";
     Ghost *ghost = nullptr;
     eastl::vector<Player*> players;
     eastl::vector<RoomBoundary*> rooms;
@@ -41,13 +41,27 @@ class LevelManager : public SceneManager {
 public:
     using SceneManager::SceneManager;
 
+    void reloadLevel() {
+        loadScene("Scenes/"+level+".xml");
+        // Apply graphics settings
+        auto renderPipeline = scene->GetOrCreateComponent<RenderPipeline>();
+        auto renderSettings = renderPipeline->GetSettings();
+        renderSettings.bloom_.enabled_ = false;
+        renderSettings.bloom_.intensity_ = 1.0f;
+        renderSettings.sceneProcessor_.lightingMode_ = DirectLightingMode::Forward;
+        renderSettings.sceneProcessor_.maxPixelLights_ = 10;
+        renderSettings.renderBufferManager_.colorSpace_ = RenderPipelineColorSpace::LinearLDR;
+        renderSettings.chromaticAberration_ = 0.25f;
+        renderPipeline->SetSettings(renderSettings);
+        // Load environment
+        loadEnv();
+    }
     void loadLevel(eastl::string nlevel) {
         level = nlevel;
         reloadLevel();
     }
 
     void Start();
-    void reloadLevel();
     void loadEnv();
     unsigned getTeamSanity() const;
     bool isAnyPlayerInHouse();

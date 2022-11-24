@@ -111,6 +111,7 @@
 					</component>
 					<component type="RigidBody" id="26">
 						<attribute name="Physics Rotation" value="3.13916e-07 -6.92209e-15 1 2.18557e-08" />
+						<attribute name="Physics Position" value="4.81468 3.09339 -3.80372" />
 					</component>
 					<component type="CollisionShape" id="27">
 						<attribute name="Shape Type" value="TriangleMesh" />
@@ -163,6 +164,7 @@
 					</component>
 					<component type="RigidBody" id="33">
 						<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+						<attribute name="Physics Position" value="3.21871 5.3402 4.00029" />
 					</component>
 				</node>
 			</node>
@@ -185,6 +187,7 @@
 				<attribute name="Scale" value="15 1 12" />
 				<attribute name="Variables" />
 				<component type="RigidBody" id="56">
+					<attribute name="Physics Position" value="0 -0.233333 0" />
 				</component>
 				<component type="CollisionShape" id="57">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -199,6 +202,7 @@
 				<attribute name="Scale" value="8.75 0.25 14.5" />
 				<attribute name="Variables" />
 				<component type="RigidBody" id="58">
+					<attribute name="Physics Position" value="-1.30786 3.35364 -0.67615" />
 				</component>
 				<component type="CollisionShape" id="59">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -213,6 +217,7 @@
 				<attribute name="Scale" value="15 0.2 13" />
 				<attribute name="Variables" />
 				<component type="RigidBody" id="120">
+					<attribute name="Physics Position" value="0.480099 6.22497 0" />
 				</component>
 				<component type="CollisionShape" id="121">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -227,6 +232,7 @@
 				<attribute name="Scale" value="8.5 5 0.2" />
 				<attribute name="Variables" />
 				<component type="RigidBody" id="62">
+					<attribute name="Physics Position" value="-1.2 1.66667 -3.93334" />
 				</component>
 				<component type="CollisionShape" id="63">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -241,6 +247,7 @@
 				<attribute name="Scale" value="13.5 5 0.3" />
 				<attribute name="Variables" />
 				<component type="RigidBody" id="66">
+					<attribute name="Physics Position" value="0.51362 1.66667 3.97406" />
 				</component>
 				<component type="CollisionShape" id="67">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -256,6 +263,7 @@
 				<attribute name="Variables" />
 				<component type="RigidBody" id="68">
 					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="1.56587 4.68317 3.90716" />
 				</component>
 				<component type="CollisionShape" id="69">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -270,6 +278,7 @@
 				<attribute name="Scale" value="4.5 5 0.2" />
 				<attribute name="Variables" />
 				<component type="RigidBody" id="70">
+					<attribute name="Physics Position" value="-2.72616 4.68317 -4.156" />
 				</component>
 				<component type="CollisionShape" id="71">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -284,6 +293,7 @@
 				<attribute name="Scale" value="2.75 5 0.2" />
 				<attribute name="Variables" />
 				<component type="RigidBody" id="72">
+					<attribute name="Physics Position" value="0.697218 4.68317 -4.156" />
 				</component>
 				<component type="CollisionShape" id="73">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -299,6 +309,7 @@
 				<attribute name="Variables" />
 				<component type="RigidBody" id="74">
 					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="-3.97444 1.66667 0.00659758" />
 				</component>
 				<component type="CollisionShape" id="75">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -314,6 +325,7 @@
 				<attribute name="Variables" />
 				<component type="RigidBody" id="76">
 					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="4.80392 1.66667 2.18929" />
 				</component>
 				<component type="CollisionShape" id="77">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -328,6 +340,7 @@
 				<attribute name="Scale" value="6.5 5 0.3" />
 				<attribute name="Variables" />
 				<component type="RigidBody" id="78">
+					<attribute name="Physics Position" value="2.62113 1.66667 0.620243" />
 				</component>
 				<component type="CollisionShape" id="79">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -342,6 +355,7 @@
 				<attribute name="Scale" value="5 5 0.3" />
 				<attribute name="Variables" />
 				<component type="RigidBody" id="80">
+					<attribute name="Physics Position" value="-2.37937 1.66667 0.620243" />
 				</component>
 				<component type="CollisionShape" id="81">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -357,6 +371,7 @@
 				<attribute name="Variables" />
 				<component type="RigidBody" id="124">
 					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="1.37996 1.66667 2.91723" />
 				</component>
 				<component type="CollisionShape" id="125">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -372,6 +387,7 @@
 				<attribute name="Variables" />
 				<component type="RigidBody" id="82">
 					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="1.31234 1.66667 -1.65518" />
 				</component>
 				<component type="CollisionShape" id="83">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -387,6 +403,7 @@
 				<attribute name="Variables" />
 				<component type="RigidBody" id="112">
 					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="-4.18462 4.75813 -0.0203122" />
 				</component>
 				<component type="CollisionShape" id="113">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -402,6 +419,7 @@
 				<attribute name="Variables" />
 				<component type="RigidBody" id="114">
 					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="1.59065 4.75813 -0.890983" />
 				</component>
 				<component type="CollisionShape" id="115">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -416,6 +434,7 @@
 				<attribute name="Scale" value="8.5 5 0.2" />
 				<attribute name="Variables" />
 				<component type="RigidBody" id="116">
+					<attribute name="Physics Position" value="-1.23775 4.68317 4.16872" />
 				</component>
 				<component type="CollisionShape" id="117">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -430,6 +449,7 @@
 				<attribute name="Scale" value="5.75 5 0.2" />
 				<attribute name="Variables" />
 				<component type="RigidBody" id="118">
+					<attribute name="Physics Position" value="-2.25228 4.68317 0.0097051" />
 				</component>
 				<component type="CollisionShape" id="119">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -445,6 +465,7 @@
 				<attribute name="Variables" />
 				<component type="RigidBody" id="173">
 					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="-2.99885 4.73773 -4.83415" />
 				</component>
 				<component type="CollisionShape" id="174">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -460,6 +481,7 @@
 				<attribute name="Variables" />
 				<component type="RigidBody" id="175">
 					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="0.138014 4.73773 -4.83415" />
 				</component>
 				<component type="CollisionShape" id="176">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -474,6 +496,7 @@
 				<attribute name="Scale" value="5 4 0.2" />
 				<attribute name="Variables" />
 				<component type="RigidBody" id="177">
+					<attribute name="Physics Position" value="-1.44248 4.73773 -5.39842" />
 				</component>
 				<component type="CollisionShape" id="178">
 					<attribute name="Model" value="Model;Scenes/OldHouse/Models/WoodWall_woodwall_0.mdl" />
@@ -489,6 +512,7 @@
 				<attribute name="Variables" />
 				<component type="CollisionShape" id="60" />
 				<component type="RigidBody" id="61">
+					<attribute name="Physics Position" value="2.5841 1.69814 2.24262" />
 				</component>
 			</node>
 			<node id="80">
@@ -501,6 +525,7 @@
 				<attribute name="Variables" />
 				<component type="CollisionShape" id="108" />
 				<component type="RigidBody" id="109">
+					<attribute name="Physics Position" value="4.16663 1.52509 2.31401" />
 				</component>
 			</node>
 			<node id="107">
@@ -514,6 +539,7 @@
 				<component type="CollisionShape" id="169" />
 				<component type="RigidBody" id="170">
 					<attribute name="Physics Rotation" value="0.945519 0 0 0.325568" />
+					<attribute name="Physics Position" value="2.61921 0.846839 1.37136" />
 				</component>
 			</node>
 			<node id="108">
@@ -527,6 +553,7 @@
 				<component type="CollisionShape" id="171" />
 				<component type="RigidBody" id="172">
 					<attribute name="Physics Rotation" value="0.945234 0 0 -0.326393" />
+					<attribute name="Physics Position" value="2.80887 2.36923 3.01095" />
 				</component>
 			</node>
 		</node>
@@ -557,6 +584,7 @@
 					<attribute name="Collision Margin" value="0.000000" />
 				</component>
 				<component type="RigidBody" id="137">
+					<attribute name="Physics Position" value="-2.56479 3.80458 -2.24786" />
 				</component>
 			</node>
 			<node id="101">
@@ -576,6 +604,7 @@
 				</component>
 				<component type="RigidBody" id="139">
 					<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Physics Position" value="-2.30832 4.18884 -1.82716" />
 					<attribute name="Mass" value="1.000000" />
 					<attribute name="Angular Damping" value="0.800000" />
 					<attribute name="Collision Layer" value="2" />
@@ -607,6 +636,7 @@
 				</component>
 				<component type="RigidBody" id="143">
 					<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Physics Position" value="-2.20509 4.18852 -1.66777" />
 					<attribute name="Mass" value="2.000000" />
 					<attribute name="Angular Damping" value="0.800000" />
 					<attribute name="Collision Layer" value="2" />
@@ -630,6 +660,7 @@
 				</component>
 				<component type="RigidBody" id="145">
 					<attribute name="Physics Rotation" value="0.5 0.5 -0.5 0.5" />
+					<attribute name="Physics Position" value="-2.19929 4.19567 -1.48182" />
 					<attribute name="Mass" value="0.500000" />
 					<attribute name="Angular Damping" value="0.900000" />
 					<attribute name="Collision Layer" value="2" />
@@ -658,6 +689,7 @@
 				</component>
 				<component type="RigidBody" id="183">
 					<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Physics Position" value="-2.30832 4.18884 -2.43823" />
 					<attribute name="Mass" value="1.000000" />
 					<attribute name="Angular Damping" value="0.800000" />
 					<attribute name="Collision Layer" value="2" />
@@ -685,6 +717,7 @@
 				</component>
 				<component type="RigidBody" id="180">
 					<attribute name="Physics Rotation" value="0.5 0.5 -0.5 0.5" />
+					<attribute name="Physics Position" value="-2.19929 4.19567 -2.09289" />
 					<attribute name="Mass" value="0.500000" />
 					<attribute name="Angular Damping" value="0.900000" />
 					<attribute name="Collision Layer" value="2" />
@@ -717,6 +750,7 @@
 				</component>
 				<component type="RigidBody" id="187">
 					<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Physics Position" value="-2.20509 4.18852 -2.27884" />
 					<attribute name="Mass" value="2.000000" />
 					<attribute name="Angular Damping" value="0.800000" />
 					<attribute name="Collision Layer" value="2" />
@@ -740,6 +774,7 @@
 				</component>
 				<component type="RigidBody" id="189">
 					<attribute name="Physics Rotation" value="0.5 0.5 -0.5 0.5" />
+					<attribute name="Physics Position" value="-2.19929 4.19567 -2.71715" />
 					<attribute name="Mass" value="0.500000" />
 					<attribute name="Angular Damping" value="0.900000" />
 					<attribute name="Collision Layer" value="2" />
@@ -768,6 +803,7 @@
 				</component>
 				<component type="RigidBody" id="192">
 					<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Physics Position" value="-2.30832 4.18884 -3.06248" />
 					<attribute name="Mass" value="1.000000" />
 					<attribute name="Angular Damping" value="0.800000" />
 					<attribute name="Collision Layer" value="2" />
@@ -799,6 +835,7 @@
 				</component>
 				<component type="RigidBody" id="196">
 					<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+					<attribute name="Physics Position" value="-2.20509 4.18852 -2.90309" />
 					<attribute name="Mass" value="2.000000" />
 					<attribute name="Angular Damping" value="0.800000" />
 					<attribute name="Collision Layer" value="2" />

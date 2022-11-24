@@ -43,13 +43,16 @@ void GhostReveal::Initialize() {
             // Close room doors
             if (GetGhost()->rng.GetBool(0.5f/*TBV*/)) {
                 // Get all rooms doors  TODO: Better implementation
-                for (auto result : GetGhost()->getCloseNodes()) {
-                    if (result.node->GetName() == "Door") {
-                        auto parentNode = result.node->GetParent();
-                        if (parentNode && GetGhost()->getCurrentRoom()->isNodeInside(parentNode)) {
-                            if (parentNode->HasComponent<Door>()) {
-                                auto door = parentNode->GetComponent<Door>();
-                                door->impulsePush(0.1f);
+                for (auto body : GetGhost()->getCloseBodies()) {
+                    if (body.body_) {
+                        auto node = body.body_->GetNode();
+                        if (node->GetName() == "Door") {
+                            auto parentNode = node->GetParent();
+                            if (parentNode && GetGhost()->getCurrentRoom()->isNodeInside(parentNode)) {
+                                if (parentNode->HasComponent<Door>()) {
+                                    auto door = parentNode->GetComponent<Door>();
+                                    door->impulsePush(0.1f);
+                                }
                             }
                         }
                     }

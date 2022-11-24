@@ -109,6 +109,7 @@
 					</component>
 					<component type="RigidBody" id="1909">
 						<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+						<attribute name="Physics Position" value="7.38516 -0.00434465 -5.70193" />
 					</component>
 					<component type="Navigable" id="2094" />
 				</node>
@@ -174,6 +175,7 @@
 					</component>
 					<component type="RigidBody" id="1915">
 						<attribute name="Physics Rotation" value="3.09086e-08 3.09086e-08 0.707107 -0.707107" />
+						<attribute name="Physics Position" value="4.66033 -0.00434461 -2.2007" />
 					</component>
 					<component type="Navigable" id="2095" />
 				</node>
@@ -197,6 +199,7 @@
 					</component>
 					<component type="RigidBody" id="1918">
 						<attribute name="Physics Rotation" value="3.09086e-08 3.09086e-08 0.707107 -0.707107" />
+						<attribute name="Physics Position" value="7.56002 -0.00434461 -2.27323" />
 					</component>
 					<component type="Navigable" id="2096" />
 				</node>
@@ -226,6 +229,7 @@
 					</component>
 					<component type="RigidBody" id="2008">
 						<attribute name="Physics Rotation" value="0.362446 0 0.932005 0" />
+						<attribute name="Physics Position" value="5.93207 0.904152 -2.23074" />
 						<attribute name="Mass" value="1.000000" />
 						<attribute name="Linear Damping" value="0.800000" />
 						<attribute name="Angular Damping" value="0.800000" />
@@ -254,6 +258,7 @@
 					</component>
 					<component type="RigidBody" id="2011">
 						<attribute name="Physics Rotation" value="0.987414 0 -0.158158 0" />
+						<attribute name="Physics Position" value="5.49402 0.906557 -2.28132" />
 						<attribute name="Mass" value="2.700000" />
 						<attribute name="Linear Damping" value="0.800000" />
 						<attribute name="Angular Damping" value="0.700000" />
@@ -283,6 +288,7 @@
 					</component>
 					<component type="RigidBody" id="2021">
 						<attribute name="Physics Rotation" value="0.694926 0.694926 -0.130684 0.130684" />
+						<attribute name="Physics Position" value="6.89849 0.925255 -2.33175" />
 						<attribute name="Mass" value="1.000000" />
 						<attribute name="Linear Damping" value="0.800000" />
 						<attribute name="Angular Damping" value="0.400000" />
@@ -396,6 +402,7 @@
 						</component>
 						<component type="RigidBody" id="1744">
 							<attribute name="Physics Rotation" value="0.686696 0.686696 0.168667 -0.168667" />
+							<attribute name="Physics Position" value="17.9965 -0.00434351 -4.12388" />
 						</component>
 					</node>
 				</node>
@@ -424,6 +431,7 @@
 						<attribute name="Material" value="Material;Materials/Ceramic.xml" />
 					</component>
 					<component type="RigidBody" id="1889">
+						<attribute name="Physics Position" value="15.8726 0.366926 -4.012" />
 						<attribute name="Mass" value="1.000000" />
 						<attribute name="Linear Damping" value="0.800000" />
 						<attribute name="Angular Damping" value="0.800000" />
@@ -452,6 +460,7 @@
 					</component>
 					<component type="RigidBody" id="2024">
 						<attribute name="Physics Rotation" value="0.987414 0 -0.158158 0" />
+						<attribute name="Physics Position" value="15.6145 0.372493 -4.15707" />
 						<attribute name="Mass" value="1.100000" />
 						<attribute name="Linear Damping" value="0.800000" />
 						<attribute name="Angular Damping" value="0.700000" />
@@ -500,6 +509,7 @@
 						</component>
 						<component type="RigidBody" id="1921">
 							<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+							<attribute name="Physics Position" value="13.3522 -1.19209e-07 -2.34139" />
 						</component>
 						<component type="Navigable" id="2098" />
 					</node>
@@ -536,6 +546,7 @@
 						</component>
 						<component type="RigidBody" id="1925">
 							<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+							<attribute name="Physics Position" value="13.2669 0.885833 -2.07942" />
 						</component>
 					</node>
 					<node id="1827">
@@ -570,6 +581,7 @@
 						</component>
 						<component type="RigidBody" id="1929">
 							<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+							<attribute name="Physics Position" value="12.7814 0.891534 -2.50234" />
 						</component>
 					</node>
 				</node>
@@ -606,6 +618,7 @@
 					</component>
 					<component type="RigidBody" id="1933">
 						<attribute name="Physics Rotation" value="3.09086e-08 3.09086e-08 0.707107 -0.707107" />
+						<attribute name="Physics Position" value="16.4605 -0.00434437 -2.34" />
 					</component>
 					<node id="1831">
 						<attribute name="Is Enabled" value="true" />
@@ -626,6 +639,7 @@
 						</component>
 						<component type="RigidBody" id="1936">
 							<attribute name="Physics Rotation" value="0.0877448 0.404074 -0.208171 0.886392" />
+							<attribute name="Physics Position" value="17.7978 0.428347 -2.31722" />
 						</component>
 					</node>
 				</node>
@@ -648,6 +662,7 @@
 					</component>
 					<component type="RigidBody" id="1939">
 						<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+						<attribute name="Physics Position" value="15.7261 -1.19209e-07 -6.4858" />
 					</component>
 					<component type="Navigable" id="2100" />
 				</node>
@@ -670,6 +685,7 @@
 					</component>
 					<component type="RigidBody" id="1942">
 						<attribute name="Physics Rotation" value="-4.37114e-08 0 1 0" />
+						<attribute name="Physics Position" value="17.6756 -0.020628 -6.74093" />
 					</component>
 					<component type="Navigable" id="2099" />
 				</node>
@@ -692,6 +708,7 @@
 					</component>
 					<component type="RigidBody" id="1945">
 						<attribute name="Physics Rotation" value="0.707107 0.707107 0 0" />
+						<attribute name="Physics Position" value="15.5663 -0.00434459 -4.02861" />
 					</component>
 				</node>
 				<node id="1835">
@@ -727,6 +744,7 @@
 					</component>
 					<component type="RigidBody" id="1949">
 						<attribute name="Physics Rotation" value="-0.122788 -0.122788 0.696364 -0.696364" />
+						<attribute name="Physics Position" value="15.6796 0.888326 -6.39437" />
 					</component>
 				</node>
 				<node id="1837">
@@ -748,6 +766,7 @@
 					</component>
 					<component type="RigidBody" id="1952">
 						<attribute name="Physics Rotation" value="4.37114e-08 -2.03547e-17 1 4.65661e-10" />
+						<attribute name="Physics Position" value="13.7047 0.585175 -6.76191" />
 					</component>
 					<component type="Navigable" id="2101" />
 				</node>
@@ -813,6 +832,7 @@
 					</component>
 					<component type="RigidBody" id="1955">
 						<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+						<attribute name="Physics Position" value="7.56112 -0.0054236 -10.0021" />
 					</component>
 					<component type="Navigable" id="2104" />
 				</node>
@@ -835,6 +855,7 @@
 					</component>
 					<component type="RigidBody" id="1958">
 						<attribute name="Physics Rotation" value="0.5 0.5 0.5 -0.5" />
+						<attribute name="Physics Position" value="4.8359 -0.000784785 -10.0314" />
 					</component>
 					<node id="1850">
 						<attribute name="Is Enabled" value="true" />
@@ -855,6 +876,7 @@
 						</component>
 						<component type="RigidBody" id="1961">
 							<attribute name="Physics Rotation" value="0.5 0.5 0.5 -0.5" />
+							<attribute name="Physics Position" value="4.03089 0.531023 -10.3624" />
 						</component>
 					</node>
 					<node id="1851">
@@ -876,6 +898,7 @@
 						</component>
 						<component type="RigidBody" id="1964">
 							<attribute name="Physics Rotation" value="0.5 0.5 0.5 -0.5" />
+							<attribute name="Physics Position" value="4.03089 0.531023 -9.71397" />
 						</component>
 					</node>
 					<node id="1852">
@@ -897,6 +920,7 @@
 						</component>
 						<component type="RigidBody" id="1967">
 							<attribute name="Physics Rotation" value="0.5 0.5 0.5 -0.5" />
+							<attribute name="Physics Position" value="5.08562 0.517058 -10.0602" />
 						</component>
 					</node>
 				</node>
@@ -961,6 +985,7 @@
 					</component>
 					<component type="RigidBody" id="1970">
 						<attribute name="Physics Rotation" value="0.5 0.5 -0.5 0.5" />
+						<attribute name="Physics Position" value="11.6305 0 -2.18127" />
 					</component>
 					<component type="Navigable" id="2097" />
 				</node>
@@ -983,6 +1008,7 @@
 					</component>
 					<component type="RigidBody" id="1973">
 						<attribute name="Physics Rotation" value="3.09086e-08 3.09086e-08 0.707107 -0.707107" />
+						<attribute name="Physics Position" value="10.115 0 -2.40061" />
 					</component>
 				</node>
 			</node>
@@ -1037,6 +1063,7 @@
 					</component>
 					<component type="RigidBody" id="1809">
 						<attribute name="Physics Rotation" value="0.707107 0 -0.707107 0" />
+						<attribute name="Physics Position" value="4.15075 -0.0054236 -6.96041" />
 					</component>
 					<component type="Navigable" id="2103" />
 				</node>
@@ -1104,6 +1131,7 @@
 						<attribute name="Cast Shadows" value="true" />
 					</component>
 					<component type="RigidBody" id="1863">
+						<attribute name="Physics Position" value="22.6002 -0.00542403 -5.80347" />
 					</component>
 					<component type="CollisionShape" id="1864">
 						<attribute name="Shape Type" value="ConvexHull" />
@@ -1216,6 +1244,7 @@
 					<attribute name="Model" value="Model;Models/Plane.mdl" />
 				</component>
 				<component type="RigidBody" id="2267">
+					<attribute name="Physics Position" value="10.9973 0 -6.36688" />
 				</component>
 			</node>
 			<node id="1782">
@@ -1236,6 +1265,7 @@
 					<attribute name="Model" value="Model;Models/Plane.mdl" />
 				</component>
 				<component type="RigidBody" id="2270">
+					<attribute name="Physics Position" value="21.1726 0 -6.36688" />
 				</component>
 			</node>
 		</node>
@@ -1293,6 +1323,7 @@
 				<attribute name="Variables" />
 				<component type="CollisionShape" id="1755" />
 				<component type="RigidBody" id="1756">
+					<attribute name="Physics Position" value="6.33208 1.25 -10.948" />
 				</component>
 				<component type="StaticModel" id="1844">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1310,6 +1341,7 @@
 				<attribute name="Variables" />
 				<component type="CollisionShape" id="1855" />
 				<component type="RigidBody" id="1856">
+					<attribute name="Physics Position" value="17.0236 1.25 -10.948" />
 				</component>
 				<component type="StaticModel" id="1857">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1327,6 +1359,7 @@
 				<attribute name="Variables" />
 				<component type="CollisionShape" id="1759" />
 				<component type="RigidBody" id="1760">
+					<attribute name="Physics Position" value="13.8354 1.25 -1.795" />
 				</component>
 				<component type="StaticModel" id="1846">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1345,6 +1378,7 @@
 				<component type="CollisionShape" id="1761" />
 				<component type="RigidBody" id="1762">
 					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="3.68302 1.25 -6.34567" />
 				</component>
 				<component type="StaticModel" id="1847">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1363,6 +1397,7 @@
 				<component type="CollisionShape" id="1858" />
 				<component type="RigidBody" id="1859">
 					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="23.9705 1.25 -6.34567" />
 				</component>
 				<component type="StaticModel" id="1860">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1389,6 +1424,7 @@
 				<attribute name="Variables" />
 				<component type="CollisionShape" id="1810" />
 				<component type="RigidBody" id="1811">
+					<attribute name="Physics Position" value="6.66537 1.21013 -6.03543" />
 				</component>
 				<component type="StaticModel" id="1818">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1406,6 +1442,7 @@
 				<attribute name="Variables" />
 				<component type="CollisionShape" id="1812" />
 				<component type="RigidBody" id="1813">
+					<attribute name="Physics Position" value="5.47449 1.21013 -7.93832" />
 				</component>
 				<component type="StaticModel" id="1819">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1423,6 +1460,7 @@
 				<attribute name="Variables" />
 				<component type="CollisionShape" id="1814" />
 				<component type="RigidBody" id="1815">
+					<attribute name="Physics Position" value="8.31073 1.21013 -7.93962" />
 				</component>
 				<component type="StaticModel" id="1820">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1440,6 +1478,7 @@
 				<attribute name="Variables" />
 				<component type="CollisionShape" id="1816" />
 				<component type="RigidBody" id="1817">
+					<attribute name="Physics Position" value="4.04173 1.21013 -6.03538" />
 				</component>
 				<component type="StaticModel" id="1821">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1458,6 +1497,7 @@
 				<component type="CollisionShape" id="1823" />
 				<component type="RigidBody" id="1824">
 					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="8.48171 1.21013 -9.43975" />
 				</component>
 				<component type="StaticModel" id="1825">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1476,6 +1516,7 @@
 				<component type="CollisionShape" id="1826" />
 				<component type="RigidBody" id="1827">
 					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="8.00408 1.21013 -3.93669" />
 				</component>
 				<component type="StaticModel" id="1828">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1494,6 +1535,7 @@
 				<component type="CollisionShape" id="1829" />
 				<component type="RigidBody" id="1830">
 					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="12.0248 1.21013 -3.47825" />
 				</component>
 				<component type="StaticModel" id="1831">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1512,6 +1554,7 @@
 				<component type="CollisionShape" id="1832" />
 				<component type="RigidBody" id="1833">
 					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="12.0248 1.21013 -6.99929" />
 				</component>
 				<component type="StaticModel" id="1834">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1530,6 +1573,7 @@
 				<component type="CollisionShape" id="1835" />
 				<component type="RigidBody" id="1836">
 					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="12.0248 1.21013 -10.3095" />
 				</component>
 				<component type="StaticModel" id="1837">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1547,6 +1591,7 @@
 				<attribute name="Variables" />
 				<component type="CollisionShape" id="1838" />
 				<component type="RigidBody" id="1839">
+					<attribute name="Physics Position" value="15.1541 1.21013 -6.98638" />
 				</component>
 				<component type="StaticModel" id="1840">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1564,6 +1609,7 @@
 				<attribute name="Variables" />
 				<component type="CollisionShape" id="1841" />
 				<component type="RigidBody" id="1842">
+					<attribute name="Physics Position" value="10.6103 1.21013 -3.98269" />
 				</component>
 				<component type="StaticModel" id="1843">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1581,6 +1627,7 @@
 				<attribute name="Variables" />
 				<component type="CollisionShape" id="2069" />
 				<component type="RigidBody" id="2070">
+					<attribute name="Physics Position" value="8.18404 1.21013 -3.98269" />
 				</component>
 				<component type="StaticModel" id="2071">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1599,6 +1646,7 @@
 				<component type="CollisionShape" id="1763" />
 				<component type="RigidBody" id="1764">
 					<attribute name="Physics Rotation" value="0.707107 0 0.707107 0" />
+					<attribute name="Physics Position" value="18.3034 1.21 -4.437" />
 				</component>
 				<component type="StaticModel" id="1848">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1652,6 +1700,7 @@
 				<component type="CollisionShape" id="2051" />
 				<component type="RigidBody" id="2052">
 					<attribute name="Physics Rotation" value="-4.37114e-08 0 0 1" />
+					<attribute name="Physics Position" value="4.87268 2.23754 -6.03536" />
 				</component>
 				<component type="StaticModel" id="2053">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1677,6 +1726,7 @@
 				</component>
 				<component type="RigidBody" id="2124">
 					<attribute name="Physics Rotation" value="-4.37114e-08 0 0 1" />
+					<attribute name="Physics Position" value="5.28827 3.67116e-08 -5.9641" />
 				</component>
 			</node>
 			<node id="1953">
@@ -1694,6 +1744,7 @@
 				</component>
 				<component type="RigidBody" id="2110">
 					<attribute name="Physics Rotation" value="0.00350507 -4.55474e-05 -0.00261743 0.99999" />
+					<attribute name="Physics Position" value="5.30326 0.248384 -5.92412" />
 					<attribute name="Mass" value="1.000000" />
 				</component>
 				<component type="CollisionShape" id="2111">
@@ -1725,6 +1776,7 @@
 				<component type="CollisionShape" id="2193" />
 				<component type="RigidBody" id="2194">
 					<attribute name="Physics Rotation" value="-4.37114e-08 0 0 1" />
+					<attribute name="Physics Position" value="4.87268 2.23754 -6.03536" />
 				</component>
 				<component type="StaticModel" id="2195">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1750,6 +1802,7 @@
 				</component>
 				<component type="RigidBody" id="2243">
 					<attribute name="Physics Rotation" value="-4.37114e-08 0 0 1" />
+					<attribute name="Physics Position" value="8.08205 3.67115e-08 -7.86826" />
 				</component>
 			</node>
 			<node id="2034">
@@ -1786,6 +1839,7 @@
 				</component>
 				<component type="RigidBody" id="2242">
 					<attribute name="Physics Rotation" value="0.0035883 -4.32586e-05 -0.00172438 0.999992" />
+					<attribute name="Physics Position" value="8.09705 0.248185 -7.82831" />
 					<attribute name="Mass" value="1.000000" />
 				</component>
 			</node>
@@ -1812,6 +1866,7 @@
 				<component type="CollisionShape" id="2202" />
 				<component type="RigidBody" id="2203">
 					<attribute name="Physics Rotation" value="-4.37114e-08 0 0 1" />
+					<attribute name="Physics Position" value="4.87268 2.23754 -6.03536" />
 				</component>
 				<component type="StaticModel" id="2204">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1837,6 +1892,7 @@
 				</component>
 				<component type="RigidBody" id="2248">
 					<attribute name="Physics Rotation" value="-4.37114e-08 0 0 1" />
+					<attribute name="Physics Position" value="9.19797 3.67115e-08 -3.91116" />
 				</component>
 			</node>
 			<node id="2038">
@@ -1873,6 +1929,7 @@
 				</component>
 				<component type="RigidBody" id="2249">
 					<attribute name="Physics Rotation" value="0.00339161 0.000440106 -0.00376483 0.999987" />
+					<attribute name="Physics Position" value="9.21297 0.248761 -3.87111" />
 					<attribute name="Mass" value="1.000000" />
 				</component>
 			</node>
@@ -1899,6 +1956,7 @@
 				<component type="CollisionShape" id="2211" />
 				<component type="RigidBody" id="2212">
 					<attribute name="Physics Rotation" value="-4.37114e-08 0 0 1" />
+					<attribute name="Physics Position" value="4.87268 2.23754 -6.03536" />
 				</component>
 				<component type="StaticModel" id="2213">
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1924,6 +1982,7 @@
 				</component>
 				<component type="RigidBody" id="2251">
 					<attribute name="Physics Rotation" value="3.09086e-08 0.707107 3.09086e-08 0.707107" />
+					<attribute name="Physics Position" value="12.0958 -3.67115e-08 -6.02043" />
 				</component>
 			</node>
 			<node id="2042">
@@ -1960,6 +2019,7 @@
 				</component>
 				<component type="RigidBody" id="2250">
 					<attribute name="Physics Rotation" value="0.00516598 0.708401 -0.000383432 0.705792" />
+					<attribute name="Physics Position" value="12.1358 0.248805 -6.03543" />
 					<attribute name="Mass" value="1.000000" />
 				</component>
 			</node>

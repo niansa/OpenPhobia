@@ -8,12 +8,11 @@
 
 
 namespace Game {
-eastl::vector<SphereCastResult> SphereCast(Scene *scene, const Vector3& position, float radius) {
-    eastl::vector<SphereCastResult> fres;
+eastl::vector<Node*> SphereCast(Scene *scene, const Vector3& position, float radius) {
+    eastl::vector<Node*> fres;
     for (auto& node : scene->GetChildren(true)) {
-        auto distance = (node->GetWorldPosition() - position).Length();
-        if (distance < radius) {
-            fres.push_back({node, distance});
+        if ((node->GetWorldPosition() - position).Length() < radius) {
+            fres.push_back(node);
         }
     }
     return fres;

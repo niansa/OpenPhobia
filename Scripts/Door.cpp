@@ -12,54 +12,68 @@ namespace Game {
 void Door::Start() {
     // Get rng from LevelManager
     auto& rng = GetGlobalVar("LevelManager").GetCustom<LevelManager*>()->getRng();
-    // Get current rotation
-    currentRotation = GetNode()->GetRotation().EulerAngles();
-    // Get base angle
-    baseAngle = getAngle();
+    // Get door node
+    doorNode = GetNode()->GetChild("Door");
+    // Get door body
+    doorBody = doorNode->GetComponent<RigidBody>();
+    // Set damping
+    doorBody->SetAngularDamping(0.8f);
+    doorBody->SetLinearDamping(0.8f);
     // Get constraint min/max angle
-    auto maxAngleVar = GetNode()->GetVar("maxAngle");
-    if (maxAngleVar.IsEmpty()) {
-        maxAngle = 90.0f;
-    } else {
-        maxAngle = maxAngleVar.GetFloat();
-    }
+    auto constraint = GetNode()->GetChild("Hinge")->GetComponent<Constraint>();
+    minAngle = constraint->GetLowLimit().x_;
+    maxAngle = constraint->GetHighLimit().x_;
     // Get if direction needs to be negative
-    //negDir = GetNode()->HasTag("negativeDoor");
+    negDir = fabsf(maxAngle) < fabsf(minAngle);
+    // Set constraint target node
+    constraint->SetOtherBody(doorBody);
+    // Set the right collision layer and mask
+    doorBody->SetCollisionLayerAndMask(1, 1);
     // Push door by random value
-    impulsePush(rng.GetFloat(0.0f, maxAngle));
+    impulsePush(rng.GetFloat(0.0f, -0.15f));
 }
 
 void Door::FixedUpdate(float) {
-    if (impulse > impulseSpeed) {
-        push(impulseSpeed);
-        impulse -= impulseSpeed;
+    // Snap door in place when closed
+    if (isClosed()) {
+        doorBody->SetAngularVelocity(Vector3::ZERO);
+        doorBody->SetLinearVelocity(Vector3::ZERO);
     }
+}
+
+float Door::getAngle() const {
+    return (doorBody->GetRotation().EulerAngles().y_ - GetNode()->GetWorldRotation().EulerAngles().y_);
 }
 
 float Door::getRelativeAngle() const {
-    return fabsf(getAngle()-baseAngle);
+    return fabsf(getAngle()-getClosedAngle());
+}
+
+float Door::getRelativeOpenAngle() const {
+    return fabsf(minAngle-maxAngle);
 }
 
 bool Door::getSmartDir() const {
-    return getRelativeAngle() > getRelativeFullyOpenAngle() / 2;
+    return getRelativeAngle() < getRelativeOpenAngle() / 2;
 }
 
-void Door::push(float power) {
-    if (!(power > 0.0f && isFullyOpen()) && !(power < 0.0f && isClosed())) {
-        currentRotation.y_ = Min(getFullyOpenAngle(), currentRotation.y_+power);
-        GetNode()->SetRotation(Quaternion(currentRotation));
-    }
-}
 void Door::push(float power, bool direction) {
-    push(direction?-power:power);
+    if (negDir) {
+        power = -power;
+    }
+    if (direction) {
+        power = -power;
+    }
+    doorBody->ApplyTorque({0.0f, power, 0.0f});
 }
 
-void Door::impulsePush(float power) {
-    if (!(power > 0.0f && isFullyOpen()) && !(power < 0.0f && isClosed())) {
-        impulse += power;
-    }
-}
 void Door::impulsePush(float power, bool direction) {
-    impulsePush(direction?-power:power);
+    if (negDir) {
+        power = -power;
+    }
+    if (direction) {
+        power = -power;
+    }
+    doorBody->ApplyTorqueImpulse({0.0f, power, 0.0f});
 }
 }

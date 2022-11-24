@@ -74,7 +74,7 @@ void Wraith::FrequentUpdate(float) {
 void Poltergeist::onInteraction(InteractionType::Type type) {
     // Do multi-throw sometimes
     if (type == InteractionType::throw_ && ghost->rng.GetBool(0.2f/*TBV*/)) {
-        for (unsigned it = ghost->rng.GetUInt(1, ghost->getCloseNodes().size()/*TBV*/); it != 0; it--) {
+        for (unsigned it = ghost->rng.GetUInt(1, ghost->getCloseBodies().size()/*TBV*/); it != 0; it--) {
             // TBV: Can each item only be thrown once?
             ghost->tryInteract(InteractionType::throw_);
         }
@@ -153,13 +153,16 @@ float Raiju::getCurrentSpeed() {
     auto bSpeed = Default::getCurrentSpeed();
     if (ghost->getState() == "Hunt") {
         // Check if there is any turned on electronic turned on nearby
-        for (auto result : ghost->getCloseNodes()) {
-            if (ghost->levelManager->getHouse()->isNodeInside(result.node) && result.node->HasTag("Useable")) {
-                auto script = static_cast<Useable *>(result.node->GetComponent(result.node->GetName()));
-                if (script->isTurnedOn()) {
-                    // Make it faster
-                    bSpeed += 1.5f;
-                    break;
+        for (auto body : ghost->getCloseBodies()) {
+            if (body.body_ && body.distance_ <= 3.0f) {
+                auto node = body.body_->GetNode();
+                if (ghost->levelManager->getHouse()->isNodeInside(node) && node->HasTag("Useable")) {
+                    auto script = static_cast<Useable *>(node->GetComponent(node->GetName()));
+                    if (script->isTurnedOn()) {
+                        // Make it faster
+                        bSpeed += 1.5f;
+                        break;
+                    }
                 }
             }
         }
