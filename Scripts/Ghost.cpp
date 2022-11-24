@@ -146,6 +146,7 @@ void Ghost::setState(const eastl::string& nState) {
 }
 
 InteractionType::Type Ghost::tryInteract(InteractionType::Type type) {
+    updateCloseBodies(); //TODO: This is temporary and to be removed.
     // Shuffle close nodes  Note: EA STL shuffle seems to be broken so STL one is in use instead
     std::shuffle(closeNodes.begin(), closeNodes.end(), std::mt19937(rng.GetUInt()));
     // Try to throw/touch an object in range
@@ -154,7 +155,8 @@ InteractionType::Type Ghost::tryInteract(InteractionType::Type type) {
             continue;
         }
         for (auto node = result.node; node; node = node->GetParent()) {
-            if (node->HasTag("GhostInteractable") && node->GetParent()->GetName() != "Hand") {
+            auto parent = node->GetParent();
+            if (node->HasTag("GhostInteractable") && parent && parent->GetName() != "Hand") {
                 if (type & InteractionType::touch) {
                     if (rng.GetBool(0.5f) && node->HasComponent<Door>()) {
                         behavior->onInteraction(InteractionType::touch);
@@ -228,7 +230,7 @@ void Ghost::useNode(Node *node) {
 void Ghost::pushDoor(Door *door) {
     door->impulsePush(rng.GetFloat(0.0f, 0.4f), door->getSmartDir());
     // Make it emit emf
-    auto emitter = door->GetNode()->GetChild("Door")->GetOrCreateComponent<EMFEmitter>();
+    auto emitter = door->GetNode()->GetOrCreateComponent<EMFEmitter>();
     emitter->setLevel(behavior->getEMFLevel(EMFLevel::touch));
     emitter->timeoutIn(defaultEmfTimeout);
 }

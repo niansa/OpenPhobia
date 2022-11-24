@@ -32,6 +32,7 @@ class Door final : public LogicComponent {
     float maxAngle;
     float baseAngle;
     float impulse = 0.0f;
+    bool negDir = false;
 
 public:
     float impulseSpeed = 0.25f;

@@ -171,7 +171,6 @@ void Player::Update(float timeStep) {
             // Get first result
             if (!results.empty()) {
                 auto node = results[0].node_;
-                printf("Object clicked: %s\n", node->GetName().c_str());
                 // Get door
                 if (node->HasComponent<Door>()) {
                     auto door = node->GetComponent<Door>();

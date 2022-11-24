@@ -24,7 +24,7 @@ void Door::Start() {
         maxAngle = maxAngleVar.GetFloat();
     }
     // Get if direction needs to be negative
-    //negDir = GetNode()->HasTag("negativeDoor");
+    negDir = true;//GetNode()->HasTag("negativeDoor");
     // Push door by random value
     impulsePush(rng.GetFloat(0.0f, maxAngle));
 }
@@ -47,7 +47,15 @@ bool Door::getSmartDir() const {
 void Door::push(float power) {
     if (!(power > 0.0f && isFullyOpen()) && !(power < 0.0f && isClosed())) {
         currentRotation.y_ = Min(getFullyOpenAngle(), currentRotation.y_+power);
-        GetNode()->SetRotation(Quaternion(currentRotation));
+        if (negDir) {
+            auto negatedRotation = currentRotation;
+            negatedRotation.y_ -= baseAngle;
+            negatedRotation.y_ = -negatedRotation.y_;
+            negatedRotation.y_ += baseAngle;
+            GetNode()->SetRotation(Quaternion(negatedRotation));
+        } else {
+            GetNode()->SetRotation(Quaternion(currentRotation));
+        }
     }
 }
 void Door::push(float power, bool direction) {
@@ -63,4 +71,3 @@ void Door::impulsePush(float power, bool direction) {
     impulsePush(direction?-power:power);
 }
 }
-
