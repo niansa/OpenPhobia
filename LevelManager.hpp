@@ -15,9 +15,6 @@ class LevelManager;
 
 #include <Urho3D/Engine/Application.h>
 #include <Urho3D/Math/RandomEngine.h>
-#include <Urho3D/RenderPipeline/RenderPipeline.h>
-#include <Urho3D/RenderPipeline/BloomPass.h>
-#include <Urho3D/RenderPipeline/SceneProcessor.h>
 
 
 
@@ -41,27 +38,13 @@ class LevelManager : public SceneManager {
 public:
     using SceneManager::SceneManager;
 
-    void reloadLevel() {
-        loadScene("Scenes/"+level+".xml");
-        // Apply graphics settings
-        auto renderPipeline = scene->GetOrCreateComponent<RenderPipeline>();
-        auto renderSettings = renderPipeline->GetSettings();
-        renderSettings.bloom_.enabled_ = false;
-        renderSettings.bloom_.intensity_ = 1.0f;
-        renderSettings.sceneProcessor_.lightingMode_ = DirectLightingMode::Forward;
-        renderSettings.sceneProcessor_.maxPixelLights_ = 10;
-        renderSettings.renderBufferManager_.colorSpace_ = RenderPipelineColorSpace::LinearLDR;
-        //renderSettings.chromaticAberration_ = 0.25f;
-        renderPipeline->SetSettings(renderSettings);
-        // Load environment
-        loadEnv();
-    }
     void loadLevel(eastl::string nlevel) {
         level = nlevel;
         reloadLevel();
     }
 
     void Start();
+    void reloadLevel();
     void loadEnv();
     unsigned getTeamSanity() const;
     bool isAnyPlayerInHouse();

@@ -2,8 +2,6 @@
 <scene id="1">
 	<attribute name="Name" value="" />
 	<attribute name="Time Scale" value="1.000000" />
-	<attribute name="Smoothing Constant" value="50.000000" />
-	<attribute name="Snap Threshold" value="5.000000" />
 	<attribute name="Elapsed Time" value="0.000000" />
 	<attribute name="Next Replicated Node ID" value="14" />
 	<attribute name="Next Replicated Component ID" value="15" />
@@ -14,14 +12,10 @@
 	<attribute name="Lightmaps" value="Texture2D;Lightmaps/Textures/Lightmap-0.png" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
-	<component type="EditorSceneSettings" id="16777216">
-		<attribute name="Camera Position" value="7.89132 3.14838 -3.6611" />
-		<attribute name="Camera Rotation" value="0.714286 0.195258 -0.648312 0.177094" />
-	</component>
 	<component type="RenderPipeline" id="839">
 		<attribute name="Color Space" value="LDR Linear" />
+		<attribute name="Max Pixel Lights" value="10" />
 		<attribute name="VSM Shadow Settings" value="1 0.9" />
-		<attribute name="Bloom" value="true" />
 		<attribute name="Post Process Antialiasing" value="FXAA2" />
 	</component>
 	<component type="DynamicNavigationMesh" id="1891">
@@ -310,7 +304,9 @@
 				<attribute name="Position" value="5.86222 1.21197 -3.92541" />
 				<attribute name="Rotation" value="1 0 0 0" />
 				<attribute name="Scale" value="4.3 2.5 4.2" />
-				<attribute name="Variables" />
+				<attribute name="Variables">
+					<variant name="Object" type="String" value="RoomBoundary" />
+				</attribute>
 				<component type="StaticModel" id="2002">
 					<attribute name="Is Enabled" value="false" />
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -351,7 +347,9 @@
 						<attribute name="Position" value="17.7978 1.75084 -4.01841" />
 						<attribute name="Rotation" value="-0.690232 -0.641268 0.212119 0.259521" />
 						<attribute name="Scale" value="1 1 1" />
-						<attribute name="Variables" />
+						<attribute name="Variables">
+							<variant name="Object" type="String" value="Lightbulb" />
+						</attribute>
 						<component type="Light" id="1705">
 							<attribute name="Light Type" value="Spot" />
 							<attribute name="Spot FOV" value="80.000000" />
@@ -367,7 +365,9 @@
 						<attribute name="Position" value="17.4916 1.45807 -4.00992" />
 						<attribute name="Rotation" value="-0.120999 -0.438751 -0.575161 -0.679733" />
 						<attribute name="Scale" value="1 1 1" />
-						<attribute name="Variables" />
+						<attribute name="Variables">
+							<variant name="Object" type="String" value="Lightbulb" />
+						</attribute>
 						<component type="Light" id="1887">
 							<attribute name="Light Type" value="Spot" />
 							<attribute name="Brightness Multiplier" value="40.000000" />
@@ -387,7 +387,9 @@
 						<attribute name="Position" value="17.9965 -0.00434458 -4.12388" />
 						<attribute name="Rotation" value="0.686696 0.686696 0.168667 -0.168667" />
 						<attribute name="Scale" value="1 1 1" />
-						<attribute name="Variables" />
+						<attribute name="Variables">
+							<variant name="Object" type="String" value="Lightswitch" />
+						</attribute>
 						<component type="StaticModel" id="1704">
 							<attribute name="Model" value="Model;Props/modern-furniture/Models/Lamp5.mdl" />
 							<attribute name="Material" value="Material;Props/modern-furniture/Materials/SteelSilver.xml;Props/modern-furniture/Materials/Glass.xml" />
@@ -780,7 +782,9 @@
 				<attribute name="Position" value="15.1612 1.21197 -4.39565" />
 				<attribute name="Rotation" value="1 0 0 0" />
 				<attribute name="Scale" value="6.3 2.5 5.2" />
-				<attribute name="Variables" />
+				<attribute name="Variables">
+					<variant name="Object" type="String" value="RoomBoundary" />
+				</attribute>
 				<component type="StaticModel" id="2001">
 					<attribute name="Is Enabled" value="false" />
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -934,7 +938,9 @@
 				<attribute name="Position" value="6.07414 1.21197 -9.42715" />
 				<attribute name="Rotation" value="1 0 0 0" />
 				<attribute name="Scale" value="4.8 2.5 3.1" />
-				<attribute name="Variables" />
+				<attribute name="Variables">
+					<variant name="Object" type="String" value="RoomBoundary" />
+				</attribute>
 				<component type="StaticModel" id="2000">
 					<attribute name="Is Enabled" value="false" />
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1021,7 +1027,9 @@
 				<attribute name="Position" value="10.0201 1.21197 -2.8792" />
 				<attribute name="Rotation" value="1 0 0 0" />
 				<attribute name="Scale" value="4 2.5 2" />
-				<attribute name="Variables" />
+				<attribute name="Variables">
+					<variant name="Object" type="String" value="RoomBoundary" />
+				</attribute>
 				<component type="StaticModel" id="1999">
 					<attribute name="Is Enabled" value="false" />
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1077,7 +1085,9 @@
 				<attribute name="Position" value="10.0201 1.21197 -4.98391" />
 				<attribute name="Rotation" value="1 0 0 0" />
 				<attribute name="Scale" value="4 2.5 2" />
-				<attribute name="Variables" />
+				<attribute name="Variables">
+					<variant name="Object" type="String" value="RoomBoundary" />
+				</attribute>
 				<component type="StaticModel" id="2026">
 					<attribute name="Is Enabled" value="false" />
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1093,7 +1103,9 @@
 				<attribute name="Position" value="7.86358 1.21197 -6.98847" />
 				<attribute name="Rotation" value="1 0 0 0" />
 				<attribute name="Scale" value="8.35 2.5 1.9" />
-				<attribute name="Variables" />
+				<attribute name="Variables">
+					<variant name="Object" type="String" value="RoomBoundary" />
+				</attribute>
 				<component type="StaticModel" id="2027">
 					<attribute name="Is Enabled" value="false" />
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1149,7 +1161,9 @@
 				<attribute name="Position" value="21.1373 1.21197 -6.37971" />
 				<attribute name="Rotation" value="1 0 0 0" />
 				<attribute name="Scale" value="5.65 2.5 9.1" />
-				<attribute name="Variables" />
+				<attribute name="Variables">
+					<variant name="Object" type="String" value="RoomBoundary" />
+				</attribute>
 				<component type="StaticModel" id="1998">
 					<attribute name="Is Enabled" value="false" />
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1174,7 +1188,9 @@
 				<attribute name="Position" value="15.1867 1.21197 -8.95494" />
 				<attribute name="Rotation" value="1 0 0 0" />
 				<attribute name="Scale" value="6.35 2.5 3.9" />
-				<attribute name="Variables" />
+				<attribute name="Variables">
+					<variant name="Object" type="String" value="RoomBoundary" />
+				</attribute>
 				<component type="StaticModel" id="1997">
 					<attribute name="Is Enabled" value="false" />
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1199,7 +1215,9 @@
 				<attribute name="Position" value="10.2451 1.21197 -9.42715" />
 				<attribute name="Rotation" value="1 0 0 0" />
 				<attribute name="Scale" value="3.5 2.5 3.1" />
-				<attribute name="Variables" />
+				<attribute name="Variables">
+					<variant name="Object" type="String" value="RoomBoundary" />
+				</attribute>
 				<component type="StaticModel" id="2028">
 					<attribute name="Is Enabled" value="false" />
 					<attribute name="Model" value="Model;Models/Box.mdl" />
@@ -1674,7 +1692,9 @@
 			<attribute name="Position" value="4.86834 0 -6.02494" />
 			<attribute name="Rotation" value="-4.37114e-08 0 -0 1" />
 			<attribute name="Scale" value="1 1 1" />
-			<attribute name="Variables" />
+			<attribute name="Variables">
+				<variant name="Object" type="String" value="Door" />
+			</attribute>
 			<node id="1915">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="Frame" />
@@ -1764,7 +1784,9 @@
 			<attribute name="Position" value="7.66212 0 -7.9291" />
 			<attribute name="Rotation" value="-4.37114e-08 0 -0 1" />
 			<attribute name="Scale" value="1 1 1" />
-			<attribute name="Variables" />
+			<attribute name="Variables">
+				<variant name="Object" type="String" value="Door" />
+			</attribute>
 			<node id="2032">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="Top" />
@@ -1854,7 +1876,9 @@
 			<attribute name="Position" value="8.77804 0 -3.972" />
 			<attribute name="Rotation" value="-4.37114e-08 0 -0 1" />
 			<attribute name="Scale" value="1 1 1" />
-			<attribute name="Variables" />
+			<attribute name="Variables">
+				<variant name="Object" type="String" value="Door" />
+			</attribute>
 			<node id="2036">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="Top" />
@@ -1944,7 +1968,9 @@
 			<attribute name="Position" value="12.035 0 -5.6005" />
 			<attribute name="Rotation" value="-3.09086e-08 -0.707107 -3.09086e-08 -0.707107" />
 			<attribute name="Scale" value="1 1 1" />
-			<attribute name="Variables" />
+			<attribute name="Variables">
+				<variant name="Object" type="String" value="Door" />
+			</attribute>
 			<node id="2040">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="Top" />
@@ -2035,57 +2061,81 @@
 		<attribute name="Variables" />
 		<node id="1730">
 			<attribute name="Is Enabled" value="true" />
-			<attribute name="Name" value="Spawn_Player" />
-			<attribute name="Tags" />
+			<attribute name="Name" value="Player" />
+			<attribute name="Tags">
+				<string value="Spawner" />
+			</attribute>
 			<attribute name="Position" value="7.51349 1.28121 -3.64154" />
 			<attribute name="Rotation" value="1 0 0 0" />
 			<attribute name="Scale" value="1 1 1" />
-			<attribute name="Variables" />
+			<attribute name="Variables">
+				<variant name="Object" type="String" value="Player" />
+			</attribute>
 		</node>
 		<node id="1758">
 			<attribute name="Is Enabled" value="true" />
-			<attribute name="Name" value="Spawn_Flashlight" />
-			<attribute name="Tags" />
+			<attribute name="Name" value="Flashlight" />
+			<attribute name="Tags">
+				<string value="Spawner" />
+			</attribute>
 			<attribute name="Position" value="4.97531 0.985955 -2.13662" />
 			<attribute name="Rotation" value="1 0 0 0" />
 			<attribute name="Scale" value="1 1 1" />
-			<attribute name="Variables" />
+			<attribute name="Variables">
+				<variant name="Object" type="String" value="Flashlight" />
+			</attribute>
 		</node>
 		<node id="2115">
 			<attribute name="Is Enabled" value="true" />
-			<attribute name="Name" value="Spawn_PhotoCam" />
-			<attribute name="Tags" />
+			<attribute name="Name" value="PhotoCam" />
+			<attribute name="Tags">
+				<string value="Spawner" />
+			</attribute>
 			<attribute name="Position" value="4.60104 0.969072 -2.29828" />
 			<attribute name="Rotation" value="1 0 0 0" />
 			<attribute name="Scale" value="1 1 1" />
-			<attribute name="Variables" />
+			<attribute name="Variables">
+				<variant name="Object" type="String" value="PhotoCam" />
+			</attribute>
 		</node>
 		<node id="1759">
 			<attribute name="Is Enabled" value="true" />
-			<attribute name="Name" value="Spawn_EMFReader" />
-			<attribute name="Tags" />
+			<attribute name="Name" value="EMFReader" />
+			<attribute name="Tags">
+				<string value="Spawner" />
+			</attribute>
 			<attribute name="Position" value="4.7581 1.00576 -2.18641" />
 			<attribute name="Rotation" value="1 0 0 0" />
 			<attribute name="Scale" value="1 1 1" />
-			<attribute name="Variables" />
+			<attribute name="Variables">
+				<variant name="Object" type="String" value="EMFReader" />
+			</attribute>
 		</node>
 		<node id="1760">
 			<attribute name="Is Enabled" value="true" />
-			<attribute name="Name" value="Spawn_Ghost" />
-			<attribute name="Tags" />
+			<attribute name="Name" value="Ghost" />
+			<attribute name="Tags">
+				<string value="Spawner" />
+			</attribute>
 			<attribute name="Position" value="5.48548 0 -3.80343" />
 			<attribute name="Rotation" value="1 0 0 0" />
 			<attribute name="Scale" value="1 1 1" />
-			<attribute name="Variables" />
+			<attribute name="Variables">
+				<variant name="Object" type="String" value="Ghost" />
+			</attribute>
 		</node>
 		<node id="1774">
 			<attribute name="Is Enabled" value="true" />
-			<attribute name="Name" value="Spawn_Ambience" />
-			<attribute name="Tags" />
+			<attribute name="Name" value="Ambience" />
+			<attribute name="Tags">
+				<string value="Spawner" />
+			</attribute>
 			<attribute name="Position" value="0 0 0" />
 			<attribute name="Rotation" value="1 0 0 0" />
 			<attribute name="Scale" value="1 1 1" />
-			<attribute name="Variables" />
+			<attribute name="Variables">
+				<variant name="Object" type="String" value="Ambience" />
+			</attribute>
 		</node>
 	</node>
 	<node id="1776">
@@ -2110,7 +2160,9 @@
 		<attribute name="Position" value="13.8278 1.21197 -6.36106" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="20.25 2.5 9.2" />
-		<attribute name="Variables" />
+		<attribute name="Variables">
+			<variant name="Object" type="String" value="HouseBoundary" />
+		</attribute>
 		<component type="StaticModel" id="1996">
 			<attribute name="Is Enabled" value="false" />
 			<attribute name="Model" value="Model;Models/Box.mdl" />

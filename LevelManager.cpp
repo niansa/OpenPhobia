@@ -13,6 +13,9 @@
 #include <Urho3D/Resource/ResourceCache.h>
 #include <Urho3D/Graphics/Texture2D.h>
 #include <Urho3D/Core/Assert.h>
+#include <Urho3D/RenderPipeline/RenderPipeline.h>
+#include <Urho3D/RenderPipeline/BloomPass.h>
+#include <Urho3D/RenderPipeline/SceneProcessor.h>
 
 
 
@@ -38,8 +41,57 @@ void LevelManager::Start() {
     }
 }
 
+void LevelManager::reloadLevel() {
+    LoadScene("Scenes/"+level+".xml");
+    // Apply graphics settings
+    auto renderPipeline = scene->GetOrCreateComponent<RenderPipeline>();
+    auto renderSettings = renderPipeline->GetSettings();
+    renderSettings.bloom_.enabled_ = false;
+    renderSettings.bloom_.intensity_ = 1.0f;
+    renderSettings.sceneProcessor_.lightingMode_ = DirectLightingMode::Forward;
+    renderSettings.sceneProcessor_.maxPixelLights_ = 10;
+    renderSettings.renderBufferManager_.colorSpace_ = RenderPipelineColorSpace::LinearLDR;
+    //renderSettings.chromaticAberration_ = 0.25f;
+    renderPipeline->SetSettings(renderSettings);
+    // Load environment
+    loadEnv();
+}
+
 void LevelManager::loadEnv() {
     eastl::vector<Node*> nodes;
+
+    // Upgrade scene
+    scene->GetChildren(nodes, true);
+    const eastl::string_view spawner_prefix = "Spawn_";
+    bool converted = false;
+    for (auto node : nodes) {
+        // Find spawners
+        if (node->GetName().starts_with(spawner_prefix)) {
+            converted = true;
+            auto nname = eastl::string_view{node->GetName().data() + spawner_prefix.size(), node->GetName().size() - spawner_prefix.size()};
+            // Convert
+            node->SetName(eastl::string(nname));
+            printf("Converting spawner for %s\n...", node->GetName().c_str());
+            node->AddTag("Spawner");
+            node->SetVar("Object", node->GetName());
+        }
+        // Find scripted nodes
+        else if (node->HasTag("Scripted")) {
+            converted = true;
+            eastl::string nname = node->GetName();
+            // Convert
+            printf("Converting spawner for %s\n...", nname.c_str());
+            node->SetVar("Object", eastl::move(nname));
+        }
+    }
+    if (converted) {
+        printf("Serializing converted scene...\n");
+        fflush(stdout);
+        File ser(app->GetContext(), "converted.xml", FileMode::FILE_WRITE);
+        scene->SaveXML(ser);
+        FinalizeScene();
+    }
+
     // Find players
     scene->GetChildrenWithComponent<Player>(nodes, true);
     for (auto node : nodes) {

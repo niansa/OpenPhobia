@@ -47,7 +47,7 @@ void Ghost::Start() {
     appearance = GetNode()->GetChild("Appearance");
     levelManager = GetGlobalVar("LevelManager").GetCustom<LevelManager*>();
     animationController = appearance->GetChild("Model")->GetComponent<AnimationController>();
-    navMesh = GetScene()->GetChild("SceneMain")->GetComponent<DynamicNavigationMesh>();
+    navMesh = GetScene()->GetComponent<DynamicNavigationMesh>();
     // Create kinematic controller
     body = GetNode()->CreateComponent<RigidBody>();
     body->SetCollisionLayerAndMask(0, 0);
